@@ -1,0 +1,630 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>corebio.moremath</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="corebio-module.html">Package&nbsp;corebio</a> ::
+        Module&nbsp;moremath
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="corebio.moremath-module.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== MODULE DESCRIPTION ==================== -->
+<h1 class="epydoc">Module moremath</h1><p class="nomargin-top"><span class="codelink"><a href="corebio.moremath-pysrc.html">source&nbsp;code</a></span></p>
+<pre class="literalblock">
+Various bits of useful math not in the standard python library.
+
+Constants :
+
+- euler_gamma  = 0.577215...
+- catalan      = 0.915965...
+- golden_ratio = 1.618033...
+- bits_per_nat = log2(e) = 1/log(2) 
+- sqrt_2pi     = 2.50662...
+    
+Special Functions :
+
+
+
+- gamma()                       -- Gamma function.
+- lngamma()                     -- Logarithm of the gamma function
+- factorial()                   -- Factorial function.
+- digamma()                     -- Digamma function (logarithmic derivative of gamma).
+- trigamma()                    -- Trigamma function (derivative of digamma).
+
+- cgamma()                       -- Complex math version of counterparts above.
+- clngamma()                                   
+- cdigamma()                     
+- ctrigamma()                    
+
+- entropy()                     -- The entropy of a probability vector
+- incomplete_gamma()            -- The 'upper' incomplete gamma function.
+- normalized_incomplete_gamma() -- 
+- log2()                          -- Base 2 logarithms.
+- argmin()
+- argmax()
+
+</pre>
+
+<!-- ==================== FUNCTIONS ==================== -->
+<a name="section-Functions"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Functions</span></td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="corebio.moremath-module.html#gamma" class="summary-sig-name">gamma</a>(<span class="summary-sig-arg">x</span>)</span><br />
+      The gamma function.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="corebio.moremath-pysrc.html#gamma">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="cgamma"></a><span class="summary-sig-name">cgamma</span>(<span class="summary-sig-arg">z</span>)</span><br />
+      Gamma function with complex arguments and results.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="corebio.moremath-pysrc.html#cgamma">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="lngamma"></a><span class="summary-sig-name">lngamma</span>(<span class="summary-sig-arg">x</span>)</span><br />
+      The logarithm of the gamma function.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="corebio.moremath-pysrc.html#lngamma">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="clngamma"></a><span class="summary-sig-name">clngamma</span>(<span class="summary-sig-arg">z</span>)</span><br />
+      The logarithm of the gamma function for a complex argument</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="corebio.moremath-pysrc.html#clngamma">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="corebio.moremath-module.html#factorial" class="summary-sig-name">factorial</a>(<span class="summary-sig-arg">z</span>)</span><br />
+      The factorial function.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="corebio.moremath-pysrc.html#factorial">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="corebio.moremath-module.html#digamma" class="summary-sig-name">digamma</a>(<span class="summary-sig-arg">x</span>)</span><br />
+      The digamma function, the logarithmic derivative of the gamma function.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="corebio.moremath-pysrc.html#digamma">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="cdigamma"></a><span class="summary-sig-name">cdigamma</span>(<span class="summary-sig-arg">z</span>)</span><br />
+      Digamma function with complex arguments</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="corebio.moremath-pysrc.html#cdigamma">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="corebio.moremath-module.html#trigamma" class="summary-sig-name">trigamma</a>(<span class="summary-sig-arg">x</span>)</span><br />
+      The trigamma function, the derivative of the digamma function.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="corebio.moremath-pysrc.html#trigamma">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="ctrigamma"></a><span class="summary-sig-name">ctrigamma</span>(<span class="summary-sig-arg">z</span>)</span><br />
+      The trigamma function with complex arguments and return value.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="corebio.moremath-pysrc.html#ctrigamma">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="corebio.moremath-module.html#incomplete_gamma" class="summary-sig-name">incomplete_gamma</a>(<span class="summary-sig-arg">a</span>,
+        <span class="summary-sig-arg">x</span>)</span><br />
+      The 'upper' incomplete gamma function:</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="corebio.moremath-pysrc.html#incomplete_gamma">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="corebio.moremath-module.html#normalized_incomplete_gamma" class="summary-sig-name">normalized_incomplete_gamma</a>(<span class="summary-sig-arg">a</span>,
+        <span class="summary-sig-arg">x</span>)</span><br />
+      The upper, incomplete gamma function normalized so that the limiting
+values are zero and one.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="corebio.moremath-pysrc.html#normalized_incomplete_gamma">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="log2"></a><span class="summary-sig-name">log2</span>(<span class="summary-sig-arg">x</span>)</span><br />
+      Return the base 2 logarithm of x</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="corebio.moremath-pysrc.html#log2">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="entropy"></a><span class="summary-sig-name">entropy</span>(<span class="summary-sig-arg">pvec</span>,
+        <span class="summary-sig-arg">base</span>=<span class="summary-sig-default">2.71828182846</span>)</span><br />
+      The entropy S = -Sum_i p_i ln p_i pvec is a frequency vector, not 
+      necessarily normalized.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="corebio.moremath-pysrc.html#entropy">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="argmax"></a><span class="summary-sig-name">argmax</span>(<span class="summary-sig-arg">alist</span>)</span><br />
+      Return the index of the last occurrence of the maximum value in the 
+      list.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="corebio.moremath-pysrc.html#argmax">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="argmin"></a><span class="summary-sig-name">argmin</span>(<span class="summary-sig-arg">alist</span>)</span><br />
+      Return the index of the first occurrence of the minimum value in the 
+      list.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="corebio.moremath-pysrc.html#argmin">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+<!-- ==================== VARIABLES ==================== -->
+<a name="section-Variables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Variables</span></td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="euler_gamma"></a><span class="summary-name">euler_gamma</span> = <code title="0.577215664902">0.577215664902</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="catalan"></a><span class="summary-name">catalan</span> = <code title="0.915965594177">0.915965594177</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="golden_ratio"></a><span class="summary-name">golden_ratio</span> = <code title="1.61803398875">1.61803398875</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="bits_per_nat"></a><span class="summary-name">bits_per_nat</span> = <code title="1.44269504089">1.44269504089</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="sqrt_2pi"></a><span class="summary-name">sqrt_2pi</span> = <code title="2.50662827463">2.50662827463</code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTION DETAILS ==================== -->
+<a name="section-FunctionDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Function Details</span></td>
+</tr>
+</table>
+<a name="gamma"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">gamma</span>(<span class="sig-arg">x</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="corebio.moremath-pysrc.html#gamma">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+The gamma function. Returns exact results for small integers. Will
+overflow for modest sized arguments. Use lngamma(z) instead. 
+
+See: Eric W. Weisstein. &quot;Gamma Function.&quot; From MathWorld, A Wolfram Web Resource.
+     http://mathworld.wolfram.com/GammaFunction.html
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="factorial"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">factorial</span>(<span class="sig-arg">z</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="corebio.moremath-pysrc.html#factorial">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>The factorial function. factorial(z) == gamma(z+1)</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="digamma"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">digamma</span>(<span class="sig-arg">x</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="corebio.moremath-pysrc.html#digamma">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+The digamma function, the logarithmic derivative of the gamma function.
+        digamma(z) = d/dz ln( gamma(z) )
+
+
+See: Eric W. Weisstein. &quot;Digamma Function.&quot; From MathWorld--
+A Wolfram Web Resource. http://mathworld.wolfram.com/DigammaFunction.html
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="trigamma"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">trigamma</span>(<span class="sig-arg">x</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="corebio.moremath-pysrc.html#trigamma">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+The trigamma function, the derivative of the digamma function.
+        trigamma(z) = d/dz digamma(z) = d/dz d/dz ln( gamma(z) )
+
+See: Eric W. Weisstein. &quot;Trigamma Function.&quot; From MathWorld--
+A Wolfram Web Resource. http://mathworld.wolfram.com/TrigammaFunction.html
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="incomplete_gamma"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">incomplete_gamma</span>(<span class="sig-arg">a</span>,
+        <span class="sig-arg">x</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="corebio.moremath-pysrc.html#incomplete_gamma">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+The 'upper' incomplete gamma function:
+
+                        oo
+                         -
+                        |    -t  a-1
+incomplete_gamma(a,x) = |   e   t   dt.
+                        |
+                       -                         
+                        x
+
+In Mathematica, Gamma[a,x].
+
+Note that, very confusingly, the phrase 'incomplete gamma fucntion'
+can also refer to the same integral between 0 and x, (the 'lower'
+incomplete gamma function) or to the normalized versions,
+normalized_incomplete_gamma() )
+
+
+See: Eric W. Weisstein. &quot;Gamma Function.&quot; From MathWorld, A Wolfram Web Resource.
+     http://mathworld.wolfram.com/IncompleteGammaFunction.html
+
+Bugs :
+    This implementation is not very accurate for some arguments. 
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="normalized_incomplete_gamma"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">normalized_incomplete_gamma</span>(<span class="sig-arg">a</span>,
+        <span class="sig-arg">x</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="corebio.moremath-pysrc.html#normalized_incomplete_gamma">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+The upper, incomplete gamma function normalized so that the limiting
+values are zero and one.
+
+ Q(a,x) = incomplete_gamma(a,x) / gamma(a) 
+
+See: 
+    incomplete_gamma()
+Bugs :
+    This implementation is not very accurate for some arguments. 
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Wed Mar 12 21:34:13 2014
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

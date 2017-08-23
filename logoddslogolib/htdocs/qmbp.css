@@ -1,0 +1,174 @@
+/*
+ * Web page layout
+ */
+* { margin: 0px; padding: 0px; }
+a {	outline:none; text-decoration: none; }
+img { border: none; text-decoration: none; }
+/* E-mail */
+a.cat { color: #336699; text-decoration: underline; cursor: pointer; margin-right: 5px; }
+span.cat { }
+body {
+	background-color:#FFFFFF;
+	min-width: 1008px;
+	max-width: 1024px;
+	font-family: Arial, Helvetica, Sans-Serif;
+	font-size: medium;
+	background: white;
+	clear: both;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 15px;
+	color: #666666;
+}
+/*
+Header
+*/
+div#header {
+    background: none repeat scroll 0 0 #333333;
+    border: 1px solid #999999;
+    margin-bottom: 6px;
+    height: 75px;
+    min-width: 800px;
+    text-align: center;
+/*  overflow: visible;
+    position: relative; */
+}
+div#header h1     { display: block; height: 100%; width: 100%; }
+div#header h1 a   { display: block; height: 100%; width: 100%; text-indent: -5000px; }
+div#qmbplogo      { float: left;  height: 100%; width: 165px; background: none repeat scroll 0 0 #FFFFFF; }
+div#ncbilogo      { float: right; height: 100%; width: 165px; background: none repeat scroll 0 0 #FFFFFF; }
+div#groupbanner   { float: left;  height: 100%; width: 440px; }
+div#raiddbsbanner { float: left;  height: 100%; width: 440px; }
+div#raidapsbanner { float: left;  height: 100%; width: 440px; }
+div#affabanner    { float: left;  height: 100%; width: 440px; }
+div#midasbanner   { float: left;  height: 100%; width: 440px; }
+div#itmprobebanner  h1 a { background: url("qmbppics/banner-itmprobe.png")  no-repeat scroll left top transparent; }
+div#seddlesumbanner h1 a { background: url("qmbppics/banner-saddlesum.png") no-repeat scroll left top transparent; }
+div#groupbanner     h1 a { background: url("qmbppics/QMBPb.png")            no-repeat scroll left top transparent; } 
+div#affabanner      h1 a { background: url("P/AFFA1.png")                   no-repeat scroll left top transparent; } 
+div#raiddbsbanner   h1 a { background: url("qmbppics/raid_dbs.png")         no-repeat scroll left top transparent; }
+div#raidapsbanner   h1 a { background: url("qmbppics/raid_aps.png")         no-repeat scroll left top transparent; }
+div#midasbanner     h1 a { background: url("qmbppics/midas.png")         no-repeat scroll left top transparent; }
+div#ncbilogo        h1 a { background: url("qmbppics/ncbi-logo.png")        no-repeat scroll left top transparent; }
+div#qmbplogo        h1 a { background: url("qmbppics/qmbp-logo.png")        no-repeat scroll left top transparent; }
+
+/*
+ * Left panel menu styles
+ */
+div#leftpanel {
+	background: white url("qmbppics/gradient-left.png") repeat-y left top;
+	float: left;
+	width: 160px;
+	vertical-align: top;
+	margin-top: 5px;
+	margin-bottom: 10px;
+	padding-left: 5px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-align: left;
+    text-transform: uppercase;
+	font-size: 92%;
+}
+div#leftpanel a         { color: #333366; }
+div#leftpanel a:visited { color: #333366; }
+
+div.ctgl { font-size: 92%; padding: 3px 0px 3px 0px; display: block; }
+div.cover:hover { background: #99CCFF url(P/larr.gif) no-repeat right center; }
+div.ctgl .ca1 { display: inline-block; height: 18px; width: 13px; }
+div.ctgl .ca2 { display: inline-block; height: 18px; width: 13px; }
+div.ctgl .ca3 { display: inline-block; height: 18px; width: 13px; }
+div.ctgl.expanded  a.ca1    { background:transparent url(PF/minus1.png) no-repeat scroll -3px 2px; }
+div.ctgl.expanded  a.ca2    { background:transparent url(PF/minus2.png) no-repeat scroll -3px 2px; }
+div.ctgl.expanded  a.ca3    { background:transparent url(PF/minus3.png) no-repeat scroll -3px 2px; }
+div.ctgl.expanded  span.ca3 { background:transparent url(PF/none3.png) no-repeat scroll -3px 2px; }
+div.ctgl.expanded  span.ca2 { background:transparent url(PF/none2.png) no-repeat scroll -3px 2px; }
+div.ctgl.collapsed a.ca1    { background:transparent url(PF/plus1.png) no-repeat scroll -3px 2px; }
+div.ctgl.collapsed a.ca2    { background:transparent url(PF/plus2.png) no-repeat scroll -3px 2px; }
+div.ctgl.collapsed a.ca3    { background:transparent url(PF/plus3.png) no-repeat scroll -3px 2px; }
+div.ctgl.collapsed span.ca3 { background:transparent url(PF/none3.png) no-repeat scroll -3px 2px; }
+div.ctgl.none      span.ca1 { background:transparent url(PF/none1.png) no-repeat scroll -3px 2px; }
+div.ctgl.none      span.ca2 { background:transparent url(PF/none2.png) no-repeat scroll -3px 2px; }
+div.ctgl.none      span.ca3 { background:transparent url(PF/none3.png) no-repeat scroll -3px 2px; }
+div.ctgl.dwnl      span.ca2 { background:transparent url(PF/none2.png) no-repeat scroll -3px 2px; }
+
+div.ctgl.dwnl { display: none; }
+div.ctgl.dwnl.cact { display: block; }
+
+div.ctgldiv { padding: 0px 0px 0px 13px; }
+div.ctgldiv.cback { background:transparent url(PF/nonen.png) no-repeat scroll -3px 0px; }
+div.ctgldiv.opened { display: block; text-transform: none; }
+div.ctgldiv.opened a { color: #333333; }
+div.ctgldiv.opened a:visited { color: #333333; }
+div.ctgldiv.closed { display: none; }
+div.ctgl a.ctgl { cursor: pointer; display: inline-block; }
+.cacur { background: transparent url(P/larr.gif) no-repeat right center; }
+
+/*
+Middle panel
+*/
+#middlepanel { margin: 10px 175px 10px 175px; }
+/*
+Right panel
+*/
+#rightpanel {
+    background: url("qmbppics/gradient-right.png") repeat-y scroll left top #336699;
+    font-size: 85%;
+    float: right;
+    padding-left:10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: left;
+    width: 155px;
+    margin-left: 5px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+#rightpanel .sidetitle {
+    color: #99CCFF;
+    font-size: 1.2em;
+    font-weight: 600;
+    padding-bottom: 5px;
+    text-transform: uppercase;
+}
+#rightpanel h4 {
+    color: white;
+    font-family: 'Trebuchet MS',sans-serif;
+    font-size: 1.1em;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+#rightpanel ul {
+    color: white;
+    list-style: square outside none;
+    margin-left: 20px;
+}
+#rightpanel ul.clip {
+    color: white;
+    list-style: none outside none;
+    margin-left: 20px;
+}
+#rightpanel a {
+    color: #99CCFF;
+    text-decoration: none;
+}
+/*
+Footer
+*/
+#footsep {
+    clear: both;
+    color: #999999;
+    margin: 0px 165px 0px 165px;
+}
+#footer {
+    text-align: center;
+    color: #999999;
+    font-size: small;
+}
+#footer ul li              { display: inline; }
+#footer ul li:before       { content: " | "; }
+#footer ul li:first-child:before { content: ""; }
+
+#footer ul li a       { color: #999999; }
+#footer ul li a:hover { text-decoration: underline; }
+
+#codedby { font-size: xx-small; }

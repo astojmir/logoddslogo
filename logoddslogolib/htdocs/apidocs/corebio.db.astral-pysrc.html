@@ -1,0 +1,576 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>corebio.db.astral</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="corebio-module.html">Package&nbsp;corebio</a> ::
+        <a href="corebio.db-module.html">Package&nbsp;db</a> ::
+        Module&nbsp;astral
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="corebio.db.astral-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="corebio.db.astral-module.html">Module corebio.db.astral</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"><tt class="py-comment"># Copyright 2000 by Jeffrey Chang.  All rights reserved.</tt> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-comment"># Copyright 2001 by Gavin E. Crooks.  All rights reserved.</tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-comment"># Modifications Copyright 2004/2005 James Casbon. </tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-comment"># Copyright 2005 by Regents of the University of California. All rights reserved</tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-comment">#   (Major rewrite for conformance to corebio. Gavin Crooks)</tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"><tt class="py-comment"># This code is derived from the Biopython distribution and is governed by it's</tt> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"><tt class="py-comment"># license.  Please see the LICENSE file that should have been included</tt> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line"><tt class="py-comment"># as part of this package.</tt> </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line"> </tt>
+<a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line"><tt class="py-docstring">"""ASTRAL:  Compendium for Sequence and Structure Analysis. </tt> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line"><tt class="py-docstring">The ASTRAL compendium provides databases and tools useful for analyzing protein structures and their sequences.  It is partially derived from, and augments the SCOP: Structural Classification of Proteins database. Most of the resources depend upon the coordinate files maintained and distributed by the Protein Data Bank.</tt> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line"><tt class="py-docstring">Ref:</tt> </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line"><tt class="py-docstring">    http://astral.berkeley.edu/ </tt> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line"><tt class="py-docstring">* Classes :</tt> </tt>
+<a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line"><tt class="py-docstring">    - Raf       -- A file of ASTRAL RAF (Rapid Access Format) Sequence Maps.</tt> </tt>
+<a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line"><tt class="py-docstring">    - RafSeqMap -- A sequence map, a RAF record.</tt> </tt>
+<a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line"><tt class="py-docstring">    - Res       -- A single residue mapping from a RAF record.</tt> </tt>
+<a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line"><tt class="py-docstring">* Functions :</tt> </tt>
+<a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line"><tt class="py-docstring">    - parse_domain  -- Convert an ASTRAL fasta header string into a Scop domain.</tt> </tt>
+<a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line"><tt class="py-docstring">    - normalize_letters -- Normalize RAF amino acid codes.</tt> </tt>
+<a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line"><tt class="py-docstring">"""</tt> </tt>
+<a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line"> </tt>
+<a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">re</tt> </tt>
+<a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">copy</tt> <tt class="py-keyword">import</tt> <tt class="py-name">copy</tt> </tt>
+<a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line"> </tt>
+<a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-0" class="py-name" targets="Package corebio=corebio-module.html"><a title="corebio" class="py-name" href="#" onclick="return doclink('link-0', 'corebio', 'link-0');">corebio</a></tt><tt class="py-op">.</tt><tt id="link-1" class="py-name" targets="Package corebio.db=corebio.db-module.html"><a title="corebio.db" class="py-name" href="#" onclick="return doclink('link-1', 'db', 'link-1');">db</a></tt><tt class="py-op">.</tt><tt id="link-2" class="py-name" targets="Module corebio.db.scop=corebio.db.scop-module.html"><a title="corebio.db.scop" class="py-name" href="#" onclick="return doclink('link-2', 'scop', 'link-2');">scop</a></tt> <tt class="py-keyword">import</tt> <tt id="link-3" class="py-name" targets="Class corebio.db.scop.Domain=corebio.db.scop.Domain-class.html"><a title="corebio.db.scop.Domain" class="py-name" href="#" onclick="return doclink('link-3', 'Domain', 'link-3');">Domain</a></tt><tt class="py-op">,</tt> <tt id="link-4" class="py-name" targets="Class corebio.db.scop.Residues=corebio.db.scop.Residues-class.html"><a title="corebio.db.scop.Residues" class="py-name" href="#" onclick="return doclink('link-4', 'Residues', 'link-4');">Residues</a></tt> </tt>
+<a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-5" class="py-name"><a title="corebio" class="py-name" href="#" onclick="return doclink('link-5', 'corebio', 'link-0');">corebio</a></tt><tt class="py-op">.</tt><tt id="link-6" class="py-name" targets="Module corebio.data=corebio.data-module.html,Variable corebio.utils.Token.data=corebio.utils.Token-class.html#data"><a title="corebio.data
+corebio.utils.Token.data" class="py-name" href="#" onclick="return doclink('link-6', 'data', 'link-6');">data</a></tt> <tt class="py-keyword">import</tt> <tt id="link-7" class="py-name" targets="Variable corebio.data.extended_three_to_one=corebio.data-module.html#extended_three_to_one"><a title="corebio.data.extended_three_to_one" class="py-name" href="#" onclick="return doclink('link-7', 'extended_three_to_one', 'link-7');">extended_three_to_one</a></tt> <tt class="py-keyword">as</tt> <tt class="py-name">to_one_letter_code</tt> </tt>
+<a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-8" class="py-name"><a title="corebio" class="py-name" href="#" onclick="return doclink('link-8', 'corebio', 'link-0');">corebio</a></tt><tt class="py-op">.</tt><tt id="link-9" class="py-name" targets="Package corebio.utils=corebio.utils-module.html"><a title="corebio.utils" class="py-name" href="#" onclick="return doclink('link-9', 'utils', 'link-9');">utils</a></tt> <tt class="py-keyword">import</tt> <tt id="link-10" class="py-name" targets="Class corebio.utils.FileIndex=corebio.utils.FileIndex-class.html"><a title="corebio.utils.FileIndex" class="py-name" href="#" onclick="return doclink('link-10', 'FileIndex', 'link-10');">FileIndex</a></tt> </tt>
+<a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line"> </tt>
+<a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line"><tt class="py-name">__all__</tt> <tt class="py-op">=</tt> <tt class="py-op">(</tt><tt class="py-string">'astral_evalues'</tt><tt class="py-op">,</tt> <tt class="py-string">'astral_percent_identities'</tt><tt class="py-op">,</tt>  </tt>
+<a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line">            <tt class="py-string">'astral_evalues_filenames'</tt><tt class="py-op">,</tt> <tt class="py-string">'normalize_letters'</tt><tt class="py-op">,</tt> <tt class="py-string">'parse_domain'</tt><tt class="py-op">,</tt>  </tt>
+<a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line">            <tt class="py-string">'Raf'</tt><tt class="py-op">,</tt> <tt class="py-string">'RafSeqMap'</tt><tt class="py-op">,</tt> <tt class="py-string">'Res'</tt><tt class="py-op">)</tt> </tt>
+<a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line"> </tt>
+<a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line"><tt class="py-comment"># Percentage identity filtered ASTRAL SCOP genetic domain sequence subset</tt> </tt>
+<a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line"><tt id="link-11" class="py-name" targets="Variable corebio.db.astral.astral_percent_identities=corebio.db.astral-module.html#astral_percent_identities"><a title="corebio.db.astral.astral_percent_identities" class="py-name" href="#" onclick="return doclink('link-11', 'astral_percent_identities', 'link-11');">astral_percent_identities</a></tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-number">10</tt><tt class="py-op">,</tt><tt class="py-number">20</tt><tt class="py-op">,</tt><tt class="py-number">25</tt><tt class="py-op">,</tt><tt class="py-number">30</tt><tt class="py-op">,</tt><tt class="py-number">35</tt><tt class="py-op">,</tt><tt class="py-number">40</tt><tt class="py-op">,</tt><tt class="py-number">50</tt><tt class="py-op">,</tt><tt class="py-number">70</tt><tt class="py-op">,</tt><tt class="py-number">90</tt><tt class="py-op">,</tt><tt class="py-number">95</tt><tt class="py-op">,</tt><tt class="py-number">100</tt><tt class="py-op">]</tt> </tt>
+<a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line"> </tt>
+<a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line"><tt class="py-comment"># E-value filtered ASTRAL SCOP genetic domain sequence subsets, based on PDB SEQRES records.</tt> </tt>
+<a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line"><tt id="link-12" class="py-name" targets="Variable corebio.db.astral.astral_evalues=corebio.db.astral-module.html#astral_evalues"><a title="corebio.db.astral.astral_evalues" class="py-name" href="#" onclick="return doclink('link-12', 'astral_evalues', 'link-12');">astral_evalues</a></tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-number">10</tt><tt class="py-op">,</tt> <tt class="py-number">5</tt><tt class="py-op">,</tt> <tt class="py-number">1</tt><tt class="py-op">,</tt> <tt class="py-number">0.5</tt><tt class="py-op">,</tt> <tt class="py-number">0.1</tt><tt class="py-op">,</tt> <tt class="py-number">0.05</tt><tt class="py-op">,</tt> <tt class="py-number">0.01</tt><tt class="py-op">,</tt> <tt class="py-number">0.005</tt><tt class="py-op">,</tt> <tt class="py-number">0.001</tt><tt class="py-op">,</tt> <tt class="py-number">1e-4</tt><tt class="py-op">,</tt> <tt class="py-number">1e-5</tt><tt class="py-op">,</tt> <tt class="py-number">1e-10</tt><tt class="py-op">,</tt> <tt class="py-number">1e-15</tt><tt class="py-op">,</tt><tt class="py-number">1e-20</tt><tt class="py-op">,</tt> <tt class="py-number">1e-25</tt><tt class="py-op">,</tt> <tt class="py-number">1e-50</tt><tt class="py-op">]</tt> </tt>
+<a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line"> </tt>
+<a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line"><tt class="py-comment"># A map between evalues and astral filename suffixes.</tt> </tt>
+<a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line"><tt id="link-13" class="py-name" targets="Variable corebio.db.astral.astral_evalues_filenames=corebio.db.astral-module.html#astral_evalues_filenames"><a title="corebio.db.astral.astral_evalues_filenames" class="py-name" href="#" onclick="return doclink('link-13', 'astral_evalues_filenames', 'link-13');">astral_evalues_filenames</a></tt> <tt class="py-op">=</tt> <tt class="py-op">{</tt>  </tt>
+<a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line">    <tt class="py-number">10</tt><tt class="py-op">:</tt> <tt class="py-string">'e+1'</tt><tt class="py-op">,</tt> <tt class="py-number">5</tt><tt class="py-op">:</tt> <tt class="py-string">'e+0,7'</tt><tt class="py-op">,</tt> <tt class="py-number">1</tt><tt class="py-op">:</tt> <tt class="py-string">'e+0'</tt><tt class="py-op">,</tt> <tt class="py-number">0.5</tt><tt class="py-op">:</tt> <tt class="py-string">'e-0,3'</tt><tt class="py-op">,</tt> <tt class="py-number">0.1</tt><tt class="py-op">:</tt> <tt class="py-string">'e-1'</tt><tt class="py-op">,</tt> </tt>
+<a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line">    <tt class="py-number">0.05</tt><tt class="py-op">:</tt> <tt class="py-string">'e-1,3'</tt><tt class="py-op">,</tt> <tt class="py-number">0.01</tt><tt class="py-op">:</tt> <tt class="py-string">'e-2'</tt><tt class="py-op">,</tt> <tt class="py-number">0.005</tt><tt class="py-op">:</tt> <tt class="py-string">'e-2,3'</tt><tt class="py-op">,</tt> <tt class="py-number">0.001</tt><tt class="py-op">:</tt> <tt class="py-string">'e-3'</tt><tt class="py-op">,</tt> </tt>
+<a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line">    <tt class="py-number">1e-4</tt><tt class="py-op">:</tt> <tt class="py-string">'e-4'</tt><tt class="py-op">,</tt>  <tt class="py-number">1e-5</tt><tt class="py-op">:</tt> <tt class="py-string">'e-5'</tt><tt class="py-op">,</tt> <tt class="py-number">1e-10</tt><tt class="py-op">:</tt> <tt class="py-string">'e-10'</tt><tt class="py-op">,</tt> <tt class="py-number">1e-15</tt><tt class="py-op">:</tt> <tt class="py-string">'e-15'</tt><tt class="py-op">,</tt> </tt>
+<a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line">    <tt class="py-number">1e-20</tt><tt class="py-op">:</tt> <tt class="py-string">'e-20'</tt><tt class="py-op">,</tt> <tt class="py-number">1e-25</tt><tt class="py-op">:</tt> <tt class="py-string">'e-25'</tt><tt class="py-op">,</tt> <tt class="py-number">1e-50</tt><tt class="py-op">:</tt> <tt class="py-string">'e-50'</tt> <tt class="py-op">}</tt> </tt>
+<a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line"> </tt>
+<a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line"> </tt>
+<a name="L55"></a><tt class="py-lineno"> 55</tt>  <tt class="py-line"> </tt>
+<a name="normalize_letters"></a><div id="normalize_letters-def"><a name="L56"></a><tt class="py-lineno"> 56</tt> <a class="py-toggle" href="#" id="normalize_letters-toggle" onclick="return toggle('normalize_letters');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="corebio.db.astral-module.html#normalize_letters">normalize_letters</a><tt class="py-op">(</tt><tt class="py-param">one_letter_code</tt><tt class="py-op">)</tt> <tt class="py-op">:</tt> </tt>
+</div><div id="normalize_letters-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="normalize_letters-expanded"><a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line">    <tt class="py-docstring">"""Convert RAF one-letter amino acid codes into IUPAC standard codes.</tt> </tt>
+<a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line"><tt class="py-docstring">    Letters are uppercased, and "." ("Unknown") is converted to "X".</tt> </tt>
+<a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-name">one_letter_code</tt> <tt class="py-op">==</tt> <tt class="py-string">'.'</tt> <tt class="py-op">:</tt> </tt>
+<a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-string">'X'</tt> </tt>
+<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line">    <tt class="py-keyword">else</tt> <tt class="py-op">:</tt> </tt>
+<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">one_letter_code</tt><tt class="py-op">.</tt><tt id="link-14" class="py-name" targets="Method corebio.seq.Seq.upper()=corebio.seq.Seq-class.html#upper"><a title="corebio.seq.Seq.upper" class="py-name" href="#" onclick="return doclink('link-14', 'upper', 'link-14');">upper</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line">      </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line"><tt id="link-15" class="py-name" targets="Variable corebio.db.astral._domain_re=corebio.db.astral-module.html#_domain_re"><a title="corebio.db.astral._domain_re" class="py-name" href="#" onclick="return doclink('link-15', '_domain_re', 'link-15');">_domain_re</a></tt> <tt class="py-op">=</tt> <tt class="py-name">re</tt><tt class="py-op">.</tt><tt class="py-name">compile</tt><tt class="py-op">(</tt><tt class="py-string">r"&gt;?([\w_\.]*)\s+([\w\.]*)\s+\(([^)]*)\) (.*)"</tt><tt class="py-op">)</tt> </tt>
+<a name="parse_domain"></a><div id="parse_domain-def"><a name="L66"></a><tt class="py-lineno"> 66</tt> <a class="py-toggle" href="#" id="parse_domain-toggle" onclick="return toggle('parse_domain');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="corebio.db.astral-module.html#parse_domain">parse_domain</a><tt class="py-op">(</tt><tt class="py-param">str</tt><tt class="py-op">)</tt> <tt class="py-op">:</tt> </tt>
+</div><div id="parse_domain-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="parse_domain-expanded"><a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line">    <tt class="py-docstring">"""Convert an ASTRAL fasta header string into a SCOP domain.</tt> </tt>
+<a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line"><tt class="py-docstring">    An ASTRAL (http://astral.stanford.edu/) header contains a concise</tt> </tt>
+<a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line"><tt class="py-docstring">    description of a SCOP domain. A very similar format is used when a</tt> </tt>
+<a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line"><tt class="py-docstring">    Domain object is converted into a string.  The Domain returned by this</tt> </tt>
+<a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line"><tt class="py-docstring">    method contains most of the SCOP information, but it will not be located</tt> </tt>
+<a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line"><tt class="py-docstring">    within the SCOP hierarchy (i.e. the parent node will be None). The</tt> </tt>
+<a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line"><tt class="py-docstring">    description is composed of the SCOP protein and species descriptions.</tt> </tt>
+<a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line"><tt class="py-docstring">    A typical ASTRAL header looks like --</tt> </tt>
+<a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line"><tt class="py-docstring">    &gt;d1tpt_1 a.46.2.1 (1-70) Thymidine phosphorylase {Escherichia coli}</tt> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line"> </tt>
+<a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line">    <tt class="py-name">m</tt> <tt class="py-op">=</tt> <tt id="link-16" class="py-name"><a title="corebio.db.astral._domain_re" class="py-name" href="#" onclick="return doclink('link-16', '_domain_re', 'link-15');">_domain_re</a></tt><tt class="py-op">.</tt><tt class="py-name">match</tt><tt class="py-op">(</tt><tt class="py-name">str</tt><tt class="py-op">)</tt> </tt>
+<a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-op">(</tt><tt class="py-keyword">not</tt> <tt class="py-name">m</tt><tt class="py-op">)</tt> <tt class="py-op">:</tt> <tt class="py-keyword">raise</tt> <tt class="py-name">ValueError</tt><tt class="py-op">(</tt><tt class="py-string">"Domain: "</tt><tt class="py-op">+</tt> <tt class="py-name">str</tt><tt class="py-op">)</tt> </tt>
+<a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line"> </tt>
+<a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line">    <tt class="py-name">dom</tt> <tt class="py-op">=</tt> <tt id="link-17" class="py-name"><a title="corebio.db.scop.Domain" class="py-name" href="#" onclick="return doclink('link-17', 'Domain', 'link-3');">Domain</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line">    <tt class="py-name">dom</tt><tt class="py-op">.</tt><tt class="py-name">sid</tt> <tt class="py-op">=</tt> <tt class="py-name">m</tt><tt class="py-op">.</tt><tt class="py-name">group</tt><tt class="py-op">(</tt><tt class="py-number">1</tt><tt class="py-op">)</tt> </tt>
+<a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line">    <tt class="py-name">dom</tt><tt class="py-op">.</tt><tt class="py-name">sccs</tt> <tt class="py-op">=</tt> <tt class="py-name">m</tt><tt class="py-op">.</tt><tt class="py-name">group</tt><tt class="py-op">(</tt><tt class="py-number">2</tt><tt class="py-op">)</tt> </tt>
+<a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line">    <tt class="py-name">dom</tt><tt class="py-op">.</tt><tt id="link-18" class="py-name" targets="Variable corebio.secstruc.dssp.DsspRecord.residues=corebio.secstruc.dssp.DsspRecord-class.html#residues,Variable corebio.secstruc.stride.StrideRecord.residues=corebio.secstruc.stride.StrideRecord-class.html#residues"><a title="corebio.secstruc.dssp.DsspRecord.residues
+corebio.secstruc.stride.StrideRecord.residues" class="py-name" href="#" onclick="return doclink('link-18', 'residues', 'link-18');">residues</a></tt> <tt class="py-op">=</tt> <tt id="link-19" class="py-name"><a title="corebio.db.scop.Residues" class="py-name" href="#" onclick="return doclink('link-19', 'Residues', 'link-4');">Residues</a></tt><tt class="py-op">(</tt><tt class="py-name">m</tt><tt class="py-op">.</tt><tt class="py-name">group</tt><tt class="py-op">(</tt><tt class="py-number">3</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">dom</tt><tt class="py-op">.</tt><tt id="link-20" class="py-name"><a title="corebio.secstruc.dssp.DsspRecord.residues
+corebio.secstruc.stride.StrideRecord.residues" class="py-name" href="#" onclick="return doclink('link-20', 'residues', 'link-18');">residues</a></tt><tt class="py-op">.</tt><tt id="link-21" class="py-name" targets="Variable corebio.secstruc.dssp.DsspRecord.pdbid=corebio.secstruc.dssp.DsspRecord-class.html#pdbid,Variable corebio.secstruc.stride.StrideRecord.pdbid=corebio.secstruc.stride.StrideRecord-class.html#pdbid"><a title="corebio.secstruc.dssp.DsspRecord.pdbid
+corebio.secstruc.stride.StrideRecord.pdbid" class="py-name" href="#" onclick="return doclink('link-21', 'pdbid', 'link-21');">pdbid</a></tt> <tt class="py-op">:</tt> </tt>
+<a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line">        <tt class="py-name">dom</tt><tt class="py-op">.</tt><tt id="link-22" class="py-name"><a title="corebio.secstruc.dssp.DsspRecord.residues
+corebio.secstruc.stride.StrideRecord.residues" class="py-name" href="#" onclick="return doclink('link-22', 'residues', 'link-18');">residues</a></tt><tt class="py-op">.</tt><tt id="link-23" class="py-name"><a title="corebio.secstruc.dssp.DsspRecord.pdbid
+corebio.secstruc.stride.StrideRecord.pdbid" class="py-name" href="#" onclick="return doclink('link-23', 'pdbid', 'link-21');">pdbid</a></tt><tt class="py-op">=</tt> <tt class="py-name">dom</tt><tt class="py-op">.</tt><tt class="py-name">sid</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">:</tt><tt class="py-number">5</tt><tt class="py-op">]</tt> </tt>
+<a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line">    <tt class="py-name">dom</tt><tt class="py-op">.</tt><tt id="link-24" class="py-name" targets="Variable corebio._version.description=corebio._version-module.html#description,Variable corebio.db.DataSource.description=corebio.db.DataSource-class.html#description,Variable corebio.matrix.SubMatrix.description=corebio.matrix.SubMatrix-class.html#description,Variable corebio.seq.SeqList.description=corebio.seq.SeqList-class.html#description,Variable corebio.transform.Transform.description=corebio.transform.Transform-class.html#description,Variable logoddslogolib.description=logoddslogolib-module.html#description,Variable weblogolib.description=weblogolib-module.html#description"><a title="corebio._version.description
+corebio.db.DataSource.description
+corebio.matrix.SubMatrix.description
+corebio.seq.SeqList.description
+corebio.transform.Transform.description
+logoddslogolib.description
+weblogolib.description" class="py-name" href="#" onclick="return doclink('link-24', 'description', 'link-24');">description</a></tt> <tt class="py-op">=</tt> <tt class="py-name">m</tt><tt class="py-op">.</tt><tt class="py-name">group</tt><tt class="py-op">(</tt><tt class="py-number">4</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt class="py-name">strip</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line"> </tt>
+<a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">dom</tt> </tt>
+</div><a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line"> </tt>
+<a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line">     </tt>
+<a name="Raf"></a><div id="Raf-def"><a name="L94"></a><tt class="py-lineno"> 94</tt> <a class="py-toggle" href="#" id="Raf-toggle" onclick="return toggle('Raf');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="corebio.db.astral.Raf-class.html">Raf</a><tt class="py-op">(</tt><tt class="py-base-class">FileIndex</tt><tt class="py-op">)</tt> <tt class="py-op">:</tt> </tt>
+</div><div id="Raf-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="Raf-expanded"><a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line">    <tt class="py-docstring">"""ASTRAL RAF (Rapid Access Format) Sequence Maps.</tt> </tt>
+<a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line"><tt class="py-docstring">    The ASTRAL RAF Sequence Maps record the relationship between the PDB SEQRES</tt> </tt>
+<a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line"><tt class="py-docstring">    records (representing the sequence of the molecule used in an experiment) </tt> </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line"><tt class="py-docstring">    and the ATOM records (representing the atoms experimentally observed). </tt> </tt>
+<a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line"><tt class="py-docstring">    This data is derived from the Protein Data Bank CIF files. Known errors in </tt> </tt>
+<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line"><tt class="py-docstring">    the CIF files are corrected manually, with the original PDB file serving as</tt> </tt>
+<a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line"><tt class="py-docstring">    the final arbiter in case of discrepancies. </tt> </tt>
+<a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line"><tt class="py-docstring">    Residues are referenced by residue ID. This consists of the PDB residue</tt> </tt>
+<a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line"><tt class="py-docstring">    sequence number (up to 4 digits) and an optional PDB insertion code (an</tt> </tt>
+<a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line"><tt class="py-docstring">    ascii alphabetic character, a-z, A-Z). e.g. "1", "10A", "1010b", "-1"</tt> </tt>
+<a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line"><tt class="py-docstring">    See "ASTRAL RAF Sequence Maps":http://astral.stanford.edu/raf.html</tt> </tt>
+<a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line"><tt class="py-docstring">    The RAF file itself is about 50 MB. Each line consists of a sequence map of</tt> </tt>
+<a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line"><tt class="py-docstring">    a different protein chain. This index provides rapid, random</tt> </tt>
+<a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line"><tt class="py-docstring">    access of RAF records without having to load the entire file into memory.</tt> </tt>
+<a name="L114"></a><tt class="py-lineno">114</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L115"></a><tt class="py-lineno">115</tt>  <tt class="py-line"><tt class="py-docstring">    This class does not load the entire RAF file into memory. Instead, it</tt> </tt>
+<a name="L116"></a><tt class="py-lineno">116</tt>  <tt class="py-line"><tt class="py-docstring">    reads the file once, noting the location and content of each RafSeqMap.</tt> </tt>
+<a name="L117"></a><tt class="py-lineno">117</tt>  <tt class="py-line"><tt class="py-docstring">    The index key is a concatenation of the  PDB ID and chain ID. e.g</tt> </tt>
+<a name="L118"></a><tt class="py-lineno">118</tt>  <tt class="py-line"><tt class="py-docstring">    "2drcA", "155c_". RAF uses an underscore to indicate blank</tt> </tt>
+<a name="L119"></a><tt class="py-lineno">119</tt>  <tt class="py-line"><tt class="py-docstring">    chain IDs. Custom maps of subsequences or spanning multiple chains can</tt> </tt>
+<a name="L120"></a><tt class="py-lineno">120</tt>  <tt class="py-line"><tt class="py-docstring">    be constructed with the get_seqmap method. </tt> </tt>
+<a name="L121"></a><tt class="py-lineno">121</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L122"></a><tt class="py-lineno">122</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="Raf.__init__"></a><div id="Raf.__init__-def"><a name="L123"></a><tt class="py-lineno">123</tt> <a class="py-toggle" href="#" id="Raf.__init__-toggle" onclick="return toggle('Raf.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="corebio.db.astral.Raf-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">raf_file</tt><tt class="py-op">)</tt> <tt class="py-op">:</tt> </tt>
+</div><div id="Raf.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Raf.__init__-expanded"><a name="L124"></a><tt class="py-lineno">124</tt>  <tt class="py-line">        <tt class="py-keyword">def</tt> <tt class="py-def-name">linekey</tt><tt class="py-op">(</tt><tt class="py-param">line</tt><tt class="py-op">)</tt> <tt class="py-op">:</tt> </tt>
+<a name="L125"></a><tt class="py-lineno">125</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">line</tt> <tt class="py-keyword">or</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">line</tt><tt class="py-op">)</tt><tt class="py-op">&lt;</tt><tt class="py-number">5</tt> <tt class="py-keyword">or</tt> <tt class="py-name">line</tt><tt class="py-op">.</tt><tt class="py-name">isspace</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> <tt class="py-keyword">or</tt> <tt class="py-name">line</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">==</tt><tt class="py-string">'#'</tt><tt class="py-op">:</tt> </tt>
+<a name="L126"></a><tt class="py-lineno">126</tt>  <tt class="py-line">                <tt class="py-keyword">return</tt> <tt class="py-name">None</tt> </tt>
+<a name="L127"></a><tt class="py-lineno">127</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt class="py-name">line</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">:</tt><tt class="py-number">5</tt><tt class="py-op">]</tt> </tt>
+</div><a name="L128"></a><tt class="py-lineno">128</tt>  <tt class="py-line">        <tt class="py-keyword">def</tt> <tt class="py-def-name">parser</tt><tt class="py-op">(</tt> <tt class="py-param">f</tt><tt class="py-op">)</tt> <tt class="py-op">:</tt> <tt class="py-keyword">return</tt> <tt id="link-25" class="py-name" targets="Class corebio.db.astral.RafSeqMap=corebio.db.astral.RafSeqMap-class.html"><a title="corebio.db.astral.RafSeqMap" class="py-name" href="#" onclick="return doclink('link-25', 'RafSeqMap', 'link-25');">RafSeqMap</a></tt><tt class="py-op">(</tt><tt class="py-name">f</tt><tt class="py-op">.</tt><tt class="py-name">readline</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L129"></a><tt class="py-lineno">129</tt>  <tt class="py-line">         </tt>
+<a name="L130"></a><tt class="py-lineno">130</tt>  <tt class="py-line">        <tt id="link-26" class="py-name"><a title="corebio.utils.FileIndex" class="py-name" href="#" onclick="return doclink('link-26', 'FileIndex', 'link-10');">FileIndex</a></tt><tt class="py-op">.</tt><tt id="link-27" class="py-name" targets="Method corebio.db.DataSource.__init__()=corebio.db.DataSource-class.html#__init__,Method corebio.db.Dbxref.__init__()=corebio.db.Dbxref-class.html#__init__,Method corebio.db.astral.Raf.__init__()=corebio.db.astral.Raf-class.html#__init__,Method corebio.db.astral.RafSeqMap.__init__()=corebio.db.astral.RafSeqMap-class.html#__init__,Method corebio.db.astral.Res.__init__()=corebio.db.astral.Res-class.html#__init__,Method corebio.db.scop.ClaRecord.__init__()=corebio.db.scop.ClaRecord-class.html#__init__,Method corebio.db.scop.DesRecord.__init__()=corebio.db.scop.DesRecord-class.html#__init__,Method corebio.db.scop.DomRecord.__init__()=corebio.db.scop.DomRecord-class.html#__init__,Method corebio.db.scop.Domain.__init__()=corebio.db.scop.Domain-class.html#__init__,Method corebio.db.scop.HieRecord.__init__()=corebio.db.scop.HieRecord-class.html#__init__,Method corebio.db.scop.Node.__init__()=corebio.db.scop.Node-class.html#__init__,Method corebio.db.scop.Residues.__init__()=corebio.db.scop.Residues-class.html#__init__,Method corebio.db.scop.Scop.__init__()=corebio.db.scop.Scop-class.html#__init__,Method corebio.matrix.AlphabeticArray.__init__()=corebio.matrix.AlphabeticArray-class.html#__init__,Method corebio.matrix.Motif.__init__()=corebio.matrix.Motif-class.html#__init__,Method corebio.matrix.SubMatrix.__init__()=corebio.matrix.SubMatrix-class.html#__init__,Method corebio.secstruc.dssp.DsspRecord.__init__()=corebio.secstruc.dssp.DsspRecord-class.html#__init__,Method corebio.secstruc.dssp.DsspResidue.__init__()=corebio.secstruc.dssp.DsspResidue-class.html#__init__,Method corebio.secstruc.dssp.RunDssp.__init__()=corebio.secstruc.dssp.RunDssp-class.html#__init__,Method corebio.secstruc.stride.RunStride.__init__()=corebio.secstruc.stride.RunStride-class.html#__init__,Method corebio.secstruc.stride.StrideRecord.__init__()=corebio.secstruc.stride.StrideRecord-class.html#__init__,Method corebio.secstruc.stride.StrideResidue.__init__()=corebio.secstruc.stride.StrideResidue-class.html#__init__,Method corebio.seq.SeqList.__init__()=corebio.seq.SeqList-class.html#__init__,Method corebio.seq_io._nexus.Block.__init__()=corebio.seq_io._nexus.Block-class.html#__init__,Method corebio.seq_io._nexus.CharBuffer.__init__()=corebio.seq_io._nexus.CharBuffer-class.html#__init__,Method corebio.seq_io._nexus.Commandline.__init__()=corebio.seq_io._nexus.Commandline-class.html#__init__,Method corebio.seq_io._nexus.Nexus.__init__()=corebio.seq_io._nexus.Nexus-class.html#__init__,Method corebio.seq_io._nexus.Nodes.Chain.__init__()=corebio.seq_io._nexus.Nodes.Chain-class.html#__init__,Method corebio.seq_io._nexus.Nodes.Node.__init__()=corebio.seq_io._nexus.Nodes.Node-class.html#__init__,Method corebio.seq_io._nexus.StepMatrix.__init__()=corebio.seq_io._nexus.StepMatrix-class.html#__init__,Method corebio.seq_io._nexus.Trees.NodeData.__init__()=corebio.seq_io._nexus.Trees.NodeData-class.html#__init__,Method corebio.seq_io._nexus.Trees.Tree.__init__()=corebio.seq_io._nexus.Trees.Tree-class.html#__init__,Method corebio.transform.GeneticCode.__init__()=corebio.transform.GeneticCode-class.html#__init__,Method corebio.transform.Transform.__init__()=corebio.transform.Transform-class.html#__init__,Method corebio.utils.ArgumentError.__init__()=corebio.utils.ArgumentError-class.html#__init__,Method corebio.utils.FileIndex.__init__()=corebio.utils.FileIndex-class.html#__init__,Method corebio.utils.Reiterate.__init__()=corebio.utils.Reiterate-class.html#__init__,Method corebio.utils.Token.__init__()=corebio.utils.Token-class.html#__init__,Method corebio.utils.deoptparse.DeHelpFormatter.__init__()=corebio.utils.deoptparse.DeHelpFormatter-class.html#__init__,Method corebio.utils.deoptparse.DeOptionParser.__init__()=corebio.utils.deoptparse.DeOptionParser-class.html#__init__,Method corebio.utils.frozendict.__init__()=corebio.utils.frozendict-class.html#__init__,Method logoddslogolib.LogoData.__init__()=logoddslogolib.LogoData-class.html#__init__,Method logoddslogolib.LogoFormat.__init__()=logoddslogolib.LogoFormat-class.html#__init__,Method logoddslogolib.LogoOptions.__init__()=logoddslogolib.LogoOptions-class.html#__init__,Method weblogolib.GhostscriptAPI.__init__()=weblogolib.GhostscriptAPI-class.html#__init__,Method weblogolib.LogoData.__init__()=weblogolib.LogoData-class.html#__init__,Method weblogolib.LogoFormat.__init__()=weblogolib.LogoFormat-class.html#__init__,Method weblogolib.LogoOptions.__init__()=weblogolib.LogoOptions-class.html#__init__,Method weblogolib._cgi.Field.__init__()=weblogolib._cgi.Field-class.html#__init__,Method weblogolib.color.Color.__init__()=weblogolib.color.Color-class.html#__init__,Method weblogolib.colorscheme.ColorGroup.__init__()=weblogolib.colorscheme.ColorGroup-class.html#__init__,Method weblogolib.colorscheme.ColorScheme.__init__()=weblogolib.colorscheme.ColorScheme-class.html#__init__,Method weblogolib.logomath.Dirichlet.__init__()=weblogolib.logomath.Dirichlet-class.html#__init__,Method weblogolib.logomath.Gamma.__init__()=weblogolib.logomath.Gamma-class.html#__init__"><a title="corebio.db.DataSource.__init__
+corebio.db.Dbxref.__init__
+corebio.db.astral.Raf.__init__
+corebio.db.astral.RafSeqMap.__init__
+corebio.db.astral.Res.__init__
+corebio.db.scop.ClaRecord.__init__
+corebio.db.scop.DesRecord.__init__
+corebio.db.scop.DomRecord.__init__
+corebio.db.scop.Domain.__init__
+corebio.db.scop.HieRecord.__init__
+corebio.db.scop.Node.__init__
+corebio.db.scop.Residues.__init__
+corebio.db.scop.Scop.__init__
+corebio.matrix.AlphabeticArray.__init__
+corebio.matrix.Motif.__init__
+corebio.matrix.SubMatrix.__init__
+corebio.secstruc.dssp.DsspRecord.__init__
+corebio.secstruc.dssp.DsspResidue.__init__
+corebio.secstruc.dssp.RunDssp.__init__
+corebio.secstruc.stride.RunStride.__init__
+corebio.secstruc.stride.StrideRecord.__init__
+corebio.secstruc.stride.StrideResidue.__init__
+corebio.seq.SeqList.__init__
+corebio.seq_io._nexus.Block.__init__
+corebio.seq_io._nexus.CharBuffer.__init__
+corebio.seq_io._nexus.Commandline.__init__
+corebio.seq_io._nexus.Nexus.__init__
+corebio.seq_io._nexus.Nodes.Chain.__init__
+corebio.seq_io._nexus.Nodes.Node.__init__
+corebio.seq_io._nexus.StepMatrix.__init__
+corebio.seq_io._nexus.Trees.NodeData.__init__
+corebio.seq_io._nexus.Trees.Tree.__init__
+corebio.transform.GeneticCode.__init__
+corebio.transform.Transform.__init__
+corebio.utils.ArgumentError.__init__
+corebio.utils.FileIndex.__init__
+corebio.utils.Reiterate.__init__
+corebio.utils.Token.__init__
+corebio.utils.deoptparse.DeHelpFormatter.__init__
+corebio.utils.deoptparse.DeOptionParser.__init__
+corebio.utils.frozendict.__init__
+logoddslogolib.LogoData.__init__
+logoddslogolib.LogoFormat.__init__
+logoddslogolib.LogoOptions.__init__
+weblogolib.GhostscriptAPI.__init__
+weblogolib.LogoData.__init__
+weblogolib.LogoFormat.__init__
+weblogolib.LogoOptions.__init__
+weblogolib._cgi.Field.__init__
+weblogolib.color.Color.__init__
+weblogolib.colorscheme.ColorGroup.__init__
+weblogolib.colorscheme.ColorScheme.__init__
+weblogolib.logomath.Dirichlet.__init__
+weblogolib.logomath.Gamma.__init__" class="py-name" href="#" onclick="return doclink('link-27', '__init__', 'link-27');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">,</tt> <tt class="py-name">raf_file</tt><tt class="py-op">,</tt> <tt class="py-name">linekey</tt><tt class="py-op">,</tt> <tt id="link-28" class="py-name" targets="Variable corebio.db.DataSource.parser=corebio.db.DataSource-class.html#parser"><a title="corebio.db.DataSource.parser" class="py-name" href="#" onclick="return doclink('link-28', 'parser', 'link-28');">parser</a></tt><tt class="py-op">)</tt> </tt>
+</div><a name="L131"></a><tt class="py-lineno">131</tt>  <tt class="py-line">         </tt>
+<a name="L132"></a><tt class="py-lineno">132</tt>  <tt class="py-line"> </tt>
+<a name="Raf.get_seqmap"></a><div id="Raf.get_seqmap-def"><a name="L133"></a><tt class="py-lineno">133</tt> <a class="py-toggle" href="#" id="Raf.get_seqmap-toggle" onclick="return toggle('Raf.get_seqmap');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="corebio.db.astral.Raf-class.html#get_seqmap">get_seqmap</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">residues</tt><tt class="py-op">)</tt> <tt class="py-op">:</tt> </tt>
+</div><div id="Raf.get_seqmap-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Raf.get_seqmap-expanded"><a name="L134"></a><tt class="py-lineno">134</tt>  <tt class="py-line">        <tt class="py-docstring">"""Get the sequence map for a collection of residues.</tt> </tt>
+<a name="L135"></a><tt class="py-lineno">135</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L136"></a><tt class="py-lineno">136</tt>  <tt class="py-line"><tt class="py-docstring">        residues -- A SCOP style description of a collection of residues from a</tt> </tt>
+<a name="L137"></a><tt class="py-lineno">137</tt>  <tt class="py-line"><tt class="py-docstring">                    PDB strucure, (e.g. '(1bba A:10-20,B:)'), as a string or a</tt> </tt>
+<a name="L138"></a><tt class="py-lineno">138</tt>  <tt class="py-line"><tt class="py-docstring">                    scop.Residues instance.</tt> </tt>
+<a name="L139"></a><tt class="py-lineno">139</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L140"></a><tt class="py-lineno">140</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">type</tt><tt class="py-op">(</tt><tt id="link-29" class="py-name"><a title="corebio.secstruc.dssp.DsspRecord.residues
+corebio.secstruc.stride.StrideRecord.residues" class="py-name" href="#" onclick="return doclink('link-29', 'residues', 'link-18');">residues</a></tt><tt class="py-op">)</tt><tt class="py-op">==</tt> <tt class="py-name">str</tt> <tt class="py-op">:</tt> </tt>
+<a name="L141"></a><tt class="py-lineno">141</tt>  <tt class="py-line">            <tt id="link-30" class="py-name"><a title="corebio.secstruc.dssp.DsspRecord.residues
+corebio.secstruc.stride.StrideRecord.residues" class="py-name" href="#" onclick="return doclink('link-30', 'residues', 'link-18');">residues</a></tt> <tt class="py-op">=</tt> <tt id="link-31" class="py-name"><a title="corebio.db.scop.Residues" class="py-name" href="#" onclick="return doclink('link-31', 'Residues', 'link-4');">Residues</a></tt><tt class="py-op">(</tt><tt id="link-32" class="py-name"><a title="corebio.secstruc.dssp.DsspRecord.residues
+corebio.secstruc.stride.StrideRecord.residues" class="py-name" href="#" onclick="return doclink('link-32', 'residues', 'link-18');">residues</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L142"></a><tt class="py-lineno">142</tt>  <tt class="py-line"> </tt>
+<a name="L143"></a><tt class="py-lineno">143</tt>  <tt class="py-line">        <tt id="link-33" class="py-name"><a title="corebio.secstruc.dssp.DsspRecord.pdbid
+corebio.secstruc.stride.StrideRecord.pdbid" class="py-name" href="#" onclick="return doclink('link-33', 'pdbid', 'link-21');">pdbid</a></tt>  <tt class="py-op">=</tt> <tt id="link-34" class="py-name"><a title="corebio.secstruc.dssp.DsspRecord.residues
+corebio.secstruc.stride.StrideRecord.residues" class="py-name" href="#" onclick="return doclink('link-34', 'residues', 'link-18');">residues</a></tt><tt class="py-op">.</tt><tt id="link-35" class="py-name"><a title="corebio.secstruc.dssp.DsspRecord.pdbid
+corebio.secstruc.stride.StrideRecord.pdbid" class="py-name" href="#" onclick="return doclink('link-35', 'pdbid', 'link-21');">pdbid</a></tt> </tt>
+<a name="L144"></a><tt class="py-lineno">144</tt>  <tt class="py-line">        <tt class="py-name">frags</tt> <tt class="py-op">=</tt> <tt id="link-36" class="py-name"><a title="corebio.secstruc.dssp.DsspRecord.residues
+corebio.secstruc.stride.StrideRecord.residues" class="py-name" href="#" onclick="return doclink('link-36', 'residues', 'link-18');">residues</a></tt><tt class="py-op">.</tt><tt class="py-name">fragments</tt> </tt>
+<a name="L145"></a><tt class="py-lineno">145</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">frags</tt><tt class="py-op">:</tt> <tt class="py-name">frags</tt> <tt class="py-op">=</tt><tt class="py-op">(</tt><tt class="py-op">(</tt><tt class="py-string">'_'</tt><tt class="py-op">,</tt><tt class="py-string">''</tt><tt class="py-op">,</tt><tt class="py-string">''</tt><tt class="py-op">)</tt><tt class="py-op">,</tt><tt class="py-op">)</tt> <tt class="py-comment"># All residues of unnamed chain</tt> </tt>
+<a name="L146"></a><tt class="py-lineno">146</tt>  <tt class="py-line"> </tt>
+<a name="L147"></a><tt class="py-lineno">147</tt>  <tt class="py-line">        <tt class="py-name">seqMap</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+<a name="L148"></a><tt class="py-lineno">148</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">frag</tt> <tt class="py-keyword">in</tt> <tt class="py-name">frags</tt> <tt class="py-op">:</tt> </tt>
+<a name="L149"></a><tt class="py-lineno">149</tt>  <tt class="py-line">            <tt id="link-37" class="py-name" targets="Variable corebio.secstruc.dssp.DsspResidue.chainid=corebio.secstruc.dssp.DsspResidue-class.html#chainid,Variable corebio.secstruc.stride.StrideResidue.chainid=corebio.secstruc.stride.StrideResidue-class.html#chainid"><a title="corebio.secstruc.dssp.DsspResidue.chainid
+corebio.secstruc.stride.StrideResidue.chainid" class="py-name" href="#" onclick="return doclink('link-37', 'chainid', 'link-37');">chainid</a></tt> <tt class="py-op">=</tt> <tt class="py-name">frag</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> </tt>
+<a name="L150"></a><tt class="py-lineno">150</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt id="link-38" class="py-name"><a title="corebio.secstruc.dssp.DsspResidue.chainid
+corebio.secstruc.stride.StrideResidue.chainid" class="py-name" href="#" onclick="return doclink('link-38', 'chainid', 'link-37');">chainid</a></tt><tt class="py-op">==</tt><tt class="py-string">''</tt> <tt class="py-keyword">or</tt> <tt id="link-39" class="py-name"><a title="corebio.secstruc.dssp.DsspResidue.chainid
+corebio.secstruc.stride.StrideResidue.chainid" class="py-name" href="#" onclick="return doclink('link-39', 'chainid', 'link-37');">chainid</a></tt><tt class="py-op">==</tt><tt class="py-string">'-'</tt> <tt class="py-keyword">or</tt> <tt id="link-40" class="py-name"><a title="corebio.secstruc.dssp.DsspResidue.chainid
+corebio.secstruc.stride.StrideResidue.chainid" class="py-name" href="#" onclick="return doclink('link-40', 'chainid', 'link-37');">chainid</a></tt><tt class="py-op">==</tt><tt class="py-string">' '</tt> <tt class="py-keyword">or</tt> <tt id="link-41" class="py-name"><a title="corebio.secstruc.dssp.DsspResidue.chainid
+corebio.secstruc.stride.StrideResidue.chainid" class="py-name" href="#" onclick="return doclink('link-41', 'chainid', 'link-37');">chainid</a></tt><tt class="py-op">==</tt><tt class="py-string">'_'</tt><tt class="py-op">:</tt> </tt>
+<a name="L151"></a><tt class="py-lineno">151</tt>  <tt class="py-line">                <tt id="link-42" class="py-name"><a title="corebio.secstruc.dssp.DsspResidue.chainid
+corebio.secstruc.stride.StrideResidue.chainid" class="py-name" href="#" onclick="return doclink('link-42', 'chainid', 'link-37');">chainid</a></tt> <tt class="py-op">=</tt> <tt class="py-string">'_'</tt> </tt>
+<a name="L152"></a><tt class="py-lineno">152</tt>  <tt class="py-line">            <tt class="py-name">sid</tt> <tt class="py-op">=</tt> <tt id="link-43" class="py-name"><a title="corebio.secstruc.dssp.DsspRecord.pdbid
+corebio.secstruc.stride.StrideRecord.pdbid" class="py-name" href="#" onclick="return doclink('link-43', 'pdbid', 'link-21');">pdbid</a></tt> <tt class="py-op">+</tt> <tt id="link-44" class="py-name"><a title="corebio.secstruc.dssp.DsspResidue.chainid
+corebio.secstruc.stride.StrideResidue.chainid" class="py-name" href="#" onclick="return doclink('link-44', 'chainid', 'link-37');">chainid</a></tt> </tt>
+<a name="L153"></a><tt class="py-lineno">153</tt>  <tt class="py-line">             </tt>
+<a name="L154"></a><tt class="py-lineno">154</tt>  <tt class="py-line">            <tt class="py-name">sm</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">[</tt><tt class="py-name">sid</tt><tt class="py-op">]</tt> </tt>
+<a name="L155"></a><tt class="py-lineno">155</tt>  <tt class="py-line">             </tt>
+<a name="L156"></a><tt class="py-lineno">156</tt>  <tt class="py-line">            <tt class="py-comment"># Cut out fragment of interest</tt> </tt>
+<a name="L157"></a><tt class="py-lineno">157</tt>  <tt class="py-line">            <tt class="py-name">start</tt> <tt class="py-op">=</tt> <tt class="py-number">0</tt> </tt>
+<a name="L158"></a><tt class="py-lineno">158</tt>  <tt class="py-line">            <tt class="py-name">end</tt> <tt class="py-op">=</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">sm</tt><tt class="py-op">.</tt><tt class="py-name">res</tt><tt class="py-op">)</tt> </tt>
+<a name="L159"></a><tt class="py-lineno">159</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">frag</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt> <tt class="py-op">:</tt> <tt class="py-name">start</tt> <tt class="py-op">=</tt> <tt class="py-name">int</tt><tt class="py-op">(</tt><tt class="py-name">sm</tt><tt class="py-op">.</tt><tt id="link-45" class="py-name" targets="Method corebio.db.astral.RafSeqMap.index()=corebio.db.astral.RafSeqMap-class.html#index,Method corebio.matrix.AlphabeticArray.index()=corebio.matrix.AlphabeticArray-class.html#index,Function corebio.seq_io.fasta_io.index()=corebio.seq_io.fasta_io-module.html#index,Method corebio.utils.Reiterate.index()=corebio.utils.Reiterate-class.html#index"><a title="corebio.db.astral.RafSeqMap.index
+corebio.matrix.AlphabeticArray.index
+corebio.seq_io.fasta_io.index
+corebio.utils.Reiterate.index" class="py-name" href="#" onclick="return doclink('link-45', 'index', 'link-45');">index</a></tt><tt class="py-op">(</tt><tt class="py-name">frag</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt id="link-46" class="py-name"><a title="corebio.secstruc.dssp.DsspResidue.chainid
+corebio.secstruc.stride.StrideResidue.chainid" class="py-name" href="#" onclick="return doclink('link-46', 'chainid', 'link-37');">chainid</a></tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L160"></a><tt class="py-lineno">160</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">frag</tt><tt class="py-op">[</tt><tt class="py-number">2</tt><tt class="py-op">]</tt> <tt class="py-op">:</tt> <tt class="py-name">end</tt> <tt class="py-op">=</tt> <tt class="py-name">int</tt><tt class="py-op">(</tt><tt class="py-name">sm</tt><tt class="py-op">.</tt><tt id="link-47" class="py-name"><a title="corebio.db.astral.RafSeqMap.index
+corebio.matrix.AlphabeticArray.index
+corebio.seq_io.fasta_io.index
+corebio.utils.Reiterate.index" class="py-name" href="#" onclick="return doclink('link-47', 'index', 'link-45');">index</a></tt><tt class="py-op">(</tt><tt class="py-name">frag</tt><tt class="py-op">[</tt><tt class="py-number">2</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt id="link-48" class="py-name"><a title="corebio.secstruc.dssp.DsspResidue.chainid
+corebio.secstruc.stride.StrideResidue.chainid" class="py-name" href="#" onclick="return doclink('link-48', 'chainid', 'link-37');">chainid</a></tt><tt class="py-op">)</tt><tt class="py-op">+</tt><tt class="py-number">1</tt><tt class="py-op">)</tt> </tt>
+<a name="L161"></a><tt class="py-lineno">161</tt>  <tt class="py-line">             </tt>
+<a name="L162"></a><tt class="py-lineno">162</tt>  <tt class="py-line">            <tt class="py-name">sm</tt> <tt class="py-op">=</tt> <tt class="py-name">sm</tt><tt class="py-op">[</tt><tt class="py-name">start</tt><tt class="py-op">:</tt><tt class="py-name">end</tt><tt class="py-op">]</tt> </tt>
+<a name="L163"></a><tt class="py-lineno">163</tt>  <tt class="py-line"> </tt>
+<a name="L164"></a><tt class="py-lineno">164</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">seqMap</tt> <tt class="py-keyword">is</tt> <tt class="py-name">None</tt> <tt class="py-op">:</tt> </tt>
+<a name="L165"></a><tt class="py-lineno">165</tt>  <tt class="py-line">                <tt class="py-name">seqMap</tt> <tt class="py-op">=</tt> <tt class="py-name">sm</tt> </tt>
+<a name="L166"></a><tt class="py-lineno">166</tt>  <tt class="py-line">            <tt class="py-keyword">else</tt> <tt class="py-op">:</tt> </tt>
+<a name="L167"></a><tt class="py-lineno">167</tt>  <tt class="py-line">                <tt class="py-name">seqMap</tt> <tt class="py-op">+=</tt> <tt class="py-name">sm</tt> </tt>
+<a name="L168"></a><tt class="py-lineno">168</tt>  <tt class="py-line">                             </tt>
+<a name="L169"></a><tt class="py-lineno">169</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">seqMap</tt> </tt>
+</div></div><a name="L170"></a><tt class="py-lineno">170</tt>  <tt class="py-line"> <tt class="py-comment"># End Raf</tt> </tt>
+<a name="L171"></a><tt class="py-lineno">171</tt>  <tt class="py-line"> </tt>
+<a name="RafSeqMap"></a><div id="RafSeqMap-def"><a name="L172"></a><tt class="py-lineno">172</tt> <a class="py-toggle" href="#" id="RafSeqMap-toggle" onclick="return toggle('RafSeqMap');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="corebio.db.astral.RafSeqMap-class.html">RafSeqMap</a><tt class="py-op">(</tt><tt class="py-base-class">object</tt><tt class="py-op">)</tt> <tt class="py-op">:</tt> </tt>
+</div><div id="RafSeqMap-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="RafSeqMap-expanded"><a name="L173"></a><tt class="py-lineno">173</tt>  <tt class="py-line">    <tt class="py-docstring">"""ASTRAL RAF (Rapid Access Format) Sequence Maps.</tt> </tt>
+<a name="L174"></a><tt class="py-lineno">174</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L175"></a><tt class="py-lineno">175</tt>  <tt class="py-line"><tt class="py-docstring">    RafSeqMap is a list like object; you can find the location of particular</tt> </tt>
+<a name="L176"></a><tt class="py-lineno">176</tt>  <tt class="py-line"><tt class="py-docstring">    residues with index(), slice this RafSeqMap into fragments, and glue </tt> </tt>
+<a name="L177"></a><tt class="py-lineno">177</tt>  <tt class="py-line"><tt class="py-docstring">    fragments back together with extend().</tt> </tt>
+<a name="L178"></a><tt class="py-lineno">178</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L179"></a><tt class="py-lineno">179</tt>  <tt class="py-line"><tt class="py-docstring">    - pdbid -- The PDB 4 character ID</tt> </tt>
+<a name="L180"></a><tt class="py-lineno">180</tt>  <tt class="py-line"><tt class="py-docstring">    - pdb_datestamp -- From the PDB file</tt> </tt>
+<a name="L181"></a><tt class="py-lineno">181</tt>  <tt class="py-line"><tt class="py-docstring">    - version -- The RAF format version. e.g. 0.01</tt> </tt>
+<a name="L182"></a><tt class="py-lineno">182</tt>  <tt class="py-line"><tt class="py-docstring">    - flags -- RAF flags. (See release notes for more information.)</tt> </tt>
+<a name="L183"></a><tt class="py-lineno">183</tt>  <tt class="py-line"><tt class="py-docstring">    - res -- A list of Res objects, one for each residue in this sequence map</tt> </tt>
+<a name="L184"></a><tt class="py-lineno">184</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L185"></a><tt class="py-lineno">185</tt>  <tt class="py-line"> </tt>
+<a name="RafSeqMap.__init__"></a><div id="RafSeqMap.__init__-def"><a name="L186"></a><tt class="py-lineno">186</tt> <a class="py-toggle" href="#" id="RafSeqMap.__init__-toggle" onclick="return toggle('RafSeqMap.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="corebio.db.astral.RafSeqMap-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">raf_record</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">)</tt> <tt class="py-op">:</tt> </tt>
+</div><div id="RafSeqMap.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="RafSeqMap.__init__-expanded"><a name="L187"></a><tt class="py-lineno">187</tt>  <tt class="py-line">        <tt class="py-docstring">"""Parses a RAF record into a RafSeqMap object."""</tt> </tt>
+<a name="L188"></a><tt class="py-lineno">188</tt>  <tt class="py-line">         </tt>
+<a name="L189"></a><tt class="py-lineno">189</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-49" class="py-name"><a title="corebio.secstruc.dssp.DsspRecord.pdbid
+corebio.secstruc.stride.StrideRecord.pdbid" class="py-name" href="#" onclick="return doclink('link-49', 'pdbid', 'link-21');">pdbid</a></tt> <tt class="py-op">=</tt> <tt class="py-string">''</tt> </tt>
+<a name="L190"></a><tt class="py-lineno">190</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">pdb_datestamp</tt> <tt class="py-op">=</tt> <tt class="py-string">''</tt> </tt>
+<a name="L191"></a><tt class="py-lineno">191</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-50" class="py-name" targets="Method corebio.secstruc.dssp.RunDssp.version()=corebio.secstruc.dssp.RunDssp-class.html#version,Method weblogolib.GhostscriptAPI.version()=weblogolib.GhostscriptAPI-class.html#version"><a title="corebio.secstruc.dssp.RunDssp.version
+weblogolib.GhostscriptAPI.version" class="py-name" href="#" onclick="return doclink('link-50', 'version', 'link-50');">version</a></tt> <tt class="py-op">=</tt> <tt class="py-string">''</tt> </tt>
+<a name="L192"></a><tt class="py-lineno">192</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">flags</tt> <tt class="py-op">=</tt> <tt class="py-string">''</tt> </tt>
+<a name="L193"></a><tt class="py-lineno">193</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">res</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L194"></a><tt class="py-lineno">194</tt>  <tt class="py-line"> </tt>
+<a name="L195"></a><tt class="py-lineno">195</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">raf_record</tt> <tt class="py-op">:</tt> <tt class="py-keyword">return</tt> </tt>
+<a name="L196"></a><tt class="py-lineno">196</tt>  <tt class="py-line">         </tt>
+<a name="L197"></a><tt class="py-lineno">197</tt>  <tt class="py-line">        <tt class="py-name">header_len</tt> <tt class="py-op">=</tt> <tt class="py-number">38</tt> </tt>
+<a name="L198"></a><tt class="py-lineno">198</tt>  <tt class="py-line">        <tt class="py-name">line</tt> <tt class="py-op">=</tt> <tt class="py-name">raf_record</tt><tt class="py-op">.</tt><tt class="py-name">rstrip</tt><tt class="py-op">(</tt><tt class="py-op">)</tt>  <tt class="py-comment"># no trailing whitespace        </tt> </tt>
+<a name="L199"></a><tt class="py-lineno">199</tt>  <tt class="py-line"> </tt>
+<a name="L200"></a><tt class="py-lineno">200</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">line</tt><tt class="py-op">)</tt><tt class="py-op">&lt;</tt><tt class="py-name">header_len</tt><tt class="py-op">:</tt>  </tt>
+<a name="L201"></a><tt class="py-lineno">201</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt class="py-name">ValueError</tt><tt class="py-op">(</tt><tt class="py-string">"Incomplete header: "</tt><tt class="py-op">+</tt><tt class="py-name">line</tt><tt class="py-op">)</tt> </tt>
+<a name="L202"></a><tt class="py-lineno">202</tt>  <tt class="py-line"> </tt>
+<a name="L203"></a><tt class="py-lineno">203</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-51" class="py-name"><a title="corebio.secstruc.dssp.DsspRecord.pdbid
+corebio.secstruc.stride.StrideRecord.pdbid" class="py-name" href="#" onclick="return doclink('link-51', 'pdbid', 'link-21');">pdbid</a></tt> <tt class="py-op">=</tt> <tt class="py-name">line</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">:</tt><tt class="py-number">4</tt><tt class="py-op">]</tt> </tt>
+<a name="L204"></a><tt class="py-lineno">204</tt>  <tt class="py-line">        <tt id="link-52" class="py-name"><a title="corebio.secstruc.dssp.DsspResidue.chainid
+corebio.secstruc.stride.StrideResidue.chainid" class="py-name" href="#" onclick="return doclink('link-52', 'chainid', 'link-37');">chainid</a></tt> <tt class="py-op">=</tt> <tt class="py-name">line</tt><tt class="py-op">[</tt><tt class="py-number">4</tt><tt class="py-op">:</tt><tt class="py-number">5</tt><tt class="py-op">]</tt> </tt>
+<a name="L205"></a><tt class="py-lineno">205</tt>  <tt class="py-line">         </tt>
+<a name="L206"></a><tt class="py-lineno">206</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-53" class="py-name"><a title="corebio.secstruc.dssp.RunDssp.version
+weblogolib.GhostscriptAPI.version" class="py-name" href="#" onclick="return doclink('link-53', 'version', 'link-50');">version</a></tt> <tt class="py-op">=</tt> <tt class="py-name">line</tt><tt class="py-op">[</tt><tt class="py-number">6</tt><tt class="py-op">:</tt><tt class="py-number">10</tt><tt class="py-op">]</tt> </tt>
+<a name="L207"></a><tt class="py-lineno">207</tt>  <tt class="py-line"> </tt>
+<a name="L208"></a><tt class="py-lineno">208</tt>  <tt class="py-line">        <tt class="py-comment"># Raf format versions 0.01 and 0.02 are identical for practical purposes</tt> </tt>
+<a name="L209"></a><tt class="py-lineno">209</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-54" class="py-name"><a title="corebio.secstruc.dssp.RunDssp.version
+weblogolib.GhostscriptAPI.version" class="py-name" href="#" onclick="return doclink('link-54', 'version', 'link-50');">version</a></tt> <tt class="py-op">!=</tt> <tt class="py-string">"0.01"</tt> <tt class="py-keyword">and</tt>  <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-55" class="py-name"><a title="corebio.secstruc.dssp.RunDssp.version
+weblogolib.GhostscriptAPI.version" class="py-name" href="#" onclick="return doclink('link-55', 'version', 'link-50');">version</a></tt> <tt class="py-op">!=</tt><tt class="py-string">"0.02"</tt><tt class="py-op">)</tt> <tt class="py-op">:</tt> </tt>
+<a name="L210"></a><tt class="py-lineno">210</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt class="py-name">ValueError</tt><tt class="py-op">(</tt><tt class="py-string">"Incompatible RAF version: "</tt><tt class="py-op">+</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-56" class="py-name"><a title="corebio.secstruc.dssp.RunDssp.version
+weblogolib.GhostscriptAPI.version" class="py-name" href="#" onclick="return doclink('link-56', 'version', 'link-50');">version</a></tt><tt class="py-op">)</tt>  </tt>
+<a name="L211"></a><tt class="py-lineno">211</tt>  <tt class="py-line"> </tt>
+<a name="L212"></a><tt class="py-lineno">212</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">pdb_datestamp</tt> <tt class="py-op">=</tt> <tt class="py-name">line</tt><tt class="py-op">[</tt><tt class="py-number">14</tt><tt class="py-op">:</tt><tt class="py-number">20</tt><tt class="py-op">]</tt> </tt>
+<a name="L213"></a><tt class="py-lineno">213</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">flags</tt> <tt class="py-op">=</tt> <tt class="py-name">line</tt><tt class="py-op">[</tt><tt class="py-number">21</tt><tt class="py-op">:</tt><tt class="py-number">27</tt><tt class="py-op">]</tt> </tt>
+<a name="L214"></a><tt class="py-lineno">214</tt>  <tt class="py-line"> </tt>
+<a name="L215"></a><tt class="py-lineno">215</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">i</tt> <tt class="py-keyword">in</tt> <tt class="py-name">range</tt><tt class="py-op">(</tt><tt class="py-name">header_len</tt><tt class="py-op">,</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">line</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-number">7</tt><tt class="py-op">)</tt> <tt class="py-op">:</tt> </tt>
+<a name="L216"></a><tt class="py-lineno">216</tt>  <tt class="py-line">            <tt class="py-name">f</tt> <tt class="py-op">=</tt> <tt class="py-name">line</tt><tt class="py-op">[</tt><tt class="py-name">i</tt> <tt class="py-op">:</tt> <tt class="py-name">i</tt><tt class="py-op">+</tt><tt class="py-number">7</tt><tt class="py-op">]</tt> </tt>
+<a name="L217"></a><tt class="py-lineno">217</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">f</tt><tt class="py-op">)</tt><tt class="py-op">!=</tt><tt class="py-number">7</tt><tt class="py-op">:</tt> </tt>
+<a name="L218"></a><tt class="py-lineno">218</tt>  <tt class="py-line">                <tt class="py-keyword">raise</tt> <tt class="py-name">ValueError</tt><tt class="py-op">(</tt><tt class="py-string">"Corrupt Field: ("</tt><tt class="py-op">+</tt><tt class="py-name">f</tt><tt class="py-op">+</tt><tt class="py-string">")"</tt> <tt class="py-op">)</tt> </tt>
+<a name="L219"></a><tt class="py-lineno">219</tt>  <tt class="py-line">            <tt class="py-name">r</tt> <tt class="py-op">=</tt> <tt id="link-57" class="py-name" targets="Class corebio.db.astral.Res=corebio.db.astral.Res-class.html"><a title="corebio.db.astral.Res" class="py-name" href="#" onclick="return doclink('link-57', 'Res', 'link-57');">Res</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L220"></a><tt class="py-lineno">220</tt>  <tt class="py-line">            <tt class="py-name">r</tt><tt class="py-op">.</tt><tt id="link-58" class="py-name"><a title="corebio.secstruc.dssp.DsspResidue.chainid
+corebio.secstruc.stride.StrideResidue.chainid" class="py-name" href="#" onclick="return doclink('link-58', 'chainid', 'link-37');">chainid</a></tt> <tt class="py-op">=</tt> <tt id="link-59" class="py-name"><a title="corebio.secstruc.dssp.DsspResidue.chainid
+corebio.secstruc.stride.StrideResidue.chainid" class="py-name" href="#" onclick="return doclink('link-59', 'chainid', 'link-37');">chainid</a></tt> </tt>
+<a name="L221"></a><tt class="py-lineno">221</tt>  <tt class="py-line">            <tt class="py-name">r</tt><tt class="py-op">.</tt><tt id="link-60" class="py-name" targets="Variable corebio.secstruc.dssp.DsspResidue.resid=corebio.secstruc.dssp.DsspResidue-class.html#resid,Variable corebio.secstruc.stride.StrideResidue.resid=corebio.secstruc.stride.StrideResidue-class.html#resid"><a title="corebio.secstruc.dssp.DsspResidue.resid
+corebio.secstruc.stride.StrideResidue.resid" class="py-name" href="#" onclick="return doclink('link-60', 'resid', 'link-60');">resid</a></tt> <tt class="py-op">=</tt>  <tt class="py-name">f</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">:</tt><tt class="py-number">5</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt class="py-name">strip</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L222"></a><tt class="py-lineno">222</tt>  <tt class="py-line">            <tt class="py-name">r</tt><tt class="py-op">.</tt><tt class="py-name">atom</tt> <tt class="py-op">=</tt> <tt id="link-61" class="py-name" targets="Function corebio.db.astral.normalize_letters()=corebio.db.astral-module.html#normalize_letters"><a title="corebio.db.astral.normalize_letters" class="py-name" href="#" onclick="return doclink('link-61', 'normalize_letters', 'link-61');">normalize_letters</a></tt><tt class="py-op">(</tt><tt class="py-name">f</tt><tt class="py-op">[</tt><tt class="py-number">5</tt><tt class="py-op">:</tt><tt class="py-number">6</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L223"></a><tt class="py-lineno">223</tt>  <tt class="py-line">            <tt class="py-name">r</tt><tt class="py-op">.</tt><tt class="py-name">seqres</tt> <tt class="py-op">=</tt> <tt id="link-62" class="py-name"><a title="corebio.db.astral.normalize_letters" class="py-name" href="#" onclick="return doclink('link-62', 'normalize_letters', 'link-61');">normalize_letters</a></tt><tt class="py-op">(</tt><tt class="py-name">f</tt><tt class="py-op">[</tt><tt class="py-number">6</tt><tt class="py-op">:</tt><tt class="py-number">7</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L224"></a><tt class="py-lineno">224</tt>  <tt class="py-line"> </tt>
+<a name="L225"></a><tt class="py-lineno">225</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">res</tt><tt class="py-op">.</tt><tt id="link-63" class="py-name" targets="Method corebio.db.astral.RafSeqMap.append()=corebio.db.astral.RafSeqMap-class.html#append"><a title="corebio.db.astral.RafSeqMap.append" class="py-name" href="#" onclick="return doclink('link-63', 'append', 'link-63');">append</a></tt><tt class="py-op">(</tt><tt class="py-name">r</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L226"></a><tt class="py-lineno">226</tt>  <tt class="py-line">    <tt class="py-comment"># end __init__</tt> </tt>
+<a name="L227"></a><tt class="py-lineno">227</tt>  <tt class="py-line"> </tt>
+<a name="L228"></a><tt class="py-lineno">228</tt>  <tt class="py-line">    <tt class="py-comment">#@staticmethod</tt> </tt>
+<a name="RafSeqMap.records"></a><div id="RafSeqMap.records-def"><a name="L229"></a><tt class="py-lineno">229</tt> <a class="py-toggle" href="#" id="RafSeqMap.records-toggle" onclick="return toggle('RafSeqMap.records');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="corebio.db.astral.RafSeqMap-class.html#records">records</a><tt class="py-op">(</tt><tt class="py-param">raf_file</tt><tt class="py-op">)</tt> <tt class="py-op">:</tt> </tt>
+</div><div id="RafSeqMap.records-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="RafSeqMap.records-expanded"><a name="L230"></a><tt class="py-lineno">230</tt>  <tt class="py-line">        <tt class="py-docstring">"""Iterates over a Raf file, generating RafSeqMaps """</tt> </tt>
+<a name="L231"></a><tt class="py-lineno">231</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">line</tt> <tt class="py-keyword">in</tt> <tt class="py-name">raf_file</tt><tt class="py-op">:</tt> </tt>
+<a name="L232"></a><tt class="py-lineno">232</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">line</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> <tt class="py-op">==</tt><tt class="py-string">'#'</tt><tt class="py-op">:</tt>  <tt class="py-keyword">continue</tt>  <tt class="py-comment"># A comment </tt> </tt>
+<a name="L233"></a><tt class="py-lineno">233</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">line</tt><tt class="py-op">.</tt><tt class="py-name">isspace</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> <tt class="py-op">:</tt> <tt class="py-keyword">continue</tt> </tt>
+<a name="L234"></a><tt class="py-lineno">234</tt>  <tt class="py-line">            <tt class="py-keyword">yield</tt> <tt id="link-64" class="py-name"><a title="corebio.db.astral.RafSeqMap" class="py-name" href="#" onclick="return doclink('link-64', 'RafSeqMap', 'link-25');">RafSeqMap</a></tt><tt class="py-op">(</tt><tt class="py-name">line</tt><tt class="py-op">)</tt>         </tt>
+</div><a name="L235"></a><tt class="py-lineno">235</tt>  <tt class="py-line">    <tt id="link-65" class="py-name" targets="Static Method corebio.db.astral.RafSeqMap.records()=corebio.db.astral.RafSeqMap-class.html#records,Static Method corebio.db.scop.ClaRecord.records()=corebio.db.scop.ClaRecord-class.html#records,Static Method corebio.db.scop.DesRecord.records()=corebio.db.scop.DesRecord-class.html#records,Static Method corebio.db.scop.DomRecord.records()=corebio.db.scop.DomRecord-class.html#records,Static Method corebio.db.scop.HieRecord.records()=corebio.db.scop.HieRecord-class.html#records"><a title="corebio.db.astral.RafSeqMap.records
+corebio.db.scop.ClaRecord.records
+corebio.db.scop.DesRecord.records
+corebio.db.scop.DomRecord.records
+corebio.db.scop.HieRecord.records" class="py-name" href="#" onclick="return doclink('link-65', 'records', 'link-65');">records</a></tt> <tt class="py-op">=</tt> <tt class="py-name">staticmethod</tt><tt class="py-op">(</tt><tt id="link-66" class="py-name"><a title="corebio.db.astral.RafSeqMap.records
+corebio.db.scop.ClaRecord.records
+corebio.db.scop.DesRecord.records
+corebio.db.scop.DomRecord.records
+corebio.db.scop.HieRecord.records" class="py-name" href="#" onclick="return doclink('link-66', 'records', 'link-65');">records</a></tt><tt class="py-op">)</tt>       </tt>
+<a name="L236"></a><tt class="py-lineno">236</tt>  <tt class="py-line">         </tt>
+<a name="RafSeqMap.index"></a><div id="RafSeqMap.index-def"><a name="L237"></a><tt class="py-lineno">237</tt> <a class="py-toggle" href="#" id="RafSeqMap.index-toggle" onclick="return toggle('RafSeqMap.index');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="corebio.db.astral.RafSeqMap-class.html#index">index</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">resid</tt><tt class="py-op">,</tt> <tt class="py-param">chainid</tt><tt class="py-op">=</tt><tt class="py-string">"_"</tt><tt class="py-op">)</tt> <tt class="py-op">:</tt> </tt>
+</div><div id="RafSeqMap.index-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="RafSeqMap.index-expanded"><a name="L238"></a><tt class="py-lineno">238</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">i</tt> <tt class="py-keyword">in</tt> <tt class="py-name">range</tt><tt class="py-op">(</tt><tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">res</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> <tt class="py-op">:</tt> </tt>
+<a name="L239"></a><tt class="py-lineno">239</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">res</tt><tt class="py-op">[</tt><tt class="py-name">i</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt id="link-67" class="py-name"><a title="corebio.secstruc.dssp.DsspResidue.resid
+corebio.secstruc.stride.StrideResidue.resid" class="py-name" href="#" onclick="return doclink('link-67', 'resid', 'link-60');">resid</a></tt> <tt class="py-op">==</tt> <tt id="link-68" class="py-name"><a title="corebio.secstruc.dssp.DsspResidue.resid
+corebio.secstruc.stride.StrideResidue.resid" class="py-name" href="#" onclick="return doclink('link-68', 'resid', 'link-60');">resid</a></tt> <tt class="py-keyword">and</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">res</tt><tt class="py-op">[</tt><tt class="py-name">i</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt id="link-69" class="py-name"><a title="corebio.secstruc.dssp.DsspResidue.chainid
+corebio.secstruc.stride.StrideResidue.chainid" class="py-name" href="#" onclick="return doclink('link-69', 'chainid', 'link-37');">chainid</a></tt> <tt class="py-op">==</tt> <tt id="link-70" class="py-name"><a title="corebio.secstruc.dssp.DsspResidue.chainid
+corebio.secstruc.stride.StrideResidue.chainid" class="py-name" href="#" onclick="return doclink('link-70', 'chainid', 'link-37');">chainid</a></tt> <tt class="py-op">:</tt> </tt>
+<a name="L240"></a><tt class="py-lineno">240</tt>  <tt class="py-line">                <tt class="py-keyword">return</tt> <tt class="py-name">i</tt> </tt>
+<a name="L241"></a><tt class="py-lineno">241</tt>  <tt class="py-line">        <tt class="py-keyword">raise</tt> <tt class="py-name">KeyError</tt><tt class="py-op">(</tt><tt class="py-string">"No such residue "</tt><tt class="py-op">+</tt><tt id="link-71" class="py-name"><a title="corebio.secstruc.dssp.DsspResidue.chainid
+corebio.secstruc.stride.StrideResidue.chainid" class="py-name" href="#" onclick="return doclink('link-71', 'chainid', 'link-37');">chainid</a></tt><tt class="py-op">+</tt><tt id="link-72" class="py-name"><a title="corebio.secstruc.dssp.DsspResidue.resid
+corebio.secstruc.stride.StrideResidue.resid" class="py-name" href="#" onclick="return doclink('link-72', 'resid', 'link-60');">resid</a></tt><tt class="py-op">)</tt> </tt>
+</div><a name="L242"></a><tt class="py-lineno">242</tt>  <tt class="py-line"> </tt>
+<a name="RafSeqMap.__getslice__"></a><div id="RafSeqMap.__getslice__-def"><a name="L243"></a><tt class="py-lineno">243</tt> <a class="py-toggle" href="#" id="RafSeqMap.__getslice__-toggle" onclick="return toggle('RafSeqMap.__getslice__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="corebio.db.astral.RafSeqMap-class.html#__getslice__">__getslice__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">i</tt><tt class="py-op">,</tt> <tt class="py-param">j</tt><tt class="py-op">)</tt> <tt class="py-op">:</tt> </tt>
+</div><div id="RafSeqMap.__getslice__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="RafSeqMap.__getslice__-expanded"><a name="L244"></a><tt class="py-lineno">244</tt>  <tt class="py-line">        <tt class="py-name">s</tt> <tt class="py-op">=</tt> <tt class="py-name">copy</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">)</tt> </tt>
+<a name="L245"></a><tt class="py-lineno">245</tt>  <tt class="py-line">        <tt class="py-name">s</tt><tt class="py-op">.</tt><tt class="py-name">res</tt> <tt class="py-op">=</tt> <tt class="py-name">s</tt><tt class="py-op">.</tt><tt class="py-name">res</tt><tt class="py-op">[</tt><tt class="py-name">i</tt><tt class="py-op">:</tt><tt class="py-name">j</tt><tt class="py-op">]</tt> </tt>
+<a name="L246"></a><tt class="py-lineno">246</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">s</tt> </tt>
+</div><a name="L247"></a><tt class="py-lineno">247</tt>  <tt class="py-line"> </tt>
+<a name="RafSeqMap.append"></a><div id="RafSeqMap.append-def"><a name="L248"></a><tt class="py-lineno">248</tt> <a class="py-toggle" href="#" id="RafSeqMap.append-toggle" onclick="return toggle('RafSeqMap.append');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="corebio.db.astral.RafSeqMap-class.html#append">append</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">res</tt><tt class="py-op">)</tt> <tt class="py-op">:</tt> </tt>
+</div><div id="RafSeqMap.append-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="RafSeqMap.append-expanded"><a name="L249"></a><tt class="py-lineno">249</tt>  <tt class="py-line">        <tt class="py-docstring">"""Append another Res object onto the list of residue mappings."""</tt> </tt>
+<a name="L250"></a><tt class="py-lineno">250</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">res</tt><tt class="py-op">.</tt><tt id="link-73" class="py-name"><a title="corebio.db.astral.RafSeqMap.append" class="py-name" href="#" onclick="return doclink('link-73', 'append', 'link-63');">append</a></tt><tt class="py-op">(</tt><tt class="py-name">res</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L251"></a><tt class="py-lineno">251</tt>  <tt class="py-line"> </tt>
+<a name="RafSeqMap.extend"></a><div id="RafSeqMap.extend-def"><a name="L252"></a><tt class="py-lineno">252</tt> <a class="py-toggle" href="#" id="RafSeqMap.extend-toggle" onclick="return toggle('RafSeqMap.extend');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="corebio.db.astral.RafSeqMap-class.html#extend">extend</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">other</tt><tt class="py-op">)</tt> <tt class="py-op">:</tt> </tt>
+</div><div id="RafSeqMap.extend-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="RafSeqMap.extend-expanded"><a name="L253"></a><tt class="py-lineno">253</tt>  <tt class="py-line">        <tt class="py-docstring">"""Append another RafSeqMap onto the end of self.</tt> </tt>
+<a name="L254"></a><tt class="py-lineno">254</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L255"></a><tt class="py-lineno">255</tt>  <tt class="py-line"><tt class="py-docstring">        Both RafSeqMaps must have the same PDB ID, PDB datestamp and</tt> </tt>
+<a name="L256"></a><tt class="py-lineno">256</tt>  <tt class="py-line"><tt class="py-docstring">        RAF version.  The RAF flags are erased if they are inconsistent. This</tt> </tt>
+<a name="L257"></a><tt class="py-lineno">257</tt>  <tt class="py-line"><tt class="py-docstring">        may happen when fragments are taken from different chains.</tt> </tt>
+<a name="L258"></a><tt class="py-lineno">258</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L259"></a><tt class="py-lineno">259</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">isinstance</tt><tt class="py-op">(</tt><tt class="py-name">other</tt><tt class="py-op">,</tt> <tt id="link-74" class="py-name"><a title="corebio.db.astral.RafSeqMap" class="py-name" href="#" onclick="return doclink('link-74', 'RafSeqMap', 'link-25');">RafSeqMap</a></tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L260"></a><tt class="py-lineno">260</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt class="py-name">TypeError</tt><tt class="py-op">(</tt><tt class="py-string">"Can only extend a RafSeqMap with a RafSeqMap."</tt><tt class="py-op">)</tt> </tt>
+<a name="L261"></a><tt class="py-lineno">261</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-75" class="py-name"><a title="corebio.secstruc.dssp.DsspRecord.pdbid
+corebio.secstruc.stride.StrideRecord.pdbid" class="py-name" href="#" onclick="return doclink('link-75', 'pdbid', 'link-21');">pdbid</a></tt> <tt class="py-op">!=</tt> <tt class="py-name">other</tt><tt class="py-op">.</tt><tt id="link-76" class="py-name"><a title="corebio.secstruc.dssp.DsspRecord.pdbid
+corebio.secstruc.stride.StrideRecord.pdbid" class="py-name" href="#" onclick="return doclink('link-76', 'pdbid', 'link-21');">pdbid</a></tt> <tt class="py-op">:</tt> </tt>
+<a name="L262"></a><tt class="py-lineno">262</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt class="py-name">TypeError</tt><tt class="py-op">(</tt><tt class="py-string">"Cannot add fragments from different proteins."</tt><tt class="py-op">)</tt> </tt>
+<a name="L263"></a><tt class="py-lineno">263</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-77" class="py-name"><a title="corebio.secstruc.dssp.RunDssp.version
+weblogolib.GhostscriptAPI.version" class="py-name" href="#" onclick="return doclink('link-77', 'version', 'link-50');">version</a></tt> <tt class="py-op">!=</tt> <tt class="py-name">other</tt><tt class="py-op">.</tt><tt id="link-78" class="py-name"><a title="corebio.secstruc.dssp.RunDssp.version
+weblogolib.GhostscriptAPI.version" class="py-name" href="#" onclick="return doclink('link-78', 'version', 'link-50');">version</a></tt> <tt class="py-op">:</tt> </tt>
+<a name="L264"></a><tt class="py-lineno">264</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt class="py-name">TypeError</tt><tt class="py-op">(</tt><tt class="py-string">"Incompatible rafs."</tt><tt class="py-op">)</tt> </tt>
+<a name="L265"></a><tt class="py-lineno">265</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">pdb_datestamp</tt> <tt class="py-op">!=</tt> <tt class="py-name">other</tt><tt class="py-op">.</tt><tt class="py-name">pdb_datestamp</tt> <tt class="py-op">:</tt> </tt>
+<a name="L266"></a><tt class="py-lineno">266</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt class="py-name">TypeError</tt><tt class="py-op">(</tt><tt class="py-string">"Different pdb dates!"</tt><tt class="py-op">)</tt> </tt>
+<a name="L267"></a><tt class="py-lineno">267</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">flags</tt> <tt class="py-op">!=</tt> <tt class="py-name">other</tt><tt class="py-op">.</tt><tt class="py-name">flags</tt> <tt class="py-op">:</tt> </tt>
+<a name="L268"></a><tt class="py-lineno">268</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">flags</tt> <tt class="py-op">=</tt> <tt class="py-string">''</tt> </tt>
+<a name="L269"></a><tt class="py-lineno">269</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">res</tt> <tt class="py-op">+=</tt> <tt class="py-name">other</tt><tt class="py-op">.</tt><tt class="py-name">res</tt> </tt>
+</div><a name="L270"></a><tt class="py-lineno">270</tt>  <tt class="py-line"> </tt>
+<a name="RafSeqMap.__iadd__"></a><div id="RafSeqMap.__iadd__-def"><a name="L271"></a><tt class="py-lineno">271</tt> <a class="py-toggle" href="#" id="RafSeqMap.__iadd__-toggle" onclick="return toggle('RafSeqMap.__iadd__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="corebio.db.astral.RafSeqMap-class.html#__iadd__">__iadd__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">other</tt><tt class="py-op">)</tt> <tt class="py-op">:</tt> </tt>
+</div><div id="RafSeqMap.__iadd__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="RafSeqMap.__iadd__-expanded"><a name="L272"></a><tt class="py-lineno">272</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-79" class="py-name" targets="Method corebio.db.astral.RafSeqMap.extend()=corebio.db.astral.RafSeqMap-class.html#extend"><a title="corebio.db.astral.RafSeqMap.extend" class="py-name" href="#" onclick="return doclink('link-79', 'extend', 'link-79');">extend</a></tt><tt class="py-op">(</tt><tt class="py-name">other</tt><tt class="py-op">)</tt> </tt>
+<a name="L273"></a><tt class="py-lineno">273</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt> </tt>
+</div><a name="L274"></a><tt class="py-lineno">274</tt>  <tt class="py-line"> </tt>
+<a name="RafSeqMap.__add__"></a><div id="RafSeqMap.__add__-def"><a name="L275"></a><tt class="py-lineno">275</tt> <a class="py-toggle" href="#" id="RafSeqMap.__add__-toggle" onclick="return toggle('RafSeqMap.__add__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="corebio.db.astral.RafSeqMap-class.html#__add__">__add__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">other</tt><tt class="py-op">)</tt> <tt class="py-op">:</tt> </tt>
+</div><div id="RafSeqMap.__add__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="RafSeqMap.__add__-expanded"><a name="L276"></a><tt class="py-lineno">276</tt>  <tt class="py-line">        <tt class="py-name">s</tt> <tt class="py-op">=</tt> <tt class="py-name">copy</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">)</tt> </tt>
+<a name="L277"></a><tt class="py-lineno">277</tt>  <tt class="py-line">        <tt class="py-name">s</tt><tt class="py-op">.</tt><tt id="link-80" class="py-name"><a title="corebio.db.astral.RafSeqMap.extend" class="py-name" href="#" onclick="return doclink('link-80', 'extend', 'link-79');">extend</a></tt><tt class="py-op">(</tt><tt class="py-name">other</tt><tt class="py-op">)</tt> </tt>
+<a name="L278"></a><tt class="py-lineno">278</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">s</tt> </tt>
+</div><a name="L279"></a><tt class="py-lineno">279</tt>  <tt class="py-line"> </tt>
+<a name="RafSeqMap.extract_atoms"></a><div id="RafSeqMap.extract_atoms-def"><a name="L280"></a><tt class="py-lineno">280</tt> <a class="py-toggle" href="#" id="RafSeqMap.extract_atoms-toggle" onclick="return toggle('RafSeqMap.extract_atoms');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="corebio.db.astral.RafSeqMap-class.html#extract_atoms">extract_atoms</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">pdb_handle</tt><tt class="py-op">,</tt> <tt class="py-param">out_handle</tt><tt class="py-op">)</tt> <tt class="py-op">:</tt> </tt>
+</div><div id="RafSeqMap.extract_atoms-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="RafSeqMap.extract_atoms-expanded"><a name="L281"></a><tt class="py-lineno">281</tt>  <tt class="py-line">        <tt class="py-docstring">"""Extract all relevant ATOM and HETATOM records from a PDB file.</tt> </tt>
+<a name="L282"></a><tt class="py-lineno">282</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L283"></a><tt class="py-lineno">283</tt>  <tt class="py-line"><tt class="py-docstring">        The PDB file is scanned for ATOM and HETATOM records. If the</tt> </tt>
+<a name="L284"></a><tt class="py-lineno">284</tt>  <tt class="py-line"><tt class="py-docstring">        chain ID, residue ID (seqNum and iCode), and residue type match</tt> </tt>
+<a name="L285"></a><tt class="py-lineno">285</tt>  <tt class="py-line"><tt class="py-docstring">        a residue in this sequence map, then the record is echoed to the</tt> </tt>
+<a name="L286"></a><tt class="py-lineno">286</tt>  <tt class="py-line"><tt class="py-docstring">        output handle.</tt> </tt>
+<a name="L287"></a><tt class="py-lineno">287</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L288"></a><tt class="py-lineno">288</tt>  <tt class="py-line"><tt class="py-docstring">        This is typically used to find the coordinates of a domain, or other</tt> </tt>
+<a name="L289"></a><tt class="py-lineno">289</tt>  <tt class="py-line"><tt class="py-docstring">        residue subset.</tt> </tt>
+<a name="L290"></a><tt class="py-lineno">290</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L291"></a><tt class="py-lineno">291</tt>  <tt class="py-line"><tt class="py-docstring">        pdb_file -- A handle to the relevant PDB file.</tt> </tt>
+<a name="L292"></a><tt class="py-lineno">292</tt>  <tt class="py-line"><tt class="py-docstring">        out_file -- All output is written to this stream.</tt> </tt>
+<a name="L293"></a><tt class="py-lineno">293</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L294"></a><tt class="py-lineno">294</tt>  <tt class="py-line">        <tt class="py-name">resSet</tt> <tt class="py-op">=</tt> <tt class="py-op">{</tt><tt class="py-op">}</tt> </tt>
+<a name="L295"></a><tt class="py-lineno">295</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">r</tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">res</tt> <tt class="py-op">:</tt> </tt>
+<a name="L296"></a><tt class="py-lineno">296</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">r</tt><tt class="py-op">.</tt><tt class="py-name">atom</tt><tt class="py-op">==</tt><tt class="py-string">'X'</tt> <tt class="py-op">:</tt> <tt class="py-comment"># Unknown residue type</tt> </tt>
+<a name="L297"></a><tt class="py-lineno">297</tt>  <tt class="py-line">                <tt class="py-keyword">continue</tt> </tt>
+<a name="L298"></a><tt class="py-lineno">298</tt>  <tt class="py-line">            <tt id="link-81" class="py-name"><a title="corebio.secstruc.dssp.DsspResidue.chainid
+corebio.secstruc.stride.StrideResidue.chainid" class="py-name" href="#" onclick="return doclink('link-81', 'chainid', 'link-37');">chainid</a></tt> <tt class="py-op">=</tt> <tt class="py-name">r</tt><tt class="py-op">.</tt><tt id="link-82" class="py-name"><a title="corebio.secstruc.dssp.DsspResidue.chainid
+corebio.secstruc.stride.StrideResidue.chainid" class="py-name" href="#" onclick="return doclink('link-82', 'chainid', 'link-37');">chainid</a></tt> </tt>
+<a name="L299"></a><tt class="py-lineno">299</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt id="link-83" class="py-name"><a title="corebio.secstruc.dssp.DsspResidue.chainid
+corebio.secstruc.stride.StrideResidue.chainid" class="py-name" href="#" onclick="return doclink('link-83', 'chainid', 'link-37');">chainid</a></tt> <tt class="py-op">==</tt> <tt class="py-string">'_'</tt><tt class="py-op">:</tt> </tt>
+<a name="L300"></a><tt class="py-lineno">300</tt>  <tt class="py-line">                <tt id="link-84" class="py-name"><a title="corebio.secstruc.dssp.DsspResidue.chainid
+corebio.secstruc.stride.StrideResidue.chainid" class="py-name" href="#" onclick="return doclink('link-84', 'chainid', 'link-37');">chainid</a></tt> <tt class="py-op">=</tt> <tt class="py-string">' '</tt> </tt>
+<a name="L301"></a><tt class="py-lineno">301</tt>  <tt class="py-line">            <tt id="link-85" class="py-name"><a title="corebio.secstruc.dssp.DsspResidue.resid
+corebio.secstruc.stride.StrideResidue.resid" class="py-name" href="#" onclick="return doclink('link-85', 'resid', 'link-60');">resid</a></tt> <tt class="py-op">=</tt> <tt class="py-name">r</tt><tt class="py-op">.</tt><tt id="link-86" class="py-name"><a title="corebio.secstruc.dssp.DsspResidue.resid
+corebio.secstruc.stride.StrideResidue.resid" class="py-name" href="#" onclick="return doclink('link-86', 'resid', 'link-60');">resid</a></tt> </tt>
+<a name="L302"></a><tt class="py-lineno">302</tt>  <tt class="py-line">            <tt class="py-name">resSet</tt><tt class="py-op">[</tt><tt class="py-op">(</tt><tt id="link-87" class="py-name"><a title="corebio.secstruc.dssp.DsspResidue.chainid
+corebio.secstruc.stride.StrideResidue.chainid" class="py-name" href="#" onclick="return doclink('link-87', 'chainid', 'link-37');">chainid</a></tt><tt class="py-op">,</tt><tt id="link-88" class="py-name"><a title="corebio.secstruc.dssp.DsspResidue.resid
+corebio.secstruc.stride.StrideResidue.resid" class="py-name" href="#" onclick="return doclink('link-88', 'resid', 'link-60');">resid</a></tt><tt class="py-op">)</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">r</tt> </tt>
+<a name="L303"></a><tt class="py-lineno">303</tt>  <tt class="py-line"> </tt>
+<a name="L304"></a><tt class="py-lineno">304</tt>  <tt class="py-line">        <tt class="py-name">resFound</tt> <tt class="py-op">=</tt> <tt class="py-op">{</tt><tt class="py-op">}</tt> </tt>
+<a name="L305"></a><tt class="py-lineno">305</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">line</tt> <tt class="py-keyword">in</tt> <tt class="py-name">pdb_handle</tt> <tt class="py-op">:</tt> </tt>
+<a name="L306"></a><tt class="py-lineno">306</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">line</tt><tt class="py-op">.</tt><tt class="py-name">startswith</tt><tt class="py-op">(</tt><tt class="py-string">"ATOM  "</tt><tt class="py-op">)</tt> <tt class="py-keyword">or</tt> <tt class="py-name">line</tt><tt class="py-op">.</tt><tt class="py-name">startswith</tt><tt class="py-op">(</tt><tt class="py-string">"HETATM"</tt><tt class="py-op">)</tt> <tt class="py-op">:</tt> </tt>
+<a name="L307"></a><tt class="py-lineno">307</tt>  <tt class="py-line">                <tt id="link-89" class="py-name"><a title="corebio.secstruc.dssp.DsspResidue.chainid
+corebio.secstruc.stride.StrideResidue.chainid" class="py-name" href="#" onclick="return doclink('link-89', 'chainid', 'link-37');">chainid</a></tt> <tt class="py-op">=</tt> <tt class="py-name">line</tt><tt class="py-op">[</tt><tt class="py-number">21</tt><tt class="py-op">:</tt><tt class="py-number">22</tt><tt class="py-op">]</tt> </tt>
+<a name="L308"></a><tt class="py-lineno">308</tt>  <tt class="py-line">                <tt id="link-90" class="py-name"><a title="corebio.secstruc.dssp.DsspResidue.resid
+corebio.secstruc.stride.StrideResidue.resid" class="py-name" href="#" onclick="return doclink('link-90', 'resid', 'link-60');">resid</a></tt> <tt class="py-op">=</tt> <tt class="py-name">line</tt><tt class="py-op">[</tt><tt class="py-number">22</tt><tt class="py-op">:</tt><tt class="py-number">27</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt class="py-name">strip</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L309"></a><tt class="py-lineno">309</tt>  <tt class="py-line">                <tt class="py-name">key</tt> <tt class="py-op">=</tt> <tt class="py-op">(</tt><tt id="link-91" class="py-name"><a title="corebio.secstruc.dssp.DsspResidue.chainid
+corebio.secstruc.stride.StrideResidue.chainid" class="py-name" href="#" onclick="return doclink('link-91', 'chainid', 'link-37');">chainid</a></tt><tt class="py-op">,</tt> <tt id="link-92" class="py-name"><a title="corebio.secstruc.dssp.DsspResidue.resid
+corebio.secstruc.stride.StrideResidue.resid" class="py-name" href="#" onclick="return doclink('link-92', 'resid', 'link-60');">resid</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L310"></a><tt class="py-lineno">310</tt>  <tt class="py-line">                <tt class="py-keyword">if</tt> <tt class="py-name">key</tt> <tt class="py-keyword">in</tt> <tt class="py-name">resSet</tt><tt class="py-op">:</tt> </tt>
+<a name="L311"></a><tt class="py-lineno">311</tt>  <tt class="py-line">                    <tt class="py-name">res</tt> <tt class="py-op">=</tt> <tt class="py-name">resSet</tt><tt class="py-op">[</tt><tt class="py-name">key</tt><tt class="py-op">]</tt> </tt>
+<a name="L312"></a><tt class="py-lineno">312</tt>  <tt class="py-line">                    <tt class="py-name">atom_aa</tt> <tt class="py-op">=</tt> <tt class="py-name">res</tt><tt class="py-op">.</tt><tt class="py-name">atom</tt> </tt>
+<a name="L313"></a><tt class="py-lineno">313</tt>  <tt class="py-line">                    <tt class="py-name">resName</tt> <tt class="py-op">=</tt> <tt class="py-name">line</tt><tt class="py-op">[</tt><tt class="py-number">17</tt><tt class="py-op">:</tt><tt class="py-number">20</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt class="py-name">capitilize</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L314"></a><tt class="py-lineno">314</tt>  <tt class="py-line">                    <tt class="py-keyword">if</tt> <tt class="py-name">resName</tt> <tt class="py-keyword">in</tt> <tt class="py-name">to_one_letter_code</tt> <tt class="py-op">:</tt> </tt>
+<a name="L315"></a><tt class="py-lineno">315</tt>  <tt class="py-line">                        <tt class="py-keyword">if</tt> <tt class="py-name">to_one_letter_code</tt><tt class="py-op">[</tt><tt class="py-name">resName</tt><tt class="py-op">]</tt> <tt class="py-op">==</tt> <tt class="py-name">atom_aa</tt> <tt class="py-op">:</tt> </tt>
+<a name="L316"></a><tt class="py-lineno">316</tt>  <tt class="py-line">                            <tt class="py-name">out_handle</tt><tt class="py-op">.</tt><tt id="link-93" class="py-name" targets="Function corebio.seq_io.array_io.write()=corebio.seq_io.array_io-module.html#write,Function corebio.seq_io.fasta_io.write()=corebio.seq_io.fasta_io-module.html#write,Function corebio.seq_io.intelligenetics_io.write()=corebio.seq_io.intelligenetics_io-module.html#write,Function corebio.seq_io.null_io.write()=corebio.seq_io.null_io-module.html#write,Function corebio.seq_io.plain_io.write()=corebio.seq_io.plain_io-module.html#write,Function corebio.seq_io.table_io.write()=corebio.seq_io.table_io-module.html#write"><a title="corebio.seq_io.array_io.write
+corebio.seq_io.fasta_io.write
+corebio.seq_io.intelligenetics_io.write
+corebio.seq_io.null_io.write
+corebio.seq_io.plain_io.write
+corebio.seq_io.table_io.write" class="py-name" href="#" onclick="return doclink('link-93', 'write', 'link-93');">write</a></tt><tt class="py-op">(</tt><tt class="py-name">line</tt><tt class="py-op">)</tt> </tt>
+<a name="L317"></a><tt class="py-lineno">317</tt>  <tt class="py-line">                            <tt class="py-name">resFound</tt><tt class="py-op">[</tt><tt class="py-name">key</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">res</tt> </tt>
+<a name="L318"></a><tt class="py-lineno">318</tt>  <tt class="py-line"> </tt>
+<a name="L319"></a><tt class="py-lineno">319</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">resSet</tt><tt class="py-op">)</tt> <tt class="py-op">!=</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">resFound</tt><tt class="py-op">)</tt> <tt class="py-op">:</tt> </tt>
+<a name="L320"></a><tt class="py-lineno">320</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt class="py-name">RuntimeError</tt><tt class="py-op">(</tt><tt class="py-string">'I could not find at least one ATOM or '</tt>  </tt>
+<a name="L321"></a><tt class="py-lineno">321</tt>  <tt class="py-line">               <tt class="py-string">'HETATM record for each and every residue in this sequence map.'</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L322"></a><tt class="py-lineno">322</tt>  <tt class="py-line"> </tt>
+<a name="L323"></a><tt class="py-lineno">323</tt>  <tt class="py-line">         </tt>
+<a name="Res"></a><div id="Res-def"><a name="L324"></a><tt class="py-lineno">324</tt> <a class="py-toggle" href="#" id="Res-toggle" onclick="return toggle('Res');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="corebio.db.astral.Res-class.html">Res</a><tt class="py-op">(</tt><tt class="py-base-class">object</tt><tt class="py-op">)</tt> <tt class="py-op">:</tt> </tt>
+</div><div id="Res-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="Res-expanded"><a name="L325"></a><tt class="py-lineno">325</tt>  <tt class="py-line">    <tt class="py-docstring">""" A single residue mapping from a RAF record.</tt> </tt>
+<a name="L326"></a><tt class="py-lineno">326</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L327"></a><tt class="py-lineno">327</tt>  <tt class="py-line"><tt class="py-docstring">    - chainid -- A single character chain ID.</tt> </tt>
+<a name="L328"></a><tt class="py-lineno">328</tt>  <tt class="py-line"><tt class="py-docstring">    - resid   -- The residue ID. </tt> </tt>
+<a name="L329"></a><tt class="py-lineno">329</tt>  <tt class="py-line"><tt class="py-docstring">    - atom    -- amino acid one-letter code from ATOM records. </tt> </tt>
+<a name="L330"></a><tt class="py-lineno">330</tt>  <tt class="py-line"><tt class="py-docstring">    - seqres  -- amino acid one-letter code from SEQRES records.</tt> </tt>
+<a name="L331"></a><tt class="py-lineno">331</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="Res.__init__"></a><div id="Res.__init__-def"><a name="L332"></a><tt class="py-lineno">332</tt> <a class="py-toggle" href="#" id="Res.__init__-toggle" onclick="return toggle('Res.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="corebio.db.astral.Res-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt> <tt class="py-op">:</tt> </tt>
+</div><div id="Res.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Res.__init__-expanded"><a name="L333"></a><tt class="py-lineno">333</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-94" class="py-name"><a title="corebio.secstruc.dssp.DsspResidue.chainid
+corebio.secstruc.stride.StrideResidue.chainid" class="py-name" href="#" onclick="return doclink('link-94', 'chainid', 'link-37');">chainid</a></tt> <tt class="py-op">=</tt> <tt class="py-string">''</tt> </tt>
+<a name="L334"></a><tt class="py-lineno">334</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-95" class="py-name"><a title="corebio.secstruc.dssp.DsspResidue.resid
+corebio.secstruc.stride.StrideResidue.resid" class="py-name" href="#" onclick="return doclink('link-95', 'resid', 'link-60');">resid</a></tt> <tt class="py-op">=</tt> <tt class="py-string">''</tt> </tt>
+<a name="L335"></a><tt class="py-lineno">335</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">atom</tt> <tt class="py-op">=</tt> <tt class="py-string">''</tt> </tt>
+<a name="L336"></a><tt class="py-lineno">336</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">seqres</tt> <tt class="py-op">=</tt> <tt class="py-string">''</tt> </tt>
+</div></div><a name="L337"></a><tt class="py-lineno">337</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Wed Mar 12 21:34:15 2014
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

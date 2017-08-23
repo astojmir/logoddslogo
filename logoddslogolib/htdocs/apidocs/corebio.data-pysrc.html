@@ -1,0 +1,564 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>corebio.data</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="corebio-module.html">Package&nbsp;corebio</a> ::
+        Module&nbsp;data
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="corebio.data-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="corebio.data-module.html">Module corebio.data</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-comment">#  Copyright (c) 2006, The Regents of the University of California, through </tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"><tt class="py-comment">#  Lawrence Berkeley National Laboratory (subject to receipt of any required</tt> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-comment">#  approvals from the U.S. Dept. of Energy).  All rights reserved.</tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-comment">#  This software is distributed under the new BSD Open Source License.</tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-comment">#  &lt;http://www.opensource.org/licenses/bsd-license.html&gt;</tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"><tt class="py-comment">#  Redistribution and use in source and binary forms, with or without </tt> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"><tt class="py-comment">#  modification, are permitted provided that the following conditions are met: </tt> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line"><tt class="py-comment">#  (1) Redistributions of source code must retain the above copyright notice, </tt> </tt>
+<a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line"><tt class="py-comment">#  this list of conditions and the following disclaimer. </tt> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line"><tt class="py-comment">#  (2) Redistributions in binary form must reproduce the above copyright </tt> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line"><tt class="py-comment">#  notice, this list of conditions and the following disclaimer in the </tt> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line"><tt class="py-comment">#  documentation and or other materials provided with the distribution. </tt> </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line"><tt class="py-comment">#  (3) Neither the name of the University of California, Lawrence Berkeley </tt> </tt>
+<a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line"><tt class="py-comment">#  National Laboratory, U.S. Dept. of Energy nor the names of its contributors </tt> </tt>
+<a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line"><tt class="py-comment">#  may be used to endorse or promote products derived from this software </tt> </tt>
+<a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line"><tt class="py-comment">#  without specific prior written permission. </tt> </tt>
+<a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line"><tt class="py-comment">#  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" </tt> </tt>
+<a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line"><tt class="py-comment">#  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE </tt> </tt>
+<a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line"><tt class="py-comment">#  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE </tt> </tt>
+<a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line"><tt class="py-comment">#  ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE </tt> </tt>
+<a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line"><tt class="py-comment">#  LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR </tt> </tt>
+<a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line"><tt class="py-comment">#  CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF </tt> </tt>
+<a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line"><tt class="py-comment">#  SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS </tt> </tt>
+<a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line"><tt class="py-comment">#  INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN </tt> </tt>
+<a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line"><tt class="py-comment">#  CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) </tt> </tt>
+<a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line"><tt class="py-comment">#  ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE </tt> </tt>
+<a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line"><tt class="py-comment">#  POSSIBILITY OF SUCH DAMAGE. </tt> </tt>
+<a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line"> </tt>
+<a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line"><tt class="py-docstring">"""</tt> </tt>
+<a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line"><tt class="py-docstring">Standard data used in computational biology.</tt> </tt>
+<a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line"><tt class="py-docstring">To convert a property dictionary to a list :</tt> </tt>
+<a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line"><tt class="py-docstring">&gt;&gt;&gt; comp = [ amino_acid_composition[k] for k in amino_acid_letters]</tt> </tt>
+<a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line"><tt class="py-docstring">Resources: </tt> </tt>
+<a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line"><tt class="py-docstring">    Various standard data files are included in the corebio distribution. These</tt> </tt>
+<a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line"><tt class="py-docstring">    may be loaded with the data_string, data_stream or data_filename methods.</tt> </tt>
+<a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line"><tt class="py-docstring">    A complete set of names is stored in 'resource_names'</tt> </tt>
+<a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line"><tt class="py-docstring"> </tt> </tt>
+<a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line"><tt class="py-docstring">BLOSUM Scoring Matrices</tt> </tt>
+<a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line"><tt class="py-docstring">    Source: ftp://ftp.ncbi.nih.gov/repository/blocks/unix/blosum</tt> </tt>
+<a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line"><tt class="py-docstring">    These are all new blast style with 1/3 bit scaling</tt> </tt>
+<a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line"><tt class="py-docstring">    - blosum35</tt> </tt>
+<a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line"><tt class="py-docstring">    - blosum45    </tt> </tt>
+<a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line"><tt class="py-docstring">    - blosum62    </tt> </tt>
+<a name="L55"></a><tt class="py-lineno"> 55</tt>  <tt class="py-line"><tt class="py-docstring">    - blosum40    </tt> </tt>
+<a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line"><tt class="py-docstring">    - blosum50    </tt> </tt>
+<a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line"><tt class="py-docstring">    - blosum80    </tt> </tt>
+<a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line"><tt class="py-docstring">    - blosum100   </tt> </tt>
+<a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line"><tt class="py-docstring">Other substitution scoring matrices:</tt> </tt>
+<a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line"><tt class="py-docstring">    - dist20_comp </tt> </tt>
+<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line"><tt class="py-docstring">    - pam250</tt> </tt>
+<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line"><tt class="py-docstring">    - pam120</tt> </tt>
+<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line"><tt class="py-docstring">    - vtml160</tt> </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line"><tt class="py-docstring">Description of database cross references :</tt> </tt>
+<a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line"><tt class="py-docstring">    - dbxref.txt (http://www.expasy.org/cgi-bin/lists?dbxref.txt)</tt> </tt>
+<a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line"><tt class="py-docstring">Attributes:</tt> </tt>
+<a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line"><tt class="py-docstring">    - amino_acid_letters</tt> </tt>
+<a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line"><tt class="py-docstring">        -- Standard codes for the 20 canonical amino acids, in alphabetic</tt> </tt>
+<a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line"><tt class="py-docstring">        order.</tt> </tt>
+<a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line"><tt class="py-docstring">        </tt> </tt>
+<a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line"><tt class="py-docstring">    - amino_acid_alternative_letters</tt> </tt>
+<a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line"><tt class="py-docstring">        -- Amino acid one letter codes, alphabetic by three letter codes.</tt> </tt>
+<a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line"><tt class="py-docstring">    - amino_acid_extended_letters</tt> </tt>
+<a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line"><tt class="py-docstring">    - dna_letters</tt> </tt>
+<a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line"><tt class="py-docstring">    - dna_extended_letters</tt> </tt>
+<a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line"><tt class="py-docstring">    - rna_letters</tt> </tt>
+<a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line"><tt class="py-docstring">    - rna_extended_letters</tt> </tt>
+<a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line"><tt class="py-docstring">    - dna_ambiguity </tt> </tt>
+<a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line"><tt class="py-docstring">    - rna_ambiguity</tt> </tt>
+<a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line"><tt class="py-docstring">    - amino_acid_ambiguity</tt> </tt>
+<a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line"><tt class="py-docstring">    - amino_acid_mass</tt> </tt>
+<a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line"><tt class="py-docstring">        -- Monomer isotopically averaged molecular mass </tt> </tt>
+<a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line"><tt class="py-docstring">    - dna_mass</tt> </tt>
+<a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line"><tt class="py-docstring">    - rna_mass</tt> </tt>
+<a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line"><tt class="py-docstring">        </tt> </tt>
+<a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line"><tt class="py-docstring">    - one_to_three      </tt> </tt>
+<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line"><tt class="py-docstring">        -- Map from standard 1 letter amino acid codes to standard three</tt> </tt>
+<a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line"><tt class="py-docstring">        letter codes. </tt> </tt>
+<a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line"><tt class="py-docstring">        Ref: http://www.ebi.ac.uk/RESID/faq.html</tt> </tt>
+<a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line"><tt class="py-docstring">      </tt> </tt>
+<a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line"><tt class="py-docstring">    - standard_three_to_one</tt> </tt>
+<a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line"><tt class="py-docstring">        -- Map from standard 3 letter amino acid codes to standard 1</tt> </tt>
+<a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line"><tt class="py-docstring">        letter codes.</tt> </tt>
+<a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line"><tt class="py-docstring">         </tt> </tt>
+<a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line"><tt class="py-docstring">    - extended_three_to_one</tt> </tt>
+<a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line"><tt class="py-docstring">        -- Map between three letter amino acid codes (first letter capitalized) </tt> </tt>
+<a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line"><tt class="py-docstring">        and standard one letter codes. This map contains many nonstandard three</tt> </tt>
+<a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line"><tt class="py-docstring">        letter codes, used, for example, to specify chemically modified amino</tt> </tt>
+<a name="L114"></a><tt class="py-lineno">114</tt>  <tt class="py-line"><tt class="py-docstring">        acids in PDB files.</tt> </tt>
+<a name="L115"></a><tt class="py-lineno">115</tt>  <tt class="py-line"><tt class="py-docstring">        Ref: http://astral.berkeley.edu/ </tt> </tt>
+<a name="L116"></a><tt class="py-lineno">116</tt>  <tt class="py-line"><tt class="py-docstring">        Ref: http://www.ebi.ac.uk/RESID/faq.html</tt> </tt>
+<a name="L117"></a><tt class="py-lineno">117</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L118"></a><tt class="py-lineno">118</tt>  <tt class="py-line"><tt class="py-docstring">    - amino_acid_names</tt> </tt>
+<a name="L119"></a><tt class="py-lineno">119</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L120"></a><tt class="py-lineno">120</tt>  <tt class="py-line"><tt class="py-docstring">    - amino_acid_composition</tt> </tt>
+<a name="L121"></a><tt class="py-lineno">121</tt>  <tt class="py-line"><tt class="py-docstring">        -- Average amino acid composition of proteins.</tt> </tt>
+<a name="L122"></a><tt class="py-lineno">122</tt>  <tt class="py-line"><tt class="py-docstring">        Ref: McCaldon P., Argos P. Proteins 4:99-122 (1988).</tt> </tt>
+<a name="L123"></a><tt class="py-lineno">123</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L124"></a><tt class="py-lineno">124</tt>  <tt class="py-line"><tt class="py-docstring">    - kyte_doolittle_hydrophobicity </tt> </tt>
+<a name="L125"></a><tt class="py-lineno">125</tt>  <tt class="py-line"><tt class="py-docstring">        -- Kyte-Doolittle hydrophobicity scale.</tt> </tt>
+<a name="L126"></a><tt class="py-lineno">126</tt>  <tt class="py-line"><tt class="py-docstring">        Ref: Kyte J., Doolittle R.F. J. Mol. Biol. 157:105-132 (1982)</tt> </tt>
+<a name="L127"></a><tt class="py-lineno">127</tt>  <tt class="py-line"><tt class="py-docstring">        </tt> </tt>
+<a name="L128"></a><tt class="py-lineno">128</tt>  <tt class="py-line"><tt class="py-docstring">    - nucleotide_names</tt> </tt>
+<a name="L129"></a><tt class="py-lineno">129</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L130"></a><tt class="py-lineno">130</tt>  <tt class="py-line"><tt class="py-docstring">    - amino_acid_accesible_surface_area</tt> </tt>
+<a name="L131"></a><tt class="py-lineno">131</tt>  <tt class="py-line"><tt class="py-docstring">        -- Nominal maximum solvent accessoble area for unmodified amino acids,</tt> </tt>
+<a name="L132"></a><tt class="py-lineno">132</tt>  <tt class="py-line"><tt class="py-docstring">        in square Angstroms.</tt> </tt>
+<a name="L133"></a><tt class="py-lineno">133</tt>  <tt class="py-line"><tt class="py-docstring">        Ref: Sander &amp; Rost, (1994), Proteins, 20:216-226</tt> </tt>
+<a name="L134"></a><tt class="py-lineno">134</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L135"></a><tt class="py-lineno">135</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L136"></a><tt class="py-lineno">136</tt>  <tt class="py-line"><tt class="py-docstring">Status: Beta (Data needs to be proof checked.)    </tt> </tt>
+<a name="L137"></a><tt class="py-lineno">137</tt>  <tt class="py-line"><tt class="py-docstring">"""</tt> </tt>
+<a name="L138"></a><tt class="py-lineno">138</tt>  <tt class="py-line"> </tt>
+<a name="L139"></a><tt class="py-lineno">139</tt>  <tt class="py-line"><tt class="py-comment"># FIXME: Proof check data</tt> </tt>
+<a name="L140"></a><tt class="py-lineno">140</tt>  <tt class="py-line"><tt class="py-comment"># FIXME: Add __all__</tt> </tt>
+<a name="L141"></a><tt class="py-lineno">141</tt>  <tt class="py-line"> </tt>
+<a name="L142"></a><tt class="py-lineno">142</tt>  <tt class="py-line"><tt class="py-comment"># The ExPasy ProtScale tool is a great source of amino acid properties.</tt> </tt>
+<a name="L143"></a><tt class="py-lineno">143</tt>  <tt class="py-line"><tt class="py-comment"># http://au.expasy.org/cgi-bin/protscale.pl       </tt> </tt>
+<a name="L144"></a><tt class="py-lineno">144</tt>  <tt class="py-line"> </tt>
+<a name="L145"></a><tt class="py-lineno">145</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">StringIO</tt> <tt class="py-keyword">import</tt> <tt class="py-name">StringIO</tt> </tt>
+<a name="L146"></a><tt class="py-lineno">146</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-0" class="py-name" targets="Package corebio=corebio-module.html"><a title="corebio" class="py-name" href="#" onclick="return doclink('link-0', 'corebio', 'link-0');">corebio</a></tt><tt class="py-op">.</tt><tt id="link-1" class="py-name" targets="Package corebio.utils=corebio.utils-module.html"><a title="corebio.utils" class="py-name" href="#" onclick="return doclink('link-1', 'utils', 'link-1');">utils</a></tt> <tt class="py-keyword">import</tt> <tt id="link-2" class="py-name" targets="Function corebio.utils.resource_string()=corebio.utils-module.html#resource_string,Function weblogolib._cgi.resource_string()=weblogolib._cgi-module.html#resource_string"><a title="corebio.utils.resource_string
+weblogolib._cgi.resource_string" class="py-name" href="#" onclick="return doclink('link-2', 'resource_string', 'link-2');">resource_string</a></tt><tt class="py-op">,</tt> <tt id="link-3" class="py-name" targets="Function corebio.utils.resource_stream()=corebio.utils-module.html#resource_stream"><a title="corebio.utils.resource_stream" class="py-name" href="#" onclick="return doclink('link-3', 'resource_stream', 'link-3');">resource_stream</a></tt><tt class="py-op">,</tt><tt id="link-4" class="py-name" targets="Function corebio.utils.resource_filename()=corebio.utils-module.html#resource_filename"><a title="corebio.utils.resource_filename" class="py-name" href="#" onclick="return doclink('link-4', 'resource_filename', 'link-4');">resource_filename</a></tt> </tt>
+<a name="L147"></a><tt class="py-lineno">147</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt id="link-5" class="py-name"><a title="corebio.utils" class="py-name" href="#" onclick="return doclink('link-5', 'utils', 'link-1');">utils</a></tt> </tt>
+<a name="L148"></a><tt class="py-lineno">148</tt>  <tt class="py-line"> </tt>
+<a name="L149"></a><tt class="py-lineno">149</tt>  <tt class="py-line"><tt class="py-comment"># Explicitly list set of available data resources. We want to be able to access</tt> </tt>
+<a name="L150"></a><tt class="py-lineno">150</tt>  <tt class="py-line"><tt class="py-comment"># these resources in, for example, a webapp, without inadvertently allowing</tt> </tt>
+<a name="L151"></a><tt class="py-lineno">151</tt>  <tt class="py-line"><tt class="py-comment"># unrestricted read access to the local file system.</tt> </tt>
+<a name="L152"></a><tt class="py-lineno">152</tt>  <tt class="py-line"> </tt>
+<a name="L153"></a><tt class="py-lineno">153</tt>  <tt class="py-line"><tt id="link-6" class="py-name" targets="Variable corebio.data.resource_names=corebio.data-module.html#resource_names"><a title="corebio.data.resource_names" class="py-name" href="#" onclick="return doclink('link-6', 'resource_names', 'link-6');">resource_names</a></tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt> </tt>
+<a name="L154"></a><tt class="py-lineno">154</tt>  <tt class="py-line">    <tt class="py-string">'blosum35'</tt><tt class="py-op">,</tt> </tt>
+<a name="L155"></a><tt class="py-lineno">155</tt>  <tt class="py-line">    <tt class="py-string">'blosum45'</tt><tt class="py-op">,</tt>     </tt>
+<a name="L156"></a><tt class="py-lineno">156</tt>  <tt class="py-line">    <tt class="py-string">'blosum62'</tt><tt class="py-op">,</tt>     </tt>
+<a name="L157"></a><tt class="py-lineno">157</tt>  <tt class="py-line">    <tt class="py-string">'blosum40'</tt><tt class="py-op">,</tt>     </tt>
+<a name="L158"></a><tt class="py-lineno">158</tt>  <tt class="py-line">    <tt class="py-string">'blosum50'</tt><tt class="py-op">,</tt>     </tt>
+<a name="L159"></a><tt class="py-lineno">159</tt>  <tt class="py-line">    <tt class="py-string">'blosum80'</tt><tt class="py-op">,</tt>     </tt>
+<a name="L160"></a><tt class="py-lineno">160</tt>  <tt class="py-line">    <tt class="py-string">'blosum100'</tt><tt class="py-op">,</tt>    </tt>
+<a name="L161"></a><tt class="py-lineno">161</tt>  <tt class="py-line">    <tt class="py-string">'dist20_comp'</tt><tt class="py-op">,</tt>  </tt>
+<a name="L162"></a><tt class="py-lineno">162</tt>  <tt class="py-line">    <tt class="py-string">'pam250'</tt><tt class="py-op">,</tt> </tt>
+<a name="L163"></a><tt class="py-lineno">163</tt>  <tt class="py-line">    <tt class="py-string">'pam120'</tt><tt class="py-op">,</tt>  </tt>
+<a name="L164"></a><tt class="py-lineno">164</tt>  <tt class="py-line">    <tt class="py-string">'dbxref.txt'</tt><tt class="py-op">,</tt> </tt>
+<a name="L165"></a><tt class="py-lineno">165</tt>  <tt class="py-line">    <tt class="py-string">'vtml160'</tt><tt class="py-op">,</tt> </tt>
+<a name="L166"></a><tt class="py-lineno">166</tt>  <tt class="py-line">    <tt class="py-op">]</tt> </tt>
+<a name="L167"></a><tt class="py-lineno">167</tt>  <tt class="py-line"> </tt>
+<a name="L168"></a><tt class="py-lineno">168</tt>  <tt class="py-line"><tt id="link-7" class="py-name" targets="Variable corebio.data._resource_filenames=corebio.data-module.html#_resource_filenames"><a title="corebio.data._resource_filenames" class="py-name" href="#" onclick="return doclink('link-7', '_resource_filenames', 'link-7');">_resource_filenames</a></tt> <tt class="py-op">=</tt> <tt class="py-op">{</tt> </tt>
+<a name="L169"></a><tt class="py-lineno">169</tt>  <tt class="py-line">    <tt class="py-string">'blosum35'</tt><tt class="py-op">:</tt>    <tt class="py-string">'data/blosum35.mat'</tt><tt class="py-op">,</tt> </tt>
+<a name="L170"></a><tt class="py-lineno">170</tt>  <tt class="py-line">    <tt class="py-string">'blosum45'</tt><tt class="py-op">:</tt>    <tt class="py-string">'data/blosum45.mat'</tt><tt class="py-op">,</tt>     </tt>
+<a name="L171"></a><tt class="py-lineno">171</tt>  <tt class="py-line">    <tt class="py-string">'blosum62'</tt><tt class="py-op">:</tt>    <tt class="py-string">'data/blosum62.mat'</tt><tt class="py-op">,</tt>     </tt>
+<a name="L172"></a><tt class="py-lineno">172</tt>  <tt class="py-line">    <tt class="py-string">'blosum40'</tt><tt class="py-op">:</tt>    <tt class="py-string">'data/blosum40.mat'</tt><tt class="py-op">,</tt>     </tt>
+<a name="L173"></a><tt class="py-lineno">173</tt>  <tt class="py-line">    <tt class="py-string">'blosum50'</tt><tt class="py-op">:</tt>    <tt class="py-string">'data/blosum50.mat'</tt><tt class="py-op">,</tt>     </tt>
+<a name="L174"></a><tt class="py-lineno">174</tt>  <tt class="py-line">    <tt class="py-string">'blosum80'</tt><tt class="py-op">:</tt>    <tt class="py-string">'data/blosum80.mat'</tt><tt class="py-op">,</tt>     </tt>
+<a name="L175"></a><tt class="py-lineno">175</tt>  <tt class="py-line">    <tt class="py-string">'blosum100'</tt><tt class="py-op">:</tt>   <tt class="py-string">'data/blosum100.mat'</tt><tt class="py-op">,</tt>    </tt>
+<a name="L176"></a><tt class="py-lineno">176</tt>  <tt class="py-line">    <tt class="py-string">'dist20_comp'</tt><tt class="py-op">:</tt> <tt class="py-string">'data/dist20_comp.mat'</tt><tt class="py-op">,</tt>  </tt>
+<a name="L177"></a><tt class="py-lineno">177</tt>  <tt class="py-line">    <tt class="py-string">'pam250'</tt><tt class="py-op">:</tt>      <tt class="py-string">'data/pam250.mat'</tt><tt class="py-op">,</tt> </tt>
+<a name="L178"></a><tt class="py-lineno">178</tt>  <tt class="py-line">    <tt class="py-string">'pam120'</tt><tt class="py-op">:</tt>      <tt class="py-string">'data/pam120.mat'</tt><tt class="py-op">,</tt>  </tt>
+<a name="L179"></a><tt class="py-lineno">179</tt>  <tt class="py-line">    <tt class="py-string">'dbxref.txt'</tt> <tt class="py-op">:</tt> <tt class="py-string">'data/dbxref.txt'</tt><tt class="py-op">,</tt> </tt>
+<a name="L180"></a><tt class="py-lineno">180</tt>  <tt class="py-line">    <tt class="py-string">'vtml160'</tt> <tt class="py-op">:</tt>    <tt class="py-string">'data/vtml160'</tt><tt class="py-op">,</tt> </tt>
+<a name="L181"></a><tt class="py-lineno">181</tt>  <tt class="py-line">    <tt class="py-op">}</tt> </tt>
+<a name="L182"></a><tt class="py-lineno">182</tt>  <tt class="py-line"> </tt>
+<a name="L183"></a><tt class="py-lineno">183</tt>  <tt class="py-line"><tt class="py-comment"># TODO: Substitution matrix parser, SeqMatrix.read</tt> </tt>
+<a name="L184"></a><tt class="py-lineno">184</tt>  <tt class="py-line"><tt class="py-comment"># _resource_parsers = {}</tt> </tt>
+<a name="L185"></a><tt class="py-lineno">185</tt>  <tt class="py-line"> </tt>
+<a name="data_string"></a><div id="data_string-def"><a name="L186"></a><tt class="py-lineno">186</tt> <a class="py-toggle" href="#" id="data_string-toggle" onclick="return toggle('data_string');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="corebio.data-module.html#data_string">data_string</a><tt class="py-op">(</tt> <tt class="py-param">name</tt> <tt class="py-op">)</tt><tt class="py-op">:</tt>  </tt>
+</div><a name="L187"></a><tt class="py-lineno">187</tt>  <tt class="py-line">    <tt class="py-docstring">"""Load the specified resource as a string."""</tt> </tt>
+<a name="L188"></a><tt class="py-lineno">188</tt>  <tt class="py-line">    <tt class="py-name">fn</tt> <tt class="py-op">=</tt> <tt id="link-8" class="py-name"><a title="corebio.data._resource_filenames" class="py-name" href="#" onclick="return doclink('link-8', '_resource_filenames', 'link-7');">_resource_filenames</a></tt><tt class="py-op">[</tt><tt id="link-9" class="py-name" targets="Variable corebio.db.DataSource.name=corebio.db.DataSource-class.html#name,Variable corebio.matrix.SubMatrix.name=corebio.matrix.SubMatrix-class.html#name,Variable corebio.seq.SeqList.name=corebio.seq.SeqList-class.html#name,Variable corebio.transform.Transform.name=corebio.transform.Transform-class.html#name"><a title="corebio.db.DataSource.name
+corebio.matrix.SubMatrix.name
+corebio.seq.SeqList.name
+corebio.transform.Transform.name" class="py-name" href="#" onclick="return doclink('link-9', 'name', 'link-9');">name</a></tt><tt class="py-op">]</tt> </tt>
+<a name="L189"></a><tt class="py-lineno">189</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt id="link-10" class="py-name"><a title="corebio.utils.resource_string
+weblogolib._cgi.resource_string" class="py-name" href="#" onclick="return doclink('link-10', 'resource_string', 'link-2');">resource_string</a></tt><tt class="py-op">(</tt><tt class="py-name">__name__</tt><tt class="py-op">,</tt> <tt class="py-name">fn</tt> <tt class="py-op">,</tt> <tt class="py-name">__file__</tt><tt class="py-op">)</tt>     </tt>
+</div><a name="L190"></a><tt class="py-lineno">190</tt>  <tt class="py-line"> </tt>
+<a name="data_stream"></a><div id="data_stream-def"><a name="L191"></a><tt class="py-lineno">191</tt> <a class="py-toggle" href="#" id="data_stream-toggle" onclick="return toggle('data_stream');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="corebio.data-module.html#data_stream">data_stream</a><tt class="py-op">(</tt> <tt class="py-param">name</tt> <tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="data_stream-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="data_stream-expanded"><a name="L192"></a><tt class="py-lineno">192</tt>  <tt class="py-line">    <tt class="py-docstring">"""Provide an open file handle to the specified resource."""</tt> </tt>
+<a name="L193"></a><tt class="py-lineno">193</tt>  <tt class="py-line">    <tt class="py-name">fn</tt> <tt class="py-op">=</tt> <tt id="link-11" class="py-name"><a title="corebio.data._resource_filenames" class="py-name" href="#" onclick="return doclink('link-11', '_resource_filenames', 'link-7');">_resource_filenames</a></tt><tt class="py-op">[</tt><tt id="link-12" class="py-name"><a title="corebio.db.DataSource.name
+corebio.matrix.SubMatrix.name
+corebio.seq.SeqList.name
+corebio.transform.Transform.name" class="py-name" href="#" onclick="return doclink('link-12', 'name', 'link-9');">name</a></tt><tt class="py-op">]</tt> </tt>
+<a name="L194"></a><tt class="py-lineno">194</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt id="link-13" class="py-name"><a title="corebio.utils.resource_stream" class="py-name" href="#" onclick="return doclink('link-13', 'resource_stream', 'link-3');">resource_stream</a></tt><tt class="py-op">(</tt><tt class="py-name">__name__</tt><tt class="py-op">,</tt> <tt class="py-name">fn</tt> <tt class="py-op">,</tt> <tt class="py-name">__file__</tt><tt class="py-op">)</tt>     </tt>
+</div><a name="L195"></a><tt class="py-lineno">195</tt>  <tt class="py-line"> </tt>
+<a name="data_filename"></a><div id="data_filename-def"><a name="L196"></a><tt class="py-lineno">196</tt> <a class="py-toggle" href="#" id="data_filename-toggle" onclick="return toggle('data_filename');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="corebio.data-module.html#data_filename">data_filename</a><tt class="py-op">(</tt> <tt class="py-param">name</tt> <tt class="py-op">)</tt><tt class="py-op">:</tt>  </tt>
+</div><a name="L197"></a><tt class="py-lineno">197</tt>  <tt class="py-line">    <tt class="py-docstring">"""Provide a filename for the given resource in the local filesystem."""</tt> </tt>
+<a name="L198"></a><tt class="py-lineno">198</tt>  <tt class="py-line">    <tt class="py-name">fn</tt> <tt class="py-op">=</tt> <tt id="link-14" class="py-name"><a title="corebio.data._resource_filenames" class="py-name" href="#" onclick="return doclink('link-14', '_resource_filenames', 'link-7');">_resource_filenames</a></tt><tt class="py-op">[</tt><tt id="link-15" class="py-name"><a title="corebio.db.DataSource.name
+corebio.matrix.SubMatrix.name
+corebio.seq.SeqList.name
+corebio.transform.Transform.name" class="py-name" href="#" onclick="return doclink('link-15', 'name', 'link-9');">name</a></tt><tt class="py-op">]</tt> </tt>
+<a name="L199"></a><tt class="py-lineno">199</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt id="link-16" class="py-name"><a title="corebio.utils.resource_filename" class="py-name" href="#" onclick="return doclink('link-16', 'resource_filename', 'link-4');">resource_filename</a></tt><tt class="py-op">(</tt><tt class="py-name">__name__</tt><tt class="py-op">,</tt> <tt class="py-name">fn</tt><tt class="py-op">,</tt> <tt class="py-name">__file__</tt><tt class="py-op">)</tt>             </tt>
+</div><a name="L200"></a><tt class="py-lineno">200</tt>  <tt class="py-line"> </tt>
+<a name="L201"></a><tt class="py-lineno">201</tt>  <tt class="py-line"><tt class="py-comment">#def data_object( name, parser = None) :</tt> </tt>
+<a name="L202"></a><tt class="py-lineno">202</tt>  <tt class="py-line"><tt class="py-comment">#    if parser is None : </tt> </tt>
+<a name="L203"></a><tt class="py-lineno">203</tt>  <tt class="py-line"><tt class="py-comment">#        if name in _resource_parsers :</tt> </tt>
+<a name="L204"></a><tt class="py-lineno">204</tt>  <tt class="py-line"><tt class="py-comment">#            parser = _resource_parsers[name]</tt> </tt>
+<a name="L205"></a><tt class="py-lineno">205</tt>  <tt class="py-line"><tt class="py-comment">#        else :</tt> </tt>
+<a name="L206"></a><tt class="py-lineno">206</tt>  <tt class="py-line"><tt class="py-comment">#            parser = str    </tt> </tt>
+<a name="L207"></a><tt class="py-lineno">207</tt>  <tt class="py-line"><tt class="py-comment">#    return parser( data_stream(name) )</tt> </tt>
+<a name="L208"></a><tt class="py-lineno">208</tt>  <tt class="py-line"> </tt>
+<a name="L209"></a><tt class="py-lineno">209</tt>  <tt class="py-line"> </tt>
+<a name="L210"></a><tt class="py-lineno">210</tt>  <tt class="py-line"><tt id="link-17" class="py-name" targets="Variable corebio.data.amino_acid_letters=corebio.data-module.html#amino_acid_letters"><a title="corebio.data.amino_acid_letters" class="py-name" href="#" onclick="return doclink('link-17', 'amino_acid_letters', 'link-17');">amino_acid_letters</a></tt> <tt class="py-op">=</tt> <tt class="py-string">"ACDEFGHIKLMNPQRSTVWY"</tt> </tt>
+<a name="L211"></a><tt class="py-lineno">211</tt>  <tt class="py-line"> </tt>
+<a name="L212"></a><tt class="py-lineno">212</tt>  <tt class="py-line"><tt id="link-18" class="py-name" targets="Variable corebio.data.amino_acid_alternative_letters=corebio.data-module.html#amino_acid_alternative_letters"><a title="corebio.data.amino_acid_alternative_letters" class="py-name" href="#" onclick="return doclink('link-18', 'amino_acid_alternative_letters', 'link-18');">amino_acid_alternative_letters</a></tt> <tt class="py-op">=</tt> <tt class="py-string">"ARNDCQEGHILKMFPSTWYV"</tt> </tt>
+<a name="L213"></a><tt class="py-lineno">213</tt>  <tt class="py-line"> </tt>
+<a name="L214"></a><tt class="py-lineno">214</tt>  <tt class="py-line"><tt id="link-19" class="py-name" targets="Variable corebio.data.amino_acid_extended_letters=corebio.data-module.html#amino_acid_extended_letters"><a title="corebio.data.amino_acid_extended_letters" class="py-name" href="#" onclick="return doclink('link-19', 'amino_acid_extended_letters', 'link-19');">amino_acid_extended_letters</a></tt> <tt class="py-op">=</tt> <tt class="py-string">"ACDEFGHIKLMNOPQRSTUVWYBJZX*-"</tt> </tt>
+<a name="L215"></a><tt class="py-lineno">215</tt>  <tt class="py-line"> </tt>
+<a name="L216"></a><tt class="py-lineno">216</tt>  <tt class="py-line"> </tt>
+<a name="L217"></a><tt class="py-lineno">217</tt>  <tt class="py-line"><tt id="link-20" class="py-name" targets="Variable corebio.data.dna_letters=corebio.data-module.html#dna_letters"><a title="corebio.data.dna_letters" class="py-name" href="#" onclick="return doclink('link-20', 'dna_letters', 'link-20');">dna_letters</a></tt> <tt class="py-op">=</tt> <tt class="py-string">"GATC"</tt> </tt>
+<a name="L218"></a><tt class="py-lineno">218</tt>  <tt class="py-line"><tt id="link-21" class="py-name" targets="Variable corebio.data.dna_extended_letters=corebio.data-module.html#dna_extended_letters"><a title="corebio.data.dna_extended_letters" class="py-name" href="#" onclick="return doclink('link-21', 'dna_extended_letters', 'link-21');">dna_extended_letters</a></tt> <tt class="py-op">=</tt> <tt class="py-string">"GATCRYWSMKHBVDN"</tt> </tt>
+<a name="L219"></a><tt class="py-lineno">219</tt>  <tt class="py-line"> </tt>
+<a name="L220"></a><tt class="py-lineno">220</tt>  <tt class="py-line"><tt id="link-22" class="py-name" targets="Variable corebio.data.rna_letters=corebio.data-module.html#rna_letters"><a title="corebio.data.rna_letters" class="py-name" href="#" onclick="return doclink('link-22', 'rna_letters', 'link-22');">rna_letters</a></tt> <tt class="py-op">=</tt> <tt class="py-string">"GAUC"</tt>   </tt>
+<a name="L221"></a><tt class="py-lineno">221</tt>  <tt class="py-line"><tt id="link-23" class="py-name" targets="Variable corebio.data.rna_extended_letters=corebio.data-module.html#rna_extended_letters"><a title="corebio.data.rna_extended_letters" class="py-name" href="#" onclick="return doclink('link-23', 'rna_extended_letters', 'link-23');">rna_extended_letters</a></tt> <tt class="py-op">=</tt> <tt class="py-string">"GAUCRYWSMKHBVDN"</tt> </tt>
+<a name="L222"></a><tt class="py-lineno">222</tt>  <tt class="py-line"> </tt>
+<a name="L223"></a><tt class="py-lineno">223</tt>  <tt class="py-line"> </tt>
+<a name="L224"></a><tt class="py-lineno">224</tt>  <tt class="py-line"><tt id="link-24" class="py-name" targets="Variable corebio.data.dna_ambiguity=corebio.data-module.html#dna_ambiguity"><a title="corebio.data.dna_ambiguity" class="py-name" href="#" onclick="return doclink('link-24', 'dna_ambiguity', 'link-24');">dna_ambiguity</a></tt> <tt class="py-op">=</tt> <tt class="py-op">{</tt> </tt>
+<a name="L225"></a><tt class="py-lineno">225</tt>  <tt class="py-line">    <tt class="py-string">"A"</tt><tt class="py-op">:</tt> <tt class="py-string">"A"</tt><tt class="py-op">,</tt> </tt>
+<a name="L226"></a><tt class="py-lineno">226</tt>  <tt class="py-line">    <tt class="py-string">"C"</tt><tt class="py-op">:</tt> <tt class="py-string">"C"</tt><tt class="py-op">,</tt> </tt>
+<a name="L227"></a><tt class="py-lineno">227</tt>  <tt class="py-line">    <tt class="py-string">"G"</tt><tt class="py-op">:</tt> <tt class="py-string">"G"</tt><tt class="py-op">,</tt> </tt>
+<a name="L228"></a><tt class="py-lineno">228</tt>  <tt class="py-line">    <tt class="py-string">"T"</tt><tt class="py-op">:</tt> <tt class="py-string">"T"</tt><tt class="py-op">,</tt> </tt>
+<a name="L229"></a><tt class="py-lineno">229</tt>  <tt class="py-line">    <tt class="py-string">"M"</tt><tt class="py-op">:</tt> <tt class="py-string">"AC"</tt><tt class="py-op">,</tt> </tt>
+<a name="L230"></a><tt class="py-lineno">230</tt>  <tt class="py-line">    <tt class="py-string">"R"</tt><tt class="py-op">:</tt> <tt class="py-string">"AG"</tt><tt class="py-op">,</tt> </tt>
+<a name="L231"></a><tt class="py-lineno">231</tt>  <tt class="py-line">    <tt class="py-string">"W"</tt><tt class="py-op">:</tt> <tt class="py-string">"AT"</tt><tt class="py-op">,</tt> </tt>
+<a name="L232"></a><tt class="py-lineno">232</tt>  <tt class="py-line">    <tt class="py-string">"S"</tt><tt class="py-op">:</tt> <tt class="py-string">"CG"</tt><tt class="py-op">,</tt> </tt>
+<a name="L233"></a><tt class="py-lineno">233</tt>  <tt class="py-line">    <tt class="py-string">"Y"</tt><tt class="py-op">:</tt> <tt class="py-string">"CT"</tt><tt class="py-op">,</tt> </tt>
+<a name="L234"></a><tt class="py-lineno">234</tt>  <tt class="py-line">    <tt class="py-string">"K"</tt><tt class="py-op">:</tt> <tt class="py-string">"GT"</tt><tt class="py-op">,</tt> </tt>
+<a name="L235"></a><tt class="py-lineno">235</tt>  <tt class="py-line">    <tt class="py-string">"V"</tt><tt class="py-op">:</tt> <tt class="py-string">"ACG"</tt><tt class="py-op">,</tt> </tt>
+<a name="L236"></a><tt class="py-lineno">236</tt>  <tt class="py-line">    <tt class="py-string">"H"</tt><tt class="py-op">:</tt> <tt class="py-string">"ACT"</tt><tt class="py-op">,</tt> </tt>
+<a name="L237"></a><tt class="py-lineno">237</tt>  <tt class="py-line">    <tt class="py-string">"D"</tt><tt class="py-op">:</tt> <tt class="py-string">"AGT"</tt><tt class="py-op">,</tt> </tt>
+<a name="L238"></a><tt class="py-lineno">238</tt>  <tt class="py-line">    <tt class="py-string">"B"</tt><tt class="py-op">:</tt> <tt class="py-string">"CGT"</tt><tt class="py-op">,</tt> </tt>
+<a name="L239"></a><tt class="py-lineno">239</tt>  <tt class="py-line">    <tt class="py-string">"X"</tt><tt class="py-op">:</tt> <tt class="py-string">"GATC"</tt><tt class="py-op">,</tt> </tt>
+<a name="L240"></a><tt class="py-lineno">240</tt>  <tt class="py-line">    <tt class="py-string">"N"</tt><tt class="py-op">:</tt> <tt class="py-string">"GATC"</tt><tt class="py-op">,</tt> </tt>
+<a name="L241"></a><tt class="py-lineno">241</tt>  <tt class="py-line"><tt class="py-op">}</tt> </tt>
+<a name="L242"></a><tt class="py-lineno">242</tt>  <tt class="py-line"> </tt>
+<a name="L243"></a><tt class="py-lineno">243</tt>  <tt class="py-line"><tt id="link-25" class="py-name" targets="Variable corebio.data.rna_ambiguity=corebio.data-module.html#rna_ambiguity"><a title="corebio.data.rna_ambiguity" class="py-name" href="#" onclick="return doclink('link-25', 'rna_ambiguity', 'link-25');">rna_ambiguity</a></tt> <tt class="py-op">=</tt> <tt class="py-op">{</tt> </tt>
+<a name="L244"></a><tt class="py-lineno">244</tt>  <tt class="py-line">    <tt class="py-string">"A"</tt><tt class="py-op">:</tt> <tt class="py-string">"A"</tt><tt class="py-op">,</tt> </tt>
+<a name="L245"></a><tt class="py-lineno">245</tt>  <tt class="py-line">    <tt class="py-string">"C"</tt><tt class="py-op">:</tt> <tt class="py-string">"C"</tt><tt class="py-op">,</tt> </tt>
+<a name="L246"></a><tt class="py-lineno">246</tt>  <tt class="py-line">    <tt class="py-string">"G"</tt><tt class="py-op">:</tt> <tt class="py-string">"G"</tt><tt class="py-op">,</tt> </tt>
+<a name="L247"></a><tt class="py-lineno">247</tt>  <tt class="py-line">    <tt class="py-string">"U"</tt><tt class="py-op">:</tt> <tt class="py-string">"U"</tt><tt class="py-op">,</tt> </tt>
+<a name="L248"></a><tt class="py-lineno">248</tt>  <tt class="py-line">    <tt class="py-string">"M"</tt><tt class="py-op">:</tt> <tt class="py-string">"AC"</tt><tt class="py-op">,</tt> </tt>
+<a name="L249"></a><tt class="py-lineno">249</tt>  <tt class="py-line">    <tt class="py-string">"R"</tt><tt class="py-op">:</tt> <tt class="py-string">"AG"</tt><tt class="py-op">,</tt> </tt>
+<a name="L250"></a><tt class="py-lineno">250</tt>  <tt class="py-line">    <tt class="py-string">"W"</tt><tt class="py-op">:</tt> <tt class="py-string">"AU"</tt><tt class="py-op">,</tt> </tt>
+<a name="L251"></a><tt class="py-lineno">251</tt>  <tt class="py-line">    <tt class="py-string">"S"</tt><tt class="py-op">:</tt> <tt class="py-string">"CG"</tt><tt class="py-op">,</tt> </tt>
+<a name="L252"></a><tt class="py-lineno">252</tt>  <tt class="py-line">    <tt class="py-string">"Y"</tt><tt class="py-op">:</tt> <tt class="py-string">"CU"</tt><tt class="py-op">,</tt> </tt>
+<a name="L253"></a><tt class="py-lineno">253</tt>  <tt class="py-line">    <tt class="py-string">"K"</tt><tt class="py-op">:</tt> <tt class="py-string">"GU"</tt><tt class="py-op">,</tt> </tt>
+<a name="L254"></a><tt class="py-lineno">254</tt>  <tt class="py-line">    <tt class="py-string">"V"</tt><tt class="py-op">:</tt> <tt class="py-string">"ACG"</tt><tt class="py-op">,</tt> </tt>
+<a name="L255"></a><tt class="py-lineno">255</tt>  <tt class="py-line">    <tt class="py-string">"H"</tt><tt class="py-op">:</tt> <tt class="py-string">"ACU"</tt><tt class="py-op">,</tt> </tt>
+<a name="L256"></a><tt class="py-lineno">256</tt>  <tt class="py-line">    <tt class="py-string">"D"</tt><tt class="py-op">:</tt> <tt class="py-string">"AGU"</tt><tt class="py-op">,</tt> </tt>
+<a name="L257"></a><tt class="py-lineno">257</tt>  <tt class="py-line">    <tt class="py-string">"B"</tt><tt class="py-op">:</tt> <tt class="py-string">"CGU"</tt><tt class="py-op">,</tt> </tt>
+<a name="L258"></a><tt class="py-lineno">258</tt>  <tt class="py-line">    <tt class="py-string">"X"</tt><tt class="py-op">:</tt> <tt class="py-string">"GAUC"</tt><tt class="py-op">,</tt> </tt>
+<a name="L259"></a><tt class="py-lineno">259</tt>  <tt class="py-line">    <tt class="py-string">"N"</tt><tt class="py-op">:</tt> <tt class="py-string">"GAUC"</tt><tt class="py-op">,</tt> </tt>
+<a name="L260"></a><tt class="py-lineno">260</tt>  <tt class="py-line"><tt class="py-op">}</tt> </tt>
+<a name="L261"></a><tt class="py-lineno">261</tt>  <tt class="py-line"> </tt>
+<a name="L262"></a><tt class="py-lineno">262</tt>  <tt class="py-line"><tt id="link-26" class="py-name" targets="Variable corebio.data.amino_acid_ambiguity=corebio.data-module.html#amino_acid_ambiguity"><a title="corebio.data.amino_acid_ambiguity" class="py-name" href="#" onclick="return doclink('link-26', 'amino_acid_ambiguity', 'link-26');">amino_acid_ambiguity</a></tt> <tt class="py-op">=</tt> <tt class="py-op">{</tt> </tt>
+<a name="L263"></a><tt class="py-lineno">263</tt>  <tt class="py-line">    <tt class="py-string">"A"</tt><tt class="py-op">:</tt> <tt class="py-string">"A"</tt><tt class="py-op">,</tt> </tt>
+<a name="L264"></a><tt class="py-lineno">264</tt>  <tt class="py-line">    <tt class="py-string">"B"</tt><tt class="py-op">:</tt> <tt class="py-string">"ND"</tt><tt class="py-op">,</tt> </tt>
+<a name="L265"></a><tt class="py-lineno">265</tt>  <tt class="py-line">    <tt class="py-string">"C"</tt><tt class="py-op">:</tt> <tt class="py-string">"C"</tt><tt class="py-op">,</tt> </tt>
+<a name="L266"></a><tt class="py-lineno">266</tt>  <tt class="py-line">    <tt class="py-string">"D"</tt><tt class="py-op">:</tt> <tt class="py-string">"D"</tt><tt class="py-op">,</tt> </tt>
+<a name="L267"></a><tt class="py-lineno">267</tt>  <tt class="py-line">    <tt class="py-string">"E"</tt><tt class="py-op">:</tt> <tt class="py-string">"E"</tt><tt class="py-op">,</tt> </tt>
+<a name="L268"></a><tt class="py-lineno">268</tt>  <tt class="py-line">    <tt class="py-string">"F"</tt><tt class="py-op">:</tt> <tt class="py-string">"F"</tt><tt class="py-op">,</tt> </tt>
+<a name="L269"></a><tt class="py-lineno">269</tt>  <tt class="py-line">    <tt class="py-string">"G"</tt><tt class="py-op">:</tt> <tt class="py-string">"G"</tt><tt class="py-op">,</tt> </tt>
+<a name="L270"></a><tt class="py-lineno">270</tt>  <tt class="py-line">    <tt class="py-string">"H"</tt><tt class="py-op">:</tt> <tt class="py-string">"H"</tt><tt class="py-op">,</tt> </tt>
+<a name="L271"></a><tt class="py-lineno">271</tt>  <tt class="py-line">    <tt class="py-string">"I"</tt><tt class="py-op">:</tt> <tt class="py-string">"I"</tt><tt class="py-op">,</tt> </tt>
+<a name="L272"></a><tt class="py-lineno">272</tt>  <tt class="py-line">    <tt class="py-string">"K"</tt><tt class="py-op">:</tt> <tt class="py-string">"K"</tt><tt class="py-op">,</tt> </tt>
+<a name="L273"></a><tt class="py-lineno">273</tt>  <tt class="py-line">    <tt class="py-string">"L"</tt><tt class="py-op">:</tt> <tt class="py-string">"L"</tt><tt class="py-op">,</tt> </tt>
+<a name="L274"></a><tt class="py-lineno">274</tt>  <tt class="py-line">    <tt class="py-string">"M"</tt><tt class="py-op">:</tt> <tt class="py-string">"M"</tt><tt class="py-op">,</tt> </tt>
+<a name="L275"></a><tt class="py-lineno">275</tt>  <tt class="py-line">    <tt class="py-string">"N"</tt><tt class="py-op">:</tt> <tt class="py-string">"N"</tt><tt class="py-op">,</tt> </tt>
+<a name="L276"></a><tt class="py-lineno">276</tt>  <tt class="py-line">    <tt class="py-string">"P"</tt><tt class="py-op">:</tt> <tt class="py-string">"P"</tt><tt class="py-op">,</tt> </tt>
+<a name="L277"></a><tt class="py-lineno">277</tt>  <tt class="py-line">    <tt class="py-string">"Q"</tt><tt class="py-op">:</tt> <tt class="py-string">"Q"</tt><tt class="py-op">,</tt> </tt>
+<a name="L278"></a><tt class="py-lineno">278</tt>  <tt class="py-line">    <tt class="py-string">"R"</tt><tt class="py-op">:</tt> <tt class="py-string">"R"</tt><tt class="py-op">,</tt> </tt>
+<a name="L279"></a><tt class="py-lineno">279</tt>  <tt class="py-line">    <tt class="py-string">"S"</tt><tt class="py-op">:</tt> <tt class="py-string">"S"</tt><tt class="py-op">,</tt> </tt>
+<a name="L280"></a><tt class="py-lineno">280</tt>  <tt class="py-line">    <tt class="py-string">"T"</tt><tt class="py-op">:</tt> <tt class="py-string">"T"</tt><tt class="py-op">,</tt> </tt>
+<a name="L281"></a><tt class="py-lineno">281</tt>  <tt class="py-line">    <tt class="py-string">"V"</tt><tt class="py-op">:</tt> <tt class="py-string">"V"</tt><tt class="py-op">,</tt> </tt>
+<a name="L282"></a><tt class="py-lineno">282</tt>  <tt class="py-line">    <tt class="py-string">"W"</tt><tt class="py-op">:</tt> <tt class="py-string">"W"</tt><tt class="py-op">,</tt> </tt>
+<a name="L283"></a><tt class="py-lineno">283</tt>  <tt class="py-line">    <tt class="py-string">"X"</tt><tt class="py-op">:</tt> <tt class="py-string">"ACDEFGHIKLMNPQRSTVWY"</tt><tt class="py-op">,</tt> </tt>
+<a name="L284"></a><tt class="py-lineno">284</tt>  <tt class="py-line">    <tt class="py-string">"Y"</tt><tt class="py-op">:</tt> <tt class="py-string">"Y"</tt><tt class="py-op">,</tt> </tt>
+<a name="L285"></a><tt class="py-lineno">285</tt>  <tt class="py-line">    <tt class="py-string">"Z"</tt><tt class="py-op">:</tt> <tt class="py-string">"QE"</tt><tt class="py-op">,</tt> </tt>
+<a name="L286"></a><tt class="py-lineno">286</tt>  <tt class="py-line">    <tt class="py-string">"J"</tt><tt class="py-op">:</tt> <tt class="py-string">"IL"</tt><tt class="py-op">,</tt> </tt>
+<a name="L287"></a><tt class="py-lineno">287</tt>  <tt class="py-line">    <tt class="py-string">'U'</tt><tt class="py-op">:</tt> <tt class="py-string">'U'</tt><tt class="py-op">,</tt> </tt>
+<a name="L288"></a><tt class="py-lineno">288</tt>  <tt class="py-line">    <tt class="py-string">'O'</tt><tt class="py-op">:</tt> <tt class="py-string">'O'</tt><tt class="py-op">,</tt> </tt>
+<a name="L289"></a><tt class="py-lineno">289</tt>  <tt class="py-line"><tt class="py-op">}</tt> </tt>
+<a name="L290"></a><tt class="py-lineno">290</tt>  <tt class="py-line"> </tt>
+<a name="L291"></a><tt class="py-lineno">291</tt>  <tt class="py-line"> </tt>
+<a name="L292"></a><tt class="py-lineno">292</tt>  <tt class="py-line"><tt class="py-comment"># Monomer isotopically averaged molecular mass </tt> </tt>
+<a name="L293"></a><tt class="py-lineno">293</tt>  <tt class="py-line"><tt class="py-comment"># Data Checked GEC Nov 2006</tt> </tt>
+<a name="L294"></a><tt class="py-lineno">294</tt>  <tt class="py-line"><tt id="link-27" class="py-name" targets="Variable corebio.data.amino_acid_mass=corebio.data-module.html#amino_acid_mass"><a title="corebio.data.amino_acid_mass" class="py-name" href="#" onclick="return doclink('link-27', 'amino_acid_mass', 'link-27');">amino_acid_mass</a></tt> <tt class="py-op">=</tt> <tt class="py-op">{</tt> </tt>
+<a name="L295"></a><tt class="py-lineno">295</tt>  <tt class="py-line">    <tt class="py-string">"A"</tt><tt class="py-op">:</tt> <tt class="py-number">89.09</tt><tt class="py-op">,</tt> </tt>
+<a name="L296"></a><tt class="py-lineno">296</tt>  <tt class="py-line">    <tt class="py-string">"B"</tt> <tt class="py-op">:</tt> <tt class="py-number">132.66</tt><tt class="py-op">,</tt>  <tt class="py-comment"># Averaged proportional to amino_acid_composition</tt> </tt>
+<a name="L297"></a><tt class="py-lineno">297</tt>  <tt class="py-line">    <tt class="py-string">"C"</tt><tt class="py-op">:</tt> <tt class="py-number">121.16</tt><tt class="py-op">,</tt> </tt>
+<a name="L298"></a><tt class="py-lineno">298</tt>  <tt class="py-line">    <tt class="py-string">"D"</tt><tt class="py-op">:</tt> <tt class="py-number">133.10</tt><tt class="py-op">,</tt> </tt>
+<a name="L299"></a><tt class="py-lineno">299</tt>  <tt class="py-line">    <tt class="py-string">"E"</tt><tt class="py-op">:</tt> <tt class="py-number">147.13</tt><tt class="py-op">,</tt> </tt>
+<a name="L300"></a><tt class="py-lineno">300</tt>  <tt class="py-line">    <tt class="py-string">"F"</tt><tt class="py-op">:</tt> <tt class="py-number">165.19</tt><tt class="py-op">,</tt> </tt>
+<a name="L301"></a><tt class="py-lineno">301</tt>  <tt class="py-line">    <tt class="py-string">"G"</tt><tt class="py-op">:</tt> <tt class="py-number">75.07</tt><tt class="py-op">,</tt> </tt>
+<a name="L302"></a><tt class="py-lineno">302</tt>  <tt class="py-line">    <tt class="py-string">"H"</tt><tt class="py-op">:</tt> <tt class="py-number">155.16</tt><tt class="py-op">,</tt>  </tt>
+<a name="L303"></a><tt class="py-lineno">303</tt>  <tt class="py-line">    <tt class="py-string">"I"</tt><tt class="py-op">:</tt> <tt class="py-number">131.18</tt><tt class="py-op">,</tt> </tt>
+<a name="L304"></a><tt class="py-lineno">304</tt>  <tt class="py-line">    <tt class="py-string">"J"</tt><tt class="py-op">:</tt> <tt class="py-number">131.18</tt><tt class="py-op">,</tt> </tt>
+<a name="L305"></a><tt class="py-lineno">305</tt>  <tt class="py-line">    <tt class="py-string">"K"</tt><tt class="py-op">:</tt> <tt class="py-number">146.19</tt><tt class="py-op">,</tt> </tt>
+<a name="L306"></a><tt class="py-lineno">306</tt>  <tt class="py-line">    <tt class="py-string">"L"</tt><tt class="py-op">:</tt> <tt class="py-number">131.18</tt><tt class="py-op">,</tt> </tt>
+<a name="L307"></a><tt class="py-lineno">307</tt>  <tt class="py-line">    <tt class="py-string">"M"</tt><tt class="py-op">:</tt> <tt class="py-number">149.21</tt><tt class="py-op">,</tt> </tt>
+<a name="L308"></a><tt class="py-lineno">308</tt>  <tt class="py-line">    <tt class="py-string">"N"</tt><tt class="py-op">:</tt> <tt class="py-number">132.12</tt><tt class="py-op">,</tt> </tt>
+<a name="L309"></a><tt class="py-lineno">309</tt>  <tt class="py-line">    <tt class="py-comment"># "O" : ???, # TODO</tt> </tt>
+<a name="L310"></a><tt class="py-lineno">310</tt>  <tt class="py-line">    <tt class="py-string">"P"</tt><tt class="py-op">:</tt> <tt class="py-number">115.13</tt><tt class="py-op">,</tt> </tt>
+<a name="L311"></a><tt class="py-lineno">311</tt>  <tt class="py-line">    <tt class="py-string">"Q"</tt><tt class="py-op">:</tt> <tt class="py-number">146.15</tt><tt class="py-op">,</tt> </tt>
+<a name="L312"></a><tt class="py-lineno">312</tt>  <tt class="py-line">    <tt class="py-string">"R"</tt><tt class="py-op">:</tt> <tt class="py-number">174.20</tt><tt class="py-op">,</tt> </tt>
+<a name="L313"></a><tt class="py-lineno">313</tt>  <tt class="py-line">    <tt class="py-string">"S"</tt><tt class="py-op">:</tt> <tt class="py-number">105.09</tt><tt class="py-op">,</tt> </tt>
+<a name="L314"></a><tt class="py-lineno">314</tt>  <tt class="py-line">    <tt class="py-string">"T"</tt><tt class="py-op">:</tt> <tt class="py-number">119.12</tt><tt class="py-op">,</tt> </tt>
+<a name="L315"></a><tt class="py-lineno">315</tt>  <tt class="py-line">    <tt class="py-string">"U"</tt> <tt class="py-op">:</tt> <tt class="py-number">168.05</tt><tt class="py-op">,</tt> </tt>
+<a name="L316"></a><tt class="py-lineno">316</tt>  <tt class="py-line">    <tt class="py-string">"V"</tt><tt class="py-op">:</tt> <tt class="py-number">117.15</tt><tt class="py-op">,</tt> </tt>
+<a name="L317"></a><tt class="py-lineno">317</tt>  <tt class="py-line">    <tt class="py-string">"W"</tt><tt class="py-op">:</tt> <tt class="py-number">204.23</tt><tt class="py-op">,</tt> </tt>
+<a name="L318"></a><tt class="py-lineno">318</tt>  <tt class="py-line">    <tt class="py-string">"X"</tt> <tt class="py-op">:</tt> <tt class="py-number">129.15</tt><tt class="py-op">,</tt> <tt class="py-comment"># Averaged proportional to amino_acid_composition  </tt> </tt>
+<a name="L319"></a><tt class="py-lineno">319</tt>  <tt class="py-line">    <tt class="py-string">"Y"</tt><tt class="py-op">:</tt> <tt class="py-number">181.19</tt><tt class="py-op">,</tt> </tt>
+<a name="L320"></a><tt class="py-lineno">320</tt>  <tt class="py-line">    <tt class="py-string">"Z"</tt> <tt class="py-op">:</tt> <tt class="py-number">146.76</tt><tt class="py-op">,</tt> <tt class="py-comment"># Averaged proportional to amino_acid_composition    </tt> </tt>
+<a name="L321"></a><tt class="py-lineno">321</tt>  <tt class="py-line">    <tt class="py-op">}</tt> </tt>
+<a name="L322"></a><tt class="py-lineno">322</tt>  <tt class="py-line">     </tt>
+<a name="L323"></a><tt class="py-lineno">323</tt>  <tt class="py-line"><tt id="link-28" class="py-name" targets="Variable corebio.data.dna_mass=corebio.data-module.html#dna_mass"><a title="corebio.data.dna_mass" class="py-name" href="#" onclick="return doclink('link-28', 'dna_mass', 'link-28');">dna_mass</a></tt> <tt class="py-op">=</tt> <tt class="py-op">{</tt> </tt>
+<a name="L324"></a><tt class="py-lineno">324</tt>  <tt class="py-line">    <tt class="py-string">"A"</tt><tt class="py-op">:</tt> <tt class="py-number">347.</tt><tt class="py-op">,</tt> </tt>
+<a name="L325"></a><tt class="py-lineno">325</tt>  <tt class="py-line">    <tt class="py-string">"C"</tt><tt class="py-op">:</tt> <tt class="py-number">323.</tt><tt class="py-op">,</tt> </tt>
+<a name="L326"></a><tt class="py-lineno">326</tt>  <tt class="py-line">    <tt class="py-string">"G"</tt><tt class="py-op">:</tt> <tt class="py-number">363.</tt><tt class="py-op">,</tt> </tt>
+<a name="L327"></a><tt class="py-lineno">327</tt>  <tt class="py-line">    <tt class="py-string">"T"</tt><tt class="py-op">:</tt> <tt class="py-number">322.</tt><tt class="py-op">,</tt> </tt>
+<a name="L328"></a><tt class="py-lineno">328</tt>  <tt class="py-line">    <tt class="py-op">}</tt> </tt>
+<a name="L329"></a><tt class="py-lineno">329</tt>  <tt class="py-line"> </tt>
+<a name="L330"></a><tt class="py-lineno">330</tt>  <tt class="py-line"><tt id="link-29" class="py-name" targets="Variable corebio.data.rna_mass=corebio.data-module.html#rna_mass"><a title="corebio.data.rna_mass" class="py-name" href="#" onclick="return doclink('link-29', 'rna_mass', 'link-29');">rna_mass</a></tt> <tt class="py-op">=</tt> <tt class="py-op">{</tt> </tt>
+<a name="L331"></a><tt class="py-lineno">331</tt>  <tt class="py-line">    <tt class="py-string">"A"</tt><tt class="py-op">:</tt> <tt class="py-number">363.</tt><tt class="py-op">,</tt> </tt>
+<a name="L332"></a><tt class="py-lineno">332</tt>  <tt class="py-line">    <tt class="py-string">"C"</tt><tt class="py-op">:</tt> <tt class="py-number">319.</tt><tt class="py-op">,</tt> </tt>
+<a name="L333"></a><tt class="py-lineno">333</tt>  <tt class="py-line">    <tt class="py-string">"G"</tt><tt class="py-op">:</tt> <tt class="py-number">379.</tt><tt class="py-op">,</tt> </tt>
+<a name="L334"></a><tt class="py-lineno">334</tt>  <tt class="py-line">    <tt class="py-string">"U"</tt><tt class="py-op">:</tt> <tt class="py-number">340.</tt><tt class="py-op">,</tt> </tt>
+<a name="L335"></a><tt class="py-lineno">335</tt>  <tt class="py-line"><tt class="py-op">}</tt> </tt>
+<a name="L336"></a><tt class="py-lineno">336</tt>  <tt class="py-line"> </tt>
+<a name="L337"></a><tt class="py-lineno">337</tt>  <tt class="py-line"><tt id="link-30" class="py-name" targets="Variable corebio.data.one_to_three=corebio.data-module.html#one_to_three"><a title="corebio.data.one_to_three" class="py-name" href="#" onclick="return doclink('link-30', 'one_to_three', 'link-30');">one_to_three</a></tt> <tt class="py-op">=</tt> <tt class="py-op">{</tt> </tt>
+<a name="L338"></a><tt class="py-lineno">338</tt>  <tt class="py-line">    <tt class="py-string">'A'</tt><tt class="py-op">:</tt><tt class="py-string">'Ala'</tt><tt class="py-op">,</tt> <tt class="py-string">'B'</tt><tt class="py-op">:</tt><tt class="py-string">'Asx'</tt><tt class="py-op">,</tt> <tt class="py-string">'C'</tt><tt class="py-op">:</tt><tt class="py-string">'Cys'</tt><tt class="py-op">,</tt> <tt class="py-string">'D'</tt><tt class="py-op">:</tt><tt class="py-string">'Asp'</tt><tt class="py-op">,</tt> </tt>
+<a name="L339"></a><tt class="py-lineno">339</tt>  <tt class="py-line">    <tt class="py-string">'E'</tt><tt class="py-op">:</tt><tt class="py-string">'Glu'</tt><tt class="py-op">,</tt> <tt class="py-string">'F'</tt><tt class="py-op">:</tt><tt class="py-string">'Phe'</tt><tt class="py-op">,</tt> <tt class="py-string">'G'</tt><tt class="py-op">:</tt><tt class="py-string">'Gly'</tt><tt class="py-op">,</tt> <tt class="py-string">'H'</tt><tt class="py-op">:</tt><tt class="py-string">'His'</tt><tt class="py-op">,</tt> </tt>
+<a name="L340"></a><tt class="py-lineno">340</tt>  <tt class="py-line">    <tt class="py-string">'I'</tt><tt class="py-op">:</tt><tt class="py-string">'Ile'</tt><tt class="py-op">,</tt> <tt class="py-string">'K'</tt><tt class="py-op">:</tt><tt class="py-string">'Lys'</tt><tt class="py-op">,</tt> <tt class="py-string">'L'</tt><tt class="py-op">:</tt><tt class="py-string">'Leu'</tt><tt class="py-op">,</tt> <tt class="py-string">'M'</tt><tt class="py-op">:</tt><tt class="py-string">'Met'</tt><tt class="py-op">,</tt> </tt>
+<a name="L341"></a><tt class="py-lineno">341</tt>  <tt class="py-line">    <tt class="py-string">'N'</tt><tt class="py-op">:</tt><tt class="py-string">'Asn'</tt><tt class="py-op">,</tt> <tt class="py-string">'P'</tt><tt class="py-op">:</tt><tt class="py-string">'Pro'</tt><tt class="py-op">,</tt> <tt class="py-string">'Q'</tt><tt class="py-op">:</tt><tt class="py-string">'Gln'</tt><tt class="py-op">,</tt> <tt class="py-string">'R'</tt><tt class="py-op">:</tt><tt class="py-string">'Arg'</tt><tt class="py-op">,</tt> </tt>
+<a name="L342"></a><tt class="py-lineno">342</tt>  <tt class="py-line">    <tt class="py-string">'S'</tt><tt class="py-op">:</tt><tt class="py-string">'Ser'</tt><tt class="py-op">,</tt> <tt class="py-string">'T'</tt><tt class="py-op">:</tt><tt class="py-string">'Thr'</tt><tt class="py-op">,</tt> <tt class="py-string">'V'</tt><tt class="py-op">:</tt><tt class="py-string">'Val'</tt><tt class="py-op">,</tt> <tt class="py-string">'W'</tt><tt class="py-op">:</tt><tt class="py-string">'Trp'</tt><tt class="py-op">,</tt> </tt>
+<a name="L343"></a><tt class="py-lineno">343</tt>  <tt class="py-line">    <tt class="py-string">'Y'</tt><tt class="py-op">:</tt><tt class="py-string">'Tyr'</tt><tt class="py-op">,</tt> <tt class="py-string">'Z'</tt><tt class="py-op">:</tt><tt class="py-string">'Glx'</tt><tt class="py-op">,</tt> <tt class="py-string">'X'</tt><tt class="py-op">:</tt><tt class="py-string">'Xaa'</tt><tt class="py-op">,</tt>  </tt>
+<a name="L344"></a><tt class="py-lineno">344</tt>  <tt class="py-line">    <tt class="py-string">'U'</tt><tt class="py-op">:</tt><tt class="py-string">'Sec'</tt><tt class="py-op">,</tt> <tt class="py-string">'J'</tt><tt class="py-op">:</tt><tt class="py-string">'Xle'</tt><tt class="py-op">,</tt> <tt class="py-string">'O'</tt><tt class="py-op">:</tt><tt class="py-string">'Pyl'</tt> </tt>
+<a name="L345"></a><tt class="py-lineno">345</tt>  <tt class="py-line">    <tt class="py-op">}</tt> </tt>
+<a name="L346"></a><tt class="py-lineno">346</tt>  <tt class="py-line"> </tt>
+<a name="L347"></a><tt class="py-lineno">347</tt>  <tt class="py-line"> </tt>
+<a name="L348"></a><tt class="py-lineno">348</tt>  <tt class="py-line"><tt id="link-31" class="py-name" targets="Variable corebio.data.standard_three_to_one=corebio.data-module.html#standard_three_to_one"><a title="corebio.data.standard_three_to_one" class="py-name" href="#" onclick="return doclink('link-31', 'standard_three_to_one', 'link-31');">standard_three_to_one</a></tt> <tt class="py-op">=</tt> <tt id="link-32" class="py-name"><a title="corebio.utils" class="py-name" href="#" onclick="return doclink('link-32', 'utils', 'link-1');">utils</a></tt><tt class="py-op">.</tt><tt id="link-33" class="py-name" targets="Function corebio.utils.invert_dict()=corebio.utils-module.html#invert_dict"><a title="corebio.utils.invert_dict" class="py-name" href="#" onclick="return doclink('link-33', 'invert_dict', 'link-33');">invert_dict</a></tt><tt class="py-op">(</tt><tt id="link-34" class="py-name"><a title="corebio.data.one_to_three" class="py-name" href="#" onclick="return doclink('link-34', 'one_to_three', 'link-30');">one_to_three</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L349"></a><tt class="py-lineno">349</tt>  <tt class="py-line"> </tt>
+<a name="L350"></a><tt class="py-lineno">350</tt>  <tt class="py-line"><tt id="link-35" class="py-name" targets="Variable corebio.data.extended_three_to_one=corebio.data-module.html#extended_three_to_one"><a title="corebio.data.extended_three_to_one" class="py-name" href="#" onclick="return doclink('link-35', 'extended_three_to_one', 'link-35');">extended_three_to_one</a></tt><tt class="py-op">=</tt> <tt class="py-op">{</tt> </tt>
+<a name="L351"></a><tt class="py-lineno">351</tt>  <tt class="py-line"><tt class="py-string">'2as'</tt><tt class="py-op">:</tt><tt class="py-string">'D'</tt><tt class="py-op">,</tt> <tt class="py-string">'3ah'</tt><tt class="py-op">:</tt><tt class="py-string">'H'</tt><tt class="py-op">,</tt> <tt class="py-string">'5hp'</tt><tt class="py-op">:</tt><tt class="py-string">'E'</tt><tt class="py-op">,</tt> <tt class="py-string">'Acl'</tt><tt class="py-op">:</tt><tt class="py-string">'R'</tt><tt class="py-op">,</tt> <tt class="py-string">'Agm'</tt><tt class="py-op">:</tt><tt class="py-string">'R'</tt><tt class="py-op">,</tt> <tt class="py-string">'Aib'</tt><tt class="py-op">:</tt><tt class="py-string">'A'</tt><tt class="py-op">,</tt> <tt class="py-string">'Ala'</tt><tt class="py-op">:</tt><tt class="py-string">'A'</tt><tt class="py-op">,</tt> <tt class="py-string">'Alm'</tt><tt class="py-op">:</tt><tt class="py-string">'A'</tt><tt class="py-op">,</tt> <tt class="py-string">'Alo'</tt><tt class="py-op">:</tt><tt class="py-string">'T'</tt><tt class="py-op">,</tt> <tt class="py-string">'Aly'</tt><tt class="py-op">:</tt><tt class="py-string">'K'</tt><tt class="py-op">,</tt> <tt class="py-string">'Arg'</tt><tt class="py-op">:</tt><tt class="py-string">'R'</tt><tt class="py-op">,</tt> <tt class="py-string">'Arm'</tt><tt class="py-op">:</tt><tt class="py-string">'R'</tt><tt class="py-op">,</tt> <tt class="py-string">'Asa'</tt><tt class="py-op">:</tt><tt class="py-string">'D'</tt><tt class="py-op">,</tt> <tt class="py-string">'Asb'</tt><tt class="py-op">:</tt><tt class="py-string">'D'</tt><tt class="py-op">,</tt> <tt class="py-string">'Ask'</tt><tt class="py-op">:</tt><tt class="py-string">'D'</tt><tt class="py-op">,</tt> <tt class="py-string">'Asl'</tt><tt class="py-op">:</tt><tt class="py-string">'D'</tt><tt class="py-op">,</tt> <tt class="py-string">'Asn'</tt><tt class="py-op">:</tt><tt class="py-string">'N'</tt><tt class="py-op">,</tt> <tt class="py-string">'Asp'</tt><tt class="py-op">:</tt><tt class="py-string">'D'</tt><tt class="py-op">,</tt> <tt class="py-string">'Asq'</tt><tt class="py-op">:</tt><tt class="py-string">'D'</tt><tt class="py-op">,</tt> <tt class="py-string">'Asx'</tt><tt class="py-op">:</tt><tt class="py-string">'B'</tt><tt class="py-op">,</tt> <tt class="py-string">'Aya'</tt><tt class="py-op">:</tt><tt class="py-string">'A'</tt><tt class="py-op">,</tt> <tt class="py-string">'Bcs'</tt><tt class="py-op">:</tt><tt class="py-string">'C'</tt><tt class="py-op">,</tt> <tt class="py-string">'Bhd'</tt><tt class="py-op">:</tt><tt class="py-string">'D'</tt><tt class="py-op">,</tt> <tt class="py-string">'Bmt'</tt><tt class="py-op">:</tt><tt class="py-string">'T'</tt><tt class="py-op">,</tt> <tt class="py-string">'Bnn'</tt><tt class="py-op">:</tt><tt class="py-string">'A'</tt><tt class="py-op">,</tt> <tt class="py-string">'Buc'</tt><tt class="py-op">:</tt><tt class="py-string">'C'</tt><tt class="py-op">,</tt> <tt class="py-string">'Bug'</tt><tt class="py-op">:</tt><tt class="py-string">'L'</tt><tt class="py-op">,</tt> <tt class="py-string">'C5c'</tt><tt class="py-op">:</tt><tt class="py-string">'C'</tt><tt class="py-op">,</tt> <tt class="py-string">'C6c'</tt><tt class="py-op">:</tt><tt class="py-string">'C'</tt><tt class="py-op">,</tt> <tt class="py-string">'Ccs'</tt><tt class="py-op">:</tt><tt class="py-string">'C'</tt><tt class="py-op">,</tt> <tt class="py-string">'Cea'</tt><tt class="py-op">:</tt><tt class="py-string">'C'</tt><tt class="py-op">,</tt> <tt class="py-string">'Cgu'</tt><tt class="py-op">:</tt><tt class="py-string">'E'</tt><tt class="py-op">,</tt> <tt class="py-string">'Chg'</tt><tt class="py-op">:</tt><tt class="py-string">'A'</tt><tt class="py-op">,</tt> <tt class="py-string">'Cle'</tt><tt class="py-op">:</tt><tt class="py-string">'L'</tt><tt class="py-op">,</tt> <tt class="py-string">'Cme'</tt><tt class="py-op">:</tt><tt class="py-string">'C'</tt><tt class="py-op">,</tt> <tt class="py-string">'Csd'</tt><tt class="py-op">:</tt><tt class="py-string">'A'</tt><tt class="py-op">,</tt> <tt class="py-string">'Cso'</tt><tt class="py-op">:</tt><tt class="py-string">'C'</tt><tt class="py-op">,</tt> <tt class="py-string">'Csp'</tt><tt class="py-op">:</tt><tt class="py-string">'C'</tt><tt class="py-op">,</tt> <tt class="py-string">'Css'</tt><tt class="py-op">:</tt><tt class="py-string">'C'</tt><tt class="py-op">,</tt> <tt class="py-string">'Csw'</tt><tt class="py-op">:</tt><tt class="py-string">'C'</tt><tt class="py-op">,</tt> <tt class="py-string">'Csx'</tt><tt class="py-op">:</tt><tt class="py-string">'C'</tt><tt class="py-op">,</tt> <tt class="py-string">'Cxm'</tt><tt class="py-op">:</tt><tt class="py-string">'M'</tt><tt class="py-op">,</tt> <tt class="py-string">'Cy1'</tt><tt class="py-op">:</tt><tt class="py-string">'C'</tt><tt class="py-op">,</tt> <tt class="py-string">'Cy3'</tt><tt class="py-op">:</tt><tt class="py-string">'C'</tt><tt class="py-op">,</tt> <tt class="py-string">'Cyg'</tt><tt class="py-op">:</tt><tt class="py-string">'C'</tt><tt class="py-op">,</tt> <tt class="py-string">'Cym'</tt><tt class="py-op">:</tt><tt class="py-string">'C'</tt><tt class="py-op">,</tt> <tt class="py-string">'Cyq'</tt><tt class="py-op">:</tt><tt class="py-string">'C'</tt><tt class="py-op">,</tt> <tt class="py-string">'Cys'</tt><tt class="py-op">:</tt><tt class="py-string">'C'</tt><tt class="py-op">,</tt> <tt class="py-string">'Dah'</tt><tt class="py-op">:</tt><tt class="py-string">'F'</tt><tt class="py-op">,</tt> <tt class="py-string">'Dal'</tt><tt class="py-op">:</tt><tt class="py-string">'A'</tt><tt class="py-op">,</tt> <tt class="py-string">'Dar'</tt><tt class="py-op">:</tt><tt class="py-string">'R'</tt><tt class="py-op">,</tt> <tt class="py-string">'Das'</tt><tt class="py-op">:</tt><tt class="py-string">'D'</tt><tt class="py-op">,</tt> <tt class="py-string">'Dcy'</tt><tt class="py-op">:</tt><tt class="py-string">'C'</tt><tt class="py-op">,</tt> <tt class="py-string">'Dgl'</tt><tt class="py-op">:</tt><tt class="py-string">'E'</tt><tt class="py-op">,</tt> <tt class="py-string">'Dgn'</tt><tt class="py-op">:</tt><tt class="py-string">'Q'</tt><tt class="py-op">,</tt> <tt class="py-string">'Dha'</tt><tt class="py-op">:</tt><tt class="py-string">'A'</tt><tt class="py-op">,</tt> <tt class="py-string">'Dhi'</tt><tt class="py-op">:</tt><tt class="py-string">'H'</tt><tt class="py-op">,</tt> <tt class="py-string">'Dil'</tt><tt class="py-op">:</tt><tt class="py-string">'I'</tt><tt class="py-op">,</tt> <tt class="py-string">'Div'</tt><tt class="py-op">:</tt><tt class="py-string">'V'</tt><tt class="py-op">,</tt> <tt class="py-string">'Dle'</tt><tt class="py-op">:</tt><tt class="py-string">'L'</tt><tt class="py-op">,</tt> <tt class="py-string">'Dly'</tt><tt class="py-op">:</tt><tt class="py-string">'K'</tt><tt class="py-op">,</tt> <tt class="py-string">'Dnp'</tt><tt class="py-op">:</tt><tt class="py-string">'A'</tt><tt class="py-op">,</tt> <tt class="py-string">'Dpn'</tt><tt class="py-op">:</tt><tt class="py-string">'F'</tt><tt class="py-op">,</tt> <tt class="py-string">'Dpr'</tt><tt class="py-op">:</tt><tt class="py-string">'P'</tt><tt class="py-op">,</tt> <tt class="py-string">'Dsn'</tt><tt class="py-op">:</tt><tt class="py-string">'S'</tt><tt class="py-op">,</tt> <tt class="py-string">'Dsp'</tt><tt class="py-op">:</tt><tt class="py-string">'D'</tt><tt class="py-op">,</tt> <tt class="py-string">'Dth'</tt><tt class="py-op">:</tt><tt class="py-string">'T'</tt><tt class="py-op">,</tt> <tt class="py-string">'Dtr'</tt><tt class="py-op">:</tt><tt class="py-string">'W'</tt><tt class="py-op">,</tt> <tt class="py-string">'Dty'</tt><tt class="py-op">:</tt><tt class="py-string">'Y'</tt><tt class="py-op">,</tt> <tt class="py-string">'Dva'</tt><tt class="py-op">:</tt><tt class="py-string">'V'</tt><tt class="py-op">,</tt> <tt class="py-string">'Efc'</tt><tt class="py-op">:</tt><tt class="py-string">'C'</tt><tt class="py-op">,</tt> <tt class="py-string">'Fla'</tt><tt class="py-op">:</tt><tt class="py-string">'A'</tt><tt class="py-op">,</tt> <tt class="py-string">'Fme'</tt><tt class="py-op">:</tt><tt class="py-string">'M'</tt><tt class="py-op">,</tt> <tt class="py-string">'Ggl'</tt><tt class="py-op">:</tt><tt class="py-string">'E'</tt><tt class="py-op">,</tt> <tt class="py-string">'Gl3'</tt><tt class="py-op">:</tt><tt class="py-string">'G'</tt><tt class="py-op">,</tt> <tt class="py-string">'Gln'</tt><tt class="py-op">:</tt><tt class="py-string">'Q'</tt><tt class="py-op">,</tt> <tt class="py-string">'Glu'</tt><tt class="py-op">:</tt><tt class="py-string">'E'</tt><tt class="py-op">,</tt> <tt class="py-string">'Glx'</tt><tt class="py-op">:</tt><tt class="py-string">'Z'</tt><tt class="py-op">,</tt> <tt class="py-string">'Gly'</tt><tt class="py-op">:</tt><tt class="py-string">'G'</tt><tt class="py-op">,</tt> <tt class="py-string">'Glz'</tt><tt class="py-op">:</tt><tt class="py-string">'G'</tt><tt class="py-op">,</tt> <tt class="py-string">'Gma'</tt><tt class="py-op">:</tt><tt class="py-string">'E'</tt><tt class="py-op">,</tt> <tt class="py-string">'Gsc'</tt><tt class="py-op">:</tt><tt class="py-string">'G'</tt><tt class="py-op">,</tt> <tt class="py-string">'Hac'</tt><tt class="py-op">:</tt><tt class="py-string">'A'</tt><tt class="py-op">,</tt> <tt class="py-string">'Har'</tt><tt class="py-op">:</tt><tt class="py-string">'R'</tt><tt class="py-op">,</tt> <tt class="py-string">'Hic'</tt><tt class="py-op">:</tt><tt class="py-string">'H'</tt><tt class="py-op">,</tt> <tt class="py-string">'Hip'</tt><tt class="py-op">:</tt><tt class="py-string">'H'</tt><tt class="py-op">,</tt> <tt class="py-string">'His'</tt><tt class="py-op">:</tt><tt class="py-string">'H'</tt><tt class="py-op">,</tt> <tt class="py-string">'Hmr'</tt><tt class="py-op">:</tt><tt class="py-string">'R'</tt><tt class="py-op">,</tt> <tt class="py-string">'Hpq'</tt><tt class="py-op">:</tt><tt class="py-string">'F'</tt><tt class="py-op">,</tt> <tt class="py-string">'Htr'</tt><tt class="py-op">:</tt><tt class="py-string">'W'</tt><tt class="py-op">,</tt> <tt class="py-string">'Hyp'</tt><tt class="py-op">:</tt><tt class="py-string">'P'</tt><tt class="py-op">,</tt> <tt class="py-string">'Iil'</tt><tt class="py-op">:</tt><tt class="py-string">'I'</tt><tt class="py-op">,</tt> <tt class="py-string">'Ile'</tt><tt class="py-op">:</tt><tt class="py-string">'I'</tt><tt class="py-op">,</tt> <tt class="py-string">'Iyr'</tt><tt class="py-op">:</tt><tt class="py-string">'Y'</tt><tt class="py-op">,</tt> <tt class="py-string">'Kcx'</tt><tt class="py-op">:</tt><tt class="py-string">'K'</tt><tt class="py-op">,</tt> <tt class="py-string">'Leu'</tt><tt class="py-op">:</tt><tt class="py-string">'L'</tt><tt class="py-op">,</tt> <tt class="py-string">'Llp'</tt><tt class="py-op">:</tt><tt class="py-string">'K'</tt><tt class="py-op">,</tt> <tt class="py-string">'Lly'</tt><tt class="py-op">:</tt><tt class="py-string">'K'</tt><tt class="py-op">,</tt> <tt class="py-string">'Ltr'</tt><tt class="py-op">:</tt><tt class="py-string">'W'</tt><tt class="py-op">,</tt> <tt class="py-string">'Lym'</tt><tt class="py-op">:</tt><tt class="py-string">'K'</tt><tt class="py-op">,</tt> <tt class="py-string">'Lys'</tt><tt class="py-op">:</tt><tt class="py-string">'K'</tt><tt class="py-op">,</tt> <tt class="py-string">'Lyz'</tt><tt class="py-op">:</tt><tt class="py-string">'K'</tt><tt class="py-op">,</tt> <tt class="py-string">'Maa'</tt><tt class="py-op">:</tt><tt class="py-string">'A'</tt><tt class="py-op">,</tt> <tt class="py-string">'Men'</tt><tt class="py-op">:</tt><tt class="py-string">'N'</tt><tt class="py-op">,</tt> <tt class="py-string">'Met'</tt><tt class="py-op">:</tt><tt class="py-string">'M'</tt><tt class="py-op">,</tt> <tt class="py-string">'Mhs'</tt><tt class="py-op">:</tt><tt class="py-string">'H'</tt><tt class="py-op">,</tt> <tt class="py-string">'Mis'</tt><tt class="py-op">:</tt><tt class="py-string">'S'</tt><tt class="py-op">,</tt> <tt class="py-string">'Mle'</tt><tt class="py-op">:</tt><tt class="py-string">'L'</tt><tt class="py-op">,</tt> <tt class="py-string">'Mpq'</tt><tt class="py-op">:</tt><tt class="py-string">'G'</tt><tt class="py-op">,</tt> <tt class="py-string">'Msa'</tt><tt class="py-op">:</tt><tt class="py-string">'G'</tt><tt class="py-op">,</tt> <tt class="py-string">'Mse'</tt><tt class="py-op">:</tt><tt class="py-string">'M'</tt><tt class="py-op">,</tt> <tt class="py-string">'Mva'</tt><tt class="py-op">:</tt><tt class="py-string">'V'</tt><tt class="py-op">,</tt> <tt class="py-string">'Nem'</tt><tt class="py-op">:</tt><tt class="py-string">'H'</tt><tt class="py-op">,</tt> <tt class="py-string">'Nep'</tt><tt class="py-op">:</tt><tt class="py-string">'H'</tt><tt class="py-op">,</tt> <tt class="py-string">'Nle'</tt><tt class="py-op">:</tt><tt class="py-string">'L'</tt><tt class="py-op">,</tt> <tt class="py-string">'Nln'</tt><tt class="py-op">:</tt><tt class="py-string">'L'</tt><tt class="py-op">,</tt> <tt class="py-string">'Nlp'</tt><tt class="py-op">:</tt><tt class="py-string">'L'</tt><tt class="py-op">,</tt> <tt class="py-string">'Nmc'</tt><tt class="py-op">:</tt><tt class="py-string">'G'</tt><tt class="py-op">,</tt> <tt class="py-string">'Oas'</tt><tt class="py-op">:</tt><tt class="py-string">'S'</tt><tt class="py-op">,</tt> <tt class="py-string">'Ocs'</tt><tt class="py-op">:</tt><tt class="py-string">'C'</tt><tt class="py-op">,</tt> <tt class="py-string">'Omt'</tt><tt class="py-op">:</tt><tt class="py-string">'M'</tt><tt class="py-op">,</tt> <tt class="py-string">'Paq'</tt><tt class="py-op">:</tt><tt class="py-string">'Y'</tt><tt class="py-op">,</tt> <tt class="py-string">'Pca'</tt><tt class="py-op">:</tt><tt class="py-string">'E'</tt><tt class="py-op">,</tt> <tt class="py-string">'Pec'</tt><tt class="py-op">:</tt><tt class="py-string">'C'</tt><tt class="py-op">,</tt> <tt class="py-string">'Phe'</tt><tt class="py-op">:</tt><tt class="py-string">'F'</tt><tt class="py-op">,</tt> <tt class="py-string">'Phi'</tt><tt class="py-op">:</tt><tt class="py-string">'F'</tt><tt class="py-op">,</tt> <tt class="py-string">'Phl'</tt><tt class="py-op">:</tt><tt class="py-string">'F'</tt><tt class="py-op">,</tt> <tt class="py-string">'Pr3'</tt><tt class="py-op">:</tt><tt class="py-string">'C'</tt><tt class="py-op">,</tt> <tt class="py-string">'Pro'</tt><tt class="py-op">:</tt><tt class="py-string">'P'</tt><tt class="py-op">,</tt> <tt class="py-string">'Prr'</tt><tt class="py-op">:</tt><tt class="py-string">'A'</tt><tt class="py-op">,</tt> <tt class="py-string">'Ptr'</tt><tt class="py-op">:</tt><tt class="py-string">'Y'</tt><tt class="py-op">,</tt> <tt class="py-string">'Pyl'</tt><tt class="py-op">:</tt><tt class="py-string">'O'</tt><tt class="py-op">,</tt> <tt class="py-string">'Sac'</tt><tt class="py-op">:</tt><tt class="py-string">'S'</tt><tt class="py-op">,</tt> <tt class="py-string">'Sar'</tt><tt class="py-op">:</tt><tt class="py-string">'G'</tt><tt class="py-op">,</tt> <tt class="py-string">'Sch'</tt><tt class="py-op">:</tt><tt class="py-string">'C'</tt><tt class="py-op">,</tt> <tt class="py-string">'Scs'</tt><tt class="py-op">:</tt><tt class="py-string">'C'</tt><tt class="py-op">,</tt> <tt class="py-string">'Scy'</tt><tt class="py-op">:</tt><tt class="py-string">'C'</tt><tt class="py-op">,</tt> <tt class="py-string">'Sec'</tt><tt class="py-op">:</tt><tt class="py-string">'U'</tt><tt class="py-op">,</tt> <tt class="py-string">'Sel'</tt><tt class="py-op">:</tt><tt class="py-string">'U'</tt><tt class="py-op">,</tt> <tt class="py-string">'Sep'</tt><tt class="py-op">:</tt><tt class="py-string">'S'</tt><tt class="py-op">,</tt> <tt class="py-string">'Ser'</tt><tt class="py-op">:</tt><tt class="py-string">'S'</tt><tt class="py-op">,</tt> <tt class="py-string">'Set'</tt><tt class="py-op">:</tt><tt class="py-string">'S'</tt><tt class="py-op">,</tt> <tt class="py-string">'Shc'</tt><tt class="py-op">:</tt><tt class="py-string">'C'</tt><tt class="py-op">,</tt> <tt class="py-string">'Shr'</tt><tt class="py-op">:</tt><tt class="py-string">'K'</tt><tt class="py-op">,</tt> <tt class="py-string">'Smc'</tt><tt class="py-op">:</tt><tt class="py-string">'C'</tt><tt class="py-op">,</tt> <tt class="py-string">'Soc'</tt><tt class="py-op">:</tt><tt class="py-string">'C'</tt><tt class="py-op">,</tt> <tt class="py-string">'Sty'</tt><tt class="py-op">:</tt><tt class="py-string">'Y'</tt><tt class="py-op">,</tt> <tt class="py-string">'Sva'</tt><tt class="py-op">:</tt><tt class="py-string">'S'</tt><tt class="py-op">,</tt> <tt class="py-string">'Ter'</tt><tt class="py-op">:</tt><tt class="py-string">'*'</tt><tt class="py-op">,</tt> <tt class="py-string">'Thr'</tt><tt class="py-op">:</tt><tt class="py-string">'T'</tt><tt class="py-op">,</tt> <tt class="py-string">'Tih'</tt><tt class="py-op">:</tt><tt class="py-string">'A'</tt><tt class="py-op">,</tt> <tt class="py-string">'Tpl'</tt><tt class="py-op">:</tt><tt class="py-string">'W'</tt><tt class="py-op">,</tt> <tt class="py-string">'Tpo'</tt><tt class="py-op">:</tt><tt class="py-string">'T'</tt><tt class="py-op">,</tt> <tt class="py-string">'Tpq'</tt><tt class="py-op">:</tt><tt class="py-string">'A'</tt><tt class="py-op">,</tt> <tt class="py-string">'Trg'</tt><tt class="py-op">:</tt><tt class="py-string">'K'</tt><tt class="py-op">,</tt> <tt class="py-string">'Tro'</tt><tt class="py-op">:</tt><tt class="py-string">'W'</tt><tt class="py-op">,</tt> <tt class="py-string">'Trp'</tt><tt class="py-op">:</tt><tt class="py-string">'W'</tt><tt class="py-op">,</tt> <tt class="py-string">'Tyb'</tt><tt class="py-op">:</tt><tt class="py-string">'Y'</tt><tt class="py-op">,</tt> <tt class="py-string">'Tyq'</tt><tt class="py-op">:</tt><tt class="py-string">'Y'</tt><tt class="py-op">,</tt> <tt class="py-string">'Tyr'</tt><tt class="py-op">:</tt><tt class="py-string">'Y'</tt><tt class="py-op">,</tt> <tt class="py-string">'Tys'</tt><tt class="py-op">:</tt><tt class="py-string">'Y'</tt><tt class="py-op">,</tt> <tt class="py-string">'Tyy'</tt><tt class="py-op">:</tt><tt class="py-string">'Y'</tt><tt class="py-op">,</tt> <tt class="py-string">'Unk'</tt><tt class="py-op">:</tt><tt class="py-string">'X'</tt><tt class="py-op">,</tt> <tt class="py-string">'Val'</tt><tt class="py-op">:</tt><tt class="py-string">'V'</tt><tt class="py-op">,</tt> <tt class="py-string">'Xaa'</tt><tt class="py-op">:</tt><tt class="py-string">'X'</tt><tt class="py-op">,</tt> <tt class="py-string">'Xer'</tt><tt class="py-op">:</tt><tt class="py-string">'X'</tt><tt class="py-op">,</tt> <tt class="py-string">'Xle'</tt><tt class="py-op">:</tt><tt class="py-string">'J'</tt><tt class="py-op">}</tt> </tt>
+<a name="L352"></a><tt class="py-lineno">352</tt>  <tt class="py-line"><tt class="py-comment"># Initial table is from the ASTRAL RAF release notes.</tt> </tt>
+<a name="L353"></a><tt class="py-lineno">353</tt>  <tt class="py-line"><tt class="py-comment"># added UNK</tt> </tt>
+<a name="L354"></a><tt class="py-lineno">354</tt>  <tt class="py-line"><tt class="py-comment"># Extra IUPAC: Xle, Xaa, Sec, Pyl</tt> </tt>
+<a name="L355"></a><tt class="py-lineno">355</tt>  <tt class="py-line"><tt class="py-comment"># The following have been seen in biopython code.</tt> </tt>
+<a name="L356"></a><tt class="py-lineno">356</tt>  <tt class="py-line"><tt class="py-comment"># Ter : '*'     Termination</tt> </tt>
+<a name="L357"></a><tt class="py-lineno">357</tt>  <tt class="py-line"><tt class="py-comment"># Sel : 'U'     A typo for Sec, selenocysteine? </tt> </tt>
+<a name="L358"></a><tt class="py-lineno">358</tt>  <tt class="py-line"><tt class="py-comment"># Xer : 'X'     Another alternative for unknown?</tt> </tt>
+<a name="L359"></a><tt class="py-lineno">359</tt>  <tt class="py-line"> </tt>
+<a name="L360"></a><tt class="py-lineno">360</tt>  <tt class="py-line"> </tt>
+<a name="L361"></a><tt class="py-lineno">361</tt>  <tt class="py-line"><tt id="link-36" class="py-name" targets="Variable corebio.data.amino_acid_names=corebio.data-module.html#amino_acid_names"><a title="corebio.data.amino_acid_names" class="py-name" href="#" onclick="return doclink('link-36', 'amino_acid_names', 'link-36');">amino_acid_names</a></tt> <tt class="py-op">=</tt> <tt class="py-op">{</tt> </tt>
+<a name="L362"></a><tt class="py-lineno">362</tt>  <tt class="py-line">    <tt class="py-string">'A'</tt> <tt class="py-op">:</tt> <tt class="py-string">'alanine'</tt><tt class="py-op">,</tt>     </tt>
+<a name="L363"></a><tt class="py-lineno">363</tt>  <tt class="py-line">    <tt class="py-string">'M'</tt> <tt class="py-op">:</tt> <tt class="py-string">'methionine'</tt><tt class="py-op">,</tt>   </tt>
+<a name="L364"></a><tt class="py-lineno">364</tt>  <tt class="py-line">    <tt class="py-string">'C'</tt> <tt class="py-op">:</tt> <tt class="py-string">'cysteine'</tt><tt class="py-op">,</tt> </tt>
+<a name="L365"></a><tt class="py-lineno">365</tt>  <tt class="py-line">    <tt class="py-string">'N'</tt> <tt class="py-op">:</tt> <tt class="py-string">'asparagine'</tt><tt class="py-op">,</tt> </tt>
+<a name="L366"></a><tt class="py-lineno">366</tt>  <tt class="py-line">    <tt class="py-string">'D'</tt> <tt class="py-op">:</tt> <tt class="py-string">'aspartic acid'</tt><tt class="py-op">,</tt> </tt>
+<a name="L367"></a><tt class="py-lineno">367</tt>  <tt class="py-line">    <tt class="py-string">'P'</tt> <tt class="py-op">:</tt> <tt class="py-string">'proline'</tt><tt class="py-op">,</tt> </tt>
+<a name="L368"></a><tt class="py-lineno">368</tt>  <tt class="py-line">    <tt class="py-string">'E'</tt> <tt class="py-op">:</tt> <tt class="py-string">'glutamic acid'</tt><tt class="py-op">,</tt> </tt>
+<a name="L369"></a><tt class="py-lineno">369</tt>  <tt class="py-line">    <tt class="py-string">'Q'</tt> <tt class="py-op">:</tt> <tt class="py-string">'glutamine'</tt><tt class="py-op">,</tt> </tt>
+<a name="L370"></a><tt class="py-lineno">370</tt>  <tt class="py-line">    <tt class="py-string">'F'</tt> <tt class="py-op">:</tt> <tt class="py-string">'phenylalanine'</tt><tt class="py-op">,</tt> </tt>
+<a name="L371"></a><tt class="py-lineno">371</tt>  <tt class="py-line">    <tt class="py-string">'R'</tt> <tt class="py-op">:</tt> <tt class="py-string">'arginine'</tt><tt class="py-op">,</tt> </tt>
+<a name="L372"></a><tt class="py-lineno">372</tt>  <tt class="py-line">    <tt class="py-string">'G'</tt> <tt class="py-op">:</tt> <tt class="py-string">'glycine'</tt><tt class="py-op">,</tt>     </tt>
+<a name="L373"></a><tt class="py-lineno">373</tt>  <tt class="py-line">    <tt class="py-string">'S'</tt> <tt class="py-op">:</tt> <tt class="py-string">'serine'</tt><tt class="py-op">,</tt> </tt>
+<a name="L374"></a><tt class="py-lineno">374</tt>  <tt class="py-line">    <tt class="py-string">'H'</tt> <tt class="py-op">:</tt> <tt class="py-string">'histidine'</tt><tt class="py-op">,</tt>   </tt>
+<a name="L375"></a><tt class="py-lineno">375</tt>  <tt class="py-line">    <tt class="py-string">'T'</tt> <tt class="py-op">:</tt> <tt class="py-string">'threonine'</tt><tt class="py-op">,</tt> </tt>
+<a name="L376"></a><tt class="py-lineno">376</tt>  <tt class="py-line">    <tt class="py-string">'I'</tt> <tt class="py-op">:</tt> <tt class="py-string">'isoleucine'</tt><tt class="py-op">,</tt>  </tt>
+<a name="L377"></a><tt class="py-lineno">377</tt>  <tt class="py-line">    <tt class="py-string">'V'</tt> <tt class="py-op">:</tt> <tt class="py-string">'valine'</tt><tt class="py-op">,</tt> </tt>
+<a name="L378"></a><tt class="py-lineno">378</tt>  <tt class="py-line">    <tt class="py-string">'K'</tt> <tt class="py-op">:</tt> <tt class="py-string">'lysine'</tt><tt class="py-op">,</tt> </tt>
+<a name="L379"></a><tt class="py-lineno">379</tt>  <tt class="py-line">    <tt class="py-string">'W'</tt> <tt class="py-op">:</tt> <tt class="py-string">'tryptophan'</tt><tt class="py-op">,</tt>  </tt>
+<a name="L380"></a><tt class="py-lineno">380</tt>  <tt class="py-line">    <tt class="py-string">'L'</tt> <tt class="py-op">:</tt> <tt class="py-string">'leucine'</tt><tt class="py-op">,</tt>     </tt>
+<a name="L381"></a><tt class="py-lineno">381</tt>  <tt class="py-line">    <tt class="py-string">'Y'</tt> <tt class="py-op">:</tt> <tt class="py-string">'tyrosine'</tt><tt class="py-op">,</tt>  </tt>
+<a name="L382"></a><tt class="py-lineno">382</tt>  <tt class="py-line">    <tt class="py-string">'B'</tt> <tt class="py-op">:</tt> <tt class="py-string">'aspartic acid or asparagine'</tt><tt class="py-op">,</tt> </tt>
+<a name="L383"></a><tt class="py-lineno">383</tt>  <tt class="py-line">    <tt class="py-string">'J'</tt> <tt class="py-op">:</tt> <tt class="py-string">'leucine or isoleucine'</tt><tt class="py-op">,</tt> </tt>
+<a name="L384"></a><tt class="py-lineno">384</tt>  <tt class="py-line">    <tt class="py-string">'X'</tt> <tt class="py-op">:</tt> <tt class="py-string">'unknown'</tt><tt class="py-op">,</tt> </tt>
+<a name="L385"></a><tt class="py-lineno">385</tt>  <tt class="py-line">    <tt class="py-string">'Z'</tt> <tt class="py-op">:</tt> <tt class="py-string">'glutamic acid or glutamine'</tt><tt class="py-op">,</tt> </tt>
+<a name="L386"></a><tt class="py-lineno">386</tt>  <tt class="py-line">    <tt class="py-string">'U'</tt> <tt class="py-op">:</tt> <tt class="py-string">'selenocysteine'</tt><tt class="py-op">,</tt> </tt>
+<a name="L387"></a><tt class="py-lineno">387</tt>  <tt class="py-line">    <tt class="py-string">'O'</tt> <tt class="py-op">:</tt> <tt class="py-string">'pyrrolysine'</tt><tt class="py-op">,</tt> </tt>
+<a name="L388"></a><tt class="py-lineno">388</tt>  <tt class="py-line">    <tt class="py-string">'*'</tt> <tt class="py-op">:</tt> <tt class="py-string">'translation stop'</tt><tt class="py-op">,</tt> </tt>
+<a name="L389"></a><tt class="py-lineno">389</tt>  <tt class="py-line">    <tt class="py-string">'-'</tt> <tt class="py-op">:</tt> <tt class="py-string">'gap'</tt> </tt>
+<a name="L390"></a><tt class="py-lineno">390</tt>  <tt class="py-line">    <tt class="py-op">}</tt> </tt>
+<a name="L391"></a><tt class="py-lineno">391</tt>  <tt class="py-line"> </tt>
+<a name="L392"></a><tt class="py-lineno">392</tt>  <tt class="py-line"><tt id="link-37" class="py-name" targets="Variable corebio.data.amino_acid_composition=corebio.data-module.html#amino_acid_composition,Variable logoddslogolib.amino_acid_composition=logoddslogolib-module.html#amino_acid_composition"><a title="corebio.data.amino_acid_composition
+logoddslogolib.amino_acid_composition" class="py-name" href="#" onclick="return doclink('link-37', 'amino_acid_composition', 'link-37');">amino_acid_composition</a></tt> <tt class="py-op">=</tt> <tt class="py-name">dict</tt><tt class="py-op">(</tt> </tt>
+<a name="L393"></a><tt class="py-lineno">393</tt>  <tt class="py-line">    <tt class="py-name">A</tt> <tt class="py-op">=</tt> <tt class="py-number">.082</tt><tt class="py-op">,</tt> <tt class="py-name">R</tt> <tt class="py-op">=</tt> <tt class="py-number">.057</tt><tt class="py-op">,</tt> <tt class="py-name">N</tt> <tt class="py-op">=</tt> <tt class="py-number">.044</tt><tt class="py-op">,</tt> <tt class="py-name">D</tt> <tt class="py-op">=</tt> <tt class="py-number">.053</tt><tt class="py-op">,</tt> <tt id="link-38" class="py-name" targets="Variable corebio.seq_io._nexus.C=corebio.seq_io._nexus-module.html#C"><a title="corebio.seq_io._nexus.C" class="py-name" href="#" onclick="return doclink('link-38', 'C', 'link-38');">C</a></tt> <tt class="py-op">=</tt> <tt class="py-number">.017</tt><tt class="py-op">,</tt>  </tt>
+<a name="L394"></a><tt class="py-lineno">394</tt>  <tt class="py-line">    <tt class="py-name">Q</tt> <tt class="py-op">=</tt> <tt class="py-number">.040</tt><tt class="py-op">,</tt> <tt class="py-name">E</tt> <tt class="py-op">=</tt> <tt class="py-number">.062</tt><tt class="py-op">,</tt> <tt class="py-name">G</tt> <tt class="py-op">=</tt> <tt class="py-number">.072</tt><tt class="py-op">,</tt> <tt class="py-name">H</tt> <tt class="py-op">=</tt> <tt class="py-number">.022</tt><tt class="py-op">,</tt> <tt class="py-name">I</tt> <tt class="py-op">=</tt> <tt class="py-number">.052</tt><tt class="py-op">,</tt>   </tt>
+<a name="L395"></a><tt class="py-lineno">395</tt>  <tt class="py-line">    <tt class="py-name">L</tt> <tt class="py-op">=</tt> <tt class="py-number">.090</tt><tt class="py-op">,</tt> <tt class="py-name">K</tt> <tt class="py-op">=</tt> <tt class="py-number">.057</tt><tt class="py-op">,</tt> <tt class="py-name">M</tt> <tt class="py-op">=</tt> <tt class="py-number">.024</tt><tt class="py-op">,</tt> <tt class="py-name">F</tt> <tt class="py-op">=</tt><tt class="py-number">.039</tt><tt class="py-op">,</tt> <tt class="py-name">P</tt> <tt class="py-op">=</tt> <tt class="py-number">.051</tt><tt class="py-op">,</tt>  </tt>
+<a name="L396"></a><tt class="py-lineno">396</tt>  <tt class="py-line">    <tt class="py-name">S</tt> <tt class="py-op">=</tt> <tt class="py-number">.069</tt><tt class="py-op">,</tt> <tt class="py-name">T</tt> <tt class="py-op">=</tt> <tt class="py-number">.058</tt><tt class="py-op">,</tt> <tt class="py-name">W</tt> <tt class="py-op">=</tt> <tt class="py-number">.013</tt><tt class="py-op">,</tt> <tt class="py-name">Y</tt><tt class="py-op">=</tt> <tt class="py-number">.032</tt><tt class="py-op">,</tt> <tt class="py-name">V</tt> <tt class="py-op">=</tt><tt class="py-number">.066</tt> <tt class="py-op">)</tt> </tt>
+<a name="L397"></a><tt class="py-lineno">397</tt>  <tt class="py-line">       </tt>
+<a name="L398"></a><tt class="py-lineno">398</tt>  <tt class="py-line"> </tt>
+<a name="L399"></a><tt class="py-lineno">399</tt>  <tt class="py-line"><tt id="link-39" class="py-name" targets="Variable corebio.data.kyte_doolittle_hydrophobicity=corebio.data-module.html#kyte_doolittle_hydrophobicity"><a title="corebio.data.kyte_doolittle_hydrophobicity" class="py-name" href="#" onclick="return doclink('link-39', 'kyte_doolittle_hydrophobicity', 'link-39');">kyte_doolittle_hydrophobicity</a></tt> <tt class="py-op">=</tt> <tt class="py-name">dict</tt><tt class="py-op">(</tt> </tt>
+<a name="L400"></a><tt class="py-lineno">400</tt>  <tt class="py-line">    <tt class="py-name">A</tt><tt class="py-op">=</tt><tt class="py-number">1.8</tt><tt class="py-op">,</tt> <tt class="py-name">R</tt><tt class="py-op">=</tt><tt class="py-op">-</tt><tt class="py-number">4.5</tt><tt class="py-op">,</tt> <tt class="py-name">N</tt><tt class="py-op">=</tt><tt class="py-op">-</tt><tt class="py-number">3.5</tt><tt class="py-op">,</tt> <tt class="py-name">D</tt><tt class="py-op">=</tt><tt class="py-op">-</tt><tt class="py-number">3.5</tt><tt class="py-op">,</tt>  <tt id="link-40" class="py-name"><a title="corebio.seq_io._nexus.C" class="py-name" href="#" onclick="return doclink('link-40', 'C', 'link-38');">C</a></tt><tt class="py-op">=</tt><tt class="py-number">2.5</tt><tt class="py-op">,</tt>  </tt>
+<a name="L401"></a><tt class="py-lineno">401</tt>  <tt class="py-line">    <tt class="py-name">Q</tt><tt class="py-op">=</tt><tt class="py-op">-</tt><tt class="py-number">3.5</tt><tt class="py-op">,</tt> <tt class="py-name">E</tt><tt class="py-op">=</tt><tt class="py-op">-</tt><tt class="py-number">3.5</tt><tt class="py-op">,</tt> <tt class="py-name">G</tt><tt class="py-op">=</tt><tt class="py-op">-</tt><tt class="py-number">0.4</tt><tt class="py-op">,</tt> <tt class="py-name">H</tt><tt class="py-op">=</tt><tt class="py-op">-</tt><tt class="py-number">3.2</tt><tt class="py-op">,</tt> <tt class="py-name">I</tt><tt class="py-op">=</tt><tt class="py-number">4.5</tt><tt class="py-op">,</tt> </tt>
+<a name="L402"></a><tt class="py-lineno">402</tt>  <tt class="py-line">    <tt class="py-name">L</tt><tt class="py-op">=</tt><tt class="py-number">3.8</tt><tt class="py-op">,</tt> <tt class="py-name">K</tt><tt class="py-op">=</tt><tt class="py-op">-</tt><tt class="py-number">3.9</tt><tt class="py-op">,</tt>  <tt class="py-name">M</tt><tt class="py-op">=</tt><tt class="py-number">1.9</tt><tt class="py-op">,</tt>  <tt class="py-name">F</tt><tt class="py-op">=</tt><tt class="py-number">2.8</tt><tt class="py-op">,</tt> <tt class="py-name">P</tt><tt class="py-op">=</tt><tt class="py-op">-</tt><tt class="py-number">1.6</tt><tt class="py-op">,</tt> </tt>
+<a name="L403"></a><tt class="py-lineno">403</tt>  <tt class="py-line">    <tt class="py-name">S</tt><tt class="py-op">=</tt><tt class="py-op">-</tt><tt class="py-number">0.8</tt><tt class="py-op">,</tt> <tt class="py-name">T</tt><tt class="py-op">=</tt><tt class="py-op">-</tt><tt class="py-number">0.7</tt><tt class="py-op">,</tt> <tt class="py-name">W</tt><tt class="py-op">=</tt><tt class="py-op">-</tt><tt class="py-number">0.9</tt><tt class="py-op">,</tt> <tt class="py-name">Y</tt><tt class="py-op">=</tt><tt class="py-op">-</tt><tt class="py-number">1.3</tt><tt class="py-op">,</tt> <tt class="py-name">V</tt><tt class="py-op">=</tt><tt class="py-number">4.2</tt> <tt class="py-op">)</tt> </tt>
+<a name="L404"></a><tt class="py-lineno">404</tt>  <tt class="py-line"> </tt>
+<a name="L405"></a><tt class="py-lineno">405</tt>  <tt class="py-line"> </tt>
+<a name="L406"></a><tt class="py-lineno">406</tt>  <tt class="py-line"><tt id="link-41" class="py-name" targets="Variable corebio.data.nucleotide_names=corebio.data-module.html#nucleotide_names"><a title="corebio.data.nucleotide_names" class="py-name" href="#" onclick="return doclink('link-41', 'nucleotide_names', 'link-41');">nucleotide_names</a></tt> <tt class="py-op">=</tt> <tt class="py-op">{</tt>  </tt>
+<a name="L407"></a><tt class="py-lineno">407</tt>  <tt class="py-line">    <tt class="py-string">'A'</tt> <tt class="py-op">:</tt> <tt class="py-string">'Adenosine'</tt><tt class="py-op">,</tt> </tt>
+<a name="L408"></a><tt class="py-lineno">408</tt>  <tt class="py-line">    <tt class="py-string">'C'</tt> <tt class="py-op">:</tt> <tt class="py-string">'Cytidine'</tt><tt class="py-op">,</tt> </tt>
+<a name="L409"></a><tt class="py-lineno">409</tt>  <tt class="py-line">    <tt class="py-string">'G'</tt> <tt class="py-op">:</tt> <tt class="py-string">'Guanine'</tt><tt class="py-op">,</tt> </tt>
+<a name="L410"></a><tt class="py-lineno">410</tt>  <tt class="py-line">    <tt class="py-string">'T'</tt> <tt class="py-op">:</tt> <tt class="py-string">'Thymidine'</tt><tt class="py-op">,</tt> </tt>
+<a name="L411"></a><tt class="py-lineno">411</tt>  <tt class="py-line">    <tt class="py-string">'U'</tt> <tt class="py-op">:</tt> <tt class="py-string">'Uracil'</tt><tt class="py-op">,</tt> </tt>
+<a name="L412"></a><tt class="py-lineno">412</tt>  <tt class="py-line">    <tt class="py-string">'R'</tt> <tt class="py-op">:</tt> <tt class="py-string">'G A (puRine)'</tt><tt class="py-op">,</tt> </tt>
+<a name="L413"></a><tt class="py-lineno">413</tt>  <tt class="py-line">    <tt class="py-string">'Y'</tt> <tt class="py-op">:</tt> <tt class="py-string">'T C (pYrimidine)'</tt><tt class="py-op">,</tt> </tt>
+<a name="L414"></a><tt class="py-lineno">414</tt>  <tt class="py-line">    <tt class="py-string">'K'</tt> <tt class="py-op">:</tt> <tt class="py-string">'G T (Ketone)'</tt><tt class="py-op">,</tt> </tt>
+<a name="L415"></a><tt class="py-lineno">415</tt>  <tt class="py-line">    <tt class="py-string">'M'</tt> <tt class="py-op">:</tt> <tt class="py-string">'A C (aMino group)'</tt><tt class="py-op">,</tt> </tt>
+<a name="L416"></a><tt class="py-lineno">416</tt>  <tt class="py-line">    <tt class="py-string">'S'</tt> <tt class="py-op">:</tt> <tt class="py-string">'G C (Strong interaction)'</tt><tt class="py-op">,</tt> </tt>
+<a name="L417"></a><tt class="py-lineno">417</tt>  <tt class="py-line">    <tt class="py-string">'W'</tt> <tt class="py-op">:</tt> <tt class="py-string">'A T (Weak interaction)'</tt><tt class="py-op">,</tt> </tt>
+<a name="L418"></a><tt class="py-lineno">418</tt>  <tt class="py-line">    <tt class="py-string">'B'</tt> <tt class="py-op">:</tt> <tt class="py-string">'G T C (not A) (B comes after A)'</tt><tt class="py-op">,</tt> </tt>
+<a name="L419"></a><tt class="py-lineno">419</tt>  <tt class="py-line">    <tt class="py-string">'D'</tt> <tt class="py-op">:</tt> <tt class="py-string">'G A T (not C) (D comes after C)'</tt><tt class="py-op">,</tt> </tt>
+<a name="L420"></a><tt class="py-lineno">420</tt>  <tt class="py-line">    <tt class="py-string">'H'</tt> <tt class="py-op">:</tt> <tt class="py-string">'A C T (not G) (H comes after G)'</tt><tt class="py-op">,</tt> </tt>
+<a name="L421"></a><tt class="py-lineno">421</tt>  <tt class="py-line">    <tt class="py-string">'V'</tt> <tt class="py-op">:</tt> <tt class="py-string">'G C A (not T, not U) (V comes after U)'</tt><tt class="py-op">,</tt> </tt>
+<a name="L422"></a><tt class="py-lineno">422</tt>  <tt class="py-line">    <tt class="py-string">'N'</tt> <tt class="py-op">:</tt> <tt class="py-string">'A G C T (aNy)'</tt><tt class="py-op">,</tt> </tt>
+<a name="L423"></a><tt class="py-lineno">423</tt>  <tt class="py-line">    <tt class="py-string">'-'</tt> <tt class="py-op">:</tt> <tt class="py-string">'gap'</tt><tt class="py-op">,</tt>  </tt>
+<a name="L424"></a><tt class="py-lineno">424</tt>  <tt class="py-line">    <tt class="py-op">}</tt> </tt>
+<a name="L425"></a><tt class="py-lineno">425</tt>  <tt class="py-line">     </tt>
+<a name="L426"></a><tt class="py-lineno">426</tt>  <tt class="py-line"> </tt>
+<a name="L427"></a><tt class="py-lineno">427</tt>  <tt class="py-line"><tt class="py-comment"># TODO: CHECK VALUES, UNITS    </tt> </tt>
+<a name="L428"></a><tt class="py-lineno">428</tt>  <tt class="py-line"><tt id="link-42" class="py-name" targets="Variable corebio.data.amino_acid_accesible_surface_area=corebio.data-module.html#amino_acid_accesible_surface_area"><a title="corebio.data.amino_acid_accesible_surface_area" class="py-name" href="#" onclick="return doclink('link-42', 'amino_acid_accesible_surface_area', 'link-42');">amino_acid_accesible_surface_area</a></tt> <tt class="py-op">=</tt> <tt class="py-op">{</tt> </tt>
+<a name="L429"></a><tt class="py-lineno">429</tt>  <tt class="py-line">    <tt class="py-string">'A'</tt> <tt class="py-op">:</tt> <tt class="py-number">106.0</tt><tt class="py-op">,</tt> </tt>
+<a name="L430"></a><tt class="py-lineno">430</tt>  <tt class="py-line">    <tt class="py-string">'C'</tt> <tt class="py-op">:</tt> <tt class="py-number">135.0</tt><tt class="py-op">,</tt> </tt>
+<a name="L431"></a><tt class="py-lineno">431</tt>  <tt class="py-line">    <tt class="py-string">'D'</tt> <tt class="py-op">:</tt> <tt class="py-number">163.0</tt><tt class="py-op">,</tt> </tt>
+<a name="L432"></a><tt class="py-lineno">432</tt>  <tt class="py-line">    <tt class="py-string">'E'</tt> <tt class="py-op">:</tt> <tt class="py-number">194.0</tt><tt class="py-op">,</tt> </tt>
+<a name="L433"></a><tt class="py-lineno">433</tt>  <tt class="py-line">    <tt class="py-string">'F'</tt> <tt class="py-op">:</tt> <tt class="py-number">197.0</tt><tt class="py-op">,</tt> </tt>
+<a name="L434"></a><tt class="py-lineno">434</tt>  <tt class="py-line">    <tt class="py-string">'G'</tt> <tt class="py-op">:</tt> <tt class="py-number">84.0</tt><tt class="py-op">,</tt> </tt>
+<a name="L435"></a><tt class="py-lineno">435</tt>  <tt class="py-line">    <tt class="py-string">'H'</tt> <tt class="py-op">:</tt> <tt class="py-number">184.0</tt><tt class="py-op">,</tt> </tt>
+<a name="L436"></a><tt class="py-lineno">436</tt>  <tt class="py-line">    <tt class="py-string">'I'</tt> <tt class="py-op">:</tt> <tt class="py-number">169.0</tt><tt class="py-op">,</tt> </tt>
+<a name="L437"></a><tt class="py-lineno">437</tt>  <tt class="py-line">    <tt class="py-string">'K'</tt> <tt class="py-op">:</tt> <tt class="py-number">205.0</tt><tt class="py-op">,</tt> </tt>
+<a name="L438"></a><tt class="py-lineno">438</tt>  <tt class="py-line">    <tt class="py-string">'L'</tt> <tt class="py-op">:</tt> <tt class="py-number">164.0</tt><tt class="py-op">,</tt> </tt>
+<a name="L439"></a><tt class="py-lineno">439</tt>  <tt class="py-line">    <tt class="py-string">'M'</tt> <tt class="py-op">:</tt> <tt class="py-number">188.0</tt><tt class="py-op">,</tt> </tt>
+<a name="L440"></a><tt class="py-lineno">440</tt>  <tt class="py-line">    <tt class="py-string">'N'</tt> <tt class="py-op">:</tt> <tt class="py-number">157.0</tt><tt class="py-op">,</tt> </tt>
+<a name="L441"></a><tt class="py-lineno">441</tt>  <tt class="py-line">    <tt class="py-string">'P'</tt> <tt class="py-op">:</tt> <tt class="py-number">136.0</tt><tt class="py-op">,</tt> </tt>
+<a name="L442"></a><tt class="py-lineno">442</tt>  <tt class="py-line">    <tt class="py-string">'Q'</tt> <tt class="py-op">:</tt> <tt class="py-number">198.0</tt><tt class="py-op">,</tt> </tt>
+<a name="L443"></a><tt class="py-lineno">443</tt>  <tt class="py-line">    <tt class="py-string">'R'</tt> <tt class="py-op">:</tt> <tt class="py-number">248.0</tt><tt class="py-op">,</tt> </tt>
+<a name="L444"></a><tt class="py-lineno">444</tt>  <tt class="py-line">    <tt class="py-string">'S'</tt> <tt class="py-op">:</tt> <tt class="py-number">130.0</tt><tt class="py-op">,</tt> </tt>
+<a name="L445"></a><tt class="py-lineno">445</tt>  <tt class="py-line">    <tt class="py-string">'T'</tt> <tt class="py-op">:</tt> <tt class="py-number">142.0</tt><tt class="py-op">,</tt> </tt>
+<a name="L446"></a><tt class="py-lineno">446</tt>  <tt class="py-line">    <tt class="py-string">'V'</tt> <tt class="py-op">:</tt> <tt class="py-number">142.0</tt><tt class="py-op">,</tt> </tt>
+<a name="L447"></a><tt class="py-lineno">447</tt>  <tt class="py-line">    <tt class="py-string">'W'</tt> <tt class="py-op">:</tt> <tt class="py-number">227.0</tt><tt class="py-op">,</tt> </tt>
+<a name="L448"></a><tt class="py-lineno">448</tt>  <tt class="py-line">    <tt class="py-string">'Y'</tt> <tt class="py-op">:</tt> <tt class="py-number">222.0</tt> </tt>
+<a name="L449"></a><tt class="py-lineno">449</tt>  <tt class="py-line">    <tt class="py-op">}</tt> </tt>
+<a name="L450"></a><tt class="py-lineno">450</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Wed Mar 12 21:34:13 2014
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

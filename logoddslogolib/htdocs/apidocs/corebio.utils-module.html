@@ -1,0 +1,711 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>corebio.utils</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="corebio-module.html">Package&nbsp;corebio</a> ::
+        Package&nbsp;utils
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="corebio.utils-module.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== PACKAGE DESCRIPTION ==================== -->
+<h1 class="epydoc">Package utils</h1><p class="nomargin-top"><span class="codelink"><a href="corebio.utils-pysrc.html">source&nbsp;code</a></span></p>
+<p>Extra utilities and core classes not in standard python.</p>
+
+<!-- ==================== SUBMODULES ==================== -->
+<a name="section-Submodules"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Submodules</span></td>
+</tr>
+  <tr><td class="summary">
+  <ul class="nomargin">
+    <li class="private"> <strong class="uidlink"><a href="corebio.utils._which-module.html">corebio.utils._which</a></strong>: <em class="summary">Find the full path to commands.</em>    </li>
+    <li> <strong class="uidlink"><a href="corebio.utils.deoptparse-module.html">corebio.utils.deoptparse</a></strong>: <em class="summary">Custom extensions to OptionParse for parsing command line options.</em>    </li>
+  </ul></td></tr>
+</table>
+
+<br />
+<!-- ==================== CLASSES ==================== -->
+<a name="section-Classes"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Classes</span></td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="corebio.utils.Token-class.html" class="summary-name">Token</a><br />
+      Represents the items returned by a file scanner, normally processed
+        by a parser.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="corebio.utils.Reiterate-class.html" class="summary-name">Reiterate</a><br />
+      A flexible wrapper around a simple iterator.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="corebio.utils.FileIndex-class.html" class="summary-name">FileIndex</a><br />
+      Line based random access to a file.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="corebio.utils.ArgumentError-class.html" class="summary-name">ArgumentError</a><br />
+      A subclass of ValueError raised when a function receives an 
+        argument that has the right type but an inappropriate value, and 
+        the situation is not described by a more precise exception such as 
+        IndexError.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="corebio.utils.frozendict-class.html" class="summary-name">frozendict</a><br />
+      A frozendict is a dictionary that cannot be modified after being 
+        created
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTIONS ==================== -->
+<a name="section-Functions"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Functions</span></td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="isblank"></a><span class="summary-sig-name">isblank</span>(<span class="summary-sig-arg">string</span>)</span><br />
+      Is this whitespace or an empty string?</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="corebio.utils-pysrc.html#isblank">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="isfloat"></a><span class="summary-sig-name">isfloat</span>(<span class="summary-sig-arg">s</span>)</span><br />
+      Does this object represent a floating point number?</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="corebio.utils-pysrc.html#isfloat">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="isint"></a><span class="summary-sig-name">isint</span>(<span class="summary-sig-arg">s</span>)</span><br />
+      Does this object represent an integer?</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="corebio.utils-pysrc.html#isint">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="fcmp"></a><span class="summary-sig-name">fcmp</span>(<span class="summary-sig-arg">x</span>,
+        <span class="summary-sig-arg">y</span>,
+        <span class="summary-sig-arg">precision</span>)</span><br />
+      Floating point comparison.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="corebio.utils-pysrc.html#fcmp">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="remove_whitespace"></a><span class="summary-sig-name">remove_whitespace</span>(<span class="summary-sig-arg">astring</span>)</span><br />
+      Remove all whitespace from a string.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="corebio.utils-pysrc.html#remove_whitespace">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="corebio.utils-module.html#invert_dict" class="summary-sig-name">invert_dict</a>(<span class="summary-sig-arg">dictionary</span>)</span><br />
+      Constructs a new dictionary with inverted mappings so that keys 
+      become values and vice versa.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="corebio.utils-pysrc.html#invert_dict">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="corebio.utils-module.html#update" class="summary-sig-name">update</a>(<span class="summary-sig-arg">obj</span>,
+        <span class="summary-sig-arg">**entries</span>)</span><br />
+      Update an instance with new values.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="corebio.utils-pysrc.html#update">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="stdrepr"></a><span class="summary-sig-name">stdrepr</span>(<span class="summary-sig-arg">obj</span>,
+        <span class="summary-sig-arg">attributes</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">name</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Create a standard representation of an object.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="corebio.utils-pysrc.html#stdrepr">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="corebio.utils-module.html#group_count" class="summary-sig-name">group_count</a>(<span class="summary-sig-arg">i</span>)</span><br />
+      An iteration that returns tuples of items and the number of 
+      consecutive occurrences.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="corebio.utils-pysrc.html#group_count">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="corebio.utils-module.html#Struct" class="summary-sig-name">Struct</a>(<span class="summary-sig-arg">**kwargs</span>)</span><br />
+      Create a new instance of an anonymous class with the supplied 
+      attributes and values.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="corebio.utils-pysrc.html#Struct">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="crc32"></a><span class="summary-sig-name">crc32</span>(<span class="summary-sig-arg">string</span>)</span><br />
+      Return the standard CRC32 checksum as a hexidecimal string.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="corebio.utils-pysrc.html#crc32">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="corebio.utils-module.html#crc64" class="summary-sig-name">crc64</a>(<span class="summary-sig-arg">string</span>)</span><br />
+      Calculate ISO 3309 standard cyclic redundancy checksum.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="corebio.utils-pysrc.html#crc64">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="corebio.utils-module.html#find_command" class="summary-sig-name">find_command</a>(<span class="summary-sig-arg">command</span>,
+        <span class="summary-sig-arg">path</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Return the full path to the first match of the given command on
+the path.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="corebio.utils-pysrc.html#find_command">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="corebio.utils-module.html#resource_string" class="summary-sig-name">resource_string</a>(<span class="summary-sig-arg">modulename</span>,
+        <span class="summary-sig-arg">resource</span>,
+        <span class="summary-sig-arg">basefilename</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Locate and return a resource as a string.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="corebio.utils-pysrc.html#resource_string">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="corebio.utils-module.html#resource_stream" class="summary-sig-name">resource_stream</a>(<span class="summary-sig-arg">modulename</span>,
+        <span class="summary-sig-arg">resource</span>,
+        <span class="summary-sig-arg">basefilename</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Locate and return a resource as a stream.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="corebio.utils-pysrc.html#resource_stream">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="corebio.utils-module.html#resource_filename" class="summary-sig-name">resource_filename</a>(<span class="summary-sig-arg">modulename</span>,
+        <span class="summary-sig-arg">resource</span>,
+        <span class="summary-sig-arg">basefilename</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Locate and return a resource filename.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="corebio.utils-pysrc.html#resource_filename">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTION DETAILS ==================== -->
+<a name="section-FunctionDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Function Details</span></td>
+</tr>
+</table>
+<a name="invert_dict"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">invert_dict</span>(<span class="sig-arg">dictionary</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="corebio.utils-pysrc.html#invert_dict">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Constructs a new dictionary with inverted mappings so that keys become
+  values and vice versa. If the values of the original dictionary are not 
+  unique then only one of the original keys will be included in the new 
+  dictionary.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="update"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">update</span>(<span class="sig-arg">obj</span>,
+        <span class="sig-arg">**entries</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="corebio.utils-pysrc.html#update">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Update an instance with new values.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">update</span>({<span class="py-string">'a'</span>: 1}, a=10, b=20)
+<span class="py-output">{'a': 10, 'b': 20}</span></pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="group_count"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">group_count</span>(<span class="sig-arg">i</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="corebio.utils-pysrc.html#group_count">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>An iteration that returns tuples of items and the number of 
+  consecutive occurrences. Thus group_count('aabbbc') yields ('a',2), 
+  ('b',3), ('c',1)</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="Struct"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">Struct</span>(<span class="sig-arg">**kwargs</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="corebio.utils-pysrc.html#Struct">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Create a new instance of an anonymous class with the supplied 
+  attributes and values.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>s = Struct(a=3,b=4)
+<span class="py-prompt">&gt;&gt;&gt; </span>s
+<span class="py-output">Struct(</span>
+<span class="py-output">    a=3,</span>
+<span class="py-output">    b=4</span>
+<span class="py-output">)</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>s.a
+<span class="py-output">3</span></pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="crc64"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">crc64</span>(<span class="sig-arg">string</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="corebio.utils-pysrc.html#crc64">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+Calculate ISO 3309 standard cyclic redundancy checksum.
+Used, for example, by SWISS-PROT.
+
+Returns : The CRC as a hexadecimal string.
+
+Reference: 
+o W. H. Press, S. A. Teukolsky, W. T. Vetterling, and B. P. Flannery,
+ &quot;Numerical recipes in C&quot;, 2nd ed., Cambridge University Press. Pages 896ff.
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="find_command"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">find_command</span>(<span class="sig-arg">command</span>,
+        <span class="sig-arg">path</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="corebio.utils-pysrc.html#find_command">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+Return the full path to the first match of the given command on
+the path.
+
+Arguments:
+- command -- is a the name of the executable to search for.
+- path -- is an optional alternate path list to search. The default is
+    to use the COREBIOPATH environment variable, if it exists, else the 
+    PATH environment variable.
+    
+Raises:
+- EnvironmentError -- If no match is found for the command.
+
+By default the COREBIOPATH or PATH environment variable is searched (as well
+as, on Windows, the AppPaths key in the registry), but a specific 'path'
+list to search may be specified as well.  
+    
+Author: Adapted from code by Trent Mick (TrentM@ActiveState.com)
+See: http://trentm.com/projects/which/
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="resource_string"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">resource_string</span>(<span class="sig-arg">modulename</span>,
+        <span class="sig-arg">resource</span>,
+        <span class="sig-arg">basefilename</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="corebio.utils-pysrc.html#resource_string">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Locate and return a resource as a string. &gt;&gt;&gt; f = 
+  resource_string( __name__, 'somedatafile', __file__)</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="resource_stream"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">resource_stream</span>(<span class="sig-arg">modulename</span>,
+        <span class="sig-arg">resource</span>,
+        <span class="sig-arg">basefilename</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="corebio.utils-pysrc.html#resource_stream">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Locate and return a resource as a stream. &gt;&gt;&gt; f = 
+  resource_stream( __name__, 'somedatafile', __file__)</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="resource_filename"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">resource_filename</span>(<span class="sig-arg">modulename</span>,
+        <span class="sig-arg">resource</span>,
+        <span class="sig-arg">basefilename</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="corebio.utils-pysrc.html#resource_filename">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Locate and return a resource filename. &gt;&gt;&gt; f = 
+  resource_filename( __name__, 'somedatafile', __file__)</p>
+  <p>A resource is a data file stored with the python code in a package. 
+  All three resource methods (resource_string,  resource_stream, 
+  resource_filename) call the corresponding methods in the 'pkg_resources' 
+  module, if installed. Otherwise, we resort to locating the resource in 
+  the local filesystem. However, this does not work if the package is 
+  located inside a zip file.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Wed Mar 12 21:34:13 2014
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

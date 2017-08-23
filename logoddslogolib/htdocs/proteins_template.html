@@ -1,0 +1,354 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <title>LogOddsLogo - Create Protein Logo </title>
+  <meta name="author" content="Yi-Kuo Yu, Aleksandar Stojmirovic, Stephen Altschul" >
+  <link href="qmbp.css" type="text/css" rel="stylesheet" />
+  <link href="raid.css" type="text/css" rel="stylesheet" />
+  <link href="logoddslogo.css" type="text/css" rel="stylesheet" />
+  <script src="qmbp.js" type="text/javascript"></script>
+  <script src="Code.js" type="text/javascript"></script>
+  <script src="raid_aps.js" type="text/javascript"></script>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+</head>
+
+<body style="align:center">
+
+<div id="header">
+  <div id="qmbplogo"><h1><a href="http://www.ncbi.nlm.nih.gov/CBBresearch/Yu/index.html">QMBP</a></h1></div>
+  <div id="logoddslogobanner">  <h1><a href="index.html">LogOddsLogo</a></h1></div>
+  <div id="ncbilogo"><h1><a href="http://www.ncbi.nlm.nih.gov">NCBI</a></h1></div>
+  <div class="cclr"></div>
+</div>
+<div id="leftpanel">
+  <div id="gtgl1a" class="ctgl expanded"><div class="cover"><a id="gtgl1" class="ca1" href="#"></a><a href="http://www.ncbi.nlm.nih.gov/CBBresearch/Yu/webresources.html" class="ctgl">Web resources</a></div>
+  <div id="gtgl1b" class="ctgldiv cback opened">
+    <div id="gtgl1_1_2" class="ctgl none"><div class="cover"><span class="ca3"></span><a href="http://www.ncbi.nlm.nih.gov/CBBresearch/Yu/raid_dbs/index.html" class="ctgl">RAId_DbS</a></div></div>
+    <div id="gtgl1_1_3a" class="ctgl none"><div class="cover"><span class="ca3"></span><a href="http://www.ncbi.nlm.nih.gov/CBBresearch/Yu/raid_aps/index.html" class="ctgl">RAId_aPS</a></div></div>
+    <div id="gtgl1_1_5" class="ctgl none"><div class="cover"><span class="ca3"></span><a href="http://www.ncbi.nlm.nih.gov/CBBresearch/Yu/midas/index.html" class="ctgl">MIDAs</a></div></div>
+    <div id="gtgl1_2a" class="ctgl none"><div class="cover"><span id="gtgl1_2" class="ca3"></span><a href="http://www.ncbi.nlm.nih.gov/CBBresearch/Yu/mn/itm_probe/index.html" class="ctgl">ITM Probe</a></div></div>
+    <div id="gtgl1_2c" class="ctgl none"><div class="cover"><span class="ca2"></span><a href="http://www.ncbi.nlm.nih.gov/CBBresearch/Yu/mn/enrich/index.html" class="ctgl">SaddleSum</a></div></div>
+    <div id="gtgl1_2c" class="ctgl none"><div class="cover cacur"><span class="ca2"></span><a href="./index.html" class="ctgl">LogOddsLogo</a></div></div>
+  </div>
+  </div>
+  <div id="gtgl2a" class="ctgl none"><div class="cover"><span class="ca3"></span><a href="http://www.ncbi.nlm.nih.gov/CBBresearch/Yu/downloads.html" class="ctgl">Downloads</a></div>
+
+  </div>
+  <div id="gtgl3a" class="ctgl none"><div class="cover"><span id="gtgl3" class="ca3"></span><a href="http://www.ncbi.nlm.nih.gov/CBBresearch/Yu/members.html" class="ctgl">Members</a></div>
+
+  </div>
+  <div id="gtgl4" class="ctgl none"><div class="cover"><span class="ca2"></span><a href="http://www.ncbi.nlm.nih.gov/CBBresearch/Yu/publications.html" class="ctgl">Publications</a></div></div>
+</div>
+<div id="rightpanel">
+<p class="sidetitle">LogOddsLogo</p>
+<h4>Web service</h4>
+<ul>
+  <li><a href="proteins.cgi">Create Protein Logo</a></li>
+  <li><a href="nucleicacid.cgi">Create Nucleic Acid Logo</a></li>
+</ul><br />
+<h4>Download</h4>
+<ul>
+<li><a href="ftp://ftp.ncbi.nlm.nih.gov/pub/qmbp/logoddslogo/">FTP Site</a></li>
+</ul><br />
+<h4>Documentation</h4>
+<ul>
+<li><a href="./">About</a></li>
+<li><a href="examples.html">Examples</a></li>
+<li><a href="manual.html">Manual</a></li>
+</ul>
+</div>
+
+<div id="middlepanel">
+<!--  ========================== -->
+<form method="post" name="logoform" action="proteins.cgi" enctype="multipart/form-data" >
+
+  <div class="cfs">
+    <span class="cftitle">Create Protein Logo</span><br />
+    <input type="hidden" name="alphabet" value="alphabet_protein">
+    <div id="Dfrm" class="cfrm">
+
+    <table class="cds">
+      <tr><td class="ctd02">
+          Paste sequence data below
+        </td>
+      </tr>
+
+
+    <tr><td colspan='2' ${sequences_err} >
+        <textarea name="sequences" rows="12" cols ="70" style="width:100%">${sequences}</textarea>
+      </td>
+    </tr>
+    <tr><td class="ctd02">
+        <span>or upload a file</span>
+      </td>
+    </tr>
+    <tr><td class="ctd02">
+      </td><td class="ctd22" >
+      <td class="ctd22">
+        <input type="file" name="sequences_file">
+      </td>
+    </tr>
+    <tr><td colspan='2'>
+        If notepad is used to produce the input file, please save it in either ANSI or unicode formats.
+    </td></tr>
+    <tr class="err_msg"><td colspan='2'>
+        ${error_message}
+    </td></tr></table>
+
+    <table class="cds">
+      <tr>
+        <td class="ctd02">
+          Download
+        </td><td class="ctd22">
+          <input type="checkbox" name="download" value="false" >
+        </td>
+      </tr>
+      <tr>
+        <td class="ctd02" ${format_err}>
+          Output format
+        </td><td class="ctd22">
+          <select class="csel" name="format">
+            <option ${png} value="png">PNG (low res.)</option>
+            <option ${png_print} value="png_print">PNG (high res.)</option>
+            <option ${jpeg} value="jpeg">JPEG (low res.)</option>
+            <option ${eps} value="eps">EPS (vector)</option>
+            <option ${pdf} value="pdf">PDF (vector)</option>
+            <option ${svg} value="svg">SVG (vector)</option>
+            <option ${logodata} value="logodata">Data (plain text)</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td class="ctd02" ${size_err} >
+          Logo size
+        </td><td class="ctd22">
+        <select class="csel" name="stack_width" >
+          <option ${small} >small</option>
+          <option ${medium}>medium</option>
+          <option ${large} >large</option>
+        </select>
+        </td>
+      </tr>
+    </table>
+
+    <table class="cds">
+      <tr><td class="ctd02">
+          <div class="ctd04"><a id="mopaToggle" class="togglelink hiding" href="#">More parameters</a></div>
+        </td><td class="ctd22">
+          <div id="mopaSum">Default settings used. <a href="#" onclick="ao.toggleon('mopaToggle')">Click to change</a></div>
+        </td></tr>
+    </table>
+
+    <div id="mopa" class="cmopa hidden">
+
+    <table class="cds">
+      <tr><td class="ctd02" ${score_method_err}>
+        Scoring method
+        </td><td class="ctd22">
+        <select class="csel" name="score_method" >
+          <option ${BILD} value="BILD">BILD</option>
+          <option ${NML} value="NML">Normalized Maximum Likelihood</option>
+          <option ${SC} value="SC">Schneider - Corrected</option>
+          <option ${SU} value="SU">Schneider - Uncorrected</option>
+        </select>
+        </td>
+      </tr>
+      <tr><td class="ctd02" ${dmnumber_err}>
+          Dirichlet mixture (BILD score only)
+        </td><td class="ctd22">
+          <select class="csel" name="dmnumber" >
+            <option ${dm0} value="dm0">recode3-20 (20 components)</option>
+            <option ${dm1} value="dm1">recode4-20 (20 components)</option>
+            <option ${dm2} value="dm2">recode5-20 (20 components)</option>
+            <option ${dm3} value="dm3">Fournier-20 (20 components)</option>
+            <option ${dm4} value="dm4">dist-20 (20 components)</option>
+            <option ${dm5} value="dm5">dist-ncbi-52 (52 components)</option>
+            <option ${dm6} value="dm6">dist-ncbi-72 (72 components)</option>
+            <option ${dm7} value="dm7">dist-ncbi-110 (110 components)</option>
+            <option ${dm8} value="dm8">dist-ncbi-134 (134 components)</option>
+          </select>
+        </td>
+      </tr>
+      <tr><td class="ctd02" ${weighcounts_err}>
+          Weight counts
+        </td><td class="ctd22" >
+          <input type="checkbox" name="weighcounts" value="true" ${weighcounts} >
+        </td>
+      </tr>
+      <tr><td class="ctd02" ${ovline_err}>
+          Draw an overline on the positive score region
+        </td><td class="ctd22">
+          <input type="checkbox" name="ovline" value="true" ${ovline} >
+        </td>
+      </tr>
+      <tr><td class="ctd02" ${stacks_per_line_err}>
+          Stacks per line
+        </td><td class="ctd22">
+          <input type="text" name="stacks_per_line" value="${stacks_per_line}" size="4" maxlength="4" >
+        </td>
+      </tr>
+      <tr><td class="ctd02">
+          Ignore lower case
+        </td><td class="ctd22">
+          <input type="checkbox" name="ignore_lower_case" value="true" ${ignore_lower_case} >
+        </td>
+      </tr>
+      <tr><td class="ctd02">
+        Units
+        </td><td class="ctd22">
+        <select class="csel" name="unit_name"  >
+          <option ${probability} >probability</option>
+          <option ${bits} >bits</option>
+          <option ${nats} >nats</option>
+          <option ${kT} >kT</option>
+          <option ${kJ_mol} >kJ/mol</option>
+          <option ${kcal_mol} >kcal/mol</option>
+        </select>
+        </td>
+      </tr>
+      <tr><td class="ctd02" ${first_index_err}>
+          First position number
+        </td><td class="ctd22">
+          <input  type="text" name="first_index" value="${first_index}" size="4" maxlength="80" >
+        </td>
+      </tr>
+      <tr><td class="ctd02" ${logo_range_err} >
+          Logo range
+        </td><td class="ctd22">
+          <input type="text" name="logo_start" value="${logo_start}" size="4" maxlength="80" > - <input type="text" name="logo_end"  value="${logo_end}" size="4" maxlength="80" >
+        </td>
+      </tr>
+      <tr><td class="ctd02">
+          Scale stack widths
+        </td><td class="ctd22">
+          <input type="checkbox" name="scale_width" value="true" ${scale_width} >
+        </td>
+      </tr>
+      <tr><td class="ctd02" ${logo_title_err}>
+          Title
+        </td><td class="ctd22">
+          <input type="text"  name="logo_title"  size="27" maxlength="80" value="${logo_title}" >
+        </td>
+      </tr>
+      <tr><td class="ctd02">
+          Figure label
+        </td><td class="ctd22">
+          <input type="text" name="logo_label"  value="${logo_label}" size="4" maxlength="100" >
+        </td>
+      </tr>
+      <tr><td class="ctd02">
+          X-axis
+        </td><td class="ctd22">
+          <input type="checkbox" name="show_xaxis" value="true" ${show_xaxis} >
+          Label:
+          <input type="text" name="xaxis_label"  value="${xaxis_label}" size="20" maxlength="100" >
+        </td>
+      </tr>
+      <tr><td class="ctd02">
+          Y-axis
+        </td><td class="ctd22">
+          <input type="checkbox" name="show_yaxis" value="true" ${show_yaxis} >
+          Label: <input type="text" name="yaxis_label" value="${yaxis_label}" size="20" maxlength="32" >
+
+        </td>
+      </tr>
+      <tr><td class="ctd02" ${yaxis_scale_err} >
+          Y-axis scale:
+        </td><td class="ctd22">
+          <input type="text" name="yaxis_scale"  value="${yaxis_scale}" size="4" maxlength="100"  >
+        </td>
+      </tr>
+      <tr><td class="ctd02" ${yaxis_tic_interval_err} >
+          Y-axis tic spacing:
+        </td><td class="ctd22">
+          <input type="text" name="yaxis_tic_interval" value="${yaxis_tic_interval}"  size="4" maxlength="100"  >
+        </td>
+      </tr>
+      <tr><td class="ctd02">
+          Sequence end labels
+        </td><td class="ctd22">
+          <input type="checkbox" name="show_ends" value="true" ${show_ends} >
+        </td>
+      </tr>
+      <tr><td class="ctd02">
+          Version fineprint
+        </td><td class="ctd22">
+          <input type="checkbox" name="show_fineprint" value="true" ${show_fineprint} >
+        </td>
+      </tr>
+      <tr><td class="ctd02" ${color_scheme_err}>
+          Color scheme
+        </td><td class="ctd22">
+          <select class="csel" name="color_scheme"  >
+            <option ${color_monochrome} value="color_monochrome" >Monochrome</option>
+            <option ${color_hydrophobicity} value="color_hydrophobicity">Hydrophobicity (default)</option>
+            <option ${color_chemistry} value="color_chemistry">Chemistry</option>
+            <option ${color_charge} value="color_charge">Charge</option>
+            <option ${color_custom} value="color_custom">Custom (Specify below)</option>
+          </select>
+      </tr>
+
+      <tr><td class="ctd02">
+          &nbsp;
+        </td><td class="ctd22">
+          <table>
+          <tr>
+            <td>Symbols</td>
+            <td>Color</td>
+          </tr>
+
+          <tr>
+            <td ${color0_err}><input name="symbols0" type="text"  size="12" maxlength="64" value="${symbols0}"></td>
+            <td><input name="color0" type="text"  size="12" maxlength="64"  value="${color0}"></td>
+          </tr>
+
+          <tr>
+            <td ${color1_err}><input name="symbols1" type="text"  size="12" maxlength="64" value="${symbols1}"></td>
+            <td><input name="color1" type="text"  size="12" maxlength="64"  value="${color1}"></td>
+          </tr>
+
+          <tr>
+            <td ${color2_err}><input name="symbols2" type="text"  size="12" maxlength="64" value="${symbols2}"></td>
+            <td><input name="color2" type="text"  size="12" maxlength="64"  value="${color2}"></td>
+          </tr>
+
+          <tr>
+            <td ${color3_err}><input name="symbols3" type="text"  size="12" maxlength="64" value="${symbols3}"></td>
+            <td><input name="color3" type="text"  size="12" maxlength="64"  value="${color3}"></td>
+          </tr>
+
+          <tr>
+            <td ${color4_err}><input name="symbols4" type="text"  size="12" maxlength="64" value="${symbols4}"></td>
+            <td><input name="color4" type="text"  size="12" maxlength="64"  value="${color4}"></td>
+          </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+
+  </div>
+
+    <div class="ctd04" style="text-align: center">
+      <input type="submit" name="cmd_create" value="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CREATE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"  >
+      <input type="submit" name="cmd_reset" value="&nbsp;&nbsp;&nbsp;&nbsp;RESET&nbsp;&nbsp;&nbsp;&nbsp;" >
+    </div>
+
+  </div>
+</div></form>
+<!--  ========================= -->
+</div>
+
+<hr id="footsep" />
+<div id="footer">
+  <ul>
+    <li><a href="http://www.ncbi.nih.gov/About/disclaimer.html">Copyright</a></li>
+    <li><a href="http://www.ncbi.nih.gov/About/disclaimer.html#disclaimer">Disclaimer</a></li>
+    <li><a href="http://www.nlm.nih.gov/privacy.html">Privacy</a></li>
+    <li><a href="http://www.ncbi.nih.gov/About/accessibility.html">Accessibility</a></li>
+  </ul>
+  <!-- <span id="codedby">Maintained by Yi-Kuo Yu. Last update: February 28, 2014</span> -->
+</div>
+
+</body>
+</html>

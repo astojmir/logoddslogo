@@ -1,0 +1,1092 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>corebio.seq.Seq</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="corebio-module.html">Package&nbsp;corebio</a> ::
+        <a href="corebio.seq-module.html">Module&nbsp;seq</a> ::
+        Class&nbsp;Seq
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="corebio.seq.Seq-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class Seq</h1><p class="nomargin-top"><span class="codelink"><a href="corebio.seq-pysrc.html#Seq">source&nbsp;code</a></span></p>
+<pre class="base-tree">
+object --+        
+         |        
+basestring --+    
+             |    
+           str --+
+                 |
+                <strong class="uidshort">Seq</strong>
+</pre>
+
+<hr />
+<pre class="literalblock">
+An alphabetic string. A subclass of &quot;str&quot; consisting solely of
+letters from the same alphabet.
+
+Attributes:
+    alphabet    -- A string or Alphabet of allowed characters.
+    name        -- A short string used to identify the sequence.
+    description -- A string describing the sequence   
+    
+Authors :
+    GEC 2005
+
+</pre>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Instance Methods</span></td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="ords"></a><span class="summary-sig-name">ords</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Convert sequence to an array of integers in the range [0, 
+      len(alphabet) )</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="corebio.seq-pysrc.html#Seq.ords">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="corebio.seq.Seq-class.html#tally" class="summary-sig-name">tally</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">alphabet</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Counts the occurrences of alphabetic characters.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="corebio.seq-pysrc.html#Seq.tally">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="corebio.seq.Seq-class.html#__getslice__" class="summary-sig-name">__getslice__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">i</span>,
+        <span class="summary-sig-arg">j</span>)</span><br />
+      x[i:j]</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="corebio.seq-pysrc.html#Seq.__getslice__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="corebio.seq.Seq-class.html#__getitem__" class="summary-sig-name">__getitem__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">key</span>)</span><br />
+      x[y]</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="corebio.seq-pysrc.html#Seq.__getitem__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="corebio.seq.Seq-class.html#__add__" class="summary-sig-name">__add__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">other</span>)</span><br />
+      x+y</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="corebio.seq-pysrc.html#Seq.__add__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="__radd__"></a><span class="summary-sig-name">__radd__</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">other</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="corebio.seq-pysrc.html#Seq.__radd__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">string</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="corebio.seq.Seq-class.html#join" class="summary-sig-name">join</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">str_list</span>)</span><br />
+      Return a string which is the concatenation of the strings in the 
+      iterable.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="corebio.seq-pysrc.html#Seq.join">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="corebio.seq.Seq-class.html#__eq__" class="summary-sig-name">__eq__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">other</span>)</span><br />
+      x==y</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="corebio.seq-pysrc.html#Seq.__eq__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="corebio.seq.Seq-class.html#__ne__" class="summary-sig-name">__ne__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">other</span>)</span><br />
+      x!=y</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="corebio.seq-pysrc.html#Seq.__ne__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="tostring"></a><span class="summary-sig-name">tostring</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Converts Seq to a raw string.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="corebio.seq-pysrc.html#Seq.tostring">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="corebio.seq.Seq-class.html#reverse" class="summary-sig-name">reverse</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Return the reversed sequence.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="corebio.seq-pysrc.html#Seq.reverse">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="ungap"></a><span class="summary-sig-name">ungap</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="corebio.seq-pysrc.html#Seq.ungap">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="remove"></a><span class="summary-sig-name">remove</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">delchars</span>)</span><br />
+      Return a new alphabetic sequence with all characters in 'delchars' 
+      removed.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="corebio.seq-pysrc.html#Seq.remove">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">string</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="corebio.seq.Seq-class.html#lower" class="summary-sig-name">lower</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Return a lower case copy of the sequence.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="corebio.seq-pysrc.html#Seq.lower">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">string</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="corebio.seq.Seq-class.html#upper" class="summary-sig-name">upper</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Return a lower case copy of the sequence.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="corebio.seq-pysrc.html#Seq.upper">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="corebio.seq.Seq-class.html#mask" class="summary-sig-name">mask</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">letters</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string">abcdefghijklmnopqrstuvwxyz</code><code class="variable-quote">'</code></span>,
+        <span class="summary-sig-arg">mask</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string">X</code><code class="variable-quote">'</code></span>)</span><br />
+      Replace all occurrences of letters with the mask character.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="corebio.seq-pysrc.html#Seq.mask">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">string</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="corebio.seq.Seq-class.html#translate" class="summary-sig-name">translate</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Translate a nucleotide sequence to a polypeptide using full IUPAC 
+      ambiguities in DNA/RNA and amino acid codes, using the standard 
+      genetic code.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="corebio.seq-pysrc.html#Seq.translate">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="corebio.seq.Seq-class.html#back_translate" class="summary-sig-name">back_translate</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Translate a protein sequence back into coding DNA, using the standard
+      genetic code.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="corebio.seq-pysrc.html#Seq.back_translate">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="corebio.seq.Seq-class.html#reverse_complement" class="summary-sig-name">reverse_complement</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Returns reversed complementary nucleic acid sequence (i.e.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="corebio.seq-pysrc.html#Seq.reverse_complement">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="complement"></a><span class="summary-sig-name">complement</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Returns complementary nucleic acid sequence.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="corebio.seq-pysrc.html#Seq.complement">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="corebio.seq.Seq-class.html#words" class="summary-sig-name">words</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">k</span>,
+        <span class="summary-sig-arg">alphabet</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Return an iteration over all subwords of length k in the sequence.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="corebio.seq-pysrc.html#Seq.words">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="corebio.seq.Seq-class.html#word_count" class="summary-sig-name">word_count</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">k</span>,
+        <span class="summary-sig-arg">alphabet</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Return a count of all subwords in the sequence.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="corebio.seq-pysrc.html#Seq.word_count">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>str</code></b>:
+      <code>__contains__</code>,
+      <code>__format__</code>,
+      <code>__ge__</code>,
+      <code>__getattribute__</code>,
+      <code>__getnewargs__</code>,
+      <code>__gt__</code>,
+      <code>__hash__</code>,
+      <code>__le__</code>,
+      <code>__len__</code>,
+      <code>__lt__</code>,
+      <code>__mod__</code>,
+      <code>__mul__</code>,
+      <code>__repr__</code>,
+      <code>__rmod__</code>,
+      <code>__rmul__</code>,
+      <code>__sizeof__</code>,
+      <code>__str__</code>,
+      <code>capitalize</code>,
+      <code>center</code>,
+      <code>count</code>,
+      <code>decode</code>,
+      <code>encode</code>,
+      <code>endswith</code>,
+      <code>expandtabs</code>,
+      <code>find</code>,
+      <code>format</code>,
+      <code>index</code>,
+      <code>isalnum</code>,
+      <code>isalpha</code>,
+      <code>isdigit</code>,
+      <code>islower</code>,
+      <code>isspace</code>,
+      <code>istitle</code>,
+      <code>isupper</code>,
+      <code>ljust</code>,
+      <code>lstrip</code>,
+      <code>partition</code>,
+      <code>replace</code>,
+      <code>rfind</code>,
+      <code>rindex</code>,
+      <code>rjust</code>,
+      <code>rpartition</code>,
+      <code>rsplit</code>,
+      <code>rstrip</code>,
+      <code>split</code>,
+      <code>splitlines</code>,
+      <code>startswith</code>,
+      <code>strip</code>,
+      <code>swapcase</code>,
+      <code>title</code>,
+      <code>zfill</code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__delattr__</code>,
+      <code>__init__</code>,
+      <code>__reduce__</code>,
+      <code>__reduce_ex__</code>,
+      <code>__setattr__</code>,
+      <code>__subclasshook__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== STATIC METHODS ==================== -->
+<a name="section-StaticMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Static Methods</span></td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">a new object with type S, a subtype of T</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="corebio.seq.Seq-class.html#__new__" class="summary-sig-name">__new__</a>(<span class="summary-sig-arg">cls</span>,
+        <span class="summary-sig-arg">obj</span>,
+        <span class="summary-sig-arg">alphabet</span>=<span class="summary-sig-default">Alphabet( ' !&quot;#$%&amp;'()*+,-./0123456789:;&lt;=&gt;?@ABCDEFGHIJKLMNOPQR<code class="variable-ellipsis">...</code></span>,
+        <span class="summary-sig-arg">name</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">description</span>=<span class="summary-sig-default">None</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="corebio.seq-pysrc.html#Seq.__new__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Properties</span></td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="corebio.seq.Seq-class.html#alphabet" class="summary-name">alphabet</a>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__class__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Method Details</span></td>
+</tr>
+</table>
+<a name="__new__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__new__</span>(<span class="sig-arg">cls</span>,
+        <span class="sig-arg">obj</span>,
+        <span class="sig-arg">alphabet</span>=<span class="sig-default">Alphabet( ' !&quot;#$%&amp;'()*+,-./0123456789:;&lt;=&gt;?@ABCDEFGHIJKLMNOPQR<code class="variable-ellipsis">...</code></span>,
+        <span class="sig-arg">name</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">description</span>=<span class="sig-default">None</span>)</span>
+    <br /><em class="fname">Static Method</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="corebio.seq-pysrc.html#Seq.__new__">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  
+  <dl class="fields">
+    <dt>Returns: a new object with type S, a subtype of T</dt>
+    <dt>Overrides:
+        object.__new__
+        <dd><em class="note">(inherited documentation)</em></dd>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="tally"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">tally</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">alphabet</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="corebio.seq-pysrc.html#Seq.tally">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+Counts the occurrences of alphabetic characters.
+        
+Arguments:
+- alphabet -- an optional alternative alphabet
+
+Returns :
+    A list of character counts in alphabetic order.
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="__getslice__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__getslice__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">i</span>,
+        <span class="sig-arg">j</span>)</span>
+    <br /><em class="fname">(Slicling operator)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="corebio.seq-pysrc.html#Seq.__getslice__">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>x[i:j]</p>
+  <p>Use of negative indices is not supported.</p>
+  <dl class="fields">
+    <dt>Overrides:
+        str.__getslice__
+        <dd><em class="note">(inherited documentation)</em></dd>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="__getitem__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__getitem__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">key</span>)</span>
+    <br /><em class="fname">(Indexing operator)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="corebio.seq-pysrc.html#Seq.__getitem__">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>x[y]</p>
+  <dl class="fields">
+    <dt>Overrides:
+        str.__getitem__
+        <dd><em class="note">(inherited documentation)</em></dd>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="__add__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__add__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">other</span>)</span>
+    <br /><em class="fname">(Addition operator)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="corebio.seq-pysrc.html#Seq.__add__">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>x+y</p>
+  <dl class="fields">
+    <dt>Overrides:
+        str.__add__
+        <dd><em class="note">(inherited documentation)</em></dd>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="join"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">join</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">str_list</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="corebio.seq-pysrc.html#Seq.join">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Return a string which is the concatenation of the strings in the 
+  iterable.  The separator between elements is S.</p>
+  <dl class="fields">
+    <dt>Returns: string</dt>
+    <dt>Overrides:
+        str.join
+        <dd><em class="note">(inherited documentation)</em></dd>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="__eq__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__eq__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">other</span>)</span>
+    <br /><em class="fname">(Equality operator)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="corebio.seq-pysrc.html#Seq.__eq__">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>x==y</p>
+  <dl class="fields">
+    <dt>Overrides:
+        str.__eq__
+        <dd><em class="note">(inherited documentation)</em></dd>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="__ne__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__ne__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">other</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="corebio.seq-pysrc.html#Seq.__ne__">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>x!=y</p>
+  <dl class="fields">
+    <dt>Overrides:
+        str.__ne__
+        <dd><em class="note">(inherited documentation)</em></dd>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="reverse"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">reverse</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="corebio.seq-pysrc.html#Seq.reverse">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Return the reversed sequence.</p>
+  <p>Note that this method returns a new object, in contrast to the 
+  in-place reverse() method of list objects.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="lower"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">lower</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="corebio.seq-pysrc.html#Seq.lower">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Return a lower case copy of the sequence.</p>
+  <dl class="fields">
+    <dt>Returns: string</dt>
+    <dt>Overrides:
+        str.lower
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="upper"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">upper</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="corebio.seq-pysrc.html#Seq.upper">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Return a lower case copy of the sequence.</p>
+  <dl class="fields">
+    <dt>Returns: string</dt>
+    <dt>Overrides:
+        str.upper
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="mask"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">mask</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">letters</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string">abcdefghijklmnopqrstuvwxyz</code><code class="variable-quote">'</code></span>,
+        <span class="sig-arg">mask</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string">X</code><code class="variable-quote">'</code></span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="corebio.seq-pysrc.html#Seq.mask">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Replace all occurrences of letters with the mask character. The 
+  default is to replace all lower case letters with 'X'.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="translate"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">translate</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="corebio.seq-pysrc.html#Seq.translate">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Translate a nucleotide sequence to a polypeptide using full IUPAC 
+  ambiguities in DNA/RNA and amino acid codes, using the standard genetic 
+  code. See corebio.transform.GeneticCode for details and more options.</p>
+  <dl class="fields">
+    <dt>Returns: string</dt>
+    <dt>Overrides:
+        str.translate
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="back_translate"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">back_translate</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="corebio.seq-pysrc.html#Seq.back_translate">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Translate a protein sequence back into coding DNA, using the standard 
+  genetic code. See corebio.transform.GeneticCode for details and more 
+  options.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="reverse_complement"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">reverse_complement</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="corebio.seq-pysrc.html#Seq.reverse_complement">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns reversed complementary nucleic acid sequence (i.e. the other 
+  strand of a DNA sequence.)</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="words"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">words</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">k</span>,
+        <span class="sig-arg">alphabet</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="corebio.seq-pysrc.html#Seq.words">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Return an iteration over all subwords of length k in the sequence. If 
+  an optional alphabet is provided, only words from that alphabet are 
+  returned.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>list(Seq(<span class="py-string">&quot;abcabc&quot;</span>).words(3))
+<span class="py-output">['abc', 'bca', 'cab', 'abc']</span></pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="word_count"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">word_count</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">k</span>,
+        <span class="sig-arg">alphabet</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="corebio.seq-pysrc.html#Seq.word_count">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Return a count of all subwords in the sequence.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> corebio.seq <span class="py-keyword">import</span> *
+<span class="py-prompt">&gt;&gt;&gt; </span>Seq(<span class="py-string">&quot;abcabc&quot;</span>).word_count(3)
+<span class="py-output">[('abc', 2), ('bca', 1), ('cab', 1)]</span></pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== PROPERTY DETAILS ==================== -->
+<a name="section-PropertyDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Property Details</span></td>
+</tr>
+</table>
+<a name="alphabet"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">alphabet</h3>
+  
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="corebio.seq.Seq-class.html#_get_alphabet" class="summary-sig-name" onclick="show_private();">_get_alphabet</a>(<span class="summary-sig-arg">self</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Wed Mar 12 21:34:13 2014
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

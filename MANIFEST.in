@@ -1,0 +1,18 @@
+include LICENSE.txt README.txt MANIFEST.in PKG-INFO
+recursive-include weblogolib/htdocs *.html *.cgi *.*
+include weblogolib/template.eps
+recursive-include logoddslogolib/htdocs *.html *.cgi *.*
+include logoddslogolib/template.eps
+recursive-include test_weblogo/data *.*
+recursive-include test_corebio *.*
+recursive-include test_corebio/data *.*
+recursive-include test_logodds/data *.*
+include test_weblogo.py
+include test_corebio.py
+include test_logodds.py
+include build_test.sh
+include cap.fa
+include Prot.fa
+recursive-include corebio/data * *.*
+recursive-include logodds *.c Makefile
+include weblogo

@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>corebio.transform</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="corebio-module.html">Package&nbsp;corebio</a> ::
+        Module&nbsp;transform
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="corebio.transform-module.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== MODULE DESCRIPTION ==================== -->
+<h1 class="epydoc">Module transform</h1><p class="nomargin-top"><span class="codelink"><a href="corebio.transform-pysrc.html">source&nbsp;code</a></span></p>
+<pre class="literalblock">
+Transformations of Seqs (alphabetic sequences).
+
+
+
+Classes :
+- Transform   -- Simple transforms of alphabetic strings.
+- GeneticCode -- The genetic mapping of DNA to protein.
+
+Functions :
+-  mask_low_complexity -- Implementation of Seg algorithm to remove low complexity  
+        regions from protein sequences.
+
+Other:
+-   reduced_protein_alphabets -- A dictionary of transforms that reduce the size of the protein alphabet,
+        merging various amino acids into classes.
+        
+        &quot;LiBn&quot; where n is 2 to 19 are from Li et al (2003), table I, 2 to 19 groups.
+        &quot;LiBn&quot; where n is 2 to 19 are from Li et al (2003), table II (no interlacing), 2 to 19 groups.
+        
+        Ref: Li et al Reduction of protein sequence complexity by residue grouping, 
+            Prot. Eng. 16 323-330 (2003)  
+
+    
+
+</pre>
+
+<!-- ==================== CLASSES ==================== -->
+<a name="section-Classes"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Classes</span></td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="corebio.transform.Transform-class.html" class="summary-name">Transform</a><br />
+      A translation between alphabetic strings.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="corebio.transform.GeneticCode-class.html" class="summary-name">GeneticCode</a><br />
+      An encoding of amino acids by DNA triplets.
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTIONS ==================== -->
+<a name="section-Functions"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Functions</span></td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="corebio.transform-module.html#mask_low_complexity" class="summary-sig-name">mask_low_complexity</a>(<span class="summary-sig-arg">seq</span>,
+        <span class="summary-sig-arg">width</span>=<span class="summary-sig-default">12</span>,
+        <span class="summary-sig-arg">trigger</span>=<span class="summary-sig-default">1.8</span>,
+        <span class="summary-sig-arg">extension</span>=<span class="summary-sig-default">2.0</span>,
+        <span class="summary-sig-arg">mask</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string">X</code><code class="variable-quote">'</code></span>)</span><br />
+      Mask low complexity regions in protein sequences.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="corebio.transform-pysrc.html#mask_low_complexity">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+<!-- ==================== VARIABLES ==================== -->
+<a name="section-Variables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Variables</span></td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="corebio.transform-module.html#reduced_protein_alphabets" class="summary-name">reduced_protein_alphabets</a> = <code title="{&quot;LiB2&quot;: Transform(Seq(&quot;CFYWMLIV-GPATSNHQEDRKX*-&quot;, std_protein_alphabe\
+t), Seq(&quot;IIIIIIII-SSSSSSSSSSSSX*-&quot;, Alphabet(&quot;ISX*-&quot;)), &quot;Li et al (200\
+3), table II, group 2&quot;), &quot;LiB3&quot;: Transform(Seq(&quot;CFYWMLIV-GPATS-NHQEDRK\
+X*-&quot;, std_protein_alphabet), Seq(&quot;IIIIIIII-SSSSS-EEEEEEEX*-&quot;, Alphabet\
+(&quot;ISEX*-&quot;)), &quot;Li et al (2003), table II, group 3&quot;), &quot;LiB4&quot;: Transform(\
+Seq(&quot;CFYW-MLIV-GPATS-NHQEDRKX*-&quot;, std_protein_alphabet), Seq(&quot;YYYY-III\
+I-SSSSS-EEEEEEEX*-&quot;, Alphabet(&quot;YISEX*-&quot;)), &quot;Li et al (2003), table II,\
+ group 4&quot;), &quot;LiB5&quot;: Transform(Seq(&quot;CFYW-MLIV-G-PATS-NHQEDRKX*-&quot;, std_p\
+...">{&quot;LiB2&quot;: Transform(Seq(&quot;CFYWMLIV-G<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTION DETAILS ==================== -->
+<a name="section-FunctionDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Function Details</span></td>
+</tr>
+</table>
+<a name="mask_low_complexity"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">mask_low_complexity</span>(<span class="sig-arg">seq</span>,
+        <span class="sig-arg">width</span>=<span class="sig-default">12</span>,
+        <span class="sig-arg">trigger</span>=<span class="sig-default">1.8</span>,
+        <span class="sig-arg">extension</span>=<span class="sig-default">2.0</span>,
+        <span class="sig-arg">mask</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string">X</code><code class="variable-quote">'</code></span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="corebio.transform-pysrc.html#mask_low_complexity">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+Mask low complexity regions in protein sequences.
+
+Uses the method of Seg [1] by Wootton &amp; Federhen [2] to divide a sequence   
+into regions of high and low complexity. The sequence is divided into
+overlapping windows. Low complexity windows either have a sequence entropy
+less than the trigger complexity, or have an entropy less than the extension    
+complexity and neighbor other low-complexity windows. The sequence within   
+a low complexity region is replaced with the mask character (default 'X'), 
+and the masked alphabetic sequence is returned.
+
+The default parameters, width=12, trigger=1.8, extension=2.0, mask='X' are
+suitable for masking protein sequences before a database search. The 
+standard default seg parameters are width=12, trigger=2.2, extension=2.5
+
+Arguments:
+    Seq seq         -- An alphabetic sequence
+    int width       -- Window width
+    float trigger   -- Entropy in bits between 0 and 4.3.. ( =log_2(20) )
+    float extension -- Entropy in bits between 0 and 4.3.. ( =log_2(20) )
+    char mask       -- The mask character (default: 'X') 
+Returns :
+    Seq         -- A masked alphabetic sequence
+Raises :
+    ValueError  -- On invalid arguments
+Refs:
+    [1] seg man page: 
+        http://bioportal.weizmann.ac.il/education/materials/gcg/seg.html
+    [2] Wootton &amp; Federhen (Computers and Chemistry 17; 149-163, (1993)) 
+Authors:
+    GEC 2005
+Future :
+    - Optional mask character.
+    - Option to lower case masked symbols.
+    - Remove arbitary restriction to protein.
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== VARIABLES DETAILS ==================== -->
+<a name="section-VariablesDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Variables Details</span></td>
+</tr>
+</table>
+<a name="reduced_protein_alphabets"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">reduced_protein_alphabets</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+{&quot;LiB2&quot;: Transform(Seq(&quot;CFYWMLIV-GPATSNHQEDRKX*-&quot;, std_protein_alphabe<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+t), Seq(&quot;IIIIIIII-SSSSSSSSSSSSX*-&quot;, Alphabet(&quot;ISX*-&quot;)), &quot;Li et al (200<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+3), table II, group 2&quot;), &quot;LiB3&quot;: Transform(Seq(&quot;CFYWMLIV-GPATS-NHQEDRK<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+X*-&quot;, std_protein_alphabet), Seq(&quot;IIIIIIII-SSSSS-EEEEEEEX*-&quot;, Alphabet<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+(&quot;ISEX*-&quot;)), &quot;Li et al (2003), table II, group 3&quot;), &quot;LiB4&quot;: Transform(<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+Seq(&quot;CFYW-MLIV-GPATS-NHQEDRKX*-&quot;, std_protein_alphabet), Seq(&quot;YYYY-III<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+I-SSSSS-EEEEEEEX*-&quot;, Alphabet(&quot;YISEX*-&quot;)), &quot;Li et al (2003), table II,<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+ group 4&quot;), &quot;LiB5&quot;: Transform(Seq(&quot;CFYW-MLIV-G-PATS-NHQEDRKX*-&quot;, std_p<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+<code class="variable-ellipsis">...</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Wed Mar 12 21:34:13 2014
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

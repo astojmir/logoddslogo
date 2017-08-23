@@ -1,0 +1,656 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>corebio.seq_io.table_io</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="corebio-module.html">Package&nbsp;corebio</a> ::
+        <a href="corebio.seq_io-module.html">Package&nbsp;seq_io</a> ::
+        Module&nbsp;table_io
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="corebio.seq_io.table_io-module.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== MODULE DESCRIPTION ==================== -->
+<h1 class="epydoc">Module table_io</h1><p class="nomargin-top"><span class="codelink"><a href="corebio.seq_io.table_io-pysrc.html">source&nbsp;code</a></span></p>
+<p>Read and write sequence information in tab-delimited format.</p>
+  <p>This very simple format has two columns per line. The first column is 
+  a sequence name, the second column is the sequence itself. The columns 
+  are separated by a single tab (&quot;\t&quot;) character.</p>
+
+<!-- ==================== FUNCTIONS ==================== -->
+<a name="section-Functions"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Functions</span></td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="corebio.seq_io.table_io-module.html#read" class="summary-sig-name">read</a>(<span class="summary-sig-arg">fin</span>,
+        <span class="summary-sig-arg">alphabet</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Read and parse file.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="corebio.seq_io.table_io-pysrc.html#read">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="corebio.seq_io.table_io-module.html#iterseq" class="summary-sig-name">iterseq</a>(<span class="summary-sig-arg">fin</span>,
+        <span class="summary-sig-arg">alphabet</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Parse a file and generate sequences.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="corebio.seq_io.table_io-pysrc.html#iterseq">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="corebio.seq_io.table_io-module.html#write" class="summary-sig-name">write</a>(<span class="summary-sig-arg">fout</span>,
+        <span class="summary-sig-arg">seqs</span>)</span><br />
+      Write a two column, tab-delimited file.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="corebio.seq_io.table_io-pysrc.html#write">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="corebio.seq_io.table_io-module.html#writeseq" class="summary-sig-name">writeseq</a>(<span class="summary-sig-arg">fout</span>,
+        <span class="summary-sig-arg">seq</span>)</span><br />
+      Write a single sequence in fasta format.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="corebio.seq_io.table_io-pysrc.html#writeseq">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+<!-- ==================== VARIABLES ==================== -->
+<a name="section-Variables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Variables</span></td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="names"></a><span class="summary-name">names</span> = <code title="('table', 'tab')"><code class="variable-group">(</code><code class="variable-quote">'</code><code class="variable-string">table</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">tab</code><code class="variable-quote">'</code><code class="variable-group">)</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="extensions"></a><span class="summary-name">extensions</span> = <code title="'tbl'"><code class="variable-quote">'</code><code class="variable-string">tbl</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="corebio.seq_io.table_io-module.html#example" class="summary-name">example</a> = <code title="'''
+EC0001\tMKRISTTITTTITITTGNGAG
+EC0002\tMRVLKFGGTSVANAERFLRVADILESNARQGQVATVLSAPAKITNHLVAM
+EC0003\tMVKVYAPASSANMSVGFDVLGAAVTPVDGALLGDVVTVEAAETFSLNNLG
+EC0004\tMKLYNLKDHNEQVSFAQAVTQGLGKNQGLFFPHDLPEFSLTEIDEMLKLD
+EC0005\tMKKMQSIVLALSLVLVAPMAAQAAEITLVPSVKLQIGDRDNRGYYWDGGH
+EC0006\tMLILISPAKTLDYQSPLTTTRYTLPELLDNSQQLIHEARKLTPPQISTLM
+EC0007\tMPDFFSFINSVLWGSVMIYLLFGAGCWFTFRTGFVQFRYIRQFGKSLKNS
+..."><code class="variable-quote">'</code><code class="variable-string">\nEC0001\tMKRISTTITTTITITTGNGAG\nEC0002\tMRVLKFGGTS</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="__package__"></a><span class="summary-name">__package__</span> = <code title="'corebio.seq_io'"><code class="variable-quote">'</code><code class="variable-string">corebio.seq_io</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="corebio.seq_io.table_io-module.html#dna_alphabet" class="summary-name">dna_alphabet</a> = <code title="Alphabet( 'ACGTRYSWKMBDHVN-', zip('acgtryswkmbdhvnXx?.~Uu', 'ACGTRYSWK\
+MBDHVNNNN--TT') )">Alphabet( 'ACGTRYSWKMBDHVN-', zip('acgtryswkmbd<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="corebio.seq_io.table_io-module.html#generic_alphabet" class="summary-name">generic_alphabet</a> = <code title="Alphabet( ' !&quot;#$%&amp;'()*+,-./0123456789:;&lt;=&gt;?@ABCDEFGHIJKLMNOPQRSTUVWXYZ\
+[\]^_`abcdefghijklmnopqrstuvwxyz{|}~', zip('', '') )">Alphabet( ' !&quot;#$%&amp;'()*+,-./0123456789:;&lt;=&gt;?<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="corebio.seq_io.table_io-module.html#nucleic_alphabet" class="summary-name">nucleic_alphabet</a> = <code title="Alphabet( 'ACGTURYSWKMBDHVN-', zip('acgturyswkmbdhvnXx?.~', 'ACGTURYSW\
+KMBDHVNNNN--') )">Alphabet( 'ACGTURYSWKMBDHVN-', zip('acgtury<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="corebio.seq_io.table_io-module.html#protein_alphabet" class="summary-name">protein_alphabet</a> = <code title="Alphabet( 'ACDEFGHIKLMNOPQRSTUVWYBJZX*-', zip('acdefghiklmnopqrstuvwyb\
+jzx?.~', 'ACDEFGHIKLMNOPQRSTUVWYBJZXX--') )">Alphabet( 'ACDEFGHIKLMNOPQRSTUVWYBJZX*-', z<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="corebio.seq_io.table_io-module.html#reduced_nucleic_alphabet" class="summary-name">reduced_nucleic_alphabet</a> = <code title="Alphabet( 'ACGTN-', zip('acgtryswkmbdhvnXx?.~RYSWKMBDHV', 'ACGTNNNNNNN\
+NNNNNNN--NNNNNNNNNN') )">Alphabet( 'ACGTN-', zip('acgtryswkm<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="corebio.seq_io.table_io-module.html#reduced_protein_alphabet" class="summary-name">reduced_protein_alphabet</a> = <code title="Alphabet( 'ACDEFGHIKLMNPQRSTVWYX*-', zip('acdefghiklmnpqrstvwyx?.~BbZz\
+Uu', 'ACDEFGHIKLMNPQRSTVWYXX--XXXXCC') )">Alphabet( 'ACDEFGHIKLMNPQRSTVWYX*-'<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="corebio.seq_io.table_io-module.html#rna_alphabet" class="summary-name">rna_alphabet</a> = <code title="Alphabet( 'ACGURYSWKMBDHVN-', zip('acguryswkmbdhvnXx?.~Tt', 'ACGURYSWK\
+MBDHVNNNN--UU') )">Alphabet( 'ACGURYSWKMBDHVN-', zip('acguryswkmbd<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="corebio.seq_io.table_io-module.html#unambiguous_dna_alphabet" class="summary-name">unambiguous_dna_alphabet</a> = <code title="Alphabet( 'ACGT', zip('acgt', 'ACGT') )">Alphabet( 'ACGT', zip('acgt', 'ACGT<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="corebio.seq_io.table_io-module.html#unambiguous_protein_alphabet" class="summary-name">unambiguous_protein_alphabet</a> = <code title="Alphabet( 'ACDEFGHIKLMNPQRSTVWY', zip('acdefghiklmnpqrstvwy', 'ACDEFGH\
+IKLMNPQRSTVWY') )">Alphabet( 'ACDEFGHIKLMNPQRSTVWY<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="corebio.seq_io.table_io-module.html#unambiguous_rna_alphabet" class="summary-name">unambiguous_rna_alphabet</a> = <code title="Alphabet( 'ACGU', zip('acgu', 'ACGU') )">Alphabet( 'ACGU', zip('acgu', 'ACGU<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTION DETAILS ==================== -->
+<a name="section-FunctionDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Function Details</span></td>
+</tr>
+</table>
+<a name="read"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">read</span>(<span class="sig-arg">fin</span>,
+        <span class="sig-arg">alphabet</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="corebio.seq_io.table_io-pysrc.html#read">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+Read and parse file. 
+
+Args:
+    fin -- A stream or file to read
+    alphabet -- The expected alphabet of the data, if given
+Returns: 
+    SeqList -- A list of sequences
+Raises: 
+    ValueError -- If the file is unparsable
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="iterseq"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">iterseq</span>(<span class="sig-arg">fin</span>,
+        <span class="sig-arg">alphabet</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="corebio.seq_io.table_io-pysrc.html#iterseq">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+Parse a file and generate sequences.
+
+Args:
+    fin -- A stream or file to read
+    alphabet -- The expected alphabet of the data, if given    
+Yeilds: 
+    Seq -- One alphabetic sequence at a time.
+Raises: 
+    ValueError -- If the file is unparsable
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="write"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">write</span>(<span class="sig-arg">fout</span>,
+        <span class="sig-arg">seqs</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="corebio.seq_io.table_io-pysrc.html#write">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+Write a two column, tab-delimited file. 
+
+Args:
+    fout -- A writable stream.
+    seqs  -- A list of Seq's
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="writeseq"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">writeseq</span>(<span class="sig-arg">fout</span>,
+        <span class="sig-arg">seq</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="corebio.seq_io.table_io-pysrc.html#writeseq">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+Write a single sequence in fasta format.
+
+Args:
+    afile -- A writable stream.
+    seq  -- A Seq instance
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== VARIABLES DETAILS ==================== -->
+<a name="section-VariablesDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Variables Details</span></td>
+</tr>
+</table>
+<a name="example"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">example</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-quote">'''</code><code class="variable-string"></code>
+<code class="variable-string">EC0001\tMKRISTTITTTITITTGNGAG</code>
+<code class="variable-string">EC0002\tMRVLKFGGTSVANAERFLRVADILESNARQGQVATVLSAPAKITNHLVAM</code>
+<code class="variable-string">EC0003\tMVKVYAPASSANMSVGFDVLGAAVTPVDGALLGDVVTVEAAETFSLNNLG</code>
+<code class="variable-string">EC0004\tMKLYNLKDHNEQVSFAQAVTQGLGKNQGLFFPHDLPEFSLTEIDEMLKLD</code>
+<code class="variable-string">EC0005\tMKKMQSIVLALSLVLVAPMAAQAAEITLVPSVKLQIGDRDNRGYYWDGGH</code>
+<code class="variable-string">EC0006\tMLILISPAKTLDYQSPLTTTRYTLPELLDNSQQLIHEARKLTPPQISTLM</code>
+<code class="variable-string">EC0007\tMPDFFSFINSVLWGSVMIYLLFGAGCWFTFRTGFVQFRYIRQFGKSLKNS</code>
+<code class="variable-ellipsis">...</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="dna_alphabet"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">dna_alphabet</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+Alphabet( 'ACGTRYSWKMBDHVN-', zip('acgtryswkmbdhvnXx?.~Uu', 'ACGTRYSWK<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+MBDHVNNNN--TT') )
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="generic_alphabet"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">generic_alphabet</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+Alphabet( ' !&quot;#$%&amp;'()*+,-./0123456789:;&lt;=&gt;?@ABCDEFGHIJKLMNOPQRSTUVWXYZ<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+[\]^_`abcdefghijklmnopqrstuvwxyz{|}~', zip('', '') )
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="nucleic_alphabet"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">nucleic_alphabet</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+Alphabet( 'ACGTURYSWKMBDHVN-', zip('acgturyswkmbdhvnXx?.~', 'ACGTURYSW<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+KMBDHVNNNN--') )
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="protein_alphabet"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">protein_alphabet</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+Alphabet( 'ACDEFGHIKLMNOPQRSTUVWYBJZX*-', zip('acdefghiklmnopqrstuvwyb<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+jzx?.~', 'ACDEFGHIKLMNOPQRSTUVWYBJZXX--') )
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="reduced_nucleic_alphabet"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">reduced_nucleic_alphabet</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+Alphabet( 'ACGTN-', zip('acgtryswkmbdhvnXx?.~RYSWKMBDHV', 'ACGTNNNNNNN<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+NNNNNNN--NNNNNNNNNN') )
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="reduced_protein_alphabet"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">reduced_protein_alphabet</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+Alphabet( 'ACDEFGHIKLMNPQRSTVWYX*-', zip('acdefghiklmnpqrstvwyx?.~BbZz<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+Uu', 'ACDEFGHIKLMNPQRSTVWYXX--XXXXCC') )
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="rna_alphabet"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">rna_alphabet</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+Alphabet( 'ACGURYSWKMBDHVN-', zip('acguryswkmbdhvnXx?.~Tt', 'ACGURYSWK<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+MBDHVNNNN--UU') )
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="unambiguous_dna_alphabet"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">unambiguous_dna_alphabet</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+Alphabet( 'ACGT', zip('acgt', 'ACGT') )
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="unambiguous_protein_alphabet"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">unambiguous_protein_alphabet</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+Alphabet( 'ACDEFGHIKLMNPQRSTVWY', zip('acdefghiklmnpqrstvwy', 'ACDEFGH<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+IKLMNPQRSTVWY') )
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="unambiguous_rna_alphabet"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">unambiguous_rna_alphabet</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+Alphabet( 'ACGU', zip('acgu', 'ACGU') )
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Wed Mar 12 21:34:13 2014
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

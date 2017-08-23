@@ -1,0 +1,144 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <title>LogOddsLogo - About</title>
+  <meta name="author" content="Yi-Kuo Yu, Aleksandar Stojmirovic, Stephen Altschul" >
+  <!-- Credit to the original authors -->
+  <meta name="author" content="Gavin E. Crooks" >
+  <link href="qmbp.css" type="text/css" rel="stylesheet" />
+  <link href="logoddslogo.css" type="text/css" rel="stylesheet" />
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+</head>
+
+<body style="align: center">
+
+
+<div id="header">
+  <div id="qmbplogo"><h1><a href="http://www.ncbi.nlm.nih.gov/CBBresearch/Yu/index.html">QMBP</a></h1></div>
+  <div id="logoddslogobanner">  <h1><a href="index.html">LogOddsLogo</a></h1></div>
+  <div id="ncbilogo"><h1><a href="http://www.ncbi.nlm.nih.gov">NCBI</a></h1></div>
+  <div class="cclr"></div>
+</div>
+<div id="leftpanel">
+  <div id="gtgl1a" class="ctgl expanded"><div class="cover"><a id="gtgl1" class="ca1" href="#"></a><a href="http://www.ncbi.nlm.nih.gov/CBBresearch/Yu/webresources.html" class="ctgl">Web resources</a></div>
+  <div id="gtgl1b" class="ctgldiv cback opened">
+    <div id="gtgl1_1_2" class="ctgl none"><div class="cover"><span class="ca3"></span><a href="http://www.ncbi.nlm.nih.gov/CBBresearch/Yu/raid_dbs/index.html" class="ctgl">RAId_DbS</a></div></div>
+    <div id="gtgl1_1_3a" class="ctgl none"><div class="cover"><span class="ca3"></span><a href="http://www.ncbi.nlm.nih.gov/CBBresearch/Yu/raid_aps/index.html" class="ctgl">RAId_aPS</a></div></div>
+    <div id="gtgl1_1_5" class="ctgl none"><div class="cover"><span class="ca3"></span><a href="http://www.ncbi.nlm.nih.gov/CBBresearch/Yu/midas/index.html" class="ctgl">MIDAs</a></div></div>
+    <div id="gtgl1_2a" class="ctgl none"><div class="cover"><span id="gtgl1_2" class="ca3"></span><a href="http://www.ncbi.nlm.nih.gov/CBBresearch/Yu/mn/itm_probe/index.html" class="ctgl">ITM Probe</a></div></div>
+    <div id="gtgl1_2c" class="ctgl none"><div class="cover"><span class="ca2"></span><a href="http://www.ncbi.nlm.nih.gov/CBBresearch/Yu/mn/enrich/index.html" class="ctgl">SaddleSum</a></div></div>
+    <div id="gtgl1_2c" class="ctgl none"><div class="cover cacur"><span class="ca2"></span><a href="./index.html" class="ctgl">LogOddsLogo</a></div></div>
+  </div>
+  </div>
+  <div id="gtgl2a" class="ctgl none"><div class="cover"><span class="ca3"></span><a href="http://www.ncbi.nlm.nih.gov/CBBresearch/Yu/downloads.html" class="ctgl">Downloads</a></div>
+
+  </div>
+  <div id="gtgl3a" class="ctgl none"><div class="cover"><span id="gtgl3" class="ca3"></span><a href="http://www.ncbi.nlm.nih.gov/CBBresearch/Yu/members.html" class="ctgl">Members</a></div>
+
+  </div>
+  <div id="gtgl4" class="ctgl none"><div class="cover"><span class="ca2"></span><a href="http://www.ncbi.nlm.nih.gov/CBBresearch/Yu/publications.html" class="ctgl">Publications</a></div></div>
+</div>
+<div id="rightpanel">
+<p class="sidetitle">LogOddsLogo</p>
+<h4>Web service</h4>
+<ul>
+  <li><a href="proteins.cgi">Create Protein Logo</a></li>
+  <li><a href="nucleicacid.cgi">Create Nucleic Acid Logo</a></li>
+</ul><br />
+<h4>Download</h4>
+<ul>
+<li><a href="ftp://ftp.ncbi.nlm.nih.gov/pub/qmbp/logoddslogo/">FTP Site</a></li>
+</ul><br />
+<h4>Documentation</h4>
+<ul>
+<li><a href="./">About</a></li>
+<li><a href="examples.html">Examples</a></li>
+<li><a href="manual.html">Manual</a></li>
+</ul>
+</div>
+
+<div id="middlepanel">
+<!--  ========================== -->
+
+
+<h1>LogOddsLogo</h1>
+
+<p>
+<strong>LogOddsLogo</strong>
+is a web based application designed to make the generation of
+sequence logos from biological sequence alignments simple.
+ Building upon <a href="http://weblogo.threeplusone.com">WebLogo 3</a> source code, LogOddsLogo uses per-observation multiple-alignment log-odds scores as measures of information
+content at each logo position. These measures have a proper statistical basis and, particularly for proteins, may outperform earlier measures in recognizing functionally relevant alignment columns.
+<p>
+A <a href="http://www.lecb.ncifcrf.gov/~toms/sequencelogo.html">sequence&nbsp;logo</a> is a graphical representation of an amino acid
+or nucleic acid multiple sequence alignment developed by
+Tom Schneider and Mike Stephens.
+ Each position within a logo, corresponding to an alignment "column", consist of a stack of letters.  The height of the stack indicates the sequence conservation at a position, while the height of each letter within the stack is proportional to the observed frequency of the corresponding amino acid or nucleotide at that position.
+In general, a sequence logo provides a richer and more precise description of a sequence motif than does a consensus sequence.
+</p>
+
+<ul>
+<li>Create your own <a href="proteins.cgi">protein</a> or <a href="nucleicacid.cgi">nucleic acid</a> logos
+</li><li><a href="examples.html">View example sequence logos and input data.</a>
+</li><li>  <a href="logoddslogo_changelog.txt">Read release notes for latest changes and updates.</a>
+</li><li><a href="manual.html">Read the User's Manual</a>
+</li><li> <a href="ftp://ftp.ncbi.nlm.nih.gov/pub/qmbp/logoddslogo/"> Download LogOddsLogo source code</a>
+</li>
+</ul>
+
+
+<h4>References</h4>
+
+<p>
+Yu YK, Capra JA, Stojmirovic A, Landsman D, Altschul, SF.
+Log-odds sequence logos. <em>Submitted for publication</em>, (2014).
+</p>
+
+<p>
+Altschul SF, Wootton JC, Zaslavsky E, Yu YK.
+<a href="http://www.ncbi.nlm.nih.gov/pubmed/20657661">The construction and use of log-odds substitution scores for multiple sequence alignment.</a>
+<em>PLoS Comput Biol.</em> 6:e1000852, (2010).
+</p>
+
+<p>
+Crooks GE, Hon G, Chandonia JM, Brenner SE.
+<a href="http://www.ncbi.nlm.nih.gov/pubmed/15173120"> WebLogo: A sequence logo
+generator.</a> <em>Genome Research</em> 14:1188-1190, (2004).
+</p>
+
+<p>
+Schneider TD, Stephens RM.
+<a href="http://www.ncbi.nlm.nih.gov/pubmed/2172928">Sequence logos: A new way to display consensus sequences.</a>
+<em>Nucleic Acids Res.</em> <em>18</em>:6097-6100, (1990).
+</p>
+
+
+<h4>Acknowledgement</h4>
+<p>
+We thank Zvezdana Stojmirovic for designing the banner for LogOddsLogo, and
+Leonardo Marino-Ramírez, Marc Gwadz, and Narmada Thanki for reviewing
+the website.
+</p>
+
+<h4>Feedback</h4>
+<p>
+Please direct questions and feedback about LogOddsLogo to <a href="http://www.ncbi.nlm.nih.gov/CBBresearch/Yu/">Yi-Kuo Yu</a>.
+</p>
+
+<!--  ========================= -->
+</div>
+
+<hr id="footsep" />
+<div id="footer">
+  <ul>
+    <li><a href="http://www.ncbi.nih.gov/About/disclaimer.html">Copyright</a></li>
+    <li><a href="http://www.ncbi.nih.gov/About/disclaimer.html#disclaimer">Disclaimer</a></li>
+    <li><a href="http://www.nlm.nih.gov/privacy.html">Privacy</a></li>
+    <li><a href="http://www.ncbi.nih.gov/About/accessibility.html">Accessibility</a></li>
+  </ul>
+  <!-- <span id="codedby">Maintained by Yi-Kuo Yu. Last update: February 28, 2014</span> -->
+</div>
+
+</body>
+</html>

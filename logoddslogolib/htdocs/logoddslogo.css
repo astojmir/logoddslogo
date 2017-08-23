@@ -1,0 +1,156 @@
+div#logoddslogobanner   { float: left;  height: 100%; width: 440px; }
+div#logoddslogobanner     h1 a { background: url("qmbppics/LogOddsLogo.png")            no-repeat scroll left top transparent; }
+
+.error {
+    color: #900;
+    border-left: red solid +4pt;
+}
+
+table.cds tr.err_msg {
+    color: #900;
+    height: 44pt;
+}
+
+table.cds tr.err_msg td {
+    vertical-align:middle;
+}
+
+
+
+body {
+  /* min-width: 890px; */
+  /* max-width: 1024px; */
+  /* color: #666; */
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: medium;
+  /* background: #fff; */
+  /* clear: both; */
+  /* margin-left: auto; */
+  /* margin-right: auto; */
+  /* padding: 15px; */
+}
+
+table, tr, td, th { font-size: 100%; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+
+
+/* Middlepanel */
+#middlepanel {
+  position: relative;
+  width: auto;
+  z-index: 2;
+  margin-top: 10px;
+  margin-left: 175px;
+  margin-right: 175px;
+  text-align: left;
+}
+
+#middlepanel h1 {
+  margin: 1em 0 .5em 0;
+  font-size: 135%;
+}
+
+#middlepanel h2 {
+  margin: 1em 0 .5em 0;
+  font-size: 125%; /* 18px */
+}
+#middlepanel h2 a {
+  color: #666;
+}
+
+#middlepanel h3 {
+  margin: 1em 0 .5em 0;
+}
+#middlepanel h3 a {
+  color: #666;
+}
+
+#middlepanel h4 {
+  font-weight: bold;
+  margin: 1em 0 .5em 0;
+}
+
+#middlepanel p {
+  margin: 0.7em 0 0.7em 0;
+  font-size: 100%;
+}
+
+#middlepanel ul {
+  margin: 0.5em 0em 0.2em 2em;
+}
+
+#middlepanel li {
+  margin: 0em 0em 0.3em 0em;
+  font-size: 100%;
+}
+
+
+table, tr, td, th { font-size: 100%; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+
+
+table.striped {
+  border: 1px solid #ddd;
+  border-collapse:collapse;
+  border-spacing: 0px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  width:100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+table.striped thead tr th {
+  margin: 0px;
+  font-weight: bold;
+  border-bottom: 0px solid #ccc;
+  padding: 2px 5px;
+  background-color: #ddd;
+}
+table.striped tr td {
+  margin: 0px;
+  border-bottom: 0px solid #ccc;
+  padding: 2px 5px;
+}
+table.striped tr.row1 td {
+  background-color: white;
+}
+table.striped tr.row2 td {
+  background-color: #f0f0f0;
+}
+
+table.striped tr .col-desc {
+  width: 45%;
+}
+table.striped tr .col-letters {
+  width: 30%;
+}
+
+table.striped tr .col-rank {
+  width: 3em;
+}
+table.striped tr .col-node {
+  text-align: left;
+}
+table.striped tr .col-assoc {
+  width: 7em;
+  text-align: right;
+}
+table.striped tr .col-score {
+  width: 6.2em;
+}
+table.striped tr .col-score2 {
+  width: 6.2em;
+  text-align: right;
+}
+table.striped tr .col-links {
+  width: 2.5em;
+  text-align: right;
+}
+table.striped tr .col-val {
+  width: 5em;
+}

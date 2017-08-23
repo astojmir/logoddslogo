@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>corebio.secstruc.stride</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="corebio-module.html">Package&nbsp;corebio</a> ::
+        <a href="corebio.secstruc-module.html">Package&nbsp;secstruc</a> ::
+        Module&nbsp;stride
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="corebio.secstruc.stride-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="corebio.secstruc.stride-module.html">Module corebio.secstruc.stride</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"><tt class="py-comment">#  Copyright (c) 2003 Gavin E. Crooks</tt> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-comment">#  Copyright (c) 2005 David D. Ding &lt;dding@berkeley.edu&gt;</tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-comment">#  Copyright (c) 2006 John Gilman</tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-comment">#  This software is distributed under the MIT Open Source License.</tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt class="py-comment">#  &lt;http://www.opensource.org/licenses/mit-license.html&gt;</tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"><tt class="py-comment">#  Permission is hereby granted, free of charge, to any person obtaining a </tt> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line"><tt class="py-comment">#  copy of this software and associated documentation files (the "Software"),</tt> </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line"><tt class="py-comment">#  to deal in the Software without restriction, including without limitation</tt> </tt>
+<a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line"><tt class="py-comment">#  the rights to use, copy, modify, merge, publish, distribute, sublicense,</tt> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line"><tt class="py-comment">#  and/or sell copies of the Software, and to permit persons to whom the</tt> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line"><tt class="py-comment">#  Software is furnished to do so, subject to the following conditions:</tt> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line"><tt class="py-comment">#  The above copyright notice and this permission notice shall be included</tt> </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line"><tt class="py-comment">#  in all copies or substantial portions of the Software.</tt> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line"><tt class="py-comment">#  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR </tt> </tt>
+<a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line"><tt class="py-comment">#  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, </tt> </tt>
+<a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line"><tt class="py-comment">#  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</tt> </tt>
+<a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line"><tt class="py-comment">#  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER </tt> </tt>
+<a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line"><tt class="py-comment">#  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</tt> </tt>
+<a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line"><tt class="py-comment">#  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN </tt> </tt>
+<a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line"><tt class="py-comment">#  THE SOFTWARE.</tt> </tt>
+<a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line"> </tt>
+<a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line"><tt class="py-docstring">"""Command and control of the program STRIDE: Protein secondary structure assignment from atomic coordinates.</tt> </tt>
+<a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line"><tt class="py-docstring">This module provides an interface to STRIDE, a program used to recognize</tt> </tt>
+<a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line"><tt class="py-docstring">secondary structural elements in proteins from their atomic coordinates.</tt> </tt>
+<a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line"><tt class="py-docstring">Refs:</tt> </tt>
+<a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line"><tt class="py-docstring">    - http://wolf.bi.umist.ac.uk/unix/stride.html</tt> </tt>
+<a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line"><tt class="py-docstring">"""</tt> </tt>
+<a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line"> </tt>
+<a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-0" class="py-name" targets="Package corebio=corebio-module.html"><a title="corebio" class="py-name" href="#" onclick="return doclink('link-0', 'corebio', 'link-0');">corebio</a></tt><tt class="py-op">.</tt><tt id="link-1" class="py-name" targets="Module corebio.seq=corebio.seq-module.html"><a title="corebio.seq" class="py-name" href="#" onclick="return doclink('link-1', 'seq', 'link-1');">seq</a></tt> <tt class="py-keyword">import</tt> <tt id="link-2" class="py-name" targets="Class corebio.seq.Seq=corebio.seq.Seq-class.html"><a title="corebio.seq.Seq" class="py-name" href="#" onclick="return doclink('link-2', 'Seq', 'link-2');">Seq</a></tt><tt class="py-op">,</tt> <tt id="link-3" class="py-name" targets="Variable corebio.seq.protein_alphabet=corebio.seq-module.html#protein_alphabet,Variable corebio.seq_io.array_io.protein_alphabet=corebio.seq_io.array_io-module.html#protein_alphabet,Variable corebio.seq_io.clustal_io.protein_alphabet=corebio.seq_io.clustal_io-module.html#protein_alphabet,Variable corebio.seq_io.fasta_io.protein_alphabet=corebio.seq_io.fasta_io-module.html#protein_alphabet,Variable corebio.seq_io.genbank_io.protein_alphabet=corebio.seq_io.genbank_io-module.html#protein_alphabet,Variable corebio.seq_io.intelligenetics_io.protein_alphabet=corebio.seq_io.intelligenetics_io-module.html#protein_alphabet,Variable corebio.seq_io.msf_io.protein_alphabet=corebio.seq_io.msf_io-module.html#protein_alphabet,Variable corebio.seq_io.nbrf_io.protein_alphabet=corebio.seq_io.nbrf_io-module.html#protein_alphabet,Variable corebio.seq_io.phylip_io.protein_alphabet=corebio.seq_io.phylip_io-module.html#protein_alphabet,Variable corebio.seq_io.plain_io.protein_alphabet=corebio.seq_io.plain_io-module.html#protein_alphabet,Variable corebio.seq_io.protein_alphabet=corebio.seq_io-module.html#protein_alphabet,Variable corebio.seq_io.stockholm_io.protein_alphabet=corebio.seq_io.stockholm_io-module.html#protein_alphabet,Variable corebio.seq_io.table_io.protein_alphabet=corebio.seq_io.table_io-module.html#protein_alphabet"><a title="corebio.seq.protein_alphabet
+corebio.seq_io.array_io.protein_alphabet
+corebio.seq_io.clustal_io.protein_alphabet
+corebio.seq_io.fasta_io.protein_alphabet
+corebio.seq_io.genbank_io.protein_alphabet
+corebio.seq_io.intelligenetics_io.protein_alphabet
+corebio.seq_io.msf_io.protein_alphabet
+corebio.seq_io.nbrf_io.protein_alphabet
+corebio.seq_io.phylip_io.protein_alphabet
+corebio.seq_io.plain_io.protein_alphabet
+corebio.seq_io.protein_alphabet
+corebio.seq_io.stockholm_io.protein_alphabet
+corebio.seq_io.table_io.protein_alphabet" class="py-name" href="#" onclick="return doclink('link-3', 'protein_alphabet', 'link-3');">protein_alphabet</a></tt><tt class="py-op">,</tt> <tt id="link-4" class="py-name" targets="Class corebio.seq.Alphabet=corebio.seq.Alphabet-class.html"><a title="corebio.seq.Alphabet" class="py-name" href="#" onclick="return doclink('link-4', 'Alphabet', 'link-4');">Alphabet</a></tt> </tt>
+<a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-5" class="py-name"><a title="corebio" class="py-name" href="#" onclick="return doclink('link-5', 'corebio', 'link-0');">corebio</a></tt><tt class="py-op">.</tt><tt id="link-6" class="py-name" targets="Package corebio.db=corebio.db-module.html"><a title="corebio.db" class="py-name" href="#" onclick="return doclink('link-6', 'db', 'link-6');">db</a></tt><tt class="py-op">.</tt><tt id="link-7" class="py-name" targets="Module corebio.db.astral=corebio.db.astral-module.html"><a title="corebio.db.astral" class="py-name" href="#" onclick="return doclink('link-7', 'astral', 'link-7');">astral</a></tt> <tt class="py-keyword">import</tt> <tt class="py-name">to_one_letter_code</tt> </tt>
+<a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">subprocess</tt> <tt class="py-keyword">import</tt> <tt class="py-op">*</tt>  </tt>
+<a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">StringIO</tt> <tt class="py-keyword">import</tt> <tt class="py-name">StringIO</tt> </tt>
+<a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-8" class="py-name"><a title="corebio" class="py-name" href="#" onclick="return doclink('link-8', 'corebio', 'link-0');">corebio</a></tt><tt class="py-op">.</tt><tt id="link-9" class="py-name" targets="Package corebio.utils=corebio.utils-module.html"><a title="corebio.utils" class="py-name" href="#" onclick="return doclink('link-9', 'utils', 'link-9');">utils</a></tt> <tt class="py-keyword">import</tt> <tt id="link-10" class="py-name" targets="Function corebio.utils.stdrepr()=corebio.utils-module.html#stdrepr"><a title="corebio.utils.stdrepr" class="py-name" href="#" onclick="return doclink('link-10', 'stdrepr', 'link-10');">stdrepr</a></tt><tt class="py-op">,</tt> <tt id="link-11" class="py-name" targets="Function corebio.utils.find_command()=corebio.utils-module.html#find_command"><a title="corebio.utils.find_command" class="py-name" href="#" onclick="return doclink('link-11', 'find_command', 'link-11');">find_command</a></tt> </tt>
+<a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line"> </tt>
+<a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line"><tt class="py-comment"># alphabet for stride secondary structure</tt> </tt>
+<a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line"><tt id="link-12" class="py-name" targets="Variable corebio.secstruc.stride.stride_alphabet=corebio.secstruc.stride-module.html#stride_alphabet"><a title="corebio.secstruc.stride.stride_alphabet" class="py-name" href="#" onclick="return doclink('link-12', 'stride_alphabet', 'link-12');">stride_alphabet</a></tt> <tt class="py-op">=</tt> <tt id="link-13" class="py-name"><a title="corebio.seq.Alphabet" class="py-name" href="#" onclick="return doclink('link-13', 'Alphabet', 'link-4');">Alphabet</a></tt><tt class="py-op">(</tt><tt class="py-string">"HGIEBC12345678@&amp;T"</tt><tt class="py-op">)</tt> </tt>
+<a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line"> </tt>
+<a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line"><tt class="py-comment"># Dictionary for conversion between names and alphabet</tt> </tt>
+<a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line"><tt id="link-14" class="py-name" targets="Variable corebio.secstruc.stride.stride_alphabet_names=corebio.secstruc.stride-module.html#stride_alphabet_names"><a title="corebio.secstruc.stride.stride_alphabet_names" class="py-name" href="#" onclick="return doclink('link-14', 'stride_alphabet_names', 'link-14');">stride_alphabet_names</a></tt>  <tt class="py-op">=</tt> <tt class="py-op">{</tt>  </tt>
+<a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line">    <tt class="py-string">"H"</tt><tt class="py-op">:</tt> <tt class="py-string">"AlphaHelix"</tt><tt class="py-op">,</tt> </tt>
+<a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line">    <tt class="py-string">"G"</tt><tt class="py-op">:</tt> <tt class="py-string">"310Helix"</tt><tt class="py-op">,</tt> </tt>
+<a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line">    <tt class="py-string">"I"</tt><tt class="py-op">:</tt> <tt class="py-string">"PiHelix"</tt><tt class="py-op">,</tt> </tt>
+<a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line">    <tt class="py-string">"E"</tt><tt class="py-op">:</tt> <tt class="py-string">"Strand"</tt><tt class="py-op">,</tt> </tt>
+<a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line">    <tt class="py-string">"b"</tt><tt class="py-op">:</tt> <tt class="py-string">"Bridge"</tt><tt class="py-op">,</tt> </tt>
+<a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line">    <tt class="py-string">"B"</tt><tt class="py-op">:</tt> <tt class="py-string">"Bridge"</tt><tt class="py-op">,</tt> </tt>
+<a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line">    <tt class="py-string">"C"</tt><tt class="py-op">:</tt> <tt class="py-string">"Coil"</tt><tt class="py-op">,</tt> </tt>
+<a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line">    <tt class="py-string">"1"</tt><tt class="py-op">:</tt> <tt class="py-string">"TurnI"</tt><tt class="py-op">,</tt> </tt>
+<a name="L55"></a><tt class="py-lineno"> 55</tt>  <tt class="py-line">    <tt class="py-string">"2"</tt><tt class="py-op">:</tt> <tt class="py-string">"TurnI'"</tt><tt class="py-op">,</tt> </tt>
+<a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line">    <tt class="py-string">"3"</tt><tt class="py-op">:</tt> <tt class="py-string">"TurnII"</tt><tt class="py-op">,</tt> </tt>
+<a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line">    <tt class="py-string">"4"</tt><tt class="py-op">:</tt> <tt class="py-string">"TurnII'"</tt><tt class="py-op">,</tt> </tt>
+<a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line">    <tt class="py-string">"5"</tt><tt class="py-op">:</tt> <tt class="py-string">"TurnVIa"</tt><tt class="py-op">,</tt> </tt>
+<a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line">    <tt class="py-string">"6"</tt><tt class="py-op">:</tt> <tt class="py-string">"TurnVIb"</tt><tt class="py-op">,</tt> </tt>
+<a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line">    <tt class="py-string">"7"</tt><tt class="py-op">:</tt> <tt class="py-string">"TurnVIII"</tt><tt class="py-op">,</tt> </tt>
+<a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line">    <tt class="py-string">"8"</tt><tt class="py-op">:</tt> <tt class="py-string">"TurnIV"</tt><tt class="py-op">,</tt> </tt>
+<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line">    <tt class="py-string">"@"</tt><tt class="py-op">:</tt> <tt class="py-string">"GammaClassic"</tt><tt class="py-op">,</tt> </tt>
+<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line">    <tt class="py-string">"&amp;"</tt><tt class="py-op">:</tt> <tt class="py-string">"GammaInv"</tt><tt class="py-op">,</tt> </tt>
+<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line">    <tt class="py-string">"T"</tt><tt class="py-op">:</tt> <tt class="py-string">"Turn"</tt> </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line">    <tt class="py-op">}</tt> </tt>
+<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line"> </tt>
+<a name="RunStride"></a><div id="RunStride-def"><a name="L67"></a><tt class="py-lineno"> 67</tt> <a class="py-toggle" href="#" id="RunStride-toggle" onclick="return toggle('RunStride');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="corebio.secstruc.stride.RunStride-class.html">RunStride</a><tt class="py-op">(</tt><tt class="py-base-class">object</tt><tt class="py-op">)</tt> <tt class="py-op">:</tt> </tt>
+</div><div id="RunStride-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="RunStride-expanded"><a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line">    <tt class="py-docstring">"""Run a locally installed STRIDE executable."""</tt> </tt>
+<a name="RunStride.__init__"></a><div id="RunStride.__init__-def"><a name="L69"></a><tt class="py-lineno"> 69</tt> <a class="py-toggle" href="#" id="RunStride.__init__-toggle" onclick="return toggle('RunStride.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="corebio.secstruc.stride.RunStride-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">path</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">)</tt> <tt class="py-op">:</tt> </tt>
+</div><div id="RunStride.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="RunStride.__init__-expanded"><a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line">        <tt class="py-name">command</tt> <tt class="py-op">=</tt> <tt id="link-15" class="py-name"><a title="corebio.utils.find_command" class="py-name" href="#" onclick="return doclink('link-15', 'find_command', 'link-11');">find_command</a></tt><tt class="py-op">(</tt><tt class="py-string">'stride'</tt><tt class="py-op">,</tt> <tt class="py-name">path</tt><tt class="py-op">=</tt><tt class="py-name">path</tt><tt class="py-op">)</tt>  </tt>
+<a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">command</tt> <tt class="py-op">=</tt> <tt class="py-name">command</tt> </tt>
+</div><a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line">     </tt>
+<a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line">     </tt>
+<a name="RunStride.process_pdb"></a><div id="RunStride.process_pdb-def"><a name="L74"></a><tt class="py-lineno"> 74</tt> <a class="py-toggle" href="#" id="RunStride.process_pdb-toggle" onclick="return toggle('RunStride.process_pdb');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="corebio.secstruc.stride.RunStride-class.html#process_pdb">process_pdb</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">pdb_filename</tt><tt class="py-op">)</tt> <tt class="py-op">:</tt> </tt>
+</div><div id="RunStride.process_pdb-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="RunStride.process_pdb-expanded"><a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line">        <tt class="py-docstring">"""Process a protein structure file in PDB format through the STRIDE </tt> </tt>
+<a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line"><tt class="py-docstring">        program and return the raw output.</tt> </tt>
+<a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line">        <tt class="py-name">args</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">command</tt><tt class="py-op">,</tt> <tt class="py-name">pdb_filename</tt><tt class="py-op">]</tt> </tt>
+<a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line">        <tt class="py-keyword">try</tt> <tt class="py-op">:</tt> </tt>
+<a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line">            <tt class="py-name">p</tt> <tt class="py-op">=</tt> <tt class="py-name">Popen</tt><tt class="py-op">(</tt><tt class="py-name">args</tt><tt class="py-op">,</tt> <tt class="py-name">stdout</tt><tt class="py-op">=</tt><tt class="py-name">PIPE</tt><tt class="py-op">)</tt> </tt>
+<a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line">            <tt class="py-op">(</tt><tt class="py-name">out</tt><tt class="py-op">,</tt><tt class="py-name">err</tt><tt class="py-op">)</tt> <tt class="py-op">=</tt> <tt class="py-name">p</tt><tt class="py-op">.</tt><tt class="py-name">communicate</tt><tt class="py-op">(</tt><tt class="py-op">)</tt>  </tt>
+<a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line">        <tt class="py-keyword">except</tt> <tt class="py-name">OSError</tt> <tt class="py-op">:</tt> </tt>
+<a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt class="py-name">RuntimeError</tt><tt class="py-op">(</tt><tt class="py-string">"Cannot communicate with STRIDE."</tt><tt class="py-op">)</tt>   </tt>
+<a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">out</tt> </tt>
+</div><a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line">     </tt>
+<a name="RunStride.record"></a><div id="RunStride.record-def"><a name="L86"></a><tt class="py-lineno"> 86</tt> <a class="py-toggle" href="#" id="RunStride.record-toggle" onclick="return toggle('RunStride.record');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="corebio.secstruc.stride.RunStride-class.html#record">record</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">pdb_filename</tt><tt class="py-op">)</tt> <tt class="py-op">:</tt> </tt>
+</div><div id="RunStride.record-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="RunStride.record-expanded"><a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line">        <tt class="py-docstring">"""Process a protein structure file in PDB format through the STRIDE</tt> </tt>
+<a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line"><tt class="py-docstring">        program and return the parsed output as a StrideRecord object.</tt> </tt>
+<a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line">        <tt id="link-16" class="py-name" targets="Module corebio.data=corebio.data-module.html,Variable corebio.utils.Token.data=corebio.utils.Token-class.html#data"><a title="corebio.data
+corebio.utils.Token.data" class="py-name" href="#" onclick="return doclink('link-16', 'data', 'link-16');">data</a></tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-17" class="py-name" targets="Method corebio.secstruc.dssp.RunDssp.process_pdb()=corebio.secstruc.dssp.RunDssp-class.html#process_pdb,Method corebio.secstruc.stride.RunStride.process_pdb()=corebio.secstruc.stride.RunStride-class.html#process_pdb"><a title="corebio.secstruc.dssp.RunDssp.process_pdb
+corebio.secstruc.stride.RunStride.process_pdb" class="py-name" href="#" onclick="return doclink('link-17', 'process_pdb', 'link-17');">process_pdb</a></tt><tt class="py-op">(</tt><tt class="py-name">pdb_filename</tt><tt class="py-op">)</tt>  </tt>
+<a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt id="link-18" class="py-name" targets="Class corebio.secstruc.stride.StrideRecord=corebio.secstruc.stride.StrideRecord-class.html"><a title="corebio.secstruc.stride.StrideRecord" class="py-name" href="#" onclick="return doclink('link-18', 'StrideRecord', 'link-18');">StrideRecord</a></tt><tt class="py-op">(</tt><tt class="py-name">StringIO</tt><tt class="py-op">(</tt><tt id="link-19" class="py-name"><a title="corebio.data
+corebio.utils.Token.data" class="py-name" href="#" onclick="return doclink('link-19', 'data', 'link-16');">data</a></tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line"> </tt>
+<a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line"><tt class="py-comment">#end class        </tt> </tt>
+<a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line"> </tt>
+<a name="StrideRecord"></a><div id="StrideRecord-def"><a name="L95"></a><tt class="py-lineno"> 95</tt> <a class="py-toggle" href="#" id="StrideRecord-toggle" onclick="return toggle('StrideRecord');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="corebio.secstruc.stride.StrideRecord-class.html">StrideRecord</a><tt class="py-op">(</tt><tt class="py-base-class">object</tt><tt class="py-op">)</tt> <tt class="py-op">:</tt> </tt>
+</div><div id="StrideRecord-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="StrideRecord-expanded"><a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line">    <tt class="py-docstring">"""Representation of stride output."""</tt> </tt>
+<a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line">    <tt class="py-name">__slots__</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-string">'pdbid'</tt><tt class="py-op">,</tt> <tt class="py-string">'residues'</tt><tt class="py-op">,</tt> <tt class="py-string">'_res_dict'</tt><tt class="py-op">]</tt> </tt>
+<a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line">     </tt>
+<a name="StrideRecord.__init__"></a><div id="StrideRecord.__init__-def"><a name="L99"></a><tt class="py-lineno"> 99</tt> <a class="py-toggle" href="#" id="StrideRecord.__init__-toggle" onclick="return toggle('StrideRecord.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="corebio.secstruc.stride.StrideRecord-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">stride_file</tt><tt class="py-op">)</tt> <tt class="py-op">:</tt> </tt>
+</div><div id="StrideRecord.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="StrideRecord.__init__-expanded"><a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line">        <tt class="py-docstring">""" Read and parse a STRIDE output file.</tt> </tt>
+<a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line"><tt class="py-docstring">        </tt> </tt>
+<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line"><tt class="py-docstring">        args:</tt> </tt>
+<a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line"><tt class="py-docstring">            - stride_file   : An open file handle</tt> </tt>
+<a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line"><tt class="py-docstring">        attributes :</tt> </tt>
+<a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line"><tt class="py-docstring">            - pdbid     : The PDB id.</tt> </tt>
+<a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line"><tt class="py-docstring">            - res       : A list of Res objects, one per PDB resiude</tt> </tt>
+<a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt>      </tt>
+<a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line">        <tt class="py-name">res</tt> <tt class="py-op">=</tt><tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line">        <tt class="py-name">f</tt><tt class="py-op">=</tt><tt class="py-name">stride_file</tt> </tt>
+<a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-20" class="py-name" targets="Variable corebio.secstruc.dssp.DsspRecord.pdbid=corebio.secstruc.dssp.DsspRecord-class.html#pdbid,Variable corebio.secstruc.stride.StrideRecord.pdbid=corebio.secstruc.stride.StrideRecord-class.html#pdbid"><a title="corebio.secstruc.dssp.DsspRecord.pdbid
+corebio.secstruc.stride.StrideRecord.pdbid" class="py-name" href="#" onclick="return doclink('link-20', 'pdbid', 'link-20');">pdbid</a></tt> <tt class="py-op">=</tt> <tt class="py-name">f</tt><tt class="py-op">.</tt><tt class="py-name">readline</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">[</tt><tt class="py-number">75</tt><tt class="py-op">:</tt><tt class="py-number">79</tt><tt class="py-op">]</tt> </tt>
+<a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">l</tt> <tt class="py-keyword">in</tt> <tt class="py-name">f</tt><tt class="py-op">:</tt> </tt>
+<a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">l</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">:</tt><tt class="py-number">3</tt><tt class="py-op">]</tt> <tt class="py-op">==</tt><tt class="py-string">"ASG"</tt><tt class="py-op">:</tt> </tt>
+<a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line">                <tt class="py-name">res</tt><tt class="py-op">.</tt><tt id="link-21" class="py-name" targets="Method corebio.db.astral.RafSeqMap.append()=corebio.db.astral.RafSeqMap-class.html#append"><a title="corebio.db.astral.RafSeqMap.append" class="py-name" href="#" onclick="return doclink('link-21', 'append', 'link-21');">append</a></tt><tt class="py-op">(</tt><tt id="link-22" class="py-name" targets="Class corebio.secstruc.stride.StrideResidue=corebio.secstruc.stride.StrideResidue-class.html"><a title="corebio.secstruc.stride.StrideResidue" class="py-name" href="#" onclick="return doclink('link-22', 'StrideResidue', 'link-22');">StrideResidue</a></tt><tt class="py-op">(</tt><tt class="py-name">l</tt><tt class="py-op">)</tt><tt class="py-op">)</tt>  </tt>
+<a name="L114"></a><tt class="py-lineno">114</tt>  <tt class="py-line">                 </tt>
+<a name="L115"></a><tt class="py-lineno">115</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-23" class="py-name" targets="Variable corebio.secstruc.dssp.DsspRecord.residues=corebio.secstruc.dssp.DsspRecord-class.html#residues,Variable corebio.secstruc.stride.StrideRecord.residues=corebio.secstruc.stride.StrideRecord-class.html#residues"><a title="corebio.secstruc.dssp.DsspRecord.residues
+corebio.secstruc.stride.StrideRecord.residues" class="py-name" href="#" onclick="return doclink('link-23', 'residues', 'link-23');">residues</a></tt> <tt class="py-op">=</tt> <tt class="py-name">res</tt> <tt class="py-comment"># A list of Res objects</tt> </tt>
+<a name="L116"></a><tt class="py-lineno">116</tt>  <tt class="py-line">         </tt>
+<a name="L117"></a><tt class="py-lineno">117</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_res_dict</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+</div><a name="L118"></a><tt class="py-lineno">118</tt>  <tt class="py-line"> </tt>
+<a name="StrideRecord.total_area"></a><div id="StrideRecord.total_area-def"><a name="L119"></a><tt class="py-lineno">119</tt> <a class="py-toggle" href="#" id="StrideRecord.total_area-toggle" onclick="return toggle('StrideRecord.total_area');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="corebio.secstruc.stride.StrideRecord-class.html#total_area">total_area</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt> <tt class="py-op">:</tt> </tt>
+</div><div id="StrideRecord.total_area-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="StrideRecord.total_area-expanded"><a name="L120"></a><tt class="py-lineno">120</tt>  <tt class="py-line">        <tt class="py-docstring">""" Return the solvent accessible area """</tt> </tt>
+<a name="L121"></a><tt class="py-lineno">121</tt>  <tt class="py-line">        <tt class="py-name">area</tt> <tt class="py-op">=</tt> <tt class="py-number">0</tt> </tt>
+<a name="L122"></a><tt class="py-lineno">122</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">i</tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-24" class="py-name"><a title="corebio.secstruc.dssp.DsspRecord.residues
+corebio.secstruc.stride.StrideRecord.residues" class="py-name" href="#" onclick="return doclink('link-24', 'residues', 'link-23');">residues</a></tt> <tt class="py-op">:</tt> </tt>
+<a name="L123"></a><tt class="py-lineno">123</tt>  <tt class="py-line">            <tt class="py-name">area</tt> <tt class="py-op">+=</tt> <tt class="py-name">i</tt><tt class="py-op">.</tt><tt id="link-25" class="py-name" targets="Variable corebio.secstruc.dssp.DsspResidue.solvent_acc_area=corebio.secstruc.dssp.DsspResidue-class.html#solvent_acc_area,Variable corebio.secstruc.stride.StrideResidue.solvent_acc_area=corebio.secstruc.stride.StrideResidue-class.html#solvent_acc_area"><a title="corebio.secstruc.dssp.DsspResidue.solvent_acc_area
+corebio.secstruc.stride.StrideResidue.solvent_acc_area" class="py-name" href="#" onclick="return doclink('link-25', 'solvent_acc_area', 'link-25');">solvent_acc_area</a></tt> </tt>
+<a name="L124"></a><tt class="py-lineno">124</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">area</tt> </tt>
+</div><a name="L125"></a><tt class="py-lineno">125</tt>  <tt class="py-line">     </tt>
+<a name="StrideRecord.primary"></a><div id="StrideRecord.primary-def"><a name="L126"></a><tt class="py-lineno">126</tt> <a class="py-toggle" href="#" id="StrideRecord.primary-toggle" onclick="return toggle('StrideRecord.primary');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="corebio.secstruc.stride.StrideRecord-class.html#primary">primary</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="StrideRecord.primary-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="StrideRecord.primary-expanded"><a name="L127"></a><tt class="py-lineno">127</tt>  <tt class="py-line">        <tt class="py-docstring">""" Return the protein primary sequence as a Seq object."""</tt> </tt>
+<a name="L128"></a><tt class="py-lineno">128</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt id="link-26" class="py-name"><a title="corebio.seq.Seq" class="py-name" href="#" onclick="return doclink('link-26', 'Seq', 'link-2');">Seq</a></tt><tt class="py-op">(</tt><tt class="py-string">''</tt><tt class="py-op">.</tt><tt id="link-27" class="py-name" targets="Method corebio.seq.Seq.join()=corebio.seq.Seq-class.html#join"><a title="corebio.seq.Seq.join" class="py-name" href="#" onclick="return doclink('link-27', 'join', 'link-27');">join</a></tt><tt class="py-op">(</tt><tt class="py-op">[</tt><tt class="py-name">r</tt><tt class="py-op">.</tt><tt id="link-28" class="py-name" targets="Variable corebio.secstruc.dssp.DsspResidue.aa=corebio.secstruc.dssp.DsspResidue-class.html#aa,Variable corebio.secstruc.stride.StrideResidue.aa=corebio.secstruc.stride.StrideResidue-class.html#aa"><a title="corebio.secstruc.dssp.DsspResidue.aa
+corebio.secstruc.stride.StrideResidue.aa" class="py-name" href="#" onclick="return doclink('link-28', 'aa', 'link-28');">aa</a></tt> <tt class="py-keyword">for</tt> <tt class="py-name">r</tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-29" class="py-name"><a title="corebio.secstruc.dssp.DsspRecord.residues
+corebio.secstruc.stride.StrideRecord.residues" class="py-name" href="#" onclick="return doclink('link-29', 'residues', 'link-23');">residues</a></tt><tt class="py-op">]</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt id="link-30" class="py-name"><a title="corebio.seq.protein_alphabet
+corebio.seq_io.array_io.protein_alphabet
+corebio.seq_io.clustal_io.protein_alphabet
+corebio.seq_io.fasta_io.protein_alphabet
+corebio.seq_io.genbank_io.protein_alphabet
+corebio.seq_io.intelligenetics_io.protein_alphabet
+corebio.seq_io.msf_io.protein_alphabet
+corebio.seq_io.nbrf_io.protein_alphabet
+corebio.seq_io.phylip_io.protein_alphabet
+corebio.seq_io.plain_io.protein_alphabet
+corebio.seq_io.protein_alphabet
+corebio.seq_io.stockholm_io.protein_alphabet
+corebio.seq_io.table_io.protein_alphabet" class="py-name" href="#" onclick="return doclink('link-30', 'protein_alphabet', 'link-3');">protein_alphabet</a></tt><tt class="py-op">)</tt> </tt>
+</div><a name="L129"></a><tt class="py-lineno">129</tt>  <tt class="py-line">         </tt>
+<a name="StrideRecord.secondary"></a><div id="StrideRecord.secondary-def"><a name="L130"></a><tt class="py-lineno">130</tt> <a class="py-toggle" href="#" id="StrideRecord.secondary-toggle" onclick="return toggle('StrideRecord.secondary');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="corebio.secstruc.stride.StrideRecord-class.html#secondary">secondary</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="StrideRecord.secondary-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="StrideRecord.secondary-expanded"><a name="L131"></a><tt class="py-lineno">131</tt>  <tt class="py-line">        <tt class="py-docstring">"""Return the secondary structure of the protein as a Seq object"""</tt> </tt>
+<a name="L132"></a><tt class="py-lineno">132</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt id="link-31" class="py-name"><a title="corebio.seq.Seq" class="py-name" href="#" onclick="return doclink('link-31', 'Seq', 'link-2');">Seq</a></tt><tt class="py-op">(</tt><tt class="py-string">''</tt><tt class="py-op">.</tt><tt id="link-32" class="py-name"><a title="corebio.seq.Seq.join" class="py-name" href="#" onclick="return doclink('link-32', 'join', 'link-27');">join</a></tt><tt class="py-op">(</tt><tt class="py-op">[</tt><tt class="py-name">r</tt><tt class="py-op">.</tt><tt id="link-33" class="py-name" targets="Package corebio.secstruc=corebio.secstruc-module.html,Variable corebio.secstruc.dssp.DsspResidue.secstruc=corebio.secstruc.dssp.DsspResidue-class.html#secstruc,Variable corebio.secstruc.stride.StrideResidue.secstruc=corebio.secstruc.stride.StrideResidue-class.html#secstruc"><a title="corebio.secstruc
+corebio.secstruc.dssp.DsspResidue.secstruc
+corebio.secstruc.stride.StrideResidue.secstruc" class="py-name" href="#" onclick="return doclink('link-33', 'secstruc', 'link-33');">secstruc</a></tt> <tt class="py-keyword">for</tt> <tt class="py-name">r</tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-34" class="py-name"><a title="corebio.secstruc.dssp.DsspRecord.residues
+corebio.secstruc.stride.StrideRecord.residues" class="py-name" href="#" onclick="return doclink('link-34', 'residues', 'link-23');">residues</a></tt><tt class="py-op">]</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt id="link-35" class="py-name"><a title="corebio.secstruc.stride.stride_alphabet" class="py-name" href="#" onclick="return doclink('link-35', 'stride_alphabet', 'link-12');">stride_alphabet</a></tt><tt class="py-op">)</tt> </tt>
+</div><a name="L133"></a><tt class="py-lineno">133</tt>  <tt class="py-line">         </tt>
+<a name="L134"></a><tt class="py-lineno">134</tt>  <tt class="py-line">         </tt>
+<a name="StrideRecord.get_residue"></a><div id="StrideRecord.get_residue-def"><a name="L135"></a><tt class="py-lineno">135</tt> <a class="py-toggle" href="#" id="StrideRecord.get_residue-toggle" onclick="return toggle('StrideRecord.get_residue');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="corebio.secstruc.stride.StrideRecord-class.html#get_residue">get_residue</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">chainid</tt><tt class="py-op">,</tt> <tt class="py-param">resid</tt><tt class="py-op">)</tt> <tt class="py-op">:</tt> </tt>
+</div><div id="StrideRecord.get_residue-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="StrideRecord.get_residue-expanded"><a name="L136"></a><tt class="py-lineno">136</tt>  <tt class="py-line">        <tt class="py-docstring">""" Return the given residue """</tt> </tt>
+<a name="L137"></a><tt class="py-lineno">137</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_res_dict</tt> <tt class="py-op">:</tt> </tt>
+<a name="L138"></a><tt class="py-lineno">138</tt>  <tt class="py-line">            <tt class="py-name">d</tt> <tt class="py-op">=</tt> <tt class="py-op">{</tt><tt class="py-op">}</tt> </tt>
+<a name="L139"></a><tt class="py-lineno">139</tt>  <tt class="py-line">            <tt class="py-keyword">for</tt> <tt class="py-name">r</tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-36" class="py-name"><a title="corebio.secstruc.dssp.DsspRecord.residues
+corebio.secstruc.stride.StrideRecord.residues" class="py-name" href="#" onclick="return doclink('link-36', 'residues', 'link-23');">residues</a></tt> <tt class="py-op">:</tt> </tt>
+<a name="L140"></a><tt class="py-lineno">140</tt>  <tt class="py-line">                <tt class="py-name">d</tt><tt class="py-op">[</tt> <tt class="py-op">(</tt><tt class="py-name">r</tt><tt class="py-op">.</tt><tt id="link-37" class="py-name" targets="Variable corebio.secstruc.dssp.DsspResidue.chainid=corebio.secstruc.dssp.DsspResidue-class.html#chainid,Variable corebio.secstruc.stride.StrideResidue.chainid=corebio.secstruc.stride.StrideResidue-class.html#chainid"><a title="corebio.secstruc.dssp.DsspResidue.chainid
+corebio.secstruc.stride.StrideResidue.chainid" class="py-name" href="#" onclick="return doclink('link-37', 'chainid', 'link-37');">chainid</a></tt><tt class="py-op">,</tt> <tt class="py-name">r</tt><tt class="py-op">.</tt><tt id="link-38" class="py-name" targets="Variable corebio.secstruc.dssp.DsspResidue.resid=corebio.secstruc.dssp.DsspResidue-class.html#resid,Variable corebio.secstruc.stride.StrideResidue.resid=corebio.secstruc.stride.StrideResidue-class.html#resid"><a title="corebio.secstruc.dssp.DsspResidue.resid
+corebio.secstruc.stride.StrideResidue.resid" class="py-name" href="#" onclick="return doclink('link-38', 'resid', 'link-38');">resid</a></tt><tt class="py-op">)</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">r</tt> </tt>
+<a name="L141"></a><tt class="py-lineno">141</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_res_dict</tt> <tt class="py-op">=</tt><tt class="py-name">d</tt> </tt>
+<a name="L142"></a><tt class="py-lineno">142</tt>  <tt class="py-line">         </tt>
+<a name="L143"></a><tt class="py-lineno">143</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_res_dict</tt><tt class="py-op">[</tt><tt class="py-op">(</tt><tt id="link-39" class="py-name"><a title="corebio.secstruc.dssp.DsspResidue.chainid
+corebio.secstruc.stride.StrideResidue.chainid" class="py-name" href="#" onclick="return doclink('link-39', 'chainid', 'link-37');">chainid</a></tt><tt class="py-op">,</tt> <tt id="link-40" class="py-name"><a title="corebio.secstruc.dssp.DsspResidue.resid
+corebio.secstruc.stride.StrideResidue.resid" class="py-name" href="#" onclick="return doclink('link-40', 'resid', 'link-38');">resid</a></tt><tt class="py-op">)</tt><tt class="py-op">]</tt> </tt>
+</div><a name="L144"></a><tt class="py-lineno">144</tt>  <tt class="py-line">         </tt>
+<a name="StrideRecord.__repr__"></a><div id="StrideRecord.__repr__-def"><a name="L145"></a><tt class="py-lineno">145</tt> <a class="py-toggle" href="#" id="StrideRecord.__repr__-toggle" onclick="return toggle('StrideRecord.__repr__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="corebio.secstruc.stride.StrideRecord-class.html#__repr__">__repr__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt>  </tt>
+</div><a name="L146"></a><tt class="py-lineno">146</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt id="link-41" class="py-name"><a title="corebio.utils.stdrepr" class="py-name" href="#" onclick="return doclink('link-41', 'stdrepr', 'link-10');">stdrepr</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L147"></a><tt class="py-lineno">147</tt>  <tt class="py-line"><tt class="py-comment"># end class</tt> </tt>
+<a name="L148"></a><tt class="py-lineno">148</tt>  <tt class="py-line">     </tt>
+<a name="L149"></a><tt class="py-lineno">149</tt>  <tt class="py-line">     </tt>
+<a name="StrideResidue"></a><div id="StrideResidue-def"><a name="L150"></a><tt class="py-lineno">150</tt> <a class="py-toggle" href="#" id="StrideResidue-toggle" onclick="return toggle('StrideResidue');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="corebio.secstruc.stride.StrideResidue-class.html">StrideResidue</a><tt class="py-op">(</tt><tt class="py-base-class">object</tt><tt class="py-op">)</tt><tt class="py-op">:</tt>                  </tt>
+</div><a name="L151"></a><tt class="py-lineno">151</tt>  <tt class="py-line">    <tt class="py-docstring">""" Structural information of a single residue. An ASG line from a stride</tt> </tt>
+<a name="L152"></a><tt class="py-lineno">152</tt>  <tt class="py-line"><tt class="py-docstring">        output file.</tt> </tt>
+<a name="L153"></a><tt class="py-lineno">153</tt>  <tt class="py-line"><tt class="py-docstring">        </tt> </tt>
+<a name="L154"></a><tt class="py-lineno">154</tt>  <tt class="py-line"><tt class="py-docstring">        Attributes :</tt> </tt>
+<a name="L155"></a><tt class="py-lineno">155</tt>  <tt class="py-line"><tt class="py-docstring">         - chainid </tt> </tt>
+<a name="L156"></a><tt class="py-lineno">156</tt>  <tt class="py-line"><tt class="py-docstring">         - resid   </tt> </tt>
+<a name="L157"></a><tt class="py-lineno">157</tt>  <tt class="py-line"><tt class="py-docstring">         - aa </tt> </tt>
+<a name="L158"></a><tt class="py-lineno">158</tt>  <tt class="py-line"><tt class="py-docstring">         - secstruc </tt> </tt>
+<a name="L159"></a><tt class="py-lineno">159</tt>  <tt class="py-line"><tt class="py-docstring">         - solvent_acc_area </tt> </tt>
+<a name="L160"></a><tt class="py-lineno">160</tt>  <tt class="py-line"><tt class="py-docstring">         - phi </tt> </tt>
+<a name="L161"></a><tt class="py-lineno">161</tt>  <tt class="py-line"><tt class="py-docstring">         - psi</tt> </tt>
+<a name="L162"></a><tt class="py-lineno">162</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L163"></a><tt class="py-lineno">163</tt>  <tt class="py-line">    <tt class="py-name">__slots__</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-string">'chainid'</tt><tt class="py-op">,</tt> <tt class="py-string">'resid'</tt><tt class="py-op">,</tt> <tt class="py-string">'aa'</tt><tt class="py-op">,</tt> <tt class="py-string">'secstruc'</tt><tt class="py-op">,</tt> <tt class="py-string">'solvent_acc_area'</tt><tt class="py-op">,</tt>  </tt>
+<a name="L164"></a><tt class="py-lineno">164</tt>  <tt class="py-line">                    <tt class="py-string">'phi'</tt><tt class="py-op">,</tt> <tt class="py-string">'psi'</tt><tt class="py-op">,</tt> <tt class="py-op">]</tt> </tt>
+<a name="StrideResidue.__init__"></a><div id="StrideResidue.__init__-def"><a name="L165"></a><tt class="py-lineno">165</tt> <a class="py-toggle" href="#" id="StrideResidue.__init__-toggle" onclick="return toggle('StrideResidue.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="corebio.secstruc.stride.StrideResidue-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">res_line</tt><tt class="py-op">)</tt> <tt class="py-op">:</tt> </tt>
+</div><div id="StrideResidue.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="StrideResidue.__init__-expanded"><a name="L166"></a><tt class="py-lineno">166</tt>  <tt class="py-line">        <tt class="py-docstring">""" Eats a single 'ASG' line from a stride file, splits it up  </tt> </tt>
+<a name="L167"></a><tt class="py-lineno">167</tt>  <tt class="py-line"><tt class="py-docstring">        into parts and return a Res object."""</tt> </tt>
+<a name="L168"></a><tt class="py-lineno">168</tt>  <tt class="py-line">             </tt>
+<a name="L169"></a><tt class="py-lineno">169</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-op">(</tt><tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">res_line</tt><tt class="py-op">)</tt><tt class="py-op">&lt;</tt><tt class="py-number">70</tt><tt class="py-op">)</tt><tt class="py-op">:</tt>  </tt>
+<a name="L170"></a><tt class="py-lineno">170</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt class="py-name">ValueError</tt><tt class="py-op">(</tt><tt class="py-string">"Line not long enough"</tt><tt class="py-op">)</tt> </tt>
+<a name="L171"></a><tt class="py-lineno">171</tt>  <tt class="py-line">        <tt class="py-keyword">try</tt><tt class="py-op">:</tt>  </tt>
+<a name="L172"></a><tt class="py-lineno">172</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-42" class="py-name"><a title="corebio.secstruc.dssp.DsspResidue.chainid
+corebio.secstruc.stride.StrideResidue.chainid" class="py-name" href="#" onclick="return doclink('link-42', 'chainid', 'link-37');">chainid</a></tt> <tt class="py-op">=</tt> <tt class="py-name">res_line</tt><tt class="py-op">[</tt><tt class="py-number">9</tt><tt class="py-op">:</tt><tt class="py-number">10</tt><tt class="py-op">]</tt> </tt>
+<a name="L173"></a><tt class="py-lineno">173</tt>  <tt class="py-line">            <tt class="py-comment"># STRIDE converts blank chain ids into dashes. Undo.</tt> </tt>
+<a name="L174"></a><tt class="py-lineno">174</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-43" class="py-name"><a title="corebio.secstruc.dssp.DsspResidue.chainid
+corebio.secstruc.stride.StrideResidue.chainid" class="py-name" href="#" onclick="return doclink('link-43', 'chainid', 'link-37');">chainid</a></tt><tt class="py-op">==</tt><tt class="py-string">"-"</tt> <tt class="py-op">:</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-44" class="py-name"><a title="corebio.secstruc.dssp.DsspResidue.chainid
+corebio.secstruc.stride.StrideResidue.chainid" class="py-name" href="#" onclick="return doclink('link-44', 'chainid', 'link-37');">chainid</a></tt> <tt class="py-op">=</tt> <tt class="py-string">" "</tt> </tt>
+<a name="L175"></a><tt class="py-lineno">175</tt>  <tt class="py-line">                 </tt>
+<a name="L176"></a><tt class="py-lineno">176</tt>  <tt class="py-line">            <tt class="py-comment"># In rare cases STRIDE columns can be misaligned. Grab extra </tt> </tt>
+<a name="L177"></a><tt class="py-lineno">177</tt>  <tt class="py-line">            <tt class="py-comment"># white space to compensate.</tt> </tt>
+<a name="L178"></a><tt class="py-lineno">178</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-45" class="py-name"><a title="corebio.secstruc.dssp.DsspResidue.resid
+corebio.secstruc.stride.StrideResidue.resid" class="py-name" href="#" onclick="return doclink('link-45', 'resid', 'link-38');">resid</a></tt> <tt class="py-op">=</tt> <tt class="py-name">res_line</tt><tt class="py-op">[</tt><tt class="py-number">10</tt><tt class="py-op">:</tt><tt class="py-number">15</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt class="py-name">strip</tt><tt class="py-op">(</tt><tt class="py-op">)</tt>  </tt>
+<a name="L179"></a><tt class="py-lineno">179</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-46" class="py-name"><a title="corebio.secstruc.dssp.DsspResidue.aa
+corebio.secstruc.stride.StrideResidue.aa" class="py-name" href="#" onclick="return doclink('link-46', 'aa', 'link-28');">aa</a></tt> <tt class="py-op">=</tt> <tt class="py-name">to_one_letter_code</tt><tt class="py-op">[</tt><tt class="py-name">res_line</tt><tt class="py-op">[</tt><tt class="py-number">5</tt><tt class="py-op">:</tt><tt class="py-number">8</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt class="py-name">capitalize</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">]</tt> </tt>
+<a name="L180"></a><tt class="py-lineno">180</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-47" class="py-name"><a title="corebio.secstruc
+corebio.secstruc.dssp.DsspResidue.secstruc
+corebio.secstruc.stride.StrideResidue.secstruc" class="py-name" href="#" onclick="return doclink('link-47', 'secstruc', 'link-33');">secstruc</a></tt> <tt class="py-op">=</tt> <tt class="py-name">res_line</tt><tt class="py-op">[</tt><tt class="py-number">24</tt><tt class="py-op">:</tt><tt class="py-number">25</tt><tt class="py-op">]</tt> </tt>
+<a name="L181"></a><tt class="py-lineno">181</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-48" class="py-name"><a title="corebio.secstruc.dssp.DsspResidue.solvent_acc_area
+corebio.secstruc.stride.StrideResidue.solvent_acc_area" class="py-name" href="#" onclick="return doclink('link-48', 'solvent_acc_area', 'link-25');">solvent_acc_area</a></tt> <tt class="py-op">=</tt> <tt class="py-name">float</tt><tt class="py-op">(</tt><tt class="py-name">res_line</tt><tt class="py-op">[</tt><tt class="py-number">64</tt><tt class="py-op">:</tt><tt class="py-number">71</tt><tt class="py-op">]</tt><tt class="py-op">)</tt>  </tt>
+<a name="L182"></a><tt class="py-lineno">182</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-49" class="py-name" targets="Variable corebio.secstruc.dssp.DsspResidue.phi=corebio.secstruc.dssp.DsspResidue-class.html#phi,Variable corebio.secstruc.stride.StrideResidue.phi=corebio.secstruc.stride.StrideResidue-class.html#phi"><a title="corebio.secstruc.dssp.DsspResidue.phi
+corebio.secstruc.stride.StrideResidue.phi" class="py-name" href="#" onclick="return doclink('link-49', 'phi', 'link-49');">phi</a></tt> <tt class="py-op">=</tt> <tt class="py-name">float</tt><tt class="py-op">(</tt><tt class="py-name">res_line</tt><tt class="py-op">[</tt><tt class="py-number">42</tt><tt class="py-op">:</tt><tt class="py-number">49</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt class="py-name">strip</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L183"></a><tt class="py-lineno">183</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-50" class="py-name" targets="Variable corebio.secstruc.dssp.DsspResidue.psi=corebio.secstruc.dssp.DsspResidue-class.html#psi,Variable corebio.secstruc.stride.StrideResidue.psi=corebio.secstruc.stride.StrideResidue-class.html#psi"><a title="corebio.secstruc.dssp.DsspResidue.psi
+corebio.secstruc.stride.StrideResidue.psi" class="py-name" href="#" onclick="return doclink('link-50', 'psi', 'link-50');">psi</a></tt> <tt class="py-op">=</tt> <tt class="py-name">float</tt><tt class="py-op">(</tt><tt class="py-name">res_line</tt><tt class="py-op">[</tt><tt class="py-number">52</tt><tt class="py-op">:</tt><tt class="py-number">59</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt class="py-name">strip</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L184"></a><tt class="py-lineno">184</tt>  <tt class="py-line">        <tt class="py-keyword">except</tt> <tt class="py-name">FloatingPointError</tt><tt class="py-op">:</tt> </tt>
+<a name="L185"></a><tt class="py-lineno">185</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt class="py-name">FloatingPointError</tt><tt class="py-op">(</tt><tt class="py-string">"Can't float phi, psi, or area"</tt><tt class="py-op">)</tt> </tt>
+<a name="L186"></a><tt class="py-lineno">186</tt>  <tt class="py-line">        <tt class="py-keyword">except</tt> <tt class="py-name">KeyError</tt><tt class="py-op">:</tt> </tt>
+<a name="L187"></a><tt class="py-lineno">187</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt class="py-name">KeyError</tt><tt class="py-op">(</tt><tt class="py-string">"Can't find three letter code in dictionary"</tt><tt class="py-op">)</tt> </tt>
+<a name="L188"></a><tt class="py-lineno">188</tt>  <tt class="py-line">        <tt class="py-keyword">except</tt> <tt class="py-name">LookupError</tt><tt class="py-op">:</tt> </tt>
+<a name="L189"></a><tt class="py-lineno">189</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt class="py-name">LookupError</tt><tt class="py-op">(</tt><tt class="py-string">"One of the values is out of index of res_line"</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L190"></a><tt class="py-lineno">190</tt>  <tt class="py-line">             </tt>
+<a name="L191"></a><tt class="py-lineno">191</tt>  <tt class="py-line">                 </tt>
+<a name="L192"></a><tt class="py-lineno">192</tt>  <tt class="py-line">    <tt class="py-comment"># End __init__</tt> </tt>
+<a name="L193"></a><tt class="py-lineno">193</tt>  <tt class="py-line"> </tt>
+<a name="StrideResidue.__repr__"></a><div id="StrideResidue.__repr__-def"><a name="L194"></a><tt class="py-lineno">194</tt> <a class="py-toggle" href="#" id="StrideResidue.__repr__-toggle" onclick="return toggle('StrideResidue.__repr__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="corebio.secstruc.stride.StrideResidue-class.html#__repr__">__repr__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt>  </tt>
+</div><a name="L195"></a><tt class="py-lineno">195</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt id="link-51" class="py-name"><a title="corebio.utils.stdrepr" class="py-name" href="#" onclick="return doclink('link-51', 'stdrepr', 'link-10');">stdrepr</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">)</tt>          </tt>
+</div></div><a name="L196"></a><tt class="py-lineno">196</tt>  <tt class="py-line"><tt class="py-comment"># End class</tt> </tt>
+<a name="L197"></a><tt class="py-lineno">197</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Wed Mar 12 21:34:13 2014
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

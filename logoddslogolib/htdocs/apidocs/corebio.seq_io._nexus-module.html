@@ -1,0 +1,558 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>corebio.seq_io._nexus</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="corebio-module.html">Package&nbsp;corebio</a> ::
+        <a href="corebio.seq_io-module.html">Package&nbsp;seq_io</a> ::
+        Package&nbsp;_nexus
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="corebio.seq_io._nexus-module.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== PACKAGE DESCRIPTION ==================== -->
+<h1 class="epydoc">Package _nexus</h1><p class="nomargin-top"><span class="codelink"><a href="corebio.seq_io._nexus-pysrc.html">source&nbsp;code</a></span></p>
+<p>Parse the contents of a nexus file. Based upon 'NEXUS: An extensible 
+  file format for systematic information' Maddison, Swofford, Maddison. 
+  1997. Syst. Biol. 46(4):590-621</p>
+  <p>Authors: Frank Kauff and Cymon J. Cox</p>
+
+<!-- ==================== SUBMODULES ==================== -->
+<a name="section-Submodules"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Submodules</span></td>
+</tr>
+  <tr><td class="summary">
+  <ul class="nomargin">
+    <li> <strong class="uidlink"><a href="corebio.seq_io._nexus.Nodes-module.html">corebio.seq_io._nexus.Nodes</a></strong>    </li>
+    <li> <strong class="uidlink"><a href="corebio.seq_io._nexus.Trees-module.html">corebio.seq_io._nexus.Trees</a></strong>    </li>
+  </ul></td></tr>
+</table>
+
+<br />
+<!-- ==================== CLASSES ==================== -->
+<a name="section-Classes"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Classes</span></td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="corebio.seq_io._nexus.NexusError-class.html" class="summary-name">NexusError</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="corebio.seq_io._nexus.CharBuffer-class.html" class="summary-name">CharBuffer</a><br />
+      Helps reading NEXUS-words and characters from a buffer.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="corebio.seq_io._nexus.StepMatrix-class.html" class="summary-name">StepMatrix</a><br />
+      Calculate a stepmatrix for weighted parsimony.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="corebio.seq_io._nexus.Commandline-class.html" class="summary-name">Commandline</a><br />
+      Represent a commandline as command and options.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="corebio.seq_io._nexus.Block-class.html" class="summary-name">Block</a><br />
+      Represent a NEXUS block with block name and list of commandlines .
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="corebio.seq_io._nexus.Nexus-class.html" class="summary-name">Nexus</a>
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTIONS ==================== -->
+<a name="section-Functions"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Functions</span></td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="corebio.seq_io._nexus-module.html#safename" class="summary-sig-name">safename</a>(<span class="summary-sig-arg">name</span>,
+        <span class="summary-sig-arg">mrbayes</span>=<span class="summary-sig-default">False</span>)</span><br />
+      Return a taxon identifier according to NEXUS standard.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="corebio.seq_io._nexus-pysrc.html#safename">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="quotestrip"></a><span class="summary-sig-name">quotestrip</span>(<span class="summary-sig-arg">word</span>)</span><br />
+      Remove quotes and/or double quotes around identifiers.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="corebio.seq_io._nexus-pysrc.html#quotestrip">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="get_start_end"></a><span class="summary-sig-name">get_start_end</span>(<span class="summary-sig-arg">sequence</span>,
+        <span class="summary-sig-arg">skiplist</span>=<span class="summary-sig-default"><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">-</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">?</code><code class="variable-quote">'</code><code class="variable-group">]</code></span>)</span><br />
+      Return position of first and last character which is not in skiplist 
+      (defaults to ['-','?']).</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="corebio.seq_io._nexus-pysrc.html#get_start_end">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="corebio.seq_io._nexus-module.html#combine" class="summary-sig-name">combine</a>(<span class="summary-sig-arg">matrices</span>)</span><br />
+      Combine matrices in [(name,nexus-instance),...] and return new nexus 
+      instance.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="corebio.seq_io._nexus-pysrc.html#combine">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+<!-- ==================== VARIABLES ==================== -->
+<a name="section-Variables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Variables</span></td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="corebio.seq_io._nexus-module.html#IUPACData" class="summary-name">IUPACData</a> = <code title="Struct(
+    ambiguous_rna_letters='GAUCRYWSMKHBVDN',
+    protein_letters='ACDEFGHIKLMNPQRSTVWY',
+    unambiguous_rna_letters='GAUC',
+    ambiguous_dna_values={'A': 'A', 'C': 'C', 'B': 'CGT', 'D': 'AGT', \
+'G': 'G', 'H': 'ACT', 'K': 'GT', 'M': 'AC', 'N': 'GATC', 'S': 'CG', 'R\
+': 'AG', 'T': 'T', 'W': 'AT', 'V': 'ACG', 'Y': 'CT', 'X': 'GATC'},
+    ambiguous_dna_letters='GATCRYWSMKHBVDN',
+...">Stru<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="corebio.seq_io._nexus-module.html#IUPAC" class="summary-name">IUPAC</a> = <code title="Struct(
+    protein=Alphabet( 'ACDEFGHIKLMNOPQRSTUVWYBJZX*-', zip('acdefghiklm\
+nopqrstuvwybjzx?.~', 'ACDEFGHIKLMNOPQRSTUVWYBJZXX--') ),
+    ambiguous_dna=Alphabet( 'GATCRYWSMKHBVDN-?', zip('abcdghkmnrstvwy'\
+, 'ABCDGHKMNRSTVWY') ),
+    ambiguous_rna=Alphabet( 'GAUCRYWSMKHBVDN-?', zip('abcdghkmnrsuvwy'\
+, 'ABCDGHKMNRSUVWY') )
+)">Stru<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="C"></a><span class="summary-name">C</span> = <code title="False">False</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="INTERLEAVE"></a><span class="summary-name">INTERLEAVE</span> = <code title="70">70</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="corebio.seq_io._nexus-module.html#SPECIAL_COMMANDS" class="summary-name">SPECIAL_COMMANDS</a> = <code title="['charstatelabels',
+ 'charlabels',
+ 'taxlabels',
+ 'taxset',
+ 'charset',
+ 'charpartition',
+ 'taxpartition',
+ 'matrix',
+..."><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">charstatelabels</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">charlabels</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">taxlabel</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="corebio.seq_io._nexus-module.html#KNOWN_NEXUS_BLOCKS" class="summary-name">KNOWN_NEXUS_BLOCKS</a> = <code title="['trees', 'data', 'characters', 'taxa', 'sets']"><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">trees</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">data</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">characters</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">taxa</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="PUNCTUATION"></a><span class="summary-name">PUNCTUATION</span> = <code title="'()[]{}/\\,;:=*\'&quot;`+-&lt;&gt;'"><code class="variable-quote">'</code><code class="variable-string">()[]{}/\\,;:=*\'&quot;`+-&lt;&gt;</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="corebio.seq_io._nexus-module.html#MRBAYESSAFE" class="summary-name">MRBAYESSAFE</a> = <code title="'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890_'"><code class="variable-quote">'</code><code class="variable-string">abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTU</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="WHITESPACE"></a><span class="summary-name">WHITESPACE</span> = <code title="''' \t
+'''"><code class="variable-quote">'</code><code class="variable-string"> \t\n</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="SPECIALCOMMENTS"></a><span class="summary-name">SPECIALCOMMENTS</span> = <code title="['&amp;']"><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">&amp;</code><code class="variable-quote">'</code><code class="variable-group">]</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="CHARSET"></a><span class="summary-name">CHARSET</span> = <code title="'chars'"><code class="variable-quote">'</code><code class="variable-string">chars</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="TAXSET"></a><span class="summary-name">TAXSET</span> = <code title="'taxa'"><code class="variable-quote">'</code><code class="variable-string">taxa</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="__package__"></a><span class="summary-name">__package__</span> = <code title="'corebio.seq_io._nexus'"><code class="variable-quote">'</code><code class="variable-string">corebio.seq_io._nexus</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTION DETAILS ==================== -->
+<a name="section-FunctionDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Function Details</span></td>
+</tr>
+</table>
+<a name="safename"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">safename</span>(<span class="sig-arg">name</span>,
+        <span class="sig-arg">mrbayes</span>=<span class="sig-default">False</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="corebio.seq_io._nexus-pysrc.html#safename">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Return a taxon identifier according to NEXUS standard. Wrap quotes 
+  around names with punctuation or whitespace, and double single quotes. 
+  mrbayes=True: write names without quotes, whitespace or punctuation for 
+  mrbayes.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="combine"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">combine</span>(<span class="sig-arg">matrices</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="corebio.seq_io._nexus-pysrc.html#combine">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Combine matrices in [(name,nexus-instance),...] and return new nexus 
+  instance.</p>
+  
+  <p>combined_matrix=combine([(name1,nexus_instance1),(name2,nexus_instance2),...]
+  Character sets, character partitions and taxon sets are prefixed, 
+  readjusted and present in the combined matrix.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== VARIABLES DETAILS ==================== -->
+<a name="section-VariablesDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Variables Details</span></td>
+</tr>
+</table>
+<a name="IUPACData"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">IUPACData</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+Struct(
+    ambiguous_rna_letters='GAUCRYWSMKHBVDN',
+    protein_letters='ACDEFGHIKLMNPQRSTVWY',
+    unambiguous_rna_letters='GAUC',
+    ambiguous_dna_values={'A': 'A', 'C': 'C', 'B': 'CGT', 'D': 'AGT', <span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+'G': 'G', 'H': 'ACT', 'K': 'GT', 'M': 'AC', 'N': 'GATC', 'S': 'CG', 'R<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+': 'AG', 'T': 'T', 'W': 'AT', 'V': 'ACG', 'Y': 'CT', 'X': 'GATC'},
+    ambiguous_dna_letters='GATCRYWSMKHBVDN',
+<code class="variable-ellipsis">...</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="IUPAC"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">IUPAC</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+Struct(
+    protein=Alphabet( 'ACDEFGHIKLMNOPQRSTUVWYBJZX*-', zip('acdefghiklm<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+nopqrstuvwybjzx?.~', 'ACDEFGHIKLMNOPQRSTUVWYBJZXX--') ),
+    ambiguous_dna=Alphabet( 'GATCRYWSMKHBVDN-?', zip('abcdghkmnrstvwy'<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+, 'ABCDGHKMNRSTVWY') ),
+    ambiguous_rna=Alphabet( 'GAUCRYWSMKHBVDN-?', zip('abcdghkmnrsuvwy'<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+, 'ABCDGHKMNRSUVWY') )
+)
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="SPECIAL_COMMANDS"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">SPECIAL_COMMANDS</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">charstatelabels</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">charlabels</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">taxlabels</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">taxset</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">charset</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">charpartition</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">taxpartition</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">matrix</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+<code class="variable-ellipsis">...</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="KNOWN_NEXUS_BLOCKS"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">KNOWN_NEXUS_BLOCKS</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">trees</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">data</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">characters</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">taxa</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">sets</code><code class="variable-quote">'</code><code class="variable-group">]</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="MRBAYESSAFE"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">MRBAYESSAFE</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-quote">'</code><code class="variable-string">abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890_</code><code class="variable-quote">'</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Wed Mar 12 21:34:13 2014
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

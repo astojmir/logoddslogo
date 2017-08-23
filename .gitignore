@@ -1,0 +1,12 @@
+# Lines starting with '#' are considered comments.
+*.o
+*.a
+*.so
+*.os
+*.pyc
+*~
+MANIFEST
+VERSION
+dist/
+build/
+tmp*

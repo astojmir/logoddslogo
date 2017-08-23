@@ -1,0 +1,36 @@
+Metadata-Version: 1.1
+Name: logoddslogo
+Version: 1.0.3
+Summary: LogOddsLogo : Log Odds Sequence Logos
+Home-page: http://www.ncbi.nlm.nih.gov/CBBresearch/Yu/logoddslogo/
+Author: Yi-Kuo Yu
+Author-email: yyu@ncbi.nlm.nih.gov
+License: UNKNOWN
+Download-URL: ftp://ftp.ncbi.nlm.nih.gov/pub/qmbp/logoddslogo/logoddslogo-1.0.3.tar.gz
+Description: LogOddsLogo (http://www.ncbi.nlm.nih.gov/CBBresearch/Yu/logoddslogo/) is a tool
+        for creating sequence logos from biological sequence alignments. Building on
+        the WebLogo (http://weblogo.threeplusone.com) source code, LogOddsLogo uses
+        per-observation multiple-alignment log-odds scores as measures of information
+        content at each position of a sequence logo.
+        
+        It can be run on the command line, as a standalone webserver, as a CGI webapp,
+        or as a python library.
+        
+        Please consult the manual for installation instructions and more information:
+        ./logoddslogolib/htdocs/manual.html
+        
+        (Also located at
+        http://www.ncbi.nlm.nih.gov/CBBresearch/Yu/logoddslogo/manual.html.)
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: BSD License
+Classifier: License :: Public Domain
+Classifier: Topic :: Scientific/Engineering :: Bio-Informatics
+Classifier: Programming Language :: Python
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires: numpy

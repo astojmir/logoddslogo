@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>corebio.seq_io.phylip_io</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="corebio-module.html">Package&nbsp;corebio</a> ::
+        <a href="corebio.seq_io-module.html">Package&nbsp;seq_io</a> ::
+        Module&nbsp;phylip_io
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="corebio.seq_io.phylip_io-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="corebio.seq_io.phylip_io-module.html">Module corebio.seq_io.phylip_io</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-comment">#!/usr/bin/env python</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-comment">#  Copyright (c) 2005 David D. Ding &lt;dding@berkeley.edu&gt;</tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-comment">#  This software is distributed under the MIT Open Source License.</tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-comment">#  &lt;http://www.opensource.org/licenses/mit-license.html&gt;</tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"><tt class="py-comment">#  Permission is hereby granted, free of charge, to any person obtaining a </tt> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"><tt class="py-comment">#  copy of this software and associated documentation files (the "Software"),</tt> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line"><tt class="py-comment">#  to deal in the Software without restriction, including without limitation</tt> </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line"><tt class="py-comment">#  the rights to use, copy, modify, merge, publish, distribute, sublicense,</tt> </tt>
+<a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line"><tt class="py-comment">#  and/or sell copies of the Software, and to permit persons to whom the</tt> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line"><tt class="py-comment">#  Software is furnished to do so, subject to the following conditions:</tt> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line"><tt class="py-comment">#  The above copyright notice and this permission notice shall be included</tt> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line"><tt class="py-comment">#  in all copies or substantial portions of the Software.</tt> </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line"><tt class="py-comment">#  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR </tt> </tt>
+<a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line"><tt class="py-comment">#  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, </tt> </tt>
+<a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line"><tt class="py-comment">#  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</tt> </tt>
+<a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line"><tt class="py-comment">#  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER </tt> </tt>
+<a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line"><tt class="py-comment">#  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</tt> </tt>
+<a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line"><tt class="py-comment">#  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN </tt> </tt>
+<a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line"><tt class="py-comment">#  THE SOFTWARE.</tt> </tt>
+<a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line"> </tt>
+<a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line"><tt class="py-docstring">"""Reads Sequences in interleaved Phylip format (not sequential) and returns a</tt> </tt>
+<a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line"><tt class="py-docstring">list of sequences. Phylip is a very common phylogeny generating sequence type</tt> </tt>
+<a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line"><tt class="py-docstring">that has the following traits:</tt> </tt>
+<a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line"><tt class="py-docstring">1) First line contains number of species and number of characters in a species'</tt> </tt>
+<a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line"><tt class="py-docstring">sequence. Options may follow, and they can be spaced or unspaced. Options are</tt> </tt>
+<a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line"><tt class="py-docstring">simply letters such as A and W after the number of characters.</tt> </tt>
+<a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line"><tt class="py-docstring">2) Options don't have to contain U in order for a usertree to appear.</tt> </tt>
+<a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line"><tt class="py-docstring">3) If there are options then options appear first, then the sequences. For the</tt> </tt>
+<a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line"><tt class="py-docstring">first iteration of sequences the first ten spaces are reserved for names of</tt> </tt>
+<a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line"><tt class="py-docstring">options and species, the rest is for sequences.</tt> </tt>
+<a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line"><tt class="py-docstring">4) For the second and following iterations the names are removed, only</tt> </tt>
+<a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line"><tt class="py-docstring">sequence appears</tt> </tt>
+<a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line"><tt class="py-docstring">4) At end of file a usertree may appear. First there is a number that indicts</tt> </tt>
+<a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line"><tt class="py-docstring">the number of lines the usertree will take, and then the usertrees follow.</tt> </tt>
+<a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line"><tt class="py-docstring">Examples:</tt> </tt>
+<a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line"><tt class="py-docstring">  6   50   W</tt> </tt>
+<a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line"><tt class="py-docstring">W         0101001111 0101110101 01011   </tt> </tt>
+<a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line"><tt class="py-docstring">dmras1    GTCGTCGTTG GACCTGGAGG CGTGG   </tt> </tt>
+<a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line"><tt class="py-docstring">hschras   GTGGTGGTGG GCGCCGGCCG TGTGG</tt> </tt>
+<a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line"><tt class="py-docstring">ddrasa    GTTATTGTTG GTGGTGGTGG TGTCG</tt> </tt>
+<a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line"><tt class="py-docstring">spras     GTAGTTGTAG GAGATGGTGG TGTTG</tt> </tt>
+<a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line"><tt class="py-docstring">scras1    GTAGTTGTCG GTGGAGGTGG CGTTG</tt> </tt>
+<a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line"><tt class="py-docstring">scras2    GTCGTCGTTG GTGGTGGTGG TGTTG</tt> </tt>
+<a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line"><tt class="py-docstring">0101001111 0101110101 01011     </tt> </tt>
+<a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line"><tt class="py-docstring">GTCGTCGTTG GACCTGGAGG CGTGG     </tt> </tt>
+<a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line"><tt class="py-docstring">GTGGTGGTGG GCGCCGGCCG TGTGG</tt> </tt>
+<a name="L55"></a><tt class="py-lineno"> 55</tt>  <tt class="py-line"><tt class="py-docstring">GTTATTGTTG GTGGTGGTGG TGTCG</tt> </tt>
+<a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line"><tt class="py-docstring">GTAGTTGTAG GAGATGGTGG TGTTG</tt> </tt>
+<a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line"><tt class="py-docstring">GTAGTTGTCG GTGGAGGTGG CGTTG</tt> </tt>
+<a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line"><tt class="py-docstring">GTCGTCGTTG GTGGTGGTGG TGTTG</tt> </tt>
+<a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line"><tt class="py-docstring">1                                       </tt> </tt>
+<a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line"><tt class="py-docstring">((dmras1,ddrasa),((hschras,spras),(scras1,scras2)));</tt> </tt>
+<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line"><tt class="py-docstring">"""</tt> </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line"> </tt>
+<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-0" class="py-name" targets="Package corebio=corebio-module.html"><a title="corebio" class="py-name" href="#" onclick="return doclink('link-0', 'corebio', 'link-0');">corebio</a></tt><tt class="py-op">.</tt><tt id="link-1" class="py-name" targets="Module corebio.seq=corebio.seq-module.html"><a title="corebio.seq" class="py-name" href="#" onclick="return doclink('link-1', 'seq', 'link-1');">seq</a></tt> <tt class="py-keyword">import</tt> <tt class="py-op">*</tt> </tt>
+<a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line"> </tt>
+<a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line"><tt id="link-2" class="py-name" targets="Variable corebio.seq_io.array_io.names=corebio.seq_io.array_io-module.html#names,Variable corebio.seq_io.clustal_io.names=corebio.seq_io.clustal_io-module.html#names,Variable corebio.seq_io.fasta_io.names=corebio.seq_io.fasta_io-module.html#names,Variable corebio.seq_io.genbank_io.names=corebio.seq_io.genbank_io-module.html#names,Variable corebio.seq_io.intelligenetics_io.names=corebio.seq_io.intelligenetics_io-module.html#names,Variable corebio.seq_io.msf_io.names=corebio.seq_io.msf_io-module.html#names,Variable corebio.seq_io.nbrf_io.names=corebio.seq_io.nbrf_io-module.html#names,Variable corebio.seq_io.nexus_io.names=corebio.seq_io.nexus_io-module.html#names,Variable corebio.seq_io.null_io.names=corebio.seq_io.null_io-module.html#names,Variable corebio.seq_io.phylip_io.names=corebio.seq_io.phylip_io-module.html#names,Variable corebio.seq_io.plain_io.names=corebio.seq_io.plain_io-module.html#names,Variable corebio.seq_io.stockholm_io.names=corebio.seq_io.stockholm_io-module.html#names,Variable corebio.seq_io.table_io.names=corebio.seq_io.table_io-module.html#names,Static Method weblogolib.color.Color.names()=weblogolib.color.Color-class.html#names"><a title="corebio.seq_io.array_io.names
+corebio.seq_io.clustal_io.names
+corebio.seq_io.fasta_io.names
+corebio.seq_io.genbank_io.names
+corebio.seq_io.intelligenetics_io.names
+corebio.seq_io.msf_io.names
+corebio.seq_io.nbrf_io.names
+corebio.seq_io.nexus_io.names
+corebio.seq_io.null_io.names
+corebio.seq_io.phylip_io.names
+corebio.seq_io.plain_io.names
+corebio.seq_io.stockholm_io.names
+corebio.seq_io.table_io.names
+weblogolib.color.Color.names" class="py-name" href="#" onclick="return doclink('link-2', 'names', 'link-2');">names</a></tt> <tt class="py-op">=</tt> <tt class="py-op">(</tt> <tt class="py-string">'phylip'</tt><tt class="py-op">,</tt><tt class="py-op">)</tt> </tt>
+<a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line"><tt id="link-3" class="py-name" targets="Variable corebio.seq_io.array_io.extensions=corebio.seq_io.array_io-module.html#extensions,Variable corebio.seq_io.clustal_io.extensions=corebio.seq_io.clustal_io-module.html#extensions,Variable corebio.seq_io.fasta_io.extensions=corebio.seq_io.fasta_io-module.html#extensions,Variable corebio.seq_io.genbank_io.extensions=corebio.seq_io.genbank_io-module.html#extensions,Variable corebio.seq_io.intelligenetics_io.extensions=corebio.seq_io.intelligenetics_io-module.html#extensions,Variable corebio.seq_io.msf_io.extensions=corebio.seq_io.msf_io-module.html#extensions,Variable corebio.seq_io.nbrf_io.extensions=corebio.seq_io.nbrf_io-module.html#extensions,Variable corebio.seq_io.nexus_io.extensions=corebio.seq_io.nexus_io-module.html#extensions,Variable corebio.seq_io.null_io.extensions=corebio.seq_io.null_io-module.html#extensions,Variable corebio.seq_io.phylip_io.extensions=corebio.seq_io.phylip_io-module.html#extensions,Variable corebio.seq_io.plain_io.extensions=corebio.seq_io.plain_io-module.html#extensions,Variable corebio.seq_io.stockholm_io.extensions=corebio.seq_io.stockholm_io-module.html#extensions,Variable corebio.seq_io.table_io.extensions=corebio.seq_io.table_io-module.html#extensions"><a title="corebio.seq_io.array_io.extensions
+corebio.seq_io.clustal_io.extensions
+corebio.seq_io.fasta_io.extensions
+corebio.seq_io.genbank_io.extensions
+corebio.seq_io.intelligenetics_io.extensions
+corebio.seq_io.msf_io.extensions
+corebio.seq_io.nbrf_io.extensions
+corebio.seq_io.nexus_io.extensions
+corebio.seq_io.null_io.extensions
+corebio.seq_io.phylip_io.extensions
+corebio.seq_io.plain_io.extensions
+corebio.seq_io.stockholm_io.extensions
+corebio.seq_io.table_io.extensions" class="py-name" href="#" onclick="return doclink('link-3', 'extensions', 'link-3');">extensions</a></tt> <tt class="py-op">=</tt> <tt class="py-op">(</tt><tt class="py-string">'phy'</tt><tt class="py-op">,</tt><tt class="py-op">)</tt> </tt>
+<a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line"> </tt>
+<a name="iterseq"></a><div id="iterseq-def"><a name="L71"></a><tt class="py-lineno"> 71</tt> <a class="py-toggle" href="#" id="iterseq-toggle" onclick="return toggle('iterseq');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="corebio.seq_io.phylip_io-module.html#iterseq">iterseq</a><tt class="py-op">(</tt><tt class="py-param">fin</tt><tt class="py-op">,</tt> <tt class="py-param">alphabet</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="iterseq-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="iterseq-expanded"><a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line">    <tt class="py-docstring">"""Iterate over the sequences in the file."""</tt> </tt>
+<a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line">    <tt class="py-comment"># Default implementation</tt> </tt>
+<a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">iter</tt><tt class="py-op">(</tt><tt id="link-4" class="py-name" targets="Static Method corebio.matrix.SubMatrix.read()=corebio.matrix.SubMatrix-class.html#read,Method corebio.seq_io._nexus.Nexus.read()=corebio.seq_io._nexus.Nexus-class.html#read,Function corebio.seq_io.array_io.read()=corebio.seq_io.array_io-module.html#read,Function corebio.seq_io.clustal_io.read()=corebio.seq_io.clustal_io-module.html#read,Function corebio.seq_io.fasta_io.read()=corebio.seq_io.fasta_io-module.html#read,Function corebio.seq_io.genbank_io.read()=corebio.seq_io.genbank_io-module.html#read,Function corebio.seq_io.intelligenetics_io.read()=corebio.seq_io.intelligenetics_io-module.html#read,Function corebio.seq_io.msf_io.read()=corebio.seq_io.msf_io-module.html#read,Function corebio.seq_io.nbrf_io.read()=corebio.seq_io.nbrf_io-module.html#read,Function corebio.seq_io.nexus_io.read()=corebio.seq_io.nexus_io-module.html#read,Function corebio.seq_io.null_io.read()=corebio.seq_io.null_io-module.html#read,Function corebio.seq_io.phylip_io.read()=corebio.seq_io.phylip_io-module.html#read,Function corebio.seq_io.plain_io.read()=corebio.seq_io.plain_io-module.html#read,Function corebio.seq_io.read()=corebio.seq_io-module.html#read,Function corebio.seq_io.stockholm_io.read()=corebio.seq_io.stockholm_io-module.html#read,Function corebio.seq_io.table_io.read()=corebio.seq_io.table_io-module.html#read"><a title="corebio.matrix.SubMatrix.read
+corebio.seq_io._nexus.Nexus.read
+corebio.seq_io.array_io.read
+corebio.seq_io.clustal_io.read
+corebio.seq_io.fasta_io.read
+corebio.seq_io.genbank_io.read
+corebio.seq_io.intelligenetics_io.read
+corebio.seq_io.msf_io.read
+corebio.seq_io.nbrf_io.read
+corebio.seq_io.nexus_io.read
+corebio.seq_io.null_io.read
+corebio.seq_io.phylip_io.read
+corebio.seq_io.plain_io.read
+corebio.seq_io.read
+corebio.seq_io.stockholm_io.read
+corebio.seq_io.table_io.read" class="py-name" href="#" onclick="return doclink('link-4', 'read', 'link-4');">read</a></tt><tt class="py-op">(</tt><tt class="py-name">fin</tt><tt class="py-op">,</tt> <tt id="link-5" class="py-name" targets="Variable corebio.matrix.Motif.alphabet=corebio.matrix.Motif-class.html#alphabet,Variable corebio.matrix.SubMatrix.alphabet=corebio.matrix.SubMatrix-class.html#alphabet,Variable corebio.seq.Seq.alphabet=corebio.seq.Seq-class.html#alphabet,Variable corebio.seq.SeqList.alphabet=corebio.seq.SeqList-class.html#alphabet"><a title="corebio.matrix.Motif.alphabet
+corebio.matrix.SubMatrix.alphabet
+corebio.seq.Seq.alphabet
+corebio.seq.SeqList.alphabet" class="py-name" href="#" onclick="return doclink('link-5', 'alphabet', 'link-5');">alphabet</a></tt><tt class="py-op">)</tt> <tt class="py-op">)</tt> </tt>
+</div><a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line"> </tt>
+<a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line"> </tt>
+<a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line"><tt class="py-comment">#Read takes in a phylip file name, reads it, processes it, and returns a SeqList</tt> </tt>
+<a name="read"></a><div id="read-def"><a name="L78"></a><tt class="py-lineno"> 78</tt> <a class="py-toggle" href="#" id="read-toggle" onclick="return toggle('read');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="corebio.seq_io.phylip_io-module.html#read">read</a><tt class="py-op">(</tt><tt class="py-param">fin</tt><tt class="py-op">,</tt> <tt class="py-param">alphabet</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="read-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="read-expanded"><a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line">     </tt>
+<a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line">    </tt>
+<a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line">    <tt class="py-name">sequence</tt><tt class="py-op">=</tt><tt class="py-op">[</tt><tt class="py-op">]</tt> <tt class="py-comment">#where sequences are stored</tt> </tt>
+<a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line">    <tt class="py-name">idents</tt><tt class="py-op">=</tt><tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line">    <tt class="py-name">num_seq</tt><tt class="py-op">=</tt><tt class="py-number">0</tt> </tt>
+<a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line">    <tt class="py-name">num_total_seq</tt><tt class="py-op">=</tt><tt class="py-number">0</tt> <tt class="py-comment">#length of sequence of 1 species</tt> </tt>
+<a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line">    <tt class="py-name">tracker</tt><tt class="py-op">=</tt><tt class="py-number">0</tt> <tt class="py-comment">#track what sequence the line is on</tt> </tt>
+<a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line">    <tt class="py-name">usertree_tracker</tt><tt class="py-op">=</tt><tt class="py-number">0</tt> <tt class="py-comment">#track usertree lines</tt> </tt>
+<a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line">    <tt class="py-name">options</tt><tt class="py-op">=</tt><tt class="py-string">''</tt> <tt class="py-comment">#options</tt> </tt>
+<a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line">    <tt class="py-name">num_options</tt><tt class="py-op">=</tt><tt class="py-number">0</tt> <tt class="py-comment">#number/lens of options - U</tt> </tt>
+<a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line"> </tt>
+<a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line">    <tt class="py-name">line</tt><tt class="py-op">=</tt><tt class="py-name">fin</tt><tt class="py-op">.</tt><tt class="py-name">readline</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line">    <tt class="py-keyword">while</tt> <tt class="py-name">line</tt><tt class="py-op">:</tt> </tt>
+<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line">        <tt class="py-name">s_line</tt><tt class="py-op">=</tt><tt class="py-name">line</tt><tt class="py-op">.</tt><tt id="link-6" class="py-name" targets="Method corebio.seq_io._nexus.Trees.Tree.split()=corebio.seq_io._nexus.Trees.Tree-class.html#split"><a title="corebio.seq_io._nexus.Trees.Tree.split" class="py-name" href="#" onclick="return doclink('link-6', 'split', 'link-6');">split</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> <tt class="py-comment">#for ease of use, not used in all scenarios, but easier on the eye</tt> </tt>
+<a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line"> </tt>
+<a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">s_line</tt> <tt class="py-op">==</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt><tt class="py-op">:</tt> <tt class="py-comment">#see nothing do nothing</tt> </tt>
+<a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line">            <tt class="py-keyword">pass</tt> </tt>
+<a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line"> </tt>
+<a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line">        <tt class="py-keyword">elif</tt> <tt class="py-op">(</tt><tt class="py-name">s_line</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt class="py-name">isdigit</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> <tt class="py-keyword">and</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">s_line</tt><tt class="py-op">)</tt> <tt class="py-op">==</tt> <tt class="py-number">1</tt> <tt class="py-keyword">and</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">sequence</tt><tt class="py-op">)</tt><tt class="py-op">==</tt><tt class="py-name">num_seq</tt> <tt class="py-keyword">and</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">sequence</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">)</tt><tt class="py-op">==</tt><tt class="py-name">num_total_seq</tt><tt class="py-op">)</tt><tt class="py-op">:</tt>    <tt class="py-comment">#identifies usertree</tt> </tt>
+<a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line">            <tt class="py-name">usertree_tracker</tt> <tt class="py-op">=</tt> <tt class="py-name">int</tt><tt class="py-op">(</tt><tt class="py-name">s_line</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line">            <tt class="py-keyword">pass</tt> </tt>
+<a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line">         </tt>
+<a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line">        <tt class="py-keyword">elif</tt> <tt class="py-name">num_options</tt> <tt class="py-op">&gt;</tt> <tt class="py-number">0</tt><tt class="py-op">:</tt> </tt>
+<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">sequence</tt><tt class="py-op">)</tt> <tt class="py-op">&lt;</tt> <tt class="py-name">num_seq</tt><tt class="py-op">:</tt> </tt>
+<a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line">                <tt class="py-keyword">if</tt> <tt class="py-name">s_line</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> <tt class="py-keyword">in</tt> <tt class="py-name">options</tt><tt class="py-op">:</tt> </tt>
+<a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line">                    <tt class="py-name">num_options</tt> <tt class="py-op">-=</tt> <tt class="py-number">1</tt> </tt>
+<a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line">                    <tt class="py-keyword">pass</tt> </tt>
+<a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line">                <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line">                    <tt class="py-keyword">raise</tt> <tt class="py-name">ValueError</tt><tt class="py-op">(</tt><tt class="py-string">'Not an option, but it should be one'</tt><tt class="py-op">)</tt> </tt>
+<a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line">            <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line">                <tt class="py-name">num_options</tt> <tt class="py-op">-=</tt> <tt class="py-number">1</tt> </tt>
+<a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line">                <tt class="py-keyword">pass</tt> </tt>
+<a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line">     </tt>
+<a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line">        <tt class="py-keyword">elif</tt> <tt class="py-name">usertree_tracker</tt> <tt class="py-op">&gt;</tt> <tt class="py-number">0</tt><tt class="py-op">:</tt>                    <tt class="py-comment">#bascally skip usertree</tt> </tt>
+<a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">sequence</tt><tt class="py-op">[</tt><tt class="py-name">num_seq</tt><tt class="py-op">-</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> <tt class="py-op">==</tt> <tt class="py-name">num_total_seq</tt><tt class="py-op">:</tt> </tt>
+<a name="L114"></a><tt class="py-lineno">114</tt>  <tt class="py-line">                <tt class="py-name">usertree_tracker</tt> <tt class="py-op">-=</tt><tt class="py-number">1</tt> </tt>
+<a name="L115"></a><tt class="py-lineno">115</tt>  <tt class="py-line">                <tt class="py-keyword">pass</tt> </tt>
+<a name="L116"></a><tt class="py-lineno">116</tt>  <tt class="py-line">            <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L117"></a><tt class="py-lineno">117</tt>  <tt class="py-line">                <tt class="py-keyword">raise</tt> <tt class="py-name">ValueError</tt><tt class="py-op">(</tt><tt class="py-string">'User Tree in Wrong Place'</tt><tt class="py-op">)</tt> </tt>
+<a name="L118"></a><tt class="py-lineno">118</tt>  <tt class="py-line">     </tt>
+<a name="L119"></a><tt class="py-lineno">119</tt>  <tt class="py-line">        <tt class="py-comment">#####problems parse error unexpected</tt> </tt>
+<a name="L120"></a><tt class="py-lineno">120</tt>  <tt class="py-line">        <tt class="py-keyword">elif</tt> <tt class="py-name">s_line</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt class="py-name">isdigit</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L121"></a><tt class="py-lineno">121</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">s_line</tt><tt class="py-op">)</tt> <tt class="py-op">&gt;=</tt> <tt class="py-number">2</tt> <tt class="py-keyword">and</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">sequence</tt><tt class="py-op">)</tt> <tt class="py-op">==</tt> <tt class="py-number">0</tt><tt class="py-op">:</tt> <tt class="py-comment">#identifies first line of file</tt> </tt>
+<a name="L122"></a><tt class="py-lineno">122</tt>  <tt class="py-line">                <tt class="py-name">num_seq</tt> <tt class="py-op">=</tt> <tt class="py-name">int</tt><tt class="py-op">(</tt><tt class="py-name">s_line</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">)</tt>               <tt class="py-comment">#get number of sequences</tt> </tt>
+<a name="L123"></a><tt class="py-lineno">123</tt>  <tt class="py-line">                <tt class="py-name">num_total_seq</tt> <tt class="py-op">=</tt> <tt class="py-name">int</tt><tt class="py-op">(</tt><tt class="py-name">s_line</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">)</tt>         <tt class="py-comment">#get length of sequences</tt> </tt>
+<a name="L124"></a><tt class="py-lineno">124</tt>  <tt class="py-line">                <tt class="py-keyword">if</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">s_line</tt><tt class="py-op">)</tt> <tt class="py-op">&gt;</tt> <tt class="py-number">2</tt><tt class="py-op">:</tt>                   <tt class="py-comment">#takes care of the options</tt> </tt>
+<a name="L125"></a><tt class="py-lineno">125</tt>  <tt class="py-line">                    <tt class="py-name">options</tt><tt class="py-op">=</tt> <tt class="py-op">(</tt><tt class="py-string">''</tt><tt class="py-op">.</tt><tt id="link-7" class="py-name" targets="Method corebio.seq.Seq.join()=corebio.seq.Seq-class.html#join"><a title="corebio.seq.Seq.join" class="py-name" href="#" onclick="return doclink('link-7', 'join', 'link-7');">join</a></tt><tt class="py-op">(</tt><tt class="py-name">s_line</tt><tt class="py-op">[</tt><tt class="py-number">2</tt><tt class="py-op">:</tt><tt class="py-op">]</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L126"></a><tt class="py-lineno">126</tt>  <tt class="py-line">                    <tt class="py-name">num_options</tt><tt class="py-op">=</tt><tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">options</tt><tt class="py-op">)</tt> <tt class="py-op">-</tt> <tt class="py-name">options</tt><tt class="py-op">.</tt><tt class="py-name">count</tt><tt class="py-op">(</tt><tt class="py-string">'U'</tt><tt class="py-op">)</tt> </tt>
+<a name="L127"></a><tt class="py-lineno">127</tt>  <tt class="py-line">            <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L128"></a><tt class="py-lineno">128</tt>  <tt class="py-line">                <tt class="py-keyword">raise</tt> <tt class="py-name">ValueError</tt><tt class="py-op">(</tt><tt class="py-string">'parse error'</tt><tt class="py-op">)</tt>  </tt>
+<a name="L129"></a><tt class="py-lineno">129</tt>  <tt class="py-line"> </tt>
+<a name="L130"></a><tt class="py-lineno">130</tt>  <tt class="py-line"> </tt>
+<a name="L131"></a><tt class="py-lineno">131</tt>  <tt class="py-line">    <tt class="py-comment">#when options end, this takes care of the sequence</tt> </tt>
+<a name="L132"></a><tt class="py-lineno">132</tt>  <tt class="py-line">        <tt class="py-keyword">elif</tt> <tt class="py-name">num_options</tt> <tt class="py-op">==</tt> <tt class="py-number">0</tt><tt class="py-op">:</tt> </tt>
+<a name="L133"></a><tt class="py-lineno">133</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-op">(</tt><tt class="py-name">num_seq</tt><tt class="py-op">==</tt><tt class="py-number">0</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L134"></a><tt class="py-lineno">134</tt>  <tt class="py-line">                <tt class="py-keyword">raise</tt> <tt class="py-name">ValueError</tt><tt class="py-op">(</tt><tt class="py-string">"Empty File, or possibly wrong file"</tt><tt class="py-op">)</tt> </tt>
+<a name="L135"></a><tt class="py-lineno">135</tt>  <tt class="py-line">            <tt class="py-keyword">elif</tt> <tt class="py-name">tracker</tt> <tt class="py-op">&lt;</tt> <tt class="py-name">num_seq</tt><tt class="py-op">:</tt> </tt>
+<a name="L136"></a><tt class="py-lineno">136</tt>  <tt class="py-line">                <tt class="py-keyword">if</tt> <tt class="py-name">num_seq</tt> <tt class="py-op">&gt;</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">sequence</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L137"></a><tt class="py-lineno">137</tt>  <tt class="py-line">                    <tt class="py-name">sequence</tt><tt class="py-op">.</tt><tt id="link-8" class="py-name" targets="Method corebio.db.astral.RafSeqMap.append()=corebio.db.astral.RafSeqMap-class.html#append"><a title="corebio.db.astral.RafSeqMap.append" class="py-name" href="#" onclick="return doclink('link-8', 'append', 'link-8');">append</a></tt><tt class="py-op">(</tt><tt class="py-string">''</tt><tt class="py-op">.</tt><tt id="link-9" class="py-name"><a title="corebio.seq.Seq.join" class="py-name" href="#" onclick="return doclink('link-9', 'join', 'link-7');">join</a></tt><tt class="py-op">(</tt><tt class="py-name">line</tt><tt class="py-op">[</tt><tt class="py-number">10</tt><tt class="py-op">:</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt id="link-10" class="py-name"><a title="corebio.seq_io._nexus.Trees.Tree.split" class="py-name" href="#" onclick="return doclink('link-10', 'split', 'link-6');">split</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> <tt class="py-comment">#removes species name</tt> </tt>
+<a name="L138"></a><tt class="py-lineno">138</tt>  <tt class="py-line">                    <tt class="py-name">idents</tt><tt class="py-op">.</tt><tt id="link-11" class="py-name"><a title="corebio.db.astral.RafSeqMap.append" class="py-name" href="#" onclick="return doclink('link-11', 'append', 'link-8');">append</a></tt><tt class="py-op">(</tt><tt class="py-name">line</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">:</tt><tt class="py-number">10</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt class="py-name">strip</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L139"></a><tt class="py-lineno">139</tt>  <tt class="py-line">                    <tt class="py-name">tracker</tt> <tt class="py-op">+=</tt><tt class="py-number">1</tt> </tt>
+<a name="L140"></a><tt class="py-lineno">140</tt>  <tt class="py-line">                     </tt>
+<a name="L141"></a><tt class="py-lineno">141</tt>  <tt class="py-line">                <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L142"></a><tt class="py-lineno">142</tt>  <tt class="py-line">                    <tt class="py-name">sequence</tt><tt class="py-op">[</tt><tt class="py-name">tracker</tt><tt class="py-op">]</tt> <tt class="py-op">+=</tt> <tt class="py-op">(</tt><tt class="py-string">''</tt><tt class="py-op">.</tt><tt id="link-12" class="py-name"><a title="corebio.seq.Seq.join" class="py-name" href="#" onclick="return doclink('link-12', 'join', 'link-7');">join</a></tt><tt class="py-op">(</tt><tt class="py-name">s_line</tt><tt class="py-op">)</tt><tt class="py-op">)</tt>       </tt>
+<a name="L143"></a><tt class="py-lineno">143</tt>  <tt class="py-line">                    <tt class="py-name">tracker</tt> <tt class="py-op">+=</tt><tt class="py-number">1</tt> </tt>
+<a name="L144"></a><tt class="py-lineno">144</tt>  <tt class="py-line">                     </tt>
+<a name="L145"></a><tt class="py-lineno">145</tt>  <tt class="py-line">                <tt class="py-keyword">if</tt> <tt class="py-name">tracker</tt> <tt class="py-op">==</tt> <tt class="py-name">num_seq</tt><tt class="py-op">:</tt> </tt>
+<a name="L146"></a><tt class="py-lineno">146</tt>  <tt class="py-line">                    <tt class="py-name">tracker</tt> <tt class="py-op">=</tt> <tt class="py-number">0</tt> </tt>
+<a name="L147"></a><tt class="py-lineno">147</tt>  <tt class="py-line">                    <tt class="py-name">num_options</tt> <tt class="py-op">=</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">options</tt><tt class="py-op">)</tt><tt class="py-op">-</tt><tt class="py-name">options</tt><tt class="py-op">.</tt><tt class="py-name">count</tt><tt class="py-op">(</tt><tt class="py-string">'U'</tt><tt class="py-op">)</tt> </tt>
+<a name="L148"></a><tt class="py-lineno">148</tt>  <tt class="py-line">         </tt>
+<a name="L149"></a><tt class="py-lineno">149</tt>  <tt class="py-line">        <tt class="py-name">line</tt><tt class="py-op">=</tt><tt class="py-name">fin</tt><tt class="py-op">.</tt><tt class="py-name">readline</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L150"></a><tt class="py-lineno">150</tt>  <tt class="py-line">    </tt>
+<a name="L151"></a><tt class="py-lineno">151</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">sequence</tt><tt class="py-op">)</tt> <tt class="py-op">!=</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">idents</tt><tt class="py-op">)</tt> <tt class="py-keyword">or</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">sequence</tt><tt class="py-op">)</tt><tt class="py-op">!=</tt><tt class="py-name">num_seq</tt><tt class="py-op">:</tt> </tt>
+<a name="L152"></a><tt class="py-lineno">152</tt>  <tt class="py-line">        <tt class="py-keyword">raise</tt> <tt class="py-name">ValueError</tt><tt class="py-op">(</tt><tt class="py-string">"Number of different sequences wrong"</tt><tt class="py-op">)</tt>  </tt>
+<a name="L153"></a><tt class="py-lineno">153</tt>  <tt class="py-line">     </tt>
+<a name="L154"></a><tt class="py-lineno">154</tt>  <tt class="py-line">    <tt class="py-name">seqs</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L155"></a><tt class="py-lineno">155</tt>  <tt class="py-line">    <tt class="py-keyword">for</tt> <tt class="py-name">i</tt> <tt class="py-keyword">in</tt> <tt class="py-name">range</tt> <tt class="py-op">(</tt><tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">idents</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L156"></a><tt class="py-lineno">156</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">sequence</tt><tt class="py-op">[</tt><tt class="py-name">i</tt><tt class="py-op">]</tt><tt class="py-op">)</tt><tt class="py-op">==</tt><tt class="py-name">num_total_seq</tt><tt class="py-op">:</tt> </tt>
+<a name="L157"></a><tt class="py-lineno">157</tt>  <tt class="py-line">            <tt class="py-name">seqs</tt><tt class="py-op">.</tt><tt id="link-13" class="py-name"><a title="corebio.db.astral.RafSeqMap.append" class="py-name" href="#" onclick="return doclink('link-13', 'append', 'link-8');">append</a></tt><tt class="py-op">(</tt><tt id="link-14" class="py-name" targets="Class corebio.seq.Seq=corebio.seq.Seq-class.html"><a title="corebio.seq.Seq" class="py-name" href="#" onclick="return doclink('link-14', 'Seq', 'link-14');">Seq</a></tt><tt class="py-op">(</tt><tt class="py-name">sequence</tt><tt class="py-op">[</tt><tt class="py-name">i</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt id="link-15" class="py-name"><a title="corebio.matrix.Motif.alphabet
+corebio.matrix.SubMatrix.alphabet
+corebio.seq.Seq.alphabet
+corebio.seq.SeqList.alphabet" class="py-name" href="#" onclick="return doclink('link-15', 'alphabet', 'link-5');">alphabet</a></tt><tt class="py-op">,</tt> <tt class="py-name">idents</tt><tt class="py-op">[</tt><tt class="py-name">i</tt><tt class="py-op">]</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L158"></a><tt class="py-lineno">158</tt>  <tt class="py-line">        <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L159"></a><tt class="py-lineno">159</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt class="py-name">ValueError</tt><tt class="py-op">(</tt><tt class="py-string">"extra sequence in list"</tt><tt class="py-op">)</tt> </tt>
+<a name="L160"></a><tt class="py-lineno">160</tt>  <tt class="py-line">     </tt>
+<a name="L161"></a><tt class="py-lineno">161</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt id="link-16" class="py-name" targets="Class corebio.seq.SeqList=corebio.seq.SeqList-class.html"><a title="corebio.seq.SeqList" class="py-name" href="#" onclick="return doclink('link-16', 'SeqList', 'link-16');">SeqList</a></tt><tt class="py-op">(</tt><tt class="py-name">seqs</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L162"></a><tt class="py-lineno">162</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Wed Mar 12 21:34:15 2014
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>
